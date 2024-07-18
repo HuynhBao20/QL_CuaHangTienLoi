@@ -1,0 +1,6 @@
+C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\ConnectionDB\obj\Debug\ConnectionDB.csproj.CoreCompileInputs.cache
+C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\ConnectionDB\bin\Debug\ConnectionDB.exe.config
+C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\ConnectionDB\bin\Debug\ConnectionDB.exe
+C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\ConnectionDB\bin\Debug\ConnectionDB.pdb
+C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\ConnectionDB\obj\Debug\ConnectionDB.exe
+C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\ConnectionDB\obj\Debug\ConnectionDB.pdb
