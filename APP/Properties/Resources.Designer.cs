@@ -69,5 +69,15 @@ namespace APP.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_add_customers_icon_color_flat_png_image_4674922 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-add-customers-icon-color-flat-png-image_4674922", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

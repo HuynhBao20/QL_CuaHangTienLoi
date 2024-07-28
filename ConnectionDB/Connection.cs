@@ -26,9 +26,19 @@ namespace ConnectionDB
 			cmd.ExecuteNonQuery();
 			_cnn.Close();
 		}
-		public void ExcuteReader()
+	
+		public string ExcuteReader(string Sql, string tableName)
 		{
-
+			_cnn.Open();
+			SqlCommand cmd = new SqlCommand(Sql, _cnn);
+			SqlDataReader Sdr = cmd.ExecuteReader();
+			string name = "";
+			while(Sdr.Read())
+			{
+				name = Sdr[tableName].ToString();
+			}
+			_cnn.Close();
+			return name;
 		}
 	}
 }

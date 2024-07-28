@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Event.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +108,10 @@
     <None Include="Resources\418386971_260437393616987_7756574484907792895_n.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\1.jpg" />
+    <Content Include="Resources\2.jpg" />
+    <None Include="Resources\pngtree-add-customers-icon-color-flat-png-image_4674922.png" />
+    <Content Include="Resources\3.jpg" />
     <Content Include="Resources\pngtree-graduation-bachelor-hat-illustration-png-image_6580811.png" />
     <Content Include="Resources\pngtree-purple-gradient-geometric-circle-background-image_50104.jpg" />
   </ItemGroup>
