@@ -96,8 +96,7 @@ BEGIN
     END
     ELSE
     BEGIN
-        PRINT 'THÊM THÀNH CÔNG';
-        -- No need to commit transaction as it is handled automatically
+        PRINT 'THÊM THÀNH CÔNG'; 
     END
 END
 SET DATEFORMAT DMY

@@ -29,6 +29,7 @@ namespace APP
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -57,7 +58,7 @@ namespace APP
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.tableLayoutPanel1.Controls.Add(this.groupBox1, 1, 1);
 			this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 1);
-			this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
+			this.tableLayoutPanel1.Controls.Add(this.button1, 1, 0);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -89,15 +90,11 @@ namespace APP
 			// 
 			// button1
 			// 
-			this.button1.BackgroundImage = global::APP.Properties.Resources._418386971_260437393616987_7756574484907792895_n;
-			this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-			this.button1.ForeColor = System.Drawing.SystemColors.Control;
-			this.button1.Location = new System.Drawing.Point(3, 3);
+			this.button1.Location = new System.Drawing.Point(699, 3);
 			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(281, 217);
+			this.button1.Size = new System.Drawing.Size(296, 137);
 			this.button1.TabIndex = 3;
 			this.button1.Text = "button1";
-			this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.button1.UseVisualStyleBackColor = true;
 			// 
 			// Form1
@@ -106,6 +103,7 @@ namespace APP
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1392, 766);
 			this.Controls.Add(this.tableLayoutPanel1);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "Form1";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Form1";

@@ -19,5 +19,16 @@ namespace ConnectionDB
 			sda.Fill(da);
 			return da;
 		}
+		public void ExcuteQuery(string Sql)
+		{
+			_cnn.Open();
+			SqlCommand cmd = new SqlCommand(Sql, _cnn);
+			cmd.ExecuteNonQuery();
+			_cnn.Close();
+		}
+		public void ExcuteReader()
+		{
+
+		}
 	}
 }

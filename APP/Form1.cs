@@ -12,39 +12,14 @@ namespace APP
 {
 	public partial class Form1 : Form
 	{
+		Connection db = new Connection();
+		UI ui = new UI();
 		public Form1()
 		{
 			InitializeComponent();
-			Connection db = new Connection();
-			dataGridView1.DataSource = db.loadDB("SELECT * FROM LOAISP");
-			loadSP();
+			dataGridView1.DataSource = db.loadDB("SELECT * FROM NHANVIEN");
+			ui.UI_loadSP(flowLayoutPanel1);
 		}
-		public void loadSP()
-		{
-			for(int i = 0; i < 5; i++)
-			{
-				Panel pnl = new Panel()
-				{
-					Width = 150,
-					Height = 180,
-					BackColor = Color.Red
-				};
-				Button btn = new Button()
-				{
-					Name = "btn",
-					TextAlign = ContentAlignment.BottomCenter,
-					Width = 150,
-					Height = 150,
-
-				};
-				Label lb = new Label();
-				
-				lb.Text = "Sản phẩm 1";
-				pnl.Controls.Add(btn);
-				pnl.Controls.Add(lb);
-				flowLayoutPanel1.Controls.Add(pnl);
-			}
-			
-		}
+		
 	}
 }
