@@ -96,7 +96,8 @@ namespace APP
 					pnl.Controls.Add(ProductName);
 					flp.Controls.Add(pnl);
 				}
-			} else
+			} 
+			else
 			{
 				MessageBox.Show("Không tìm thấy");
 				
@@ -254,6 +255,14 @@ namespace APP
 			combo.DataSource = db.loadDB(Sql);
 			combo.DisplayMember = display;
 			combo.ValueMember = Value;
+		}
+		public void loadTreeView(TreeView tv)
+		{
+			DataTable da = db.loadDB("SELECT TENLOAI FROM LOAISP");
+			foreach(DataRow item in da.Rows)
+			{
+				tv.Nodes.Add(item["TENLOAI"].ToString());
+			}
 		}
 	}
 }

@@ -6,7 +6,6 @@ C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.csproj.Generat
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.csproj.CoreCompileInputs.cache
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.exe
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.pdb
-C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Form1.resources
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\ConnectionDB.exe
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\ConnectionDB.pdb
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.csproj.AssemblyReference.cache
@@ -15,4 +14,5 @@ C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\EntityFramework.dl
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\EntityFramework.xml
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.QuanLyHangHoa.resources
+C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.MainForm.resources
+C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.QuanLyHangHoa.resources
