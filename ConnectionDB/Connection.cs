@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
-
+using ConnectionDB.Models;
 namespace ConnectionDB
 {
 	public class Connection

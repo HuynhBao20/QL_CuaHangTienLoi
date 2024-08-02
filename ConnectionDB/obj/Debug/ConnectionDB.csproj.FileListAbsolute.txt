@@ -9,3 +9,4 @@ C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\ConnectionDB\bin\Debug\EntityFra
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\ConnectionDB\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\ConnectionDB\obj\Debug\ConnectionDB.csproj.AssemblyReference.cache
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\ConnectionDB\obj\Debug\ConnectionDB.csproj.CopyComplete
+C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\ConnectionDB\bin\Debug\ConnectionDB.exe.config

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using APP.Views;
+using ConnectionDB.Models;
 namespace APP
 {
 	public partial class MainForm : Form
@@ -16,7 +17,7 @@ namespace APP
 		public MainForm()
 		{
 			InitializeComponent();
-			Debug.WriteLine(!true);
+			
 		}
 
 		private void tv_DanhMuc_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)

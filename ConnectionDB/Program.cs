@@ -10,7 +10,7 @@ namespace ConnectionDB
 	{
 		static void Main(string[] argv)
 		{
-
+			
 		}
 	}
 }

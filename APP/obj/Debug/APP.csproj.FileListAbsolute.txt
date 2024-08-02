@@ -16,3 +16,5 @@ C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\EntityFramework.xm
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.MainForm.resources
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.QuanLyHangHoa.resources
+C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\ConnectionDB.exe.config
+C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.FrmLogin.resources

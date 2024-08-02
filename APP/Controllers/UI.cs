@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ConnectionDB;
-namespace APP
+namespace APP.Controllers
 {
 	//Summary:
 	// Class này dùng để thực hiện UI trên giao diện người dùng

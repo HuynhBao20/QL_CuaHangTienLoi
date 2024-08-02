@@ -131,7 +131,21 @@ END
 
 exec Tong_ThanhTien 6
 GO
-
+--Xuất hóa đơn
+ALTER PROC sp_XuatHoaDon @MAHD int
+AS
+BEGIN
+	SELECT	ct.MAHD, 
+			nv.HOTEN,
+			hd.NGAYLAP,
+			sp.TENSP, 
+			ct.SOLUONG, 
+			sp.DONGIA, 
+			ct.SOLUONG * sp.DONGIA AS N'Thành Tiền',
+			hd.TIENKD
+	FROM CT_HOADON ct, HOADON hd, NHANVIEN nv, SANPHAM sp
+	where ct.MAHD = hd.MAHD AND hd.MANV = nv.MANV AND sp.MASP = ct.MASP AND ct.MAHD = @MAHD
+END
 --FUNCTION
 --QUERY
 
