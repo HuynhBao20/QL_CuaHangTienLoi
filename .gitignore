@@ -1,0 +1,4 @@
+*.exe
+/ConnectionDB/bin/
+/Reporting/bin/
+/App/bin/
