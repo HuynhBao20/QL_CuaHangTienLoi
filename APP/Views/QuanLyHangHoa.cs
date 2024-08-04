@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using APP.Controllers;
 using ConnectionDB;
 using ConnectionDB.Enum;
-
+using Reporting;
 namespace APP.Views
 {
 	public partial class QuanLyHangHoa : Form
@@ -21,10 +21,14 @@ namespace APP.Views
 		public QuanLyHangHoa()
 		{
 			InitializeComponent();
-			ui.UI_LoadProduct(flowLayoutPanel1, flp_BillDetail, "", int.Parse(db.ExcuteReader(QuanLyHangHoa.getBillID, "MAHD")));
+			UI_Design();
+		}
+		public void UI_Design()
+		{
+			ui.UI_LoadProduct(flp_Product, flp_BillDetail, "", int.Parse(db.ExcuteReader(QuanLyHangHoa.getBillID, "MAHD")));
 			ui.loadCombobox(cbo_MaKH, "SELECT MAKH FROM KHACHHANG", "MAKH", "MAKH");
 			ui.UI_BillDetail(flp_BillDetail, 0);
-			ui.loadTreeView(treeView1);
+			ui.loadTreeView(tv_LoaiSP);
 		}
 		private void btnThemHoaDon_Click(object sender, EventArgs e)
 		{
@@ -54,16 +58,18 @@ namespace APP.Views
 		}
 		private void btnSearch_Click(object sender, EventArgs e)
 		{
-			flowLayoutPanel1.Controls.Clear();
-			ui.UI_LoadProduct(flowLayoutPanel1, flp_BillDetail, txtSearch.Text, int.Parse(db.ExcuteReader(QuanLyHangHoa.getBillID, "MAHD")));
+			flp_Product.Controls.Clear();
+			ui.UI_LoadProduct(flp_Product, flp_BillDetail, txtSearch.Text, int.Parse(db.ExcuteReader(QuanLyHangHoa.getBillID, "MAHD")));
 		}
-		private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+		private void tv_LoaiSP_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
 		{
-
+			flp_Product.Controls.Clear();
+			ui.Ui_Filter_Product(flp_Product, $"SELECT * FROM SANPHAM sp, LOAISP l WHERE sp.MALOAI = l.MALOAI AND TENLOAI = N'{e.Node.Text}'", flp_BillDetail, int.Parse(db.ExcuteReader(QuanLyHangHoa.getBillID, "MAHD")));
 		}
-		private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+		private void btnXuatHoaDon_Click(object sender, EventArgs e)
 		{
-			
+			SharedReporting S = new SharedReporting(db.ExcuteReader(QuanLyHangHoa.getBillID, "MAHD"));
+			S.Show();
 		}
 	}
 }

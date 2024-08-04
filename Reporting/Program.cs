@@ -8,6 +8,7 @@ namespace Reporting
 {
 	static class Program
 	{
+		public static string MAHD { get; set; }
 		/// <summary>
 		/// The main entry point for the application.
 		/// </summary>
@@ -16,7 +17,7 @@ namespace Reporting
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new SharedReporting());
+			Application.Run(new SharedReporting(MAHD));
 		}
 	}
 }

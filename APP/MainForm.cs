@@ -16,9 +16,8 @@ namespace APP
 	{
 		public MainForm()
 		{
-			InitializeComponent();
-			
-		}
+			InitializeComponent();            
+        }
 
 		private void tv_DanhMuc_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
 		{

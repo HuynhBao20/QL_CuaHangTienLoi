@@ -55,7 +55,7 @@ namespace APP.Controllers
 		public void UI_LoadProduct(FlowLayoutPanel flp, FlowLayoutPanel billDetail, string ProName, int MAHD = 1)
 		{
 			//string Query = ProName == "" ? "" : $"WHERE TENSP = N'{ProName}'";
-			DataTable da = db.loadDB("SELECT * FROM SANPHAM "); //Đưa dữ liệu vào bảng
+			DataTable da = db.loadDB("SELECT * FROM SANPHAM"); //Đưa dữ liệu vào bảng
 			var dat = da.AsEnumerable()
 				.Where(t => t.Field<string>("TENSP")
 				.Contains(ProName));
@@ -70,8 +70,8 @@ namespace APP.Controllers
 				{
 					Panel pnl = new Panel()
 					{
-						Width = flp.Width / 6,
-						Height = 150,
+						Width = (flp.Width - 10) / 4,
+						Height = 200,
 						BackgroundImage = Image.FromFile(fullPath(@"../../Resources/pngtree-purple-gradient-geometric-circle-background-image_50104.jpg")),
 						BackgroundImageLayout = ImageLayout.Stretch
 					};
@@ -262,6 +262,40 @@ namespace APP.Controllers
 			foreach(DataRow item in da.Rows)
 			{
 				tv.Nodes.Add(item["TENLOAI"].ToString());
+			}
+		}
+		public void Ui_Filter_Product(FlowLayoutPanel flp, string SQL, FlowLayoutPanel billDetail, int MAHD = 1)
+		{
+			DataTable da = db.loadDB(SQL);
+			foreach (DataRow item in da.Rows)
+			{
+				Panel pnl = new Panel()
+				{
+					Width = (flp.Width - 10) / 4,
+					Height = 200,
+					BackgroundImage = Image.FromFile(fullPath(@"../../Resources/pngtree-purple-gradient-geometric-circle-background-image_50104.jpg")),
+					BackgroundImageLayout = ImageLayout.Stretch
+				};
+				Button btn = new Button()
+				{
+					Width = pnl.Width - 10,
+					Dock = DockStyle.Fill,
+					BackColor = Color.Transparent,
+					BackgroundImage = Image.FromFile(fullPath(@"../../Resources/" + item["MASP"] + ".jpg")),
+					BackgroundImageLayout = ImageLayout.Stretch
+				};
+				btn.FlatAppearance.BorderSize = 0;
+				Label ProductName = new Label()
+				{
+					Text = item["TENSP"].ToString(),
+					Dock = DockStyle.Bottom,
+					BackColor = Color.Transparent
+				};
+
+				btn.Click += (sender, e) => Event_Product_Click(sender, e, int.Parse(item["MASP"].ToString()), billDetail, MAHD);
+				pnl.Controls.Add(btn);
+				pnl.Controls.Add(ProductName);
+				flp.Controls.Add(pnl);
 			}
 		}
 	}
