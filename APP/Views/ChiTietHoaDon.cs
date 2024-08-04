@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace APP.Views
 {
-	public partial class QuanLyHoaDon : Form
+	public partial class ChiTietHoaDon : Form
 	{
 		UI ui = new UI();
-		public QuanLyHoaDon()
+		public ChiTietHoaDon(int MAHD)
 		{
 			InitializeComponent();
-			ui.loadPhieuNhap(flp_LoadHoaDon, @"../../Resources/iconHoaDon.png", "SELECT * FROM HOADON", "NGAYLAP");
+			ui.loadCT_HoaDon(flowLayoutPanel1, MAHD);
 		}
 	}
 }

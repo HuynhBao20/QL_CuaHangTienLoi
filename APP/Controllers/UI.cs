@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using APP.Views;
 using ConnectionDB;
 namespace APP.Controllers
 {
@@ -330,7 +331,7 @@ namespace APP.Controllers
 			}
 		}
 		public int getHoaDon() => int.Parse(db.ExcuteReader(UI.getBillID, "MAHD"));
-		public void loadPhieu(FlowLayoutPanel flp, string fpathIMG, string Sql, string tableName)
+		public void loadPhieuKho(FlowLayoutPanel flp, string fpathIMG, string Sql, string tableName)
 		{
 			DataTable da = db.loadDB(Sql);
 			foreach (DataRow item in da.Rows)
@@ -363,6 +364,82 @@ namespace APP.Controllers
 				pnl.Controls.Add(ProductName);
 				flp.Controls.Add(pnl);
 			}
+		}
+		public void loadPhieuNhap(FlowLayoutPanel flp, string fpathIMG, string Sql, string tableName)
+		{
+			DataTable da = db.loadDB(Sql);
+			foreach (DataRow item in da.Rows)
+			{
+				Panel pnl = new Panel()
+				{
+					Width = (flp.Width) / 4,
+					Height = 210,
+					BackColor = Color.White
+				};
+
+				Button btn = new Button()
+				{
+					Width = 150,
+					Height = 150,
+					Dock = DockStyle.Fill,
+					BackColor = Color.Transparent,
+					BackgroundImage = Image.FromFile(fullPath(fpathIMG)),
+					BackgroundImageLayout = ImageLayout.Stretch
+
+				};
+				btn.FlatAppearance.BorderSize = 1;
+				Label ProductName = new Label()
+				{
+					Text = item[tableName].ToString(),
+					Dock = DockStyle.Bottom,
+					BackColor = Color.Transparent
+				};
+				btn.Click += (sender, e) => Event_Show_Bill(sender, e, int.Parse(item["MAHD"].ToString()));
+				pnl.Controls.Add(btn);
+				pnl.Controls.Add(ProductName);
+				flp.Controls.Add(pnl);
+			}
+		}
+		public void loadCT_HoaDon(FlowLayoutPanel flp, int MAHD)
+		{
+			string Sql = $"EXEC sp_XuatHoaDon {MAHD}";
+			DataTable da = db.loadDB(Sql);
+			foreach(DataRow item in da.Rows)
+			{
+				string fpath = fullPath(@"../../Resources/Sp.jpg");
+				Panel pnl = new Panel()
+				{
+					Width = (flp.Width) - 40,
+					Height = 210,
+					BackColor = Color.White
+				};
+
+				Button btn = new Button()
+				{
+					Width = 150,
+					Height = 150,
+					Dock = DockStyle.Left,
+					BackColor = Color.Transparent,
+					BackgroundImage = Image.FromFile(fullPath(fpath)),
+					BackgroundImageLayout = ImageLayout.Stretch
+
+				};
+				btn.FlatAppearance.BorderSize = 1;
+				Label ProductName = new Label()
+				{
+					Text = item["TENSP"].ToString(),
+					Dock = DockStyle.Bottom,
+					BackColor = Color.Transparent
+				};
+				pnl.Controls.Add(btn);
+				pnl.Controls.Add(ProductName);
+				flp.Controls.Add(pnl);
+			}
+		}
+		public void Event_Show_Bill(object sender, EventArgs e, int MAHD)
+		{
+			ChiTietHoaDon ct = new ChiTietHoaDon(MAHD);
+			ct.Show();
 		}
 	}
 }

@@ -21,7 +21,7 @@ namespace APP.Views
 		public QuanLySanPham()
 		{
 			InitializeComponent();
-			ui.loadPhieu(flp_PhieuNhap, @"../../Resources/quan-ly-ton-kho-la-gi.png", "select * from PHIEUNHAP", "NGAYNHAP");
+			ui.loadPhieuKho(flp_PhieuNhap, @"../../Resources/quan-ly-ton-kho-la-gi.png", "select * from PHIEUNHAP", "NGAYNHAP");
 		}
 
 		private void btn_ImportExcel_Click(object sender, EventArgs e)
