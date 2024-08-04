@@ -59,7 +59,6 @@ namespace APP.Views
 			this.label9 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
-			this.btnXuatHoaDon = new System.Windows.Forms.Button();
 			this.label4 = new System.Windows.Forms.Label();
 			this.txtKD = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
@@ -67,6 +66,7 @@ namespace APP.Views
 			this.txtTongTien = new System.Windows.Forms.TextBox();
 			this.txtThanhTien = new System.Windows.Forms.TextBox();
 			this.button3 = new System.Windows.Forms.Button();
+			this.btnXuatHoaDon = new System.Windows.Forms.Button();
 			this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.groupBox3.SuspendLayout();
@@ -314,6 +314,7 @@ namespace APP.Views
 			// 
 			// flp_Product
 			// 
+			this.flp_Product.AutoScroll = true;
 			this.tableLayoutPanel5.SetColumnSpan(this.flp_Product, 2);
 			this.flp_Product.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.flp_Product.Location = new System.Drawing.Point(3, 41);
@@ -450,17 +451,6 @@ namespace APP.Views
 			this.label7.Text = "Tiền thừa";
 			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// btnXuatHoaDon
-			// 
-			this.btnXuatHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.btnXuatHoaDon.Location = new System.Drawing.Point(3, 116);
-			this.btnXuatHoaDon.Name = "btnXuatHoaDon";
-			this.btnXuatHoaDon.Size = new System.Drawing.Size(177, 41);
-			this.btnXuatHoaDon.TabIndex = 0;
-			this.btnXuatHoaDon.Text = "Xuất hóa đơn";
-			this.btnXuatHoaDon.UseVisualStyleBackColor = true;
-			this.btnXuatHoaDon.Click += new System.EventHandler(this.btnXuatHoaDon_Click);
-			// 
 			// label4
 			// 
 			this.label4.AutoSize = true;
@@ -534,6 +524,17 @@ namespace APP.Views
 			this.button3.Text = "Thanh toán";
 			this.button3.UseVisualStyleBackColor = true;
 			this.button3.Click += new System.EventHandler(this.button3_Click);
+			// 
+			// btnXuatHoaDon
+			// 
+			this.btnXuatHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.btnXuatHoaDon.Location = new System.Drawing.Point(3, 116);
+			this.btnXuatHoaDon.Name = "btnXuatHoaDon";
+			this.btnXuatHoaDon.Size = new System.Drawing.Size(177, 41);
+			this.btnXuatHoaDon.TabIndex = 0;
+			this.btnXuatHoaDon.Text = "Xuất hóa đơn";
+			this.btnXuatHoaDon.UseVisualStyleBackColor = true;
+			this.btnXuatHoaDon.Click += new System.EventHandler(this.btnXuatHoaDon_Click);
 			// 
 			// QuanLyHangHoa
 			// 

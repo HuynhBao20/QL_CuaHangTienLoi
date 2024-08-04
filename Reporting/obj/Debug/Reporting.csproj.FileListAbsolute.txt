@@ -35,3 +35,4 @@ C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\Reporting\obj\Debug\Reporting.cs
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\Reporting\obj\Debug\Reporting.csproj.CopyComplete
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\Reporting\obj\Debug\Reporting.exe
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\Reporting\obj\Debug\Reporting.pdb
+C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\Reporting\bin\Debug\ExcelDataReader.dll

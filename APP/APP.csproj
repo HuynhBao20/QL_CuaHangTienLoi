@@ -80,11 +80,11 @@
     <Compile Include="Views\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\QuanLyDoanhThu.cs">
+    <Compile Include="Views\QuanLyHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\QuanLyDoanhThu.Designer.cs">
-      <DependentUpon>QuanLyDoanhThu.cs</DependentUpon>
+    <Compile Include="Views\QuanLyHoaDon.Designer.cs">
+      <DependentUpon>QuanLyHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\QuanLyHangHoa.cs">
       <SubType>Form</SubType>
@@ -104,12 +104,6 @@
     </Compile>
     <Compile Include="Views\QuanLySanPham.Designer.cs">
       <DependentUpon>QuanLySanPham.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ThemSanPhamVaoHoaDon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\ThemSanPhamVaoHoaDon.Designer.cs">
-      <DependentUpon>ThemSanPhamVaoHoaDon.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -133,11 +127,11 @@
     <EmbeddedResource Include="Views\QuanLyHangHoa.resx">
       <DependentUpon>QuanLyHangHoa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\QuanLyHoaDon.resx">
+      <DependentUpon>QuanLyHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\QuanLySanPham.resx">
       <DependentUpon>QuanLySanPham.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ThemSanPhamVaoHoaDon.resx">
-      <DependentUpon>ThemSanPhamVaoHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -169,7 +163,9 @@
   <ItemGroup>
     <Content Include="Resources\1.jpg" />
     <Content Include="Resources\2.jpg" />
+    <Content Include="Resources\iconHoaDon.png" />
     <Content Include="Resources\quan-ly-ton-kho-la-gi.png" />
+    <Content Include="Resources\Sp.jpg" />
     <None Include="Resources\pngtree-add-customers-icon-color-flat-png-image_4674922.png" />
     <Content Include="Resources\3.jpg" />
     <None Include="Resources\9fe421fc6b77b480955f8572e0ead633.jpg" />

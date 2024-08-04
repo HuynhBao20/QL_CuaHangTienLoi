@@ -55,32 +55,32 @@ namespace APP.Controllers
 		}
 		public void UI_LoadProduct(FlowLayoutPanel flp, FlowLayoutPanel billDetail, string ProName, TextBox ThanhTien)
 		{
-			DataTable da = db.loadDB("SELECT * FROM SANPHAM"); //Đưa dữ liệu vào bảng
-			var dat = da.AsEnumerable()
-				.Where(t => t.Field<string>("TENSP")
-				.Contains(ProName));
-			DataTable data = new DataTable();
-			if(dat.Any())
+			DataTable da = db.loadDB("SELECT * FROM SANPHAM");
+			if (da.Rows.Count > 0)
 			{
-				 data = dat.CopyToDataTable();
-			}
-			if (data.Rows.Count > 0)
-			{
-				foreach (DataRow item in data.Rows)
+				foreach (DataRow item in da.Rows)
 				{
 					Panel pnl = new Panel()
 					{
-						Width = (flp.Width - 10) / 4,
+						Width = (flp.Width - 10) / 5,
 						Height = 200,
 						BackgroundImage = Image.FromFile(fullPath(@"../../Resources/pngtree-purple-gradient-geometric-circle-background-image_50104.jpg")),
 						BackgroundImageLayout = ImageLayout.Stretch
 					};
+					string fpath = "";
+					if(File.Exists(fullPath(@"../../Resources/" + item["MASP"] + ".jpg")))
+					{
+						fpath = fullPath(@"../../Resources/" + item["MASP"] + ".jpg");
+					} else
+					{
+						fpath = fullPath(@"../../Resources/Sp.jpg");
+					}
 					Button btn = new Button()
 					{
 						Width = pnl.Width - 10,
 						Dock = DockStyle.Fill,
 						BackColor = Color.Transparent,
-						BackgroundImage = Image.FromFile(fullPath(@"../../Resources/" + item["MASP"] + ".jpg")),
+						BackgroundImage = Image.FromFile(fpath),
 						BackgroundImageLayout = ImageLayout.Stretch
 					};
 					btn.FlatAppearance.BorderSize = 0;
@@ -122,11 +122,19 @@ namespace APP.Controllers
 					Text = item["Tên sản phẩm"].ToString(),
 					TextAlign = ContentAlignment.MiddleCenter
 				};
-				
+				string fpath = "";
+				if (File.Exists(fullPath(@"../../Resources/" + item["Mã sản phẩm"] + ".jpg")))
+				{
+					fpath = fullPath(@"../../Resources/" + item["Mã sản phẩm"] + ".jpg");
+				}
+				else
+				{
+					fpath = fullPath(@"../../Resources/Sp.jpg");
+				}
 				PictureBox pictureBox = new PictureBox()
 				{
 					Width = pnl.Width / 6,
-					Image = Image.FromFile(fullPath(@"../../Resources/" + item["Mã sản phẩm"] + ".jpg")),
+					Image = Image.FromFile(fpath),
 					SizeMode = PictureBoxSizeMode.StretchImage,
 					Dock = DockStyle.Left
 				};
@@ -226,20 +234,18 @@ namespace APP.Controllers
 		{
 			try
 			{
-				int MAHD = int.Parse(db.ExcuteReader(UI.getBillID, "MAHD"));
-				Add_Product_Bill(MASP, MAHD);
+				Add_Product_Bill(MASP);
 				flp.Controls.Clear();
-				UI_BillDetail(flp, MAHD);
-				ThanhTien.Text = db.ExcuteReader($"EXEC Tong_ThanhTien {MAHD}", "Thành tiền");
+				UI_BillDetail(flp, getHoaDon());
+				ThanhTien.Text = db.ExcuteReader($"EXEC Tong_ThanhTien {getHoaDon()}", "Thành tiền");
 			}
 			catch (Exception ex)
 			{
 				MessageBox.Show(ex.Message);
 			}
 		}
-		public void Add_Product_Bill(int MASP, int MAHD)
+		public void Add_Product_Bill(int MASP)
 		{
-			MAHD = int.Parse(db.ExcuteReader(UI.getBillID, "MAHD"));
 			try
 			{
 				string Sql = $"INSERT INTO CT_HOADON(MAHD, MASP, SOLUONG) VALUES ({int.Parse(db.ExcuteReader(UI.getBillID, "MAHD"))}, {MASP}, 1)";
@@ -247,9 +253,9 @@ namespace APP.Controllers
 			} catch
 			{
 				db.close();
-				int SL = int.Parse(db.ExcuteReader($"SELECT SOLUONG FROM CT_HOADON WHERE MAHD = {MAHD} AND MASP = {MASP}", "SOLUONG"));
+				int SL = int.Parse(db.ExcuteReader($"SELECT SOLUONG FROM CT_HOADON WHERE MAHD = {getHoaDon()} AND MASP = {MASP}", "SOLUONG"));
 				SL++;
-				string Sql = $"UPDATE CT_HOADON SET SOLUONG = {SL} WHERE MAHD = {MAHD} AND MASP = {MASP}";
+				string Sql = $"UPDATE CT_HOADON SET SOLUONG = {SL} WHERE MAHD = {getHoaDon()} AND MASP = {MASP}";
 				db.ExcuteQuery(Sql);
 			}
 		}
@@ -286,17 +292,27 @@ namespace APP.Controllers
 			{
 				Panel pnl = new Panel()
 				{
-					Width = (flp.Width - 10) / 4,
+					Width = (flp.Width - 10) / 5,
 					Height = 200,
 					BackgroundImage = Image.FromFile(fullPath(@"../../Resources/pngtree-purple-gradient-geometric-circle-background-image_50104.jpg")),
 					BackgroundImageLayout = ImageLayout.Stretch
 				};
+				string fpath = "";
+				if (File.Exists(fullPath(@"../../Resources/" + item["MASP"] + ".jpg")))
+				{
+					fpath = fullPath(@"../../Resources/" + item["MASP"] + ".jpg");
+				}
+				else
+				{
+					fpath = fullPath(@"../../Resources/Sp.jpg");
+				}
+
 				Button btn = new Button()
 				{
 					Width = pnl.Width - 10,
 					Dock = DockStyle.Fill,
 					BackColor = Color.Transparent,
-					BackgroundImage = Image.FromFile(fullPath(@"../../Resources/" + item["MASP"] + ".jpg")),
+					BackgroundImage = Image.FromFile(fpath),
 					BackgroundImageLayout = ImageLayout.Stretch
 				};
 				btn.FlatAppearance.BorderSize = 0;
@@ -314,31 +330,32 @@ namespace APP.Controllers
 			}
 		}
 		public int getHoaDon() => int.Parse(db.ExcuteReader(UI.getBillID, "MAHD"));
-		public void loadPhieuNhap(FlowLayoutPanel flp)
+		public void loadPhieu(FlowLayoutPanel flp, string fpathIMG, string Sql, string tableName)
 		{
-			DataTable da = db.loadDB("SELECT NGAYNHAP FROM PHIEUNHAP GROUP BY NGAYNHAP");
+			DataTable da = db.loadDB(Sql);
 			foreach (DataRow item in da.Rows)
 			{
 				Panel pnl = new Panel()
 				{
-					Width = (flp.Width - 10) / 4,
-					Height = 200,
+					Width = (flp.Width) / 4,
+					Height = 210,
 					BackColor = Color.White
 				};
+
 				Button btn = new Button()
 				{
-					Width = pnl.Width - 30,
-					Height = pnl.Width - 30,
+					Width = 150,
+					Height = 150,
 					Dock = DockStyle.Fill,
 					BackColor = Color.Transparent,
-					BackgroundImage = Image.FromFile(fullPath(@"../../Resources/quan-ly-ton-kho-la-gi.png")),
+					BackgroundImage = Image.FromFile(fullPath(fpathIMG)),
 					BackgroundImageLayout = ImageLayout.Stretch
 
 				};
 				btn.FlatAppearance.BorderSize = 1;
 				Label ProductName = new Label()
 				{
-					Text = item["NGAYNHAP"].ToString(),
+					Text = item[tableName].ToString(),
 					Dock = DockStyle.Bottom,
 					BackColor = Color.Transparent
 				};

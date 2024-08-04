@@ -33,9 +33,14 @@ namespace APP.Views
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.flp_PhieuNhap = new System.Windows.Forms.FlowLayoutPanel();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.btn_ImportExcel = new System.Windows.Forms.Button();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
+			this.groupBox2.SuspendLayout();
+			this.groupBox3.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -80,16 +85,28 @@ namespace APP.Views
 			// 
 			// groupBox2
 			// 
+			this.groupBox2.Controls.Add(this.btn_ImportExcel);
 			this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.groupBox2.Location = new System.Drawing.Point(742, 3);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Size = new System.Drawing.Size(714, 294);
 			this.groupBox2.TabIndex = 1;
 			this.groupBox2.TabStop = false;
-			this.groupBox2.Text = "groupBox2";
+			this.groupBox2.Text = "Quản lý";
+			// 
+			// btn_ImportExcel
+			// 
+			this.btn_ImportExcel.Location = new System.Drawing.Point(6, 26);
+			this.btn_ImportExcel.Name = "btn_ImportExcel";
+			this.btn_ImportExcel.Size = new System.Drawing.Size(166, 48);
+			this.btn_ImportExcel.TabIndex = 0;
+			this.btn_ImportExcel.Text = "Import";
+			this.btn_ImportExcel.UseVisualStyleBackColor = true;
+			this.btn_ImportExcel.Click += new System.EventHandler(this.btn_ImportExcel_Click);
 			// 
 			// groupBox3
 			// 
+			this.groupBox3.Controls.Add(this.dataGridView1);
 			this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.groupBox3.Location = new System.Drawing.Point(742, 303);
 			this.groupBox3.Name = "groupBox3";
@@ -97,6 +114,17 @@ namespace APP.Views
 			this.groupBox3.TabIndex = 1;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "groupBox2";
+			// 
+			// dataGridView1
+			// 
+			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dataGridView1.Location = new System.Drawing.Point(3, 23);
+			this.dataGridView1.Name = "dataGridView1";
+			this.dataGridView1.RowHeadersWidth = 51;
+			this.dataGridView1.RowTemplate.Height = 24;
+			this.dataGridView1.Size = new System.Drawing.Size(708, 428);
+			this.dataGridView1.TabIndex = 0;
 			// 
 			// QuanLySanPham
 			// 
@@ -112,6 +140,9 @@ namespace APP.Views
 			this.Text = "QuanLySanPham";
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.groupBox1.ResumeLayout(false);
+			this.groupBox2.ResumeLayout(false);
+			this.groupBox3.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -123,5 +154,7 @@ namespace APP.Views
 		private System.Windows.Forms.FlowLayoutPanel flp_PhieuNhap;
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.GroupBox groupBox3;
+		private System.Windows.Forms.Button btn_ImportExcel;
+		private System.Windows.Forms.DataGridView dataGridView1;
 	}
 }

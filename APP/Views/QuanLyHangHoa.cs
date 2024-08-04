@@ -29,11 +29,13 @@ namespace APP.Views
 			ui.loadCombobox(cbo_MaKH, "SELECT MAKH FROM KHACHHANG", "MAKH", "MAKH");
 			ui.UI_BillDetail(flp_BillDetail, 0);
 			ui.loadTreeView(tv_LoaiSP);
+			btnHuyHoaDon.Enabled = false;
 		}
 		private void btnThemHoaDon_Click(object sender, EventArgs e)
 		{
 			try
 			{
+				btnHuyHoaDon.Enabled = true;
 				string Sql = "INSERT INTO HOADON(MAKH, MANV) VALUES (1, 1)";
 				db.ExcuteQuery(Sql);
 				lb_MaHD.Text = db.ExcuteReader(QuanLyHangHoa.getBillID, "MAHD");
@@ -73,7 +75,7 @@ namespace APP.Views
 		private void txtKD_TextChanged(object sender, EventArgs e)
 		{
 			int thanhtien = int.Parse(txtTongTien.Text);
-			int tienKD = int.Parse(txtKD.Text);
+			int tienKD = txtKD.Text == "" ? 0 : int.Parse(txtKD.Text);
 			txtThanhTien.Text = (tienKD - thanhtien).ToString();
 		}
 		private void button3_Click(object sender, EventArgs e)
@@ -81,6 +83,7 @@ namespace APP.Views
 			int MAHD = ui.getHoaDon();
 			string insertTienKD = $"UPDATE HOADON SET TIENKD = {int.Parse(txtKD.Text)}, TRANGTHAI = N'Đã xuất hóa đơn' WHERE MAHD = {MAHD}";
 			db.ExcuteQuery(insertTienKD);
+			btnHuyHoaDon.Enabled = false;
 		}
 	}
 }

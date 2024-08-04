@@ -21,22 +21,28 @@ namespace APP
 
 		private void tv_DanhMuc_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
 		{
-			switch(e.Node.Text)
+			switch (e.Node.Text)
 			{
 				case "Quản lý bán hàng":
-
 					QuanLyHangHoa hh = new QuanLyHangHoa();
 					hh.Dock = DockStyle.Fill;
 					hh.TopLevel = false;
 					pnl_Load_Main.Controls.Add(hh);
 					hh.Show();
-				break;
+					break;
 				case "Quản lý kho":
 					QuanLySanPham sp = new QuanLySanPham();
 					sp.Dock = DockStyle.Fill;
 					sp.TopLevel = false;
 					pnl_Load_Main.Controls.Add(sp);
 					sp.Show();
+					break;
+				case "Hóa đơn trong ngày":
+					QuanLyHoaDon hd = new QuanLyHoaDon();
+					hd.Dock = DockStyle.Fill;
+					hd.TopLevel = false;
+					pnl_Load_Main.Controls.Add(hd);
+					hd.Show();
 					break;
 			}	
 		}

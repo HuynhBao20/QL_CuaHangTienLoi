@@ -1,4 +1,5 @@
-﻿using System;
+﻿using APP.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,13 @@ using System.Windows.Forms;
 
 namespace APP.Views
 {
-	public partial class QuanLyDoanhThu : Form
+	public partial class QuanLyHoaDon : Form
 	{
-		public QuanLyDoanhThu()
+		UI ui = new UI();
+		public QuanLyHoaDon()
 		{
 			InitializeComponent();
+			ui.loadPhieu(flp_LoadHoaDon, @"../../Resources/iconHoaDon.png", "SELECT * FROM HOADON", "NGAYLAP");
 		}
 	}
 }
