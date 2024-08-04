@@ -61,7 +61,7 @@ namespace APP.Views
 			this.label7 = new System.Windows.Forms.Label();
 			this.btnXuatHoaDon = new System.Windows.Forms.Button();
 			this.label4 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.txtKD = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.txtTongTien = new System.Windows.Forms.TextBox();
@@ -392,20 +392,20 @@ namespace APP.Views
 			// tableLayoutPanel6
 			// 
 			this.tableLayoutPanel6.ColumnCount = 3;
-			this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 155F));
-			this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 234F));
-			this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 209F));
+			this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 183F));
+			this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 248F));
+			this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 167F));
 			this.tableLayoutPanel6.Controls.Add(this.label9, 2, 2);
 			this.tableLayoutPanel6.Controls.Add(this.label8, 2, 0);
 			this.tableLayoutPanel6.Controls.Add(this.label7, 0, 2);
-			this.tableLayoutPanel6.Controls.Add(this.btnXuatHoaDon, 2, 3);
 			this.tableLayoutPanel6.Controls.Add(this.label4, 0, 0);
-			this.tableLayoutPanel6.Controls.Add(this.textBox1, 1, 1);
+			this.tableLayoutPanel6.Controls.Add(this.txtKD, 1, 1);
 			this.tableLayoutPanel6.Controls.Add(this.label5, 0, 1);
 			this.tableLayoutPanel6.Controls.Add(this.label6, 2, 1);
 			this.tableLayoutPanel6.Controls.Add(this.txtTongTien, 1, 0);
 			this.tableLayoutPanel6.Controls.Add(this.txtThanhTien, 1, 2);
 			this.tableLayoutPanel6.Controls.Add(this.button3, 1, 3);
+			this.tableLayoutPanel6.Controls.Add(this.btnXuatHoaDon, 0, 3);
 			this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 23);
 			this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -421,9 +421,9 @@ namespace APP.Views
 			// 
 			this.label9.AutoSize = true;
 			this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label9.Location = new System.Drawing.Point(392, 77);
+			this.label9.Location = new System.Drawing.Point(434, 77);
 			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(203, 36);
+			this.label9.Size = new System.Drawing.Size(161, 36);
 			this.label9.TabIndex = 4;
 			this.label9.Text = "(VNĐ)";
 			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -432,9 +432,9 @@ namespace APP.Views
 			// 
 			this.label8.AutoSize = true;
 			this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label8.Location = new System.Drawing.Point(392, 0);
+			this.label8.Location = new System.Drawing.Point(434, 0);
 			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(203, 36);
+			this.label8.Size = new System.Drawing.Size(161, 36);
 			this.label8.TabIndex = 3;
 			this.label8.Text = "(VNĐ)";
 			this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -445,7 +445,7 @@ namespace APP.Views
 			this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.label7.Location = new System.Drawing.Point(3, 77);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(149, 36);
+			this.label7.Size = new System.Drawing.Size(177, 36);
 			this.label7.TabIndex = 1;
 			this.label7.Text = "Tiền thừa";
 			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -453,9 +453,9 @@ namespace APP.Views
 			// btnXuatHoaDon
 			// 
 			this.btnXuatHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.btnXuatHoaDon.Location = new System.Drawing.Point(392, 116);
+			this.btnXuatHoaDon.Location = new System.Drawing.Point(3, 116);
 			this.btnXuatHoaDon.Name = "btnXuatHoaDon";
-			this.btnXuatHoaDon.Size = new System.Drawing.Size(203, 41);
+			this.btnXuatHoaDon.Size = new System.Drawing.Size(177, 41);
 			this.btnXuatHoaDon.TabIndex = 0;
 			this.btnXuatHoaDon.Text = "Xuất hóa đơn";
 			this.btnXuatHoaDon.UseVisualStyleBackColor = true;
@@ -467,19 +467,20 @@ namespace APP.Views
 			this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.label4.Location = new System.Drawing.Point(3, 0);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(149, 36);
+			this.label4.Size = new System.Drawing.Size(177, 36);
 			this.label4.TabIndex = 1;
 			this.label4.Text = "Tổng tiền";
 			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// textBox1
+			// txtKD
 			// 
-			this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.textBox1.Location = new System.Drawing.Point(158, 39);
-			this.textBox1.Multiline = true;
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(228, 35);
-			this.textBox1.TabIndex = 2;
+			this.txtKD.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.txtKD.Location = new System.Drawing.Point(186, 39);
+			this.txtKD.Multiline = true;
+			this.txtKD.Name = "txtKD";
+			this.txtKD.Size = new System.Drawing.Size(242, 35);
+			this.txtKD.TabIndex = 2;
+			this.txtKD.TextChanged += new System.EventHandler(this.txtKD_TextChanged);
 			// 
 			// label5
 			// 
@@ -487,7 +488,7 @@ namespace APP.Views
 			this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.label5.Location = new System.Drawing.Point(3, 36);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(149, 41);
+			this.label5.Size = new System.Drawing.Size(177, 41);
 			this.label5.TabIndex = 1;
 			this.label5.Text = "Tiền khách đưa";
 			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -496,9 +497,9 @@ namespace APP.Views
 			// 
 			this.label6.AutoSize = true;
 			this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label6.Location = new System.Drawing.Point(392, 36);
+			this.label6.Location = new System.Drawing.Point(434, 36);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(203, 41);
+			this.label6.Size = new System.Drawing.Size(161, 41);
 			this.label6.TabIndex = 1;
 			this.label6.Text = "(VNĐ)";
 			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -506,32 +507,33 @@ namespace APP.Views
 			// txtTongTien
 			// 
 			this.txtTongTien.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.txtTongTien.Location = new System.Drawing.Point(158, 3);
+			this.txtTongTien.Location = new System.Drawing.Point(186, 3);
 			this.txtTongTien.Multiline = true;
 			this.txtTongTien.Name = "txtTongTien";
 			this.txtTongTien.ReadOnly = true;
-			this.txtTongTien.Size = new System.Drawing.Size(228, 30);
+			this.txtTongTien.Size = new System.Drawing.Size(242, 30);
 			this.txtTongTien.TabIndex = 2;
 			// 
 			// txtThanhTien
 			// 
 			this.txtThanhTien.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.txtThanhTien.Location = new System.Drawing.Point(158, 80);
+			this.txtThanhTien.Location = new System.Drawing.Point(186, 80);
 			this.txtThanhTien.Multiline = true;
 			this.txtThanhTien.Name = "txtThanhTien";
 			this.txtThanhTien.ReadOnly = true;
-			this.txtThanhTien.Size = new System.Drawing.Size(228, 30);
+			this.txtThanhTien.Size = new System.Drawing.Size(242, 30);
 			this.txtThanhTien.TabIndex = 2;
 			// 
 			// button3
 			// 
 			this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.button3.Location = new System.Drawing.Point(158, 116);
+			this.button3.Location = new System.Drawing.Point(186, 116);
 			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(228, 41);
+			this.button3.Size = new System.Drawing.Size(242, 41);
 			this.button3.TabIndex = 0;
 			this.button3.Text = "Thanh toán";
 			this.button3.UseVisualStyleBackColor = true;
+			this.button3.Click += new System.EventHandler(this.button3_Click);
 			// 
 			// QuanLyHangHoa
 			// 
@@ -592,7 +594,7 @@ namespace APP.Views
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Button btnXuatHoaDon;
 		private System.Windows.Forms.TextBox txtThanhTien;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox txtKD;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Label label4;

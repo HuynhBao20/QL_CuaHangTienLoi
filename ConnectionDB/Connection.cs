@@ -41,5 +41,11 @@ namespace ConnectionDB
 			_cnn.Close();
 			return name;
 		}
+		public void close()
+		{
+			if(_cnn.State == ConnectionState.Open)
+			{
+				_cnn.Close();
+			}		}
 	}
 }

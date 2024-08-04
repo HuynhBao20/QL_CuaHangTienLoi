@@ -29,14 +29,15 @@ namespace APP
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Trang chủ");
-			System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Quản lý bán hàng");
-			System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Quản lý hàng hóa");
-			System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Quản lý kho");
-			System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Danh mục bán hàng", new System.Windows.Forms.TreeNode[] {
-            treeNode12,
-            treeNode13,
-            treeNode14});
+			System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Trang chủ");
+			System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Quản lý bán hàng");
+			System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Quản lý hàng hóa");
+			System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Quản lý kho");
+			System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Danh mục bán hàng", new System.Windows.Forms.TreeNode[] {
+            treeNode2,
+            treeNode3,
+            treeNode4});
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.pnl_Load_Main = new System.Windows.Forms.Panel();
 			this.tv_DanhMuc = new System.Windows.Forms.TreeView();
@@ -84,19 +85,19 @@ namespace APP
 			this.tv_DanhMuc.Location = new System.Drawing.Point(4, 47);
 			this.tv_DanhMuc.Margin = new System.Windows.Forms.Padding(4);
 			this.tv_DanhMuc.Name = "tv_DanhMuc";
-			treeNode11.Name = "Node5";
-			treeNode11.Text = "Trang chủ";
-			treeNode12.Name = "Node1";
-			treeNode12.Text = "Quản lý bán hàng";
-			treeNode13.Name = "Node3";
-			treeNode13.Text = "Quản lý hàng hóa";
-			treeNode14.Name = "Node4";
-			treeNode14.Text = "Quản lý kho";
-			treeNode15.Name = "Node0";
-			treeNode15.Text = "Danh mục bán hàng";
+			treeNode1.Name = "Node5";
+			treeNode1.Text = "Trang chủ";
+			treeNode2.Name = "Node1";
+			treeNode2.Text = "Quản lý bán hàng";
+			treeNode3.Name = "Node3";
+			treeNode3.Text = "Quản lý hàng hóa";
+			treeNode4.Name = "Node4";
+			treeNode4.Text = "Quản lý kho";
+			treeNode5.Name = "Node0";
+			treeNode5.Text = "Danh mục bán hàng";
 			this.tv_DanhMuc.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode11,
-            treeNode15});
+            treeNode1,
+            treeNode5});
 			this.tv_DanhMuc.Size = new System.Drawing.Size(193, 727);
 			this.tv_DanhMuc.TabIndex = 1;
 			this.tv_DanhMuc.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tv_DanhMuc_NodeMouseClick);
@@ -130,13 +131,13 @@ namespace APP
 			// đổiMậtKhẩuToolStripMenuItem
 			// 
 			this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
-			this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
 			this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
 			// 
 			// đăngXuấtToolStripMenuItem
 			// 
 			this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-			this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
 			this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
 			// 
 			// MainForm
@@ -146,6 +147,7 @@ namespace APP
 			this.ClientSize = new System.Drawing.Size(1544, 778);
 			this.Controls.Add(this.tableLayoutPanel1);
 			this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "MainForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

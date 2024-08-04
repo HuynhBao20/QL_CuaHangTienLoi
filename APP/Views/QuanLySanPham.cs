@@ -1,4 +1,5 @@
-﻿using System;
+﻿using APP.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,14 @@ using System.Windows.Forms;
 
 namespace APP.Views
 {
+	
 	public partial class QuanLySanPham : Form
 	{
+		UI ui = new UI();
 		public QuanLySanPham()
 		{
 			InitializeComponent();
+			ui.loadPhieuNhap(flp_PhieuNhap);
 		}
 	}
 }

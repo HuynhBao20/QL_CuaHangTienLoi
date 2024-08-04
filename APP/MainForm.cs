@@ -31,6 +31,13 @@ namespace APP
 					pnl_Load_Main.Controls.Add(hh);
 					hh.Show();
 				break;
+				case "Quản lý kho":
+					QuanLySanPham sp = new QuanLySanPham();
+					sp.Dock = DockStyle.Fill;
+					sp.TopLevel = false;
+					pnl_Load_Main.Controls.Add(sp);
+					sp.Show();
+					break;
 			}	
 		}
 	}
