@@ -10,13 +10,15 @@
 namespace ConnectionDB.Models
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class Select_CTHoaDon_Result
+    public partial class TICHDIEM
     {
-        public string Mã_sản_phẩm { get; set; }
-        public string Tên_sản_phẩm { get; set; }
-        public Nullable<double> Đơn_giá { get; set; }
-        public Nullable<int> Số_lượng { get; set; }
-        public Nullable<double> Thành_tiền { get; set; }
+        public string MAKH { get; set; }
+        public string MAHD { get; set; }
+        public Nullable<System.DateTime> NGAYTICH { get; set; }
+    
+        public virtual HOADON HOADON { get; set; }
+        public virtual KHACHHANG KHACHHANG { get; set; }
     }
 }

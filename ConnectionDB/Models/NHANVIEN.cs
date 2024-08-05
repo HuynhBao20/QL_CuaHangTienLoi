@@ -21,12 +21,13 @@ namespace ConnectionDB.Models
             this.PHIEUNHAPs = new HashSet<PHIEUNHAP>();
         }
     
-        public int MANV { get; set; }
+        public string MANV { get; set; }
         public string HOTEN { get; set; }
         public Nullable<System.DateTime> NGAYSINH { get; set; }
         public Nullable<System.DateTime> NGAYVL { get; set; }
         public string TENDN { get; set; }
         public string SDT { get; set; }
+        public string CCCD { get; set; }
         public string DIACHI { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

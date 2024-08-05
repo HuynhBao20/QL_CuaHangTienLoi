@@ -13,7 +13,7 @@ namespace ConnectionDB.Models
     
     public partial class Tong_ThanhTien_Result
     {
-        public int MAHD { get; set; }
+        public string MAHD { get; set; }
         public Nullable<double> Thành_tiền { get; set; }
     }
 }

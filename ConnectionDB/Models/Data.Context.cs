@@ -15,10 +15,10 @@ namespace ConnectionDB.Models
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class QL_CHTienLoiEntities : DbContext
+    public partial class DataEntities : DbContext
     {
-        public QL_CHTienLoiEntities()
-            : base("name=QL_CHTienLoiEntities")
+        public DataEntities()
+            : base("name=DataEntities")
         {
         }
     
@@ -30,38 +30,36 @@ namespace ConnectionDB.Models
         public virtual DbSet<CT_HOADON> CT_HOADON { get; set; }
         public virtual DbSet<HOADON> HOADONs { get; set; }
         public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
+        public virtual DbSet<KHUYENMAI> KHUYENMAIs { get; set; }
         public virtual DbSet<LOAISP> LOAISPs { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
         public virtual DbSet<PHIEUNHAP> PHIEUNHAPs { get; set; }
         public virtual DbSet<SANPHAM> SANPHAMs { get; set; }
+        public virtual DbSet<TICHDIEM> TICHDIEMs { get; set; }
     
-        public virtual ObjectResult<Select_CTHoaDon_Result> Select_CTHoaDon(Nullable<int> mAHD)
+        public virtual ObjectResult<Select_CTHoaDon_Result> Select_CTHoaDon(string mAHD)
         {
-            var mAHDParameter = mAHD.HasValue ?
+            var mAHDParameter = mAHD != null ?
                 new ObjectParameter("MAHD", mAHD) :
-                new ObjectParameter("MAHD", typeof(int));
+                new ObjectParameter("MAHD", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Select_CTHoaDon_Result>("Select_CTHoaDon", mAHDParameter);
         }
     
-        public virtual ObjectResult<string> sp_LoginUser(string uSERNAME, string pASSWORD)
+        public virtual ObjectResult<sp_XuatHoaDon_Result> sp_XuatHoaDon(string mAHD)
         {
-            var uSERNAMEParameter = uSERNAME != null ?
-                new ObjectParameter("USERNAME", uSERNAME) :
-                new ObjectParameter("USERNAME", typeof(string));
+            var mAHDParameter = mAHD != null ?
+                new ObjectParameter("MAHD", mAHD) :
+                new ObjectParameter("MAHD", typeof(string));
     
-            var pASSWORDParameter = pASSWORD != null ?
-                new ObjectParameter("PASSWORD", pASSWORD) :
-                new ObjectParameter("PASSWORD", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("sp_LoginUser", uSERNAMEParameter, pASSWORDParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_XuatHoaDon_Result>("sp_XuatHoaDon", mAHDParameter);
         }
     
-        public virtual ObjectResult<Tong_ThanhTien_Result> Tong_ThanhTien(Nullable<int> mAHD)
+        public virtual ObjectResult<Tong_ThanhTien_Result> Tong_ThanhTien(string mAHD)
         {
-            var mAHDParameter = mAHD.HasValue ?
+            var mAHDParameter = mAHD != null ?
                 new ObjectParameter("MAHD", mAHD) :
-                new ObjectParameter("MAHD", typeof(int));
+                new ObjectParameter("MAHD", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Tong_ThanhTien_Result>("Tong_ThanhTien", mAHDParameter);
         }

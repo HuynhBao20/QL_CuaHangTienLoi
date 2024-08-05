@@ -20,7 +20,7 @@ namespace Reporting
 		public SharedReporting(string MAHD)
 		{
 			InitializeComponent();
-			s.showHD($"EXEC sp_XuatHoaDon {int.Parse(MAHD)}", crv);
+			s.showHD($"EXEC sp_XuatHoaDon {MAHD}", crv);
 		}
 		private void Form1_Load(object sender, EventArgs e)
 		{

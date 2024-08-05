@@ -11,12 +11,15 @@ namespace ConnectionDB.Models
 {
     using System;
     
-    public partial class Select_CTHoaDon_Result
+    public partial class sp_XuatHoaDon_Result
     {
-        public string Mã_sản_phẩm { get; set; }
-        public string Tên_sản_phẩm { get; set; }
-        public Nullable<double> Đơn_giá { get; set; }
-        public Nullable<int> Số_lượng { get; set; }
-        public Nullable<double> Thành_tiền { get; set; }
+        public string MAHD { get; set; }
+        public string HOTEN { get; set; }
+        public Nullable<System.DateTime> NGAYLAP { get; set; }
+        public string TENSP { get; set; }
+        public Nullable<int> SOLUONG { get; set; }
+        public Nullable<double> DONGIA { get; set; }
+        public Nullable<double> Thành_Tiền { get; set; }
+        public Nullable<double> TIENKD { get; set; }
     }
 }

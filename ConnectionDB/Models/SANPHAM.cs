@@ -18,9 +18,11 @@ namespace ConnectionDB.Models
         public SANPHAM()
         {
             this.CT_HOADON = new HashSet<CT_HOADON>();
+            this.KHUYENMAIs = new HashSet<KHUYENMAI>();
+            this.KHUYENMAIs1 = new HashSet<KHUYENMAI>();
         }
     
-        public int MASP { get; set; }
+        public string MASP { get; set; }
         public string TENSP { get; set; }
         public Nullable<int> MALOAI { get; set; }
         public Nullable<System.DateTime> NGAYSX { get; set; }
@@ -29,7 +31,10 @@ namespace ConnectionDB.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_HOADON> CT_HOADON { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KHUYENMAI> KHUYENMAIs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KHUYENMAI> KHUYENMAIs1 { get; set; }
         public virtual LOAISP LOAISP { get; set; }
-        public virtual PHIEUNHAP PHIEUNHAP { get; set; }
     }
 }

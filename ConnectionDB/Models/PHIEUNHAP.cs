@@ -14,14 +14,14 @@ namespace ConnectionDB.Models
     
     public partial class PHIEUNHAP
     {
-        public int MASP { get; set; }
-        public Nullable<System.DateTime> NGAYNHAP { get; set; }
+        public string MAPN { get; set; }
+        public string MASP { get; set; }
+        public System.DateTime NGAYNHAP { get; set; }
         public Nullable<int> SLTON { get; set; }
-        public Nullable<int> MANV { get; set; }
+        public string MANV { get; set; }
         public Nullable<double> GIANHAP { get; set; }
         public string DVT { get; set; }
     
         public virtual NHANVIEN NHANVIEN { get; set; }
-        public virtual SANPHAM SANPHAM { get; set; }
     }
 }

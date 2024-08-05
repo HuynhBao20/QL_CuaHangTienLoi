@@ -71,7 +71,9 @@
   <ItemGroup>
     <Compile Include="Connection.cs" />
     <Compile Include="Enum\Query.cs" />
+    <Compile Include="Logic\DBContext.cs" />
     <Compile Include="Logic\ImportExcel.cs" />
+    <Compile Include="Logic\Process.cs" />
     <Compile Include="Models\CT_HOADON.cs">
       <DependentUpon>Data.tt</DependentUpon>
     </Compile>
@@ -96,6 +98,9 @@
     <Compile Include="Models\KHACHHANG.cs">
       <DependentUpon>Data.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\KHUYENMAI.cs">
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\LOAISP.cs">
       <DependentUpon>Data.tt</DependentUpon>
     </Compile>
@@ -109,6 +114,12 @@
       <DependentUpon>Data.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Select_CTHoaDon_Result.cs">
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_XuatHoaDon_Result.cs">
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TICHDIEM.cs">
       <DependentUpon>Data.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tong_ThanhTien_Result.cs">
@@ -129,6 +140,16 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Models\Data.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Data.edmx</DependentUpon>
@@ -139,16 +160,6 @@
       <DependentUpon>Data.edmx</DependentUpon>
       <LastGenOutput>Data.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using APP.Controllers;
 using ConnectionDB;
 using ConnectionDB.Enum;
+using ConnectionDB.Logic;
 using Reporting;
 namespace APP.Views
 {
@@ -17,6 +18,7 @@ namespace APP.Views
 	{
 		UI ui = new UI();
 		Connection db = new Connection();
+		Process p = new Process();
 		public static string getBillID = "SELECT TOP 1 MAHD FROM HOADON ORDER BY MAHD DESC";
 		public QuanLyHangHoa()
 		{
@@ -27,7 +29,7 @@ namespace APP.Views
 		{
 			ui.UI_LoadProduct(flp_Product, flp_BillDetail, "", txtTongTien);
 			ui.loadCombobox(cbo_MaKH, "SELECT MAKH FROM KHACHHANG", "MAKH", "MAKH");
-			ui.UI_BillDetail(flp_BillDetail, 0);
+			ui.UI_BillDetail(flp_BillDetail, "HD001");
 			ui.loadTreeView(tv_LoaiSP);
 			btnHuyHoaDon.Enabled = false;
 		}
@@ -36,11 +38,13 @@ namespace APP.Views
 			try
 			{
 				btnHuyHoaDon.Enabled = true;
-				string Sql = "INSERT INTO HOADON(MAKH, MANV) VALUES (1, 1)";
+				string getMAHD = db.ExcuteReader("SELECT TOP 1 MAHD FROM HOADON ORDER BY MAHD DESC", "MAHD").Trim();
+				string MAHD = p.getMAHD(getMAHD);
+				string Sql = $"INSERT INTO HOADON(MAHD, MAKH, MANV) VALUES ('{MAHD}', 'VL000', 'NV001')";
 				db.ExcuteQuery(Sql);
-				lb_MaHD.Text = db.ExcuteReader(QuanLyHangHoa.getBillID, "MAHD");
+				lb_MaHD.Text = MAHD;
 				lb_NgayLap.Text = DateTime.Now.ToString("dd/MM/yyyy");
-				txtThanhTien.Text = db.ExcuteReader("EXEC Tong_ThanhTien " + int.Parse(db.ExcuteReader(QuanLyHangHoa.getBillID, "MAHD")), "Thành tiền");
+				txtThanhTien.Text = db.ExcuteReader($"EXEC Tong_ThanhTien '{MAHD}'", "Thành tiền");
 			} catch (Exception ex)
 			{
 				MessageBox.Show($"Thêm hóa đơn thất bại \n{ex.Message}");
@@ -80,8 +84,8 @@ namespace APP.Views
 		}
 		private void button3_Click(object sender, EventArgs e)
 		{
-			int MAHD = ui.getHoaDon();
-			string insertTienKD = $"UPDATE HOADON SET TIENKD = {int.Parse(txtKD.Text)}, TRANGTHAI = N'Đã xuất hóa đơn' WHERE MAHD = {MAHD}";
+			string MAHD = ui.getHoaDon();
+			string insertTienKD = $"UPDATE HOADON SET TIENKD = {int.Parse(txtKD.Text)}, TRANGTHAI = N'Đã xuất hóa đơn' WHERE MAHD = '{MAHD}'";
 			db.ExcuteQuery(insertTienKD);
 			btnHuyHoaDon.Enabled = false;
 		}

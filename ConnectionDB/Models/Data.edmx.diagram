@@ -4,21 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="19ccd07fec514a82ab835c17b5419c35" Name="Diagram1" ZoomLevel="86">
-        <EntityTypeShape EntityType="QL_CHTienLoiModel.CT_HOADON" Width="1.5" PointX="7.5" PointY="6.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="QL_CHTienLoiModel.HOADON" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="QL_CHTienLoiModel.KHACHHANG" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QL_CHTienLoiModel.LOAISP" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QL_CHTienLoiModel.NHANVIEN" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="QL_CHTienLoiModel.PHIEUNHAP" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="QL_CHTienLoiModel.SANPHAM" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
+      <Diagram DiagramId="9b0bf687923b4f51b6602c5dab7eeab7" Name="Diagram1">
+        <EntityTypeShape EntityType="QL_CHTienLoiModel.CT_HOADON" Width="1.5" PointX="5.25" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_CHTienLoiModel.HOADON" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_CHTienLoiModel.KHACHHANG" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_CHTienLoiModel.KHUYENMAI" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_CHTienLoiModel.LOAISP" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_CHTienLoiModel.NHANVIEN" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_CHTienLoiModel.PHIEUNHAP" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_CHTienLoiModel.SANPHAM" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_CHTienLoiModel.TICHDIEM" Width="1.5" PointX="5.25" PointY="8.75" IsExpanded="true" />
         <AssociationConnector Association="QL_CHTienLoiModel.FK_CT_HOADON_MAHD" ManuallyRouted="false" />
         <AssociationConnector Association="QL_CHTienLoiModel.FK_CT_HOADON_MASP" ManuallyRouted="false" />
         <AssociationConnector Association="QL_CHTienLoiModel.FK_HOADON_MAKH" ManuallyRouted="false" />
         <AssociationConnector Association="QL_CHTienLoiModel.FK_HOADON_MANV" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_CHTienLoiModel.FK_TICHDIEM_MAHD" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_CHTienLoiModel.FK_TICHDIEM_MAKH" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_CHTienLoiModel.FK_KHUYENMAI_MASP" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_CHTienLoiModel.FK_KHUYENMAI_SPTANG" ManuallyRouted="false" />
         <AssociationConnector Association="QL_CHTienLoiModel.FK_SANPHAM_MALOAI" ManuallyRouted="false" />
         <AssociationConnector Association="QL_CHTienLoiModel.FK_PHIEUNHAP_MANV" ManuallyRouted="false" />
-        <AssociationConnector Association="QL_CHTienLoiModel.FK__SANPHAM__MASP__06CD04F7" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

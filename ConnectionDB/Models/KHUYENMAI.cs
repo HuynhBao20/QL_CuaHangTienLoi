@@ -12,13 +12,17 @@ namespace ConnectionDB.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class CT_HOADON
+    public partial class KHUYENMAI
     {
-        public string MAHD { get; set; }
+        public string MAKM { get; set; }
+        public string TENKM { get; set; }
         public string MASP { get; set; }
-        public Nullable<int> SOLUONG { get; set; }
+        public Nullable<System.DateTime> NGAYBD { get; set; }
+        public Nullable<System.DateTime> NGAYHH { get; set; }
+        public Nullable<int> SLMUA { get; set; }
+        public string SPTANG { get; set; }
     
-        public virtual HOADON HOADON { get; set; }
         public virtual SANPHAM SANPHAM { get; set; }
+        public virtual SANPHAM SANPHAM1 { get; set; }
     }
 }

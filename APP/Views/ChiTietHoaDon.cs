@@ -14,7 +14,7 @@ namespace APP.Views
 	public partial class ChiTietHoaDon : Form
 	{
 		UI ui = new UI();
-		public ChiTietHoaDon(int MAHD)
+		public ChiTietHoaDon(string MAHD)
 		{
 			InitializeComponent();
 			ui.loadCT_HoaDon(flowLayoutPanel1, MAHD);

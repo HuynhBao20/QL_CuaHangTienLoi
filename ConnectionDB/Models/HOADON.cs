@@ -18,18 +18,21 @@ namespace ConnectionDB.Models
         public HOADON()
         {
             this.CT_HOADON = new HashSet<CT_HOADON>();
+            this.TICHDIEMs = new HashSet<TICHDIEM>();
         }
     
-        public int MAHD { get; set; }
-        public Nullable<int> MAKH { get; set; }
-        public Nullable<int> MANV { get; set; }
+        public string MAHD { get; set; }
+        public string MAKH { get; set; }
+        public string MANV { get; set; }
         public Nullable<System.DateTime> NGAYLAP { get; set; }
-        public Nullable<double> TIENKD { get; set; }
         public string TRANGTHAI { get; set; }
+        public Nullable<double> TIENKD { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_HOADON> CT_HOADON { get; set; }
         public virtual KHACHHANG KHACHHANG { get; set; }
         public virtual NHANVIEN NHANVIEN { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TICHDIEM> TICHDIEMs { get; set; }
     }
 }

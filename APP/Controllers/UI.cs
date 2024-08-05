@@ -18,42 +18,6 @@ namespace APP.Controllers
 		Connection db = new Connection();
 		public static string getBillID = "SELECT TOP 1 MAHD FROM HOADON ORDER BY MAHD DESC";
 		public string fullPath(string Fpath) => Path.GetFullPath(Fpath); //Hàm này lấy ra đường dẫn của file
-		public void UI_loadSP(FlowLayoutPanel flp)
-		{
-			for (int i = 0; i < 5; i++)
-			{
-				Panel pnl = new Panel()
-				{
-					Width = 170,
-					Height = 180,
-					BackgroundImageLayout = ImageLayout.Stretch,
-					BackgroundImage = Image.FromFile(fullPath(@"../../Resources/pngtree-purple-gradient-geometric-circle-background-image_50104.jpg"))
-				};
-				Button btn = new Button()
-				{
-					Name = "btn",
-					TextAlign = ContentAlignment.BottomCenter,
-					Width = 150,
-					Height = 150,
-					Dock = DockStyle.Top,
-					Margin = new Padding(200),
-					FlatStyle = FlatStyle.Flat,
-					BackColor = Color.AliceBlue,
-					BackgroundImage = Image.FromFile(fullPath(@"..\..\Resources\pngtree-graduation-bachelor-hat-illustration-png-image_6580811.png")),
-					BackgroundImageLayout = ImageLayout.Stretch
-				};
-				btn.FlatAppearance.BorderSize = 0;
-				 
-				Label lb = new Label();
-				lb.Text = "Sản phẩm 1";
-				lb.Dock = DockStyle.Bottom;
-				lb.BackColor = Color.Transparent;
-				pnl.Controls.Add(btn);
-				pnl.Controls.Add(lb);
-				flp.Controls.Add(pnl);
-			}
-
-		}
 		public void UI_LoadProduct(FlowLayoutPanel flp, FlowLayoutPanel billDetail, string ProName, TextBox ThanhTien)
 		{
 			DataTable da = db.loadDB("SELECT * FROM SANPHAM");
@@ -92,7 +56,7 @@ namespace APP.Controllers
 						BackColor = Color.Transparent
 					};
 
-					btn.Click += (sender, e) => Event_Product_Click(sender, e, int.Parse(item["MASP"].ToString()), billDetail, ThanhTien);
+					btn.Click += (sender, e) => Event_Product_Click(sender, e, item["MASP"].ToString(), billDetail, ThanhTien);
 					pnl.Controls.Add(btn);
 					pnl.Controls.Add(ProductName);
 					flp.Controls.Add(pnl);
@@ -103,9 +67,9 @@ namespace APP.Controllers
 				MessageBox.Show("Không tìm thấy");
 			}
 		}
-		public void UI_BillDetail(FlowLayoutPanel flp, int MAHD)
+		public void UI_BillDetail(FlowLayoutPanel flp, string MAHD)
 		{
-			DataTable da = db.loadDB($"exec Select_CTHoaDon {MAHD}");
+			DataTable da = db.loadDB($"exec Select_CTHoaDon '{MAHD}'");
 			Tilte(flp);
 			foreach(DataRow item in da.Rows)
 			{
@@ -176,7 +140,7 @@ namespace APP.Controllers
 				pnl.Controls.Add(lb_Name);
 				pnl.Controls.Add(pictureBox);
 				flp.Controls.Add(pnl);
-				btn.Click += (Sender, e) => Event_Del_Product_BillDetail(Sender, e, int.Parse(item["Mã sản phẩm"].ToString()), flp, MAHD);
+				btn.Click += (Sender, e) => Event_Del_Product_BillDetail(Sender, e, item["Mã sản phẩm"].ToString(), flp, MAHD);
 			}
 		}
 		public void Tilte(FlowLayoutPanel flp)
@@ -231,7 +195,7 @@ namespace APP.Controllers
 			pnl.Controls.Add(lb_HinhAnh);
 			flp.Controls.Add(pnl);
 		}
-		public void Event_Product_Click(object sender, EventArgs e, int MASP, FlowLayoutPanel flp, TextBox ThanhTien)
+		public void Event_Product_Click(object sender, EventArgs e, string MASP, FlowLayoutPanel flp, TextBox ThanhTien)
 		{
 			try
 			{
@@ -245,29 +209,29 @@ namespace APP.Controllers
 				MessageBox.Show(ex.Message);
 			}
 		}
-		public void Add_Product_Bill(int MASP)
+		public void Add_Product_Bill(string MASP)
 		{
 			try
 			{
-				string Sql = $"INSERT INTO CT_HOADON(MAHD, MASP, SOLUONG) VALUES ({int.Parse(db.ExcuteReader(UI.getBillID, "MAHD"))}, {MASP}, 1)";
+				string Sql = $"INSERT INTO CT_HOADON(MAHD, MASP, SOLUONG) VALUES ('{db.ExcuteReader(UI.getBillID, "MAHD")}', '{MASP}', 1)";
 				db.ExcuteQuery(Sql);
 			} catch
 			{
 				db.close();
-				int SL = int.Parse(db.ExcuteReader($"SELECT SOLUONG FROM CT_HOADON WHERE MAHD = {getHoaDon()} AND MASP = {MASP}", "SOLUONG"));
+				int SL = int.Parse(db.ExcuteReader($"SELECT SOLUONG FROM CT_HOADON WHERE MAHD = '{getHoaDon()}' AND MASP = '{MASP}'", "SOLUONG"));
 				SL++;
-				string Sql = $"UPDATE CT_HOADON SET SOLUONG = {SL} WHERE MAHD = {getHoaDon()} AND MASP = {MASP}";
+				string Sql = $"UPDATE CT_HOADON SET SOLUONG = {SL} WHERE MAHD = '{getHoaDon()}' AND MASP = '{MASP}'";
 				db.ExcuteQuery(Sql);
 			}
 		}
 		public void show_SumTotal(TextBox txt)
 		{
 			string getBillID = "SELECT TOP 1 MAHD FROM HOADON ORDER BY MAHD DESC";
-			txt.Text = db.ExcuteReader("EXEC Tong_ThanhTien " + int.Parse(db.ExcuteReader(getBillID, "MAHD")), "Thành tiền");
+			txt.Text = db.ExcuteReader("EXEC Tong_ThanhTien " + db.ExcuteReader(getBillID, "MAHD"), "Thành tiền");
 		}
-		public void Event_Del_Product_BillDetail(object sender, EventArgs e, int MASP, FlowLayoutPanel flp, int MAHD)
+		public void Event_Del_Product_BillDetail(object sender, EventArgs e, string MASP, FlowLayoutPanel flp, string MAHD)
 		{
-			string Sql = $"DELETE FROM CT_HOADON WHERE MASP = {MASP}";
+			string Sql = $"DELETE FROM CT_HOADON WHERE MASP = '{MASP}'";
 			db.ExcuteQuery(Sql);
 			flp.Controls.Clear();
 			UI_BillDetail(flp, MAHD);
@@ -324,13 +288,13 @@ namespace APP.Controllers
 					BackColor = Color.Transparent
 				};
 
-				btn.Click += (sender, e) => Event_Product_Click(sender, e, int.Parse(item["MASP"].ToString()), billDetail, ThanhTien);
+				btn.Click += (sender, e) => Event_Product_Click(sender, e, item["MASP"].ToString(), billDetail, ThanhTien);
 				pnl.Controls.Add(btn);
 				pnl.Controls.Add(ProductName);
 				flp.Controls.Add(pnl);
 			}
 		}
-		public int getHoaDon() => int.Parse(db.ExcuteReader(UI.getBillID, "MAHD"));
+		public string getHoaDon() => db.ExcuteReader(UI.getBillID, "MAHD");
 		public void loadPhieuKho(FlowLayoutPanel flp, string fpathIMG, string Sql, string tableName)
 		{
 			DataTable da = db.loadDB(Sql);
@@ -394,15 +358,15 @@ namespace APP.Controllers
 					Dock = DockStyle.Bottom,
 					BackColor = Color.Transparent
 				};
-				btn.Click += (sender, e) => Event_Show_Bill(sender, e, int.Parse(item["MAHD"].ToString()));
+				btn.Click += (sender, e) => Event_Show_Bill(sender, e, item["MAHD"].ToString());
 				pnl.Controls.Add(btn);
 				pnl.Controls.Add(ProductName);
 				flp.Controls.Add(pnl);
 			}
 		}
-		public void loadCT_HoaDon(FlowLayoutPanel flp, int MAHD)
+		public void loadCT_HoaDon(FlowLayoutPanel flp, string MAHD)
 		{
-			string Sql = $"EXEC sp_XuatHoaDon {MAHD}";
+			string Sql = $"EXEC sp_XuatHoaDon '{MAHD}'";
 			DataTable da = db.loadDB(Sql);
 			foreach(DataRow item in da.Rows)
 			{
@@ -436,7 +400,7 @@ namespace APP.Controllers
 				flp.Controls.Add(pnl);
 			}
 		}
-		public void Event_Show_Bill(object sender, EventArgs e, int MAHD)
+		public void Event_Show_Bill(object sender, EventArgs e, string MAHD)
 		{
 			ChiTietHoaDon ct = new ChiTietHoaDon(MAHD);
 			ct.Show();
