@@ -1,2 +1,5 @@
 *.exe
-/bin/
+/ConnectionDB/bin/
+/ConnectionMoMo/bin/
+/Reporting/bin/
+/APP/bin/
