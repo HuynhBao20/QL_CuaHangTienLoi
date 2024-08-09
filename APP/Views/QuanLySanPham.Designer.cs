@@ -35,12 +35,11 @@ namespace APP.Views
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.btn_ImportExcel = new System.Windows.Forms.Button();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
-			this.groupBox3.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			this.tableLayoutPanel2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -63,7 +62,7 @@ namespace APP.Views
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.flp_PhieuNhap);
+			this.groupBox1.Controls.Add(this.tableLayoutPanel2);
 			this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.groupBox1.Location = new System.Drawing.Point(4, 4);
 			this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
@@ -73,14 +72,15 @@ namespace APP.Views
 			this.groupBox1.Size = new System.Drawing.Size(731, 752);
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "Nhập hàng";
+			this.groupBox1.Text = "Danh sách sản phẩm";
 			// 
 			// flp_PhieuNhap
 			// 
-			this.flp_PhieuNhap.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.flp_PhieuNhap.Location = new System.Drawing.Point(4, 24);
+			this.flp_PhieuNhap.AutoScroll = true;
+			this.tableLayoutPanel2.SetColumnSpan(this.flp_PhieuNhap, 2);
+			this.flp_PhieuNhap.Location = new System.Drawing.Point(3, 36);
 			this.flp_PhieuNhap.Name = "flp_PhieuNhap";
-			this.flp_PhieuNhap.Size = new System.Drawing.Size(723, 724);
+			this.flp_PhieuNhap.Size = new System.Drawing.Size(717, 685);
 			this.flp_PhieuNhap.TabIndex = 0;
 			// 
 			// groupBox2
@@ -106,7 +106,6 @@ namespace APP.Views
 			// 
 			// groupBox3
 			// 
-			this.groupBox3.Controls.Add(this.dataGridView1);
 			this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.groupBox3.Location = new System.Drawing.Point(742, 303);
 			this.groupBox3.Name = "groupBox3";
@@ -115,16 +114,20 @@ namespace APP.Views
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "groupBox2";
 			// 
-			// dataGridView1
+			// tableLayoutPanel2
 			// 
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dataGridView1.Location = new System.Drawing.Point(3, 23);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.RowHeadersWidth = 51;
-			this.dataGridView1.RowTemplate.Height = 24;
-			this.dataGridView1.Size = new System.Drawing.Size(708, 428);
-			this.dataGridView1.TabIndex = 0;
+			this.tableLayoutPanel2.ColumnCount = 2;
+			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel2.Controls.Add(this.flp_PhieuNhap, 0, 1);
+			this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 24);
+			this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+			this.tableLayoutPanel2.RowCount = 2;
+			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.558011F));
+			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95.44199F));
+			this.tableLayoutPanel2.Size = new System.Drawing.Size(723, 724);
+			this.tableLayoutPanel2.TabIndex = 0;
 			// 
 			// QuanLySanPham
 			// 
@@ -141,8 +144,7 @@ namespace APP.Views
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox2.ResumeLayout(false);
-			this.groupBox3.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			this.tableLayoutPanel2.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -155,6 +157,6 @@ namespace APP.Views
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.GroupBox groupBox3;
 		private System.Windows.Forms.Button btn_ImportExcel;
-		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
 	}
 }

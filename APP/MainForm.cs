@@ -24,6 +24,7 @@ namespace APP
 			switch (e.Node.Text)
 			{
 				case "Quản lý bán hàng":
+					pnl_Load_Main.Controls.Clear();
 					QuanLyHangHoa hh = new QuanLyHangHoa();
 					hh.Dock = DockStyle.Fill;
 					hh.TopLevel = false;
@@ -31,6 +32,7 @@ namespace APP
 					hh.Show();
 					break;
 				case "Quản lý kho":
+					pnl_Load_Main.Controls.Clear();
 					QuanLySanPham sp = new QuanLySanPham();
 					sp.Dock = DockStyle.Fill;
 					sp.TopLevel = false;
@@ -38,6 +40,7 @@ namespace APP
 					sp.Show();
 					break;
 				case "Hóa đơn trong ngày":
+					pnl_Load_Main.Controls.Clear();
 					QuanLyHoaDon hd = new QuanLyHoaDon();
 					hd.Dock = DockStyle.Fill;
 					hd.TopLevel = false;

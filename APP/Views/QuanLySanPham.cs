@@ -21,9 +21,13 @@ namespace APP.Views
 		public QuanLySanPham()
 		{
 			InitializeComponent();
-			ui.loadPhieuKho(flp_PhieuNhap, @"../../Resources/quan-ly-ton-kho-la-gi.png", "select * from PHIEUNHAP", "NGAYNHAP");
+			load();
 		}
-
+		public void load()
+		{
+			//ui.loadPhieuKho(flp_PhieuNhap, @"../../Resources/quan-ly-ton-kho-la-gi.png", "select * from PHIEUNHAP", "NGAYNHAP");
+			//ui.load_Product_Vertical(flp_PhieuNhap);
+		}
 		private void btn_ImportExcel_Click(object sender, EventArgs e)
 		{
 			OpenFileDialog open = new OpenFileDialog();
@@ -33,17 +37,13 @@ namespace APP.Views
 			{
 				string excelFilePath = open.FileName; // Đường dẫn tệp Excel đã chọn
 				ImportExcel import = new ImportExcel();
-				dataGridView1.DataSource = import.load(excelFilePath);
+				//dataGridView1.DataSource = import.load(excelFilePath);
 				foreach(DataRow item in import.load(excelFilePath).Rows)
 				{
 					string Sql = $"INSERT INTO SANPHAM VALUES ({int.Parse(item["MASP"].ToString())}, N'{item["TENSP"].ToString()}',{int.Parse(item["MALOAI"].ToString())}, '{item["NGAYSX"].ToString()}', '{item["NGAYHH"].ToString()}', {int.Parse(item["DONGIA"].ToString())})";
 					db.ExcuteQuery(Sql);
 				}
 				MessageBox.Show("Thành công");
-			}
-			else
-			{
-
 			}
 		}
 	}

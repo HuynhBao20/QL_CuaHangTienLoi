@@ -12,7 +12,7 @@ namespace ConnectionDB.Logic
 		{
 			int a = int.Parse(MAHD.Trim().Substring(2, MAHD.Length - 2));
 			a++;
-			return a < 10 ? $"HD00{a}" : (a > 10 && a < 100) ? $"HD0{a}" : $"HD{a}";
+			return a < 10 ? $"HD00{a}" : (a >= 10 && a < 100) ? $"HD0{a}" : $"HD{a}";
 		}
 	}
 }

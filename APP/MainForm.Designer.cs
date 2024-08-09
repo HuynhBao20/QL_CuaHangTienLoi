@@ -29,6 +29,7 @@ namespace APP
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Trang chủ");
 			System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Quản lý bán hàng");
 			System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Quản lý hàng hóa");
@@ -48,6 +49,7 @@ namespace APP
 			this.toolStripButton1 = new System.Windows.Forms.ToolStripDropDownButton();
 			this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.imageList1 = new System.Windows.Forms.ImageList(this.components);
 			this.tableLayoutPanel1.SuspendLayout();
 			this.toolStrip1.SuspendLayout();
 			this.SuspendLayout();
@@ -85,17 +87,21 @@ namespace APP
 			// 
 			this.tv_DanhMuc.BackColor = System.Drawing.Color.White;
 			this.tv_DanhMuc.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tv_DanhMuc.ImageIndex = 0;
+			this.tv_DanhMuc.ImageList = this.imageList1;
 			this.tv_DanhMuc.Location = new System.Drawing.Point(4, 47);
 			this.tv_DanhMuc.Margin = new System.Windows.Forms.Padding(4);
 			this.tv_DanhMuc.Name = "tv_DanhMuc";
 			treeNode1.Name = "Node5";
 			treeNode1.Text = "Trang chủ";
+			treeNode2.ImageIndex = -2;
 			treeNode2.Name = "Node1";
 			treeNode2.Text = "Quản lý bán hàng";
 			treeNode3.Name = "Node3";
 			treeNode3.Text = "Quản lý hàng hóa";
 			treeNode4.Name = "Node4";
 			treeNode4.Text = "Quản lý kho";
+			treeNode5.ImageIndex = -2;
 			treeNode5.Name = "Node0";
 			treeNode5.Text = "Danh mục bán hàng";
 			treeNode6.Name = "Node1";
@@ -106,6 +112,7 @@ namespace APP
             treeNode1,
             treeNode5,
             treeNode7});
+			this.tv_DanhMuc.SelectedImageIndex = 0;
 			this.tv_DanhMuc.Size = new System.Drawing.Size(193, 727);
 			this.tv_DanhMuc.TabIndex = 1;
 			this.tv_DanhMuc.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tv_DanhMuc_NodeMouseClick);
@@ -148,6 +155,12 @@ namespace APP
 			this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
 			this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
 			// 
+			// imageList1
+			// 
+			this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+			this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+			this.imageList1.Images.SetKeyName(0, "icon-thiet-ke-linh-vuc-logo-hang-tieu-dung-baa-brand-1.png");
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -178,5 +191,6 @@ namespace APP
 		private System.Windows.Forms.ToolStripDropDownButton toolStripButton1;
 		private System.Windows.Forms.ToolStripMenuItem đổiMậtKhẩuToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
+		private System.Windows.Forms.ImageList imageList1;
 	}
 }

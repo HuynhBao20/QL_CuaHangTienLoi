@@ -17,7 +17,6 @@ namespace APP.Views
 		public QuanLyHoaDon()
 		{
 			InitializeComponent();
-			ui.loadPhieuNhap(flp_LoadHoaDon, @"../../Resources/iconHoaDon.png", "SELECT * FROM HOADON", "NGAYLAP");
 		}
 	}
 }
