@@ -105,11 +105,11 @@
       <DependentUpon>QuanLyHangHoa.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\UI.cs" />
-    <Compile Include="Views\frmThanhToan.cs">
+    <Compile Include="Views\frmQLKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\frmThanhToan.Designer.cs">
-      <DependentUpon>frmThanhToan.cs</DependentUpon>
+    <Compile Include="Views\frmQLKhachHang.Designer.cs">
+      <DependentUpon>frmQLKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\QuanLySanPham.cs">
       <SubType>Form</SubType>
@@ -128,14 +128,17 @@
     <EmbeddedResource Include="Views\ChiTietHoaDon.resx">
       <DependentUpon>ChiTietHoaDon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\DanhMucNhanSu.resx">
+      <DependentUpon>DanhMucNhanSu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmThanhToan.resx">
-      <DependentUpon>frmThanhToan.cs</DependentUpon>
+    <EmbeddedResource Include="Views\frmQLKhachHang.resx">
+      <DependentUpon>frmQLKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\QuanLyHangHoa.resx">
       <DependentUpon>QuanLyHangHoa.cs</DependentUpon>
@@ -175,13 +178,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\1.jpg" />
-    <Content Include="Resources\2.jpg" />
+    <Content Include="Resources\01010101.jpg" />
+    <Content Include="Resources\01020101.jpg" />
     <Content Include="Resources\iconHoaDon.png" />
     <Content Include="Resources\quan-ly-ton-kho-la-gi.png" />
     <Content Include="Resources\Sp.jpg" />
     <None Include="Resources\pngtree-add-customers-icon-color-flat-png-image_4674922.png" />
-    <Content Include="Resources\3.jpg" />
+    <Content Include="Resources\01030101.jpg" />
     <None Include="Resources\images.jpg" />
     <Content Include="Resources\khoicon.png" />
     <Content Include="Resources\pngtree-graduation-bachelor-hat-illustration-png-image_6580811.png" />

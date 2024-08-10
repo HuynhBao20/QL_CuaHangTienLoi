@@ -14,10 +14,11 @@ namespace ConnectionMoMo
 		[STAThread]
 		static void Main()
 		{
+			int TienKD = 0;
 			string MAHD = "";
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Form1(MAHD));
+			Application.Run(new QRThanhToanMoMo(MAHD, TienKD));
 		}
 	}
 }

@@ -43,9 +43,10 @@ C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\Reporting.exe.conf
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\ExcelDataReader.dll
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.QuanLyHoaDon.resources
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.ChiTietHoaDon.resources
-C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.frmThanhToan.resources
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\ConnectionMoMo.exe
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\zxing.dll
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\ConnectionMoMo.pdb
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\ConnectionMoMo.exe.config
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\zxing.xml
+C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.DanhMucNhanSu.resources
+C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.frmQLKhachHang.resources

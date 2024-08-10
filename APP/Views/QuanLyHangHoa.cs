@@ -30,11 +30,12 @@ namespace APP.Views
 		}
 		public void UI_Design()
 		{
+			lb_MaHD.Text = "";
+			lb_NgayLap.Text = "";
 			ui.UI_LoadProduct(flp_Product, flp_BillDetail, txtTongTien);
-			ui.loadCombobox(cbo_MaKH, "SELECT MAKH FROM KHACHHANG", "MAKH", "MAKH");
-			ui.UI_BillDetail(flp_BillDetail, "HD001");
+			ui.UI_BillDetail(flp_BillDetail, "");
 			ui.loadTreeView(tv_LoaiSP);
-			ui.load_HoaDon_ChuaXuat(flp_HDChuaXuat);
+			ui.load_HoaDon_ChuaXuat(flp_HDChuaXuat, "EXEC sp_HD_ChuaXuat", lb_MaHD, lb_NgayLap, flp_BillDetail);
 			btnHuyHoaDon.Enabled = false;
 		}
 		private void btnThemHoaDon_Click(object sender, EventArgs e)
@@ -82,19 +83,30 @@ namespace APP.Views
 		}
 		private void txtKD_TextChanged(object sender, EventArgs e)
 		{
-			int thanhtien = int.Parse(txtTongTien.Text);
-			int tienKD = txtKD.Text == "" ? 0 : int.Parse(txtKD.Text);
-			txtThanhTien.Text = (tienKD - thanhtien).ToString();
+			
+			int tongtien = int.Parse(txtKD.Text != "" ? txtKD.Text : "0") - int.Parse(txtTongTien.Text);
+			if(tongtien < 0)
+			{
+				txtThanhTien.Text = "0";
+			}else
+			{
+				txtThanhTien.Text = (tongtien).ToString();
+
+			}
 		}
 		private void button3_Click(object sender, EventArgs e)
 		{
-			string MAHD = ui.getHoaDon();
-			//string insertTienKD = $"UPDATE HOADON SET TIENKD = {int.Parse(txtKD.Text)}, TRANGTHAI = N'Đã xuất hóa đơn' WHERE MAHD = '{MAHD}'";
-			//db.ExcuteQuery(insertTienKD);
-			
-			frmMainThanhToan main = new frmMainThanhToan(MAHD);
-			main.Show();
-			//btnHuyHoaDon.Enabled = false;
+			txtThanhTien.Text = string.IsNullOrEmpty(txtThanhTien.Text) ? "0" : txtThanhTien.Text;
+			txtKD.Text = string.IsNullOrEmpty(txtKD.Text) ? "0" : txtKD.Text;
+			if (int.Parse(txtThanhTien.Text) >= int.Parse(txtKD.Text))
+			{
+				MessageBox.Show("Tiền khách đưa phải >= tổng thành tiền");
+			}else
+			{
+				string MAHD = ui.getHoaDon();
+				frmMainThanhToan main = new frmMainThanhToan(MAHD, int.Parse(txtKD.Text));
+				main.Show();
+			}
 		}
 		private void btnMua_Click(object sender, EventArgs e)
 		{
@@ -126,6 +138,11 @@ namespace APP.Views
 			{
 				e.Handled = true;
 			} 
+		}
+		private void btnLamMoi_Click(object sender, EventArgs e)
+		{
+			flp_BillDetail.Controls.Clear();
+			UI_Design();
 		}
 	}
 }

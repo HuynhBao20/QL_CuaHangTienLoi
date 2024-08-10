@@ -18,11 +18,13 @@ namespace APP.Controllers
 	{
 		Connection db = new Connection();
 		CustomTool custom = new CustomTool();
+		public Label MAHD;
+		public Label NgayLap;
 		public static string getBillID = "SELECT TOP 1 MAHD FROM HOADON ORDER BY MAHD DESC";
 		//Hàm hay dùng
 		public string fullPath(string Fpath) => Path.GetFullPath(Fpath); //Hàm này lấy ra đường dẫn của file
 		public string fpathImage(string ImageName) => File.Exists(fullPath(@"../../Resources/" + ImageName + ".jpg")) ? fullPath(@"../../Resources/" + ImageName + ".jpg") : fullPath(@"../../Resources/Sp.jpg");
-		public string getHoaDon() => db.ExcuteReader(UI.getBillID, "MAHD");
+		public string getHoaDon() => db.ExcuteReader("SELECT TRANGTHAI FROM HOADON", "TRANGTHAI") == "Chưa xuất" ? db.ExcuteReader(UI.getBillID, "MAHD") : "";
 		//load san pham
 		public void loadCombobox(ComboBox combo, string Sql, string display, string Value)
 		{
@@ -137,30 +139,33 @@ namespace APP.Controllers
 				flp.Controls.Add(pnl);
 			}
 		}
-		public void load_HoaDon_ChuaXuat(FlowLayoutPanel flp)
+		public void load_HoaDon_ChuaXuat(FlowLayoutPanel flp, string SQL, Label _MAHD, Label NgayLap, FlowLayoutPanel flowLayout)
 		{
-			DataTable da = db.loadDB($"EXEC sp_HD_ChuaXuat");
+			flp.Controls.Clear();
+			DataTable da = db.loadDB(SQL);
 			foreach (DataRow item in da.Rows)
 			{
-				EventHandler even = (sender, e) => { };
-				custom.UI_Load(
-							   "",
+				this.MAHD = _MAHD;
+				this.NgayLap = NgayLap;
+				custom.UI_Load("",
 							   fullPath(@"../../Resources/iconHoaDon.png"),
 							   flp, 
-							   DateTime.Parse(item["NGAYLAP"].ToString()).ToString("dd/MM/yyyy HH:mm:ss"), 
+							   $"MAHD: {item["MAHD"].ToString()} { Environment.NewLine + DateTime.Parse(item["NGAYLAP"].ToString()).ToString("dd/MM/yyyy HH:mm:ss")}", 
 							   140,
-							   even);
+							   (sender, e) => Event_Bill_Process_Click(sender, e, item["MAHD"].ToString(), item["NGAYLAP"].ToString(), flowLayout));
 			}
 		}
-		public void load_Product_Vertical(FlowLayoutPanel flow)
-		{
-			DataTable da = db.loadDB("SELECT * FROM HOADON");
-			foreach(DataRow item in da.Rows)
-			{
-				//custom.UI_Load(flow, )
-			}
-		}
-
+		//public void load_HoaDon(FlowLayoutPanel flow)
+		//{
+		//	DataTable da = db.loadDB("");
+		//	foreach(DataRow item in da.Rows)
+		//	{
+		//		custom.UI_Load("", 
+		//					fullPath(@"../../Resources/iconHoaDon.png"),
+		//					flow,
+		//					);
+		//	}
+		//}
 		//Xử lý sự kiện
 		public void Event_Product_Click(object sender, EventArgs e, string MASP, FlowLayoutPanel flp, TextBox ThanhTien)
 		{
@@ -168,7 +173,14 @@ namespace APP.Controllers
 			{
 				Add_Product_Bill(MASP);
 				flp.Controls.Clear();
-				UI_BillDetail(flp, getHoaDon());
+				if(getHoaDon() == "")
+				{
+					MessageBox.Show("Chưa tạo hóa đơn");
+				} else
+				{
+					UI_BillDetail(flp, getHoaDon());
+				}	
+				
 				ThanhTien.Text = db.ExcuteReader($"EXEC Tong_ThanhTien {getHoaDon()}", "Thành tiền");
 			}
 			catch (Exception ex)
@@ -180,7 +192,6 @@ namespace APP.Controllers
 		{
 			try
 			{
-				
 				string Sql = $"INSERT INTO CT_HOADON(MAHD, MASP, SOLUONG) VALUES ('{db.ExcuteReader(UI.getBillID, "MAHD")}', '{MASP}', 1)";
 				db.ExcuteQuery(Sql);
 			} catch
@@ -211,7 +222,12 @@ namespace APP.Controllers
 			ChiTietHoaDon ct = new ChiTietHoaDon(MAHD);
 			ct.Show();
 		}
-
-		
+		public void Event_Bill_Process_Click(object sender, EventArgs e, string MAHD, string NgayLap, FlowLayoutPanel flow)
+		{
+			flow.Controls.Clear();
+			this.MAHD.Text = MAHD;
+			this.NgayLap.Text = DateTime.Parse(NgayLap).ToString("dd/MM/yyyy HH:mm:ss");
+			UI_BillDetail(flow, MAHD);
+		}
 	}
 }

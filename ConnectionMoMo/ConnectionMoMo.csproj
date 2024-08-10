@@ -52,11 +52,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="QRThanhToanMoMo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="QRThanhToanMoMo.Designer.cs">
+      <DependentUpon>QRThanhToanMoMo.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMainThanhToan.cs">
       <SubType>Form</SubType>
@@ -67,8 +67,8 @@
     <Compile Include="LogicMoMo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="QRThanhToanMoMo.resx">
+      <DependentUpon>QRThanhToanMoMo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMainThanhToan.resx">
       <DependentUpon>frmMainThanhToan.cs</DependentUpon>
@@ -103,6 +103,10 @@
     <ProjectReference Include="..\ConnectionDB\ConnectionDB.csproj">
       <Project>{5f557680-2f73-4686-abf1-63ba915492c6}</Project>
       <Name>ConnectionDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Reporting\Reporting.csproj">
+      <Project>{dc2087d7-c0a5-493f-aaaf-f11c7ca76577}</Project>
+      <Name>Reporting</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

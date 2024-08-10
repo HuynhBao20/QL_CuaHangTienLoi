@@ -13,15 +13,17 @@ namespace ConnectionMoMo
 	public partial class frmMainThanhToan : Form
 	{
 		public readonly string MAHD;
-		public frmMainThanhToan(string MAHD)
+		public readonly int TienKD;
+		public frmMainThanhToan(string MAHD, int TienKD)
 		{
 			InitializeComponent();
 			this.MAHD = MAHD;
+			this.TienKD = TienKD;
 		}
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			Form1 form = new Form1(MAHD);
+			QRThanhToanMoMo form = new QRThanhToanMoMo(MAHD, TienKD);
 			form.Show();
 		}
 	}

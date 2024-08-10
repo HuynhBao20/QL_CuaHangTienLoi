@@ -1,7 +1,7 @@
 ﻿
 namespace APP.Views
 {
-	partial class frmThanhToan
+	partial class frmQLKhachHang
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -31,12 +31,14 @@ namespace APP.Views
 		{
 			this.SuspendLayout();
 			// 
-			// frmThanhToan
+			// frmQLKhachHang
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(572, 682);
-			this.Name = "frmThanhToan";
+			this.ClientSize = new System.Drawing.Size(883, 563);
+			this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Name = "frmQLKhachHang";
 			this.Text = "QuanLyKhachHang";
 			this.ResumeLayout(false);
 

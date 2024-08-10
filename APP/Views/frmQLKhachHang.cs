@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace APP.Views
 {
-	public partial class frmThanhToan : Form
+	public partial class frmQLKhachHang : Form
 	{
-		public frmThanhToan()
+		public frmQLKhachHang()
 		{
 			InitializeComponent();
 		}
