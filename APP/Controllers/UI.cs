@@ -68,6 +68,7 @@ namespace APP.Controllers
 			foreach(DataRow item in da.Rows)
 			{
 				custom.UI_Load(flp,
+							   MAHD,
 							   item["Tên sản phẩm"].ToString(),
 							   fpathImage(item["Mã sản phẩm"].ToString()),
 							   item["Đơn giá"].ToString(),
@@ -81,6 +82,7 @@ namespace APP.Controllers
 		{
 			EventHandler handler = (sender, e) => { };
 			custom.UI_Load(flp,
+				"",
 			   "Tên sản phẩm",
 			   fpathImage(""),
 			   "Đơn giá",
@@ -155,17 +157,7 @@ namespace APP.Controllers
 							   (sender, e) => Event_Bill_Process_Click(sender, e, item["MAHD"].ToString(), item["NGAYLAP"].ToString(), flowLayout));
 			}
 		}
-		//public void load_HoaDon(FlowLayoutPanel flow)
-		//{
-		//	DataTable da = db.loadDB("");
-		//	foreach(DataRow item in da.Rows)
-		//	{
-		//		custom.UI_Load("", 
-		//					fullPath(@"../../Resources/iconHoaDon.png"),
-		//					flow,
-		//					);
-		//	}
-		//}
+		
 		//Xử lý sự kiện
 		public void Event_Product_Click(object sender, EventArgs e, string MASP, FlowLayoutPanel flp, TextBox ThanhTien)
 		{
@@ -229,5 +221,6 @@ namespace APP.Controllers
 			this.NgayLap.Text = DateTime.Parse(NgayLap).ToString("dd/MM/yyyy HH:mm:ss");
 			UI_BillDetail(flow, MAHD);
 		}
+		
 	}
 }
