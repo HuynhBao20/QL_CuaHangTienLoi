@@ -16,11 +16,18 @@ namespace APP
 	{
 		public MainForm()
 		{
-			InitializeComponent();            
-        }
+			InitializeComponent();
+			Dashboard hh = new Dashboard();
+			hh.Dock = DockStyle.Fill;
+			hh.TopLevel = false;
+			hh.FormBorderStyle = FormBorderStyle.None;
+			pnl_Load_Main.Controls.Add(hh);
+			hh.Show();
+		}
 
 		private void tv_DanhMuc_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
 		{
+			
 			switch (e.Node.Text)
 			{
 				case "Quản lý bán hàng":
@@ -46,6 +53,16 @@ namespace APP
 					hd.TopLevel = false;
 					pnl_Load_Main.Controls.Add(hd);
 					hd.Show();
+					break;
+				case "Quản lý khách hàng":
+					pnl_Load_Main.Controls.Clear();
+					frmKhachHang kh = new frmKhachHang();
+					kh.FormBorderStyle = FormBorderStyle.None;
+					kh.Dock = DockStyle.Fill;
+					kh.TopLevel = false;
+					pnl_Load_Main.Controls.Add(kh);
+					kh.Show();
+
 					break;
 			}	
 		}

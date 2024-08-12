@@ -12,6 +12,9 @@ namespace APP.Controllers
 	public class CustomTool
 	{
 		Connection db = new Connection();
+		public TextBox txt { get; set; }
+		public Label lb { get; set; }
+		public string dongia { get; set; }
 		public Button button(int Width,
 						  int Height,
 						  Color color,
@@ -193,17 +196,38 @@ namespace APP.Controllers
 			flp.Controls.Add(pnl);
 			#endregion
 			btn.Click += e;
-			btnDesc.Click += (sender, ex) => Event_Product_Sort_Click(sender, ex, MAHD, db.ExcuteReader($"SELECT MASP FROM SANPHAM WHERE TENSP = '{Product_Name}'", "MASP").ToString(), "desc", txtSL, lb_ThanhTien, int.Parse(DonGia));
-			btnASC.Click += (sender, ex) => Event_Product_Sort_Click(sender, ex, MAHD, db.ExcuteReader($"SELECT MASP FROM SANPHAM WHERE TENSP = '{Product_Name}'", "MASP").ToString(), "asc", txtSL, lb_ThanhTien, int.Parse(DonGia));
+			this.txt = txtSL;
+			this.dongia = DonGia;
+			string MASP = db.ExcuteReader($"SELECT MASP FROM SANPHAM WHERE TENSP = '{Product_Name}'", "MASP").ToString();
+			btnDesc.Click += (sender, ex) => Event_Product_Sort_Click(sender, ex, MAHD, MASP, "desc", txtSL, lb_ThanhTien, int.Parse(DonGia));
+			btnASC.Click += (sender, ex) => Event_Product_Sort_Click(sender, ex, MAHD, MASP, "asc", txtSL, lb_ThanhTien, int.Parse(DonGia));
+			txtSL.TextChanged += (sender, ex) => Event_Input_ChangeText(sender, ex, MAHD, MASP, txtSL, int.Parse(DonGia), lb_ThanhTien);
 		}
 		public void Event_Product_Sort_Click(object sender, EventArgs e, string MAHD, string MASP, string sort, TextBox txt, Label thanhtien, int dongia)
 		{
 			int SL = int.Parse(db.ExcuteReader($"SELECT SOLUONG FROM CT_HOADON WHERE MAHD = '{MAHD}' AND MASP = '{MASP}'", "SOLUONG"));
-			SL++;
+			if(sort == "asc")
+			{
+				SL++;
+			} else
+			{
+				SL--;
+				if(SL < 1)
+				{
+					MessageBox.Show("Số lượng quá nhỏ");
+					return;
+				}
+			}
 			string Sql = $"UPDATE CT_HOADON SET SOLUONG = {SL} WHERE MAHD = '{MAHD}' AND MASP = '{MASP}'";
 			db.ExcuteQuery(Sql);
 			txt.Text = SL.ToString();
 			thanhtien.Text = (int.Parse(txt.Text) * dongia).ToString();
+		}
+		public void Event_Input_ChangeText(object sender, EventArgs e, string MAHD, string MASP, TextBox txt, int DonGia, Label thanhtien)
+		{
+			string Sql = $"UPDATE CT_HOADON SET SOLUONG = {int.Parse(string.IsNullOrEmpty(txt.Text) ? "0" : txt.Text)} WHERE MAHD = '{MAHD}' AND MASP = '{MASP}'";
+			db.ExcuteQuery(Sql);
+			thanhtien.Text = (int.Parse(txt.Text) * DonGia).ToString();
 		}
 	}
 }

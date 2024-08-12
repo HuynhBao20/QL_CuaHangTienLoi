@@ -1,4 +1,5 @@
-﻿using System;
+﻿using APP.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace APP.Views
 {
 	public partial class Dashboard : Form
 	{
+		Analyst a = new Analyst();
 		public Dashboard()
 		{
 			InitializeComponent();
+			a.Analyst_Month(chart1);
 		}
 	}
 }

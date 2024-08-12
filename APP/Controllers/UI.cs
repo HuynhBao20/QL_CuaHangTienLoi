@@ -23,7 +23,7 @@ namespace APP.Controllers
 		public static string getBillID = "SELECT TOP 1 MAHD FROM HOADON ORDER BY MAHD DESC";
 		//Hàm hay dùng
 		public string fullPath(string Fpath) => Path.GetFullPath(Fpath); //Hàm này lấy ra đường dẫn của file
-		public string fpathImage(string ImageName) => File.Exists(fullPath(@"../../Resources/" + ImageName + ".jpg")) ? fullPath(@"../../Resources/" + ImageName + ".jpg") : fullPath(@"../../Resources/Sp.jpg");
+		public string fpathImage(string ImageName) => File.Exists(fullPath(@"../../Resources/" + ImageName.Trim() + ".jpg")) ? fullPath(@"../../Resources/" + ImageName.Trim() + ".jpg") : fullPath(@"../../Resources/Sp.jpg");
 		public string getHoaDon() => db.ExcuteReader("SELECT TRANGTHAI FROM HOADON", "TRANGTHAI") == "Chưa xuất" ? db.ExcuteReader(UI.getBillID, "MAHD") : "";
 		//load san pham
 		public void loadCombobox(ComboBox combo, string Sql, string display, string Value)

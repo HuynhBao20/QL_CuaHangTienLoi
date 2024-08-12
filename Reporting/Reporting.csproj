@@ -58,6 +58,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Process\Show.cs" />
+    <Compile Include="Reporting\HoaDonMoMo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HoaDonMoMo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SharedReporting.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,10 @@
       <DependentUpon>HoaDon.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="Reporting\HoaDonMoMo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HoaDonMoMo.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="SharedReporting.resx">
       <DependentUpon>SharedReporting.cs</DependentUpon>
     </EmbeddedResource>

@@ -12,8 +12,8 @@ using ConnectionDB;
 using ConnectionDB.Enum;
 using ConnectionDB.Logic;
 using Reporting;
-using ConnectionMoMo;
 using System.Data.SqlClient;
+using APP.Views.manhinhphu;
 
 namespace APP.Views
 {
@@ -23,6 +23,9 @@ namespace APP.Views
 		Connection db = new Connection();
 		Process p = new Process();
 		public static string getBillID = "SELECT TOP 1 MAHD FROM HOADON ORDER BY MAHD DESC";
+		public static string query_Bill = "SELECT COUNT(*) as 'SL' FROM HOADON WHERE TRANGTHAI = N'Chưa xuất' AND CAST(NGAYLAP AS DATE) = CAST(GETDATE() AS DATE)";
+		public string MAHD { get; set; }
+		public int SOHD { get; set; }
 		public QuanLyHangHoa()
 		{
 			InitializeComponent();
@@ -37,18 +40,27 @@ namespace APP.Views
 			ui.loadTreeView(tv_LoaiSP);
 			ui.load_HoaDon_ChuaXuat(flp_HDChuaXuat, "EXEC sp_HD_ChuaXuat", lb_MaHD, lb_NgayLap, flp_BillDetail);
 			btnHuyHoaDon.Enabled = false;
+			int SOHD = int.Parse(db.ExcuteReader(QuanLyHangHoa.query_Bill, "SL"));
+			gp_HoaDonChuaXuat.Text = $"Số hóa đơn chưa xuất: {SOHD}";
 		}
 		private void btnThemHoaDon_Click(object sender, EventArgs e)
 		{
 			try
 			{
 				btnHuyHoaDon.Enabled = true;
-				string getMAHD = db.ExcuteReader("SELECT TOP 1 MAHD FROM HOADON ORDER BY MAHD DESC", "MAHD").Trim();
+				string getMAHD = db.ExcuteReader(QuanLyHangHoa.getBillID, "MAHD").Trim();
 				string MAHD = p.getMAHD(getMAHD);
-				string Sql = $"INSERT INTO HOADON(MAHD, MAKH, MANV) VALUES ('{MAHD}', 'VL000', 'NV001')";
+				this.MAHD = MAHD;
+				string Sql = $"INSERT INTO HOADON(MAHD, MAKH, MANV) VALUES ('{MAHD}', 'KH001', 'NV001')";
 				db.ExcuteQuery(Sql);
 				lb_MaHD.Text = MAHD;
 				lb_NgayLap.Text = DateTime.Now.ToString("dd/MM/yyyy");
+				int HDDT = int.Parse(db.ExcuteReader(QuanLyHangHoa.query_Bill, "SL"));
+				if (HDDT != this.SOHD)
+				{
+					gp_HoaDonChuaXuat.Text = $"Số hóa đơn chưa xuất: {HDDT}";
+					ui.load_HoaDon_ChuaXuat(flp_HDChuaXuat, "EXEC sp_HD_ChuaXuat", lb_MaHD, lb_NgayLap, flp_BillDetail);
+				}
 				txtThanhTien.Text = db.ExcuteReader($"EXEC Tong_ThanhTien '{MAHD}'", "Thành tiền");
 			} catch (Exception ex)
 			{
@@ -91,22 +103,21 @@ namespace APP.Views
 			}else
 			{
 				txtThanhTien.Text = (tongtien).ToString();
-
 			}
 		}
 		private void button3_Click(object sender, EventArgs e)
 		{
-			txtThanhTien.Text = string.IsNullOrEmpty(txtThanhTien.Text) ? "0" : txtThanhTien.Text;
-			txtKD.Text = string.IsNullOrEmpty(txtKD.Text) ? "0" : txtKD.Text;
-			if (int.Parse(txtThanhTien.Text) >= int.Parse(txtKD.Text))
+			try
 			{
-				MessageBox.Show("Tiền khách đưa phải >= tổng thành tiền");
-			}else
-			{
-				string MAHD = ui.getHoaDon();
-				frmMainThanhToan main = new frmMainThanhToan(MAHD, int.Parse(txtKD.Text));
-				main.Show();
+				string insertTienKD = $"UPDATE HOADON SET TIENKD = {int.Parse(txtKD.Text)}, TRANGTHAI = N'Đã xuất hóa đơn' WHERE MAHD = '{MAHD}'";
+				db.ExcuteQuery(insertTienKD);
+				MessageBox.Show("Xác nhận thành công");
 			}
+			catch (SqlException ex)
+			{
+				MessageBox.Show($"Xác nhận thất bại vì: \n {ex.Message}");
+			}
+
 		}
 		private void btnMua_Click(object sender, EventArgs e)
 		{
@@ -129,8 +140,6 @@ namespace APP.Views
 			{
 				MessageBox.Show(ex.Message);
 			}
-
-
 		}
 		private void txtMaSP_KeyPress(object sender, KeyPressEventArgs e)
 		{
@@ -143,6 +152,34 @@ namespace APP.Views
 		{
 			flp_BillDetail.Controls.Clear();
 			UI_Design();
+		}
+		private void btnThemKhach_Click(object sender, EventArgs e)
+		{
+			frmKhachHang kh = new frmKhachHang();
+			kh.Show();
+		}
+		private void btnTotalMoMo_Click(object sender, EventArgs e)
+		{
+			if (!string.IsNullOrEmpty(this.MAHD) && !string.IsNullOrEmpty(txtKD.Text))
+			{
+				QRThanhToanMoMo momo = new QRThanhToanMoMo(MAHD, int.Parse(txtKD.Text));
+				momo.Show();
+			} else
+			{
+				MessageBox.Show("Bạn chưa có hóa đơn");
+			}
+		}
+		private void btnTimKH_Click(object sender, EventArgs e)
+		{
+			if(!string.IsNullOrEmpty(txtSDT.Text))
+			{
+				string Sql = $"SELECT Count(*) AS 'SL' FROM KHACHHANG WHERE SDT = '{txtSDT.Text}'";
+				string is_Customer = int.Parse(db.ExcuteReader(Sql, "SL")) > 0 ? "đã có" : "chưa đăng ký";
+				MessageBox.Show($"Khách hàng {is_Customer} tài khoản");
+			} else
+			{
+				MessageBox.Show("Số điện thoại không được để trống");
+			}
 		}
 	}
 }

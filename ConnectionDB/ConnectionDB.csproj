@@ -70,7 +70,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection.cs" />
-    <Compile Include="ConnectionMoMo.cs" />
     <Compile Include="Enum\Query.cs" />
     <Compile Include="Logic\DBContext.cs" />
     <Compile Include="Logic\ImportExcel.cs" />
