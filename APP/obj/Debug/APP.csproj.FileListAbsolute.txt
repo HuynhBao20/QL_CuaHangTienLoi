@@ -46,7 +46,6 @@ C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.ChiTietH
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\zxing.dll
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\zxing.xml
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.DanhMucNhanSu.resources
-C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.frmQLKhachHang.resources
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.frmKhachHang.resources
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\zxing.presentation.dll
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\zxing.presentation.xml

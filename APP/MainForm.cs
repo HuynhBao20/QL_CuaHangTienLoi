@@ -62,7 +62,6 @@ namespace APP
 					kh.TopLevel = false;
 					pnl_Load_Main.Controls.Add(kh);
 					kh.Show();
-
 					break;
 			}	
 		}

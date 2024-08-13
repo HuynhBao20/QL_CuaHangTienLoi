@@ -127,12 +127,6 @@
       <DependentUpon>QuanLyHangHoa.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\UI.cs" />
-    <Compile Include="Views\frmQLKhachHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\frmQLKhachHang.Designer.cs">
-      <DependentUpon>frmQLKhachHang.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\QuanLySanPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,9 +155,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmQLKhachHang.resx">
-      <DependentUpon>frmQLKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\manhinhphu\QRThanhToanMoMo.resx">
       <DependentUpon>QRThanhToanMoMo.cs</DependentUpon>

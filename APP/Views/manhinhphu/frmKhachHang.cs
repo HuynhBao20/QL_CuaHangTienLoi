@@ -19,7 +19,7 @@ namespace APP.Views
 		public frmKhachHang()
 		{
 			InitializeComponent();
-			dataGridView1.DataSource = db.loadDB("SELECT * FROM KHACHHANG");
+			dgvKhachHang.DataSource = db.loadDB("SELECT * FROM KHACHHANG");
 		}
 
 		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

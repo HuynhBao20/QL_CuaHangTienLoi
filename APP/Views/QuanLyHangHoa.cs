@@ -37,9 +37,9 @@ namespace APP.Views
 			lb_NgayLap.Text = "";
 			ui.UI_LoadProduct(flp_Product, flp_BillDetail, txtTongTien);
 			ui.UI_BillDetail(flp_BillDetail, "");
+			tv_LoaiSP.Controls.Clear();
 			ui.loadTreeView(tv_LoaiSP);
 			ui.load_HoaDon_ChuaXuat(flp_HDChuaXuat, "EXEC sp_HD_ChuaXuat", lb_MaHD, lb_NgayLap, flp_BillDetail);
-			btnHuyHoaDon.Enabled = false;
 			int SOHD = int.Parse(db.ExcuteReader(QuanLyHangHoa.query_Bill, "SL"));
 			gp_HoaDonChuaXuat.Text = $"Số hóa đơn chưa xuất: {SOHD}";
 		}
@@ -47,7 +47,6 @@ namespace APP.Views
 		{
 			try
 			{
-				btnHuyHoaDon.Enabled = true;
 				string getMAHD = db.ExcuteReader(QuanLyHangHoa.getBillID, "MAHD").Trim();
 				string MAHD = p.getMAHD(getMAHD);
 				this.MAHD = MAHD;
@@ -71,7 +70,7 @@ namespace APP.Views
 		{
 			try
 			{
-				string Sql = $"DELETE FROM HOADON WHERE MAHD = {int.Parse(db.ExcuteReader(UI.getBillID, "MAHD"))}";
+				string Sql = $"";
 				db.ExcuteQuery(Sql);
 			} catch(Exception ex)
 			{
@@ -88,27 +87,15 @@ namespace APP.Views
 			flp_Product.Controls.Clear();
 			ui.Ui_Filter_Product(flp_Product, $"SELECT * FROM SANPHAM sp, LOAISP l WHERE sp.MALOAI = l.MALOAI AND TENLOAI = N'{e.Node.Text}'", flp_BillDetail, txtThanhTien);
 		}
-		private void btnXuatHoaDon_Click(object sender, EventArgs e)
-		{
-			SharedReporting S = new SharedReporting(db.ExcuteReader(QuanLyHangHoa.getBillID, "MAHD"));
-			S.Show();
-		}
 		private void txtKD_TextChanged(object sender, EventArgs e)
 		{
-			
-			int tongtien = int.Parse(txtKD.Text != "" ? txtKD.Text : "0") - int.Parse(txtTongTien.Text);
-			if(tongtien < 0)
-			{
-				txtThanhTien.Text = "0";
-			}else
-			{
-				txtThanhTien.Text = (tongtien).ToString();
-			}
+
 		}
 		private void button3_Click(object sender, EventArgs e)
 		{
 			try
 			{
+				MAHD = lb_MaHD.Text;
 				string insertTienKD = $"UPDATE HOADON SET TIENKD = {int.Parse(txtKD.Text)}, TRANGTHAI = N'Đã xuất hóa đơn' WHERE MAHD = '{MAHD}'";
 				db.ExcuteQuery(insertTienKD);
 				MessageBox.Show("Xác nhận thành công");
@@ -131,9 +118,10 @@ namespace APP.Views
 				}
 				else
 				{
-					string Sql = $"INSERT INTO CT_HOADON(MAHD, MASP, SOLUONG) VALUES ('{db.ExcuteReader(UI.getBillID, "MAHD")}', '{txtMaSP.Text}', 1)";
+					
+					string Sql = $"INSERT INTO CT_HOADON(MAHD, MASP, SOLUONG) VALUES ('{MAHD}', '{txtMaSP.Text}', 1)";
 					db.ExcuteQuery(Sql);
-					ui.UI_BillDetail(flp_BillDetail, db.ExcuteReader(UI.getBillID, "MAHD"));
+					ui.UI_BillDetail(flp_BillDetail, MAHD);
 				}
 			}
 			catch (SqlException ex)
@@ -179,6 +167,26 @@ namespace APP.Views
 			} else
 			{
 				MessageBox.Show("Số điện thoại không được để trống");
+			}
+		}
+		private void btnMacDinh_Click(object sender, EventArgs e)
+		{
+			txtKD.Text = db.ExcuteReader($"EXEC Tong_ThanhTien '{lb_MaHD.Text}'", "Thành tiền");
+		}
+		private void lb_MaHD_TextChanged(object sender, EventArgs e)
+		{
+			if(!string.IsNullOrEmpty(lb_MaHD.Text))
+			{
+				btnHuyHoaDon.Enabled = true;
+				btnMacDinh.Enabled = true;
+				btnTienMat.Enabled = true;
+				btnTotalMoMo.Enabled = true;
+			} else
+			{
+				btnHuyHoaDon.Enabled = false;
+				btnMacDinh.Enabled = false;
+				btnTienMat.Enabled = false;
+				btnTotalMoMo.Enabled = false;
 			}
 		}
 	}

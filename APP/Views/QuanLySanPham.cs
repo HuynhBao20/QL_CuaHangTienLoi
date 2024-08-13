@@ -25,8 +25,11 @@ namespace APP.Views
 		}
 		public void load()
 		{
-			//ui.loadPhieuKho(flp_PhieuNhap, @"../../Resources/quan-ly-ton-kho-la-gi.png", "select * from PHIEUNHAP", "NGAYNHAP");
-			//ui.load_Product_Vertical(flp_PhieuNhap);
+			tabControl1.Controls.Clear();
+			foreach(DataRow item in db.loadDB("SELECT * FROM LOAISP").Rows)
+			{
+				tabControl1.TabPages.Add(item["TENLOAI"].ToString());
+			}
 		}
 		private void btn_ImportExcel_Click(object sender, EventArgs e)
 		{

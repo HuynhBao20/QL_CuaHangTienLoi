@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using APP.Views;
 using ConnectionDB;
+using ConnectionDB.Logic;
+
 namespace APP.Controllers
 {
 	//Summary:
@@ -18,13 +20,15 @@ namespace APP.Controllers
 	{
 		Connection db = new Connection();
 		CustomTool custom = new CustomTool();
-		public Label MAHD;
+		Process p = new Process();
+		public string MAHD;
+		public Label BILLID;
 		public Label NgayLap;
 		public static string getBillID = "SELECT TOP 1 MAHD FROM HOADON ORDER BY MAHD DESC";
 		//Hàm hay dùng
 		public string fullPath(string Fpath) => Path.GetFullPath(Fpath); //Hàm này lấy ra đường dẫn của file
 		public string fpathImage(string ImageName) => File.Exists(fullPath(@"../../Resources/" + ImageName.Trim() + ".jpg")) ? fullPath(@"../../Resources/" + ImageName.Trim() + ".jpg") : fullPath(@"../../Resources/Sp.jpg");
-		public string getHoaDon() => db.ExcuteReader("SELECT TRANGTHAI FROM HOADON", "TRANGTHAI") == "Chưa xuất" ? db.ExcuteReader(UI.getBillID, "MAHD") : "";
+		public string getHoaDon() => db.ExcuteReader("SELECT TOP 1 TRANGTHAI FROM HOADON ORDER BY MAHD desc", "TRANGTHAI") == "Chưa xuất" ? db.ExcuteReader(UI.getBillID, "MAHD") : "";
 		//load san pham
 		public void loadCombobox(ComboBox combo, string Sql, string display, string Value)
 		{
@@ -147,7 +151,7 @@ namespace APP.Controllers
 			DataTable da = db.loadDB(SQL);
 			foreach (DataRow item in da.Rows)
 			{
-				this.MAHD = _MAHD;
+				this.BILLID = _MAHD;
 				this.NgayLap = NgayLap;
 				custom.UI_Load("",
 							   fullPath(@"../../Resources/iconHoaDon.png"),
@@ -157,41 +161,52 @@ namespace APP.Controllers
 							   (sender, e) => Event_Bill_Process_Click(sender, e, item["MAHD"].ToString(), item["NGAYLAP"].ToString(), flowLayout));
 			}
 		}
-		
 		//Xử lý sự kiện
 		public void Event_Product_Click(object sender, EventArgs e, string MASP, FlowLayoutPanel flp, TextBox ThanhTien)
 		{
 			try
 			{
-				Add_Product_Bill(MASP);
+				Add_Product_Bill(MASP, ThanhTien);
 				flp.Controls.Clear();
-				if(getHoaDon() == "")
-				{
-					MessageBox.Show("Chưa tạo hóa đơn");
-				} else
-				{
-					UI_BillDetail(flp, getHoaDon());
-				}	
-				
-				ThanhTien.Text = db.ExcuteReader($"EXEC Tong_ThanhTien {getHoaDon()}", "Thành tiền");
+				UI_BillDetail(flp, this.BILLID.Text);
+				//ThanhTien.Text = db.ExcuteReader($"EXEC Tong_ThanhTien '{db.ExcuteReader(UI.getBillID, "MAHD")}'", "Thành tiền");
+				//ThanhTien.Text = string.IsNullOrEmpty(this.BILLID.Text) ? db.ExcuteReader($"EXEC Tong_ThanhTien '{db.ExcuteReader(UI.getBillID, "MAHD")}'", "Thành tiền") : 
+				//	db.ExcuteReader($"EXEC Tong_ThanhTien '{this.BILLID.Text}'", "Thành tiền");
+
 			}
 			catch (Exception ex)
 			{
 				MessageBox.Show(ex.Message);
 			}
 		}
-		public void Add_Product_Bill(string MASP)
+		public void Add_Product_Bill(string MASP, TextBox ThanhTien)
 		{
+			string MAHD = string.IsNullOrEmpty(this.BILLID.Text) ? p.getMAHD(db.ExcuteReader(UI.getBillID, "MAHD").Trim()) : this.BILLID.Text;
 			try
 			{
-				string Sql = $"INSERT INTO CT_HOADON(MAHD, MASP, SOLUONG) VALUES ('{db.ExcuteReader(UI.getBillID, "MAHD")}', '{MASP}', 1)";
-				db.ExcuteQuery(Sql);
+				if(MAHD != this.BILLID.Text)
+				{
+					string themHD = $"INSERT INTO HOADON(MAHD, MAKH, MANV) VALUES ('{MAHD}', 'KH001', 'NV001')";
+					db.ExcuteQuery(themHD);
+					this.BILLID.Text = MAHD;
+				}
+				string is_Bill_Active = db.ExcuteReader($"SELECT * FROM HOADON WHERE MAHD = '{MAHD}'", "TRANGTHAI");
+				if (is_Bill_Active == "Đã xuất hóa đơn" || is_Bill_Active == "Đã hủy")
+				{
+					MessageBox.Show("Không thể thêm sản phẩm khi đã xuất hóa đơn");
+				}else
+				{
+					string Sql = $"INSERT INTO CT_HOADON(MAHD, MASP, SOLUONG) VALUES ('{MAHD}', '{MASP}', 1)";
+					db.ExcuteQuery(Sql);					
+					ThanhTien.Text = db.ExcuteReader($"EXEC Tong_ThanhTien '{MAHD}'", "Thành tiền");
+				}
+
 			} catch
 			{
 				db.close();
-				int SL = int.Parse(db.ExcuteReader($"SELECT SOLUONG FROM CT_HOADON WHERE MAHD = '{getHoaDon()}' AND MASP = '{MASP}'", "SOLUONG"));
+				int SL = int.Parse(db.ExcuteReader($"SELECT SOLUONG FROM CT_HOADON WHERE MAHD = '{MAHD}' AND MASP = '{MASP}'", "SOLUONG"));
 				SL++;
-				string Sql = $"UPDATE CT_HOADON SET SOLUONG = {SL} WHERE MAHD = '{getHoaDon()}' AND MASP = '{MASP}'";
+				string Sql = $"UPDATE CT_HOADON SET SOLUONG = {SL} WHERE MAHD = '{MAHD}' AND MASP = '{MASP}'";
 				db.ExcuteQuery(Sql);
 			}
 		}
@@ -217,7 +232,7 @@ namespace APP.Controllers
 		public void Event_Bill_Process_Click(object sender, EventArgs e, string MAHD, string NgayLap, FlowLayoutPanel flow)
 		{
 			flow.Controls.Clear();
-			this.MAHD.Text = MAHD;
+			this.BILLID.Text = MAHD;
 			this.NgayLap.Text = DateTime.Parse(NgayLap).ToString("dd/MM/yyyy HH:mm:ss");
 			UI_BillDetail(flow, MAHD);
 		}

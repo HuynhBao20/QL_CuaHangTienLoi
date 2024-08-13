@@ -21,9 +21,9 @@ namespace APP.Controllers
             // Create a new series
             Series series = new Series("Doanh thu theo ngày")
             {
-                ChartType = SeriesChartType.Line, // Set chart type to Column
-                XValueType = ChartValueType.String, // X-axis type (e.g., categories)
-                YValueType = ChartValueType.Double // Y-axis type (e.g., values)
+                ChartType = SeriesChartType.Line,
+                XValueType = ChartValueType.String,
+                YValueType = ChartValueType.Double 
             };
             foreach(DataRow item in da.Rows)
 			{

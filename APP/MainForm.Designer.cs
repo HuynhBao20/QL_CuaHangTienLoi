@@ -32,16 +32,14 @@ namespace APP
 			this.components = new System.ComponentModel.Container();
 			System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Trang chủ");
 			System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Quản lý bán hàng");
-			System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Quản lý hàng hóa");
-			System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Quản lý kho");
-			System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Danh mục bán hàng", new System.Windows.Forms.TreeNode[] {
+			System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Quản lý kho");
+			System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Danh mục bán hàng", new System.Windows.Forms.TreeNode[] {
             treeNode2,
-            treeNode3,
-            treeNode4});
-			System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Hóa đơn trong ngày");
-			System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Quản lý hóa đơn", new System.Windows.Forms.TreeNode[] {
-            treeNode6});
-			System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Quản lý khách hàng");
+            treeNode3});
+			System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Hóa đơn trong ngày");
+			System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Quản lý hóa đơn", new System.Windows.Forms.TreeNode[] {
+            treeNode5});
+			System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Quản lý khách hàng");
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.pnl_Load_Main = new System.Windows.Forms.Panel();
@@ -59,8 +57,8 @@ namespace APP
 			// 
 			this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.tableLayoutPanel1.ColumnCount = 2;
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.0829F));
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.9171F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.60104F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.39896F));
 			this.tableLayoutPanel1.Controls.Add(this.pnl_Load_Main, 1, 1);
 			this.tableLayoutPanel1.Controls.Add(this.tv_DanhMuc, 0, 1);
 			this.tableLayoutPanel1.Controls.Add(this.toolStrip1, 0, 0);
@@ -78,10 +76,10 @@ namespace APP
 			// pnl_Load_Main
 			// 
 			this.pnl_Load_Main.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pnl_Load_Main.Location = new System.Drawing.Point(205, 47);
+			this.pnl_Load_Main.Location = new System.Drawing.Point(214, 47);
 			this.pnl_Load_Main.Margin = new System.Windows.Forms.Padding(4);
 			this.pnl_Load_Main.Name = "pnl_Load_Main";
-			this.pnl_Load_Main.Size = new System.Drawing.Size(1335, 727);
+			this.pnl_Load_Main.Size = new System.Drawing.Size(1326, 727);
 			this.pnl_Load_Main.TabIndex = 0;
 			// 
 			// tv_DanhMuc
@@ -98,26 +96,24 @@ namespace APP
 			treeNode2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
 			treeNode2.Name = "Node1";
 			treeNode2.Text = "Quản lý bán hàng";
-			treeNode3.Name = "Node3";
-			treeNode3.Text = "Quản lý hàng hóa";
-			treeNode4.Name = "Node4";
-			treeNode4.Text = "Quản lý kho";
-			treeNode5.ImageIndex = -2;
-			treeNode5.Name = "Node0";
-			treeNode5.Text = "Danh mục bán hàng";
-			treeNode6.Name = "Node1";
-			treeNode6.Text = "Hóa đơn trong ngày";
+			treeNode3.Name = "Node4";
+			treeNode3.Text = "Quản lý kho";
+			treeNode4.ImageIndex = -2;
+			treeNode4.Name = "Node0";
+			treeNode4.Text = "Danh mục bán hàng";
+			treeNode5.Name = "Node1";
+			treeNode5.Text = "Hóa đơn trong ngày";
+			treeNode6.Name = "Node0";
+			treeNode6.Text = "Quản lý hóa đơn";
 			treeNode7.Name = "Node0";
-			treeNode7.Text = "Quản lý hóa đơn";
-			treeNode8.Name = "Node0";
-			treeNode8.Text = "Quản lý khách hàng";
+			treeNode7.Text = "Quản lý khách hàng";
 			this.tv_DanhMuc.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode1,
-            treeNode5,
-            treeNode7,
-            treeNode8});
+            treeNode4,
+            treeNode6,
+            treeNode7});
 			this.tv_DanhMuc.SelectedImageIndex = 0;
-			this.tv_DanhMuc.Size = new System.Drawing.Size(193, 727);
+			this.tv_DanhMuc.Size = new System.Drawing.Size(202, 727);
 			this.tv_DanhMuc.TabIndex = 1;
 			this.tv_DanhMuc.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tv_DanhMuc_NodeMouseClick);
 			// 
