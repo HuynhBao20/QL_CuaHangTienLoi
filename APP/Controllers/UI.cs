@@ -161,6 +161,29 @@ namespace APP.Controllers
 							   (sender, e) => Event_Bill_Process_Click(sender, e, item["MAHD"].ToString(), item["NGAYLAP"].ToString(), flowLayout));
 			}
 		}
+		public void load_Product_Detail(TabControl tabControl1)
+		{
+			tabControl1.Controls.Clear();
+			foreach (DataRow item in db.loadDB("SELECT * FROM LOAISP").Rows)
+			{
+				TabPage tabPage = new TabPage(item["TENLOAI"].ToString());
+				FlowLayoutPanel flp = new FlowLayoutPanel();
+				flp.Dock = DockStyle.Fill;
+				foreach (DataRow pro in db.loadDB($"Select * from SANPHAM where MALOAI = {int.Parse(item["MALOAI"].ToString())}").Rows)
+				{
+					EventHandler e = (sender, ex) => { };
+					custom.UI_Load(fullPath(@"../../Resources/pngtree-purple-gradient-geometric-circle-background-image_50104.jpg"),
+								   fpathImage(pro["MASP"].ToString()),
+								   flp,
+								   pro["TENSP"].ToString(),
+								   145,
+									e);
+				}
+				tabPage.Controls.Add(flp);
+				tabControl1.Controls.Add(tabPage);
+			}
+
+		}
 		//Xử lý sự kiện
 		public void Event_Product_Click(object sender, EventArgs e, string MASP, FlowLayoutPanel flp, TextBox ThanhTien)
 		{

@@ -10,6 +10,25 @@ CREATE TABLE THONGTINCUAHANG
 	EMAIL	NCHAR(40),
 	HOTEN	NVARCHAR(40)
 )
+CREATE TABLE _USER
+(
+	USERID	NVARCHAR(30) PRIMARY KEY,
+
+)
+GO
+CREATE TABLE Roles
+(
+	RoleID		Nvarchar(30) PRIMARY KEY,
+	RoleName	NVARCHAR(50),
+	PrivID		NVARCHAR(30),
+)
+GO
+CREATE TABLE Priv
+(
+	PrivID	Nvarchar(30) PRIMARY KEY,
+	PrivName NVARCHAR(30),
+
+)
 GO
 insert into THONGTINCUAHANG values ('CH001', N'140 Lê Trọng Tấn, Phường Tây Thạnh, Quận Tân Phú, TPHCM', '0334661938', 'huynhthebao.201020020@gmail.com', N'Huỳnh Thế Bảo')
 --bảng nhân viên
@@ -170,7 +189,7 @@ BEGIN
 END
 GO
 --Summary: TRIGGER Này dùng để ràng buộc sau khi xuất hóa đơn không được chỉnh sửa
-ALTER TRIGGER IS_Bill_Cancle
+CREATE TRIGGER IS_Bill_Cancle
 ON CT_HOADON
 AFTER DELETE
 AS 
@@ -244,7 +263,7 @@ END
 EXEC sp_ThongKe 
 GO
 --Thống kê hóa đơn theo tháng
-ALTER PROC sp_ThongKeTheoThang @NGAYLAP int
+CREATE PROC sp_ThongKeTheoThang @NGAYLAP int
 AS
 BEGIN
 	SELECT MONTH(NGAYLAP), SUM(sp.DONGIA * ct.SOLUONG) as N'Tổng giá trị hóa đơn'
@@ -255,7 +274,7 @@ END
 EXEC sp_ThongKeTheoThang 8
 GO
 --Theo ngày
-ALTER PROC sp_ThongKeTheoNgay
+CREATE PROC sp_ThongKeTheoNgay
 AS
 BEGIN
 	SELECT DAY(NGAYLAP) AS N'Ngày lập', YEAR(NGAYLAP) AS N'Năm', SUM(sp.DONGIA * ct.SOLUONG) as N'Tổng giá trị hóa đơn'
@@ -264,6 +283,15 @@ BEGIN
 	GROUP BY DAY(NGAYLAP), YEAR(NGAYLAP)
 END
 EXEC sp_ThongKeTheoNgay
+GO
+--Summary: Proc này dùng để tính sản phẩm được mua nhiều nhất (Mới)
+CREATE PROC sp_SoSP
+AS
+BEGIN
+	SELECT ct.MASP, TENSP, MONTH(NGAYLAP) as 'NGAYLAP', SUM(SOLUONG) AS 'SOLUONG' FROM CT_HOADON ct, SANPHAM sp, HOADON hd
+	WHERE ct.MASP = sp.MASP AND hd.MAHD = ct.MAHD
+	GROUP BY ct.MASP, TENSP, MONTH(NGAYLAP)
+END
 GO
 --Lấy hóa đơn chưa xuất
 CREATE PROC sp_HD_ChuaXuat

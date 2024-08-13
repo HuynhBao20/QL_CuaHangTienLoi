@@ -18,6 +18,7 @@ namespace APP.Views
 		{
 			InitializeComponent();
 			a.Analyst_Month(chart1);
+			a.Analyst_Product_Buy(chart2);
 		}
 	}
 }

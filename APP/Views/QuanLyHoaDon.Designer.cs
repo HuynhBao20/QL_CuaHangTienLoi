@@ -134,6 +134,7 @@ namespace APP.Views
 			// rd_HomNay
 			// 
 			this.rd_HomNay.AutoSize = true;
+			this.rd_HomNay.Checked = true;
 			this.rd_HomNay.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.rd_HomNay.Location = new System.Drawing.Point(3, 3);
 			this.rd_HomNay.Name = "rd_HomNay";
@@ -141,6 +142,7 @@ namespace APP.Views
 			this.rd_HomNay.TabIndex = 0;
 			this.rd_HomNay.TabStop = true;
 			this.rd_HomNay.Text = "Hôm nay";
+			this.rd_HomNay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.rd_HomNay.UseVisualStyleBackColor = true;
 			this.rd_HomNay.CheckedChanged += new System.EventHandler(this.rd_HomNay_CheckedChanged);
 			// 
@@ -152,8 +154,8 @@ namespace APP.Views
 			this.rd_ChonNgay.Name = "rd_ChonNgay";
 			this.rd_ChonNgay.Size = new System.Drawing.Size(168, 28);
 			this.rd_ChonNgay.TabIndex = 0;
-			this.rd_ChonNgay.TabStop = true;
 			this.rd_ChonNgay.Text = "Chọn ngày";
+			this.rd_ChonNgay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.rd_ChonNgay.UseVisualStyleBackColor = true;
 			this.rd_ChonNgay.CheckedChanged += new System.EventHandler(this.rd_ChonNgay_CheckedChanged);
 			// 

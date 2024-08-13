@@ -195,6 +195,9 @@
   <ItemGroup>
     <Content Include="Resources\01010101.jpg" />
     <Content Include="Resources\01020101.jpg" />
+    <None Include="Resources\ExplorerFile.png" />
+    <None Include="Resources\icona.png" />
+    <None Include="Resources\avatar.jpg" />
     <Content Include="Resources\iconHoaDon.png" />
     <Content Include="Resources\quan-ly-ton-kho-la-gi.png" />
     <Content Include="Resources\Sp.jpg" />

@@ -33,5 +33,23 @@ namespace APP.Controllers
             // Add series to the chart
             chart.Series.Add(series);
         }
+        public void Analyst_Product_Buy(Chart chart)
+		{
+            ChartArea chartArea = new ChartArea("");
+            DataTable da = db.loadDB("EXEC sp_SoSP");
+            Series series = new Series("")
+            {
+                ChartType = SeriesChartType.Column,
+                XValueType = ChartValueType.String,
+                YValueType = ChartValueType.Double
+            };
+            foreach (DataRow item in da.Rows)
+            {
+                series.Points.AddXY(item["TENSP"].ToString(), int.Parse(item["SOLUONG"].ToString()));
+            }
+
+            // Add series to the chart
+            chart.Series.Add(series);
+        }
 	}
 }
