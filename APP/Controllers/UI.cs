@@ -189,7 +189,7 @@ namespace APP.Controllers
 		{
 			try
 			{
-				Add_Product_Bill(MASP, ThanhTien);
+				Add_ProductToBill(MASP, ThanhTien);
 				flp.Controls.Clear();
 				UI_BillDetail(flp, this.BILLID.Text);
 				//ThanhTien.Text = db.ExcuteReader($"EXEC Tong_ThanhTien '{db.ExcuteReader(UI.getBillID, "MAHD")}'", "Thành tiền");
@@ -202,7 +202,7 @@ namespace APP.Controllers
 				MessageBox.Show(ex.Message);
 			}
 		}
-		public void Add_Product_Bill(string MASP, TextBox ThanhTien)
+		public void Add_ProductToBill(string MASP, TextBox ThanhTien)
 		{
 			string MAHD = string.IsNullOrEmpty(this.BILLID.Text) ? p.getMAHD(db.ExcuteReader(UI.getBillID, "MAHD").Trim()) : this.BILLID.Text;
 			try

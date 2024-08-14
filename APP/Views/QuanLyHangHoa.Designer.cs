@@ -80,9 +80,10 @@ namespace APP.Views
 			this.flp_HDChuaXuat = new System.Windows.Forms.FlowLayoutPanel();
 			this.button2 = new System.Windows.Forms.Button();
 			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.panel1 = new System.Windows.Forms.Panel();
 			this.imageList1 = new System.Windows.Forms.ImageList(this.components);
 			this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-			this.panel1 = new System.Windows.Forms.Panel();
+			this.btnXemSanPham = new System.Windows.Forms.Button();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.tableLayoutPanel3.SuspendLayout();
@@ -375,6 +376,7 @@ namespace APP.Views
 			this.tableLayoutPanel2.Controls.Add(this.btnThemKhach, 3, 2);
 			this.tableLayoutPanel2.Controls.Add(this.btnThemHoaDon, 2, 0);
 			this.tableLayoutPanel2.Controls.Add(this.btnHuyHoaDon, 3, 0);
+			this.tableLayoutPanel2.Controls.Add(this.btnXemSanPham, 3, 3);
 			this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 23);
 			this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -653,7 +655,7 @@ namespace APP.Views
 			this.tabPage2.Location = new System.Drawing.Point(4, 29);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(789, 541);
+			this.tabPage2.Size = new System.Drawing.Size(789, 516);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Danh sách hóa đơn chưa xuất";
 			this.tabPage2.UseVisualStyleBackColor = true;
@@ -664,7 +666,7 @@ namespace APP.Views
 			this.gp_HoaDonChuaXuat.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.gp_HoaDonChuaXuat.Location = new System.Drawing.Point(3, 3);
 			this.gp_HoaDonChuaXuat.Name = "gp_HoaDonChuaXuat";
-			this.gp_HoaDonChuaXuat.Size = new System.Drawing.Size(783, 535);
+			this.gp_HoaDonChuaXuat.Size = new System.Drawing.Size(783, 510);
 			this.gp_HoaDonChuaXuat.TabIndex = 0;
 			this.gp_HoaDonChuaXuat.TabStop = false;
 			this.gp_HoaDonChuaXuat.Text = "Hóa đơn chưa xuất";
@@ -684,7 +686,7 @@ namespace APP.Views
 			this.tableLayoutPanel8.RowCount = 2;
 			this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.876228F));
 			this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.12377F));
-			this.tableLayoutPanel8.Size = new System.Drawing.Size(777, 509);
+			this.tableLayoutPanel8.Size = new System.Drawing.Size(777, 484);
 			this.tableLayoutPanel8.TabIndex = 0;
 			// 
 			// flp_HDChuaXuat
@@ -692,9 +694,9 @@ namespace APP.Views
 			this.flp_HDChuaXuat.AutoScroll = true;
 			this.tableLayoutPanel8.SetColumnSpan(this.flp_HDChuaXuat, 3);
 			this.flp_HDChuaXuat.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.flp_HDChuaXuat.Location = new System.Drawing.Point(3, 37);
+			this.flp_HDChuaXuat.Location = new System.Drawing.Point(3, 36);
 			this.flp_HDChuaXuat.Name = "flp_HDChuaXuat";
-			this.flp_HDChuaXuat.Size = new System.Drawing.Size(771, 469);
+			this.flp_HDChuaXuat.Size = new System.Drawing.Size(771, 445);
 			this.flp_HDChuaXuat.TabIndex = 0;
 			// 
 			// button2
@@ -702,7 +704,7 @@ namespace APP.Views
 			this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.button2.Location = new System.Drawing.Point(238, 3);
 			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(105, 28);
+			this.button2.Size = new System.Drawing.Size(105, 27);
 			this.button2.TabIndex = 2;
 			this.button2.Text = "Tìm";
 			this.button2.UseVisualStyleBackColor = true;
@@ -713,14 +715,8 @@ namespace APP.Views
 			this.textBox1.Location = new System.Drawing.Point(3, 3);
 			this.textBox1.Multiline = true;
 			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(229, 28);
+			this.textBox1.Size = new System.Drawing.Size(229, 27);
 			this.textBox1.TabIndex = 3;
-			// 
-			// imageList1
-			// 
-			this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-			this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-			this.imageList1.Images.SetKeyName(0, "pngtree-add-customers-icon-color-flat-png-image_4674922.png");
 			// 
 			// panel1
 			// 
@@ -730,6 +726,22 @@ namespace APP.Views
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(1419, 27);
 			this.panel1.TabIndex = 6;
+			// 
+			// imageList1
+			// 
+			this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+			this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+			this.imageList1.Images.SetKeyName(0, "pngtree-add-customers-icon-color-flat-png-image_4674922.png");
+			// 
+			// btnXemSanPham
+			// 
+			this.btnXemSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.btnXemSanPham.Location = new System.Drawing.Point(639, 121);
+			this.btnXemSanPham.Name = "btnXemSanPham";
+			this.btnXemSanPham.Size = new System.Drawing.Size(149, 31);
+			this.btnXemSanPham.TabIndex = 16;
+			this.btnXemSanPham.Text = "Xem sản phẩm";
+			this.btnXemSanPham.UseVisualStyleBackColor = true;
 			// 
 			// QuanLyHangHoa
 			// 
@@ -823,5 +835,6 @@ namespace APP.Views
 		private System.Windows.Forms.Button btnTotalMoMo;
 		private System.Windows.Forms.Button btnMacDinh;
 		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Button btnXemSanPham;
 	}
 }

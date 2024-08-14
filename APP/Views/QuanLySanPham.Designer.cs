@@ -363,7 +363,7 @@ namespace APP.Views
 			this.btn_ImportExcel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.btn_ImportExcel.Location = new System.Drawing.Point(3, 68);
 			this.btn_ImportExcel.Name = "btn_ImportExcel";
-			this.btn_ImportExcel.Size = new System.Drawing.Size(110, 60);
+			this.btn_ImportExcel.Size = new System.Drawing.Size(111, 60);
 			this.btn_ImportExcel.TabIndex = 0;
 			this.btn_ImportExcel.Text = "Import";
 			this.btn_ImportExcel.UseVisualStyleBackColor = true;
@@ -374,7 +374,7 @@ namespace APP.Views
 			this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.button1.Location = new System.Drawing.Point(3, 3);
 			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(110, 59);
+			this.button1.Size = new System.Drawing.Size(111, 59);
 			this.button1.TabIndex = 1;
 			this.button1.Text = "Thêm";
 			this.button1.UseVisualStyleBackColor = true;
@@ -382,9 +382,9 @@ namespace APP.Views
 			// button2
 			// 
 			this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.button2.Location = new System.Drawing.Point(119, 3);
+			this.button2.Location = new System.Drawing.Point(120, 3);
 			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(110, 59);
+			this.button2.Size = new System.Drawing.Size(111, 59);
 			this.button2.TabIndex = 1;
 			this.button2.Text = "Sửa";
 			this.button2.UseVisualStyleBackColor = true;
@@ -392,9 +392,9 @@ namespace APP.Views
 			// button3
 			// 
 			this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.button3.Location = new System.Drawing.Point(235, 3);
+			this.button3.Location = new System.Drawing.Point(237, 3);
 			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(113, 59);
+			this.button3.Size = new System.Drawing.Size(111, 59);
 			this.button3.TabIndex = 1;
 			this.button3.Text = "Xóa";
 			this.button3.UseVisualStyleBackColor = true;

@@ -198,6 +198,10 @@
     <None Include="Resources\ExplorerFile.png" />
     <None Include="Resources\icona.png" />
     <None Include="Resources\avatar.jpg" />
+    <None Include="Resources\8160405.png" />
+    <None Include="Resources\5087579.png" />
+    <None Include="Resources\4022801.png" />
+    <None Include="Resources\9759376.png" />
     <Content Include="Resources\iconHoaDon.png" />
     <Content Include="Resources\quan-ly-ton-kho-la-gi.png" />
     <Content Include="Resources\Sp.jpg" />

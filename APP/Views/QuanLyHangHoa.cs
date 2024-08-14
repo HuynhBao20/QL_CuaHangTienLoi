@@ -118,9 +118,10 @@ namespace APP.Views
 				}
 				else
 				{
-					
+
 					string Sql = $"INSERT INTO CT_HOADON(MAHD, MASP, SOLUONG) VALUES ('{MAHD}', '{txtMaSP.Text}', 1)";
 					db.ExcuteQuery(Sql);
+					//ui.Add_ProductToBill(txtMaSP.Text, txtThanhTien);
 					ui.UI_BillDetail(flp_BillDetail, MAHD);
 				}
 			}
