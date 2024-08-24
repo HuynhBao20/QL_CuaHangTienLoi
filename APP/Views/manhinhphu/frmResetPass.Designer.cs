@@ -39,15 +39,19 @@ namespace APP.Views.manhinhphu
 			this.label4 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// txtOldPass
 			// 
-			this.txtOldPass.Location = new System.Drawing.Point(216, 55);
+			this.txtOldPass.Dock = System.Windows.Forms.DockStyle.Left;
+			this.txtOldPass.Location = new System.Drawing.Point(0, 0);
 			this.txtOldPass.Margin = new System.Windows.Forms.Padding(4);
 			this.txtOldPass.Multiline = true;
 			this.txtOldPass.Name = "txtOldPass";
-			this.txtOldPass.Size = new System.Drawing.Size(278, 32);
+			this.txtOldPass.PasswordChar = '•';
+			this.txtOldPass.Size = new System.Drawing.Size(278, 38);
 			this.txtOldPass.TabIndex = 0;
 			// 
 			// txtNewPass
@@ -56,6 +60,7 @@ namespace APP.Views.manhinhphu
 			this.txtNewPass.Margin = new System.Windows.Forms.Padding(4);
 			this.txtNewPass.Multiline = true;
 			this.txtNewPass.Name = "txtNewPass";
+			this.txtNewPass.PasswordChar = '•';
 			this.txtNewPass.Size = new System.Drawing.Size(278, 32);
 			this.txtNewPass.TabIndex = 1;
 			// 
@@ -65,6 +70,7 @@ namespace APP.Views.manhinhphu
 			this.txtConfirmPass.Margin = new System.Windows.Forms.Padding(4);
 			this.txtConfirmPass.Multiline = true;
 			this.txtConfirmPass.Name = "txtConfirmPass";
+			this.txtConfirmPass.PasswordChar = '•';
 			this.txtConfirmPass.Size = new System.Drawing.Size(278, 32);
 			this.txtConfirmPass.TabIndex = 2;
 			// 
@@ -112,7 +118,7 @@ namespace APP.Views.manhinhphu
 			// 
 			this.label4.AutoSize = true;
 			this.label4.ForeColor = System.Drawing.Color.Red;
-			this.label4.Location = new System.Drawing.Point(514, 58);
+			this.label4.Location = new System.Drawing.Point(570, 58);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(27, 20);
 			this.label4.TabIndex = 2;
@@ -122,7 +128,7 @@ namespace APP.Views.manhinhphu
 			// 
 			this.label5.AutoSize = true;
 			this.label5.ForeColor = System.Drawing.Color.Red;
-			this.label5.Location = new System.Drawing.Point(514, 121);
+			this.label5.Location = new System.Drawing.Point(570, 121);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(27, 20);
 			this.label5.TabIndex = 2;
@@ -132,17 +138,26 @@ namespace APP.Views.manhinhphu
 			// 
 			this.label6.AutoSize = true;
 			this.label6.ForeColor = System.Drawing.Color.Red;
-			this.label6.Location = new System.Drawing.Point(514, 183);
+			this.label6.Location = new System.Drawing.Point(570, 183);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(27, 20);
 			this.label6.TabIndex = 2;
 			this.label6.Text = "(*)";
 			// 
+			// panel1
+			// 
+			this.panel1.Controls.Add(this.txtOldPass);
+			this.panel1.Location = new System.Drawing.Point(216, 49);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(319, 38);
+			this.panel1.TabIndex = 4;
+			// 
 			// frmResetPass
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(569, 317);
+			this.ClientSize = new System.Drawing.Size(640, 317);
+			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label6);
@@ -152,13 +167,14 @@ namespace APP.Views.manhinhphu
 			this.Controls.Add(this.btnResetPass);
 			this.Controls.Add(this.txtConfirmPass);
 			this.Controls.Add(this.txtNewPass);
-			this.Controls.Add(this.txtOldPass);
 			this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "frmResetPass";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "ĐỔI MẬT KHẨU";
+			this.panel1.ResumeLayout(false);
+			this.panel1.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -176,5 +192,6 @@ namespace APP.Views.manhinhphu
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.Panel panel1;
 	}
 }

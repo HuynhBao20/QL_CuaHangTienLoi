@@ -38,9 +38,6 @@ namespace APP.Views
 			try
 			{	
 				Connection conn = new Connection(txtUserName.Text, txtPass.Text);
-				string is_Active = conn.ExcuteReader($"SELECT TRANGTHAI FROM TAIKHOAN WHERE MANV = '{txtUserName.Text}'", "TRANGTHAI");
-				if(is_Active == "Đang hoạt động")
-				{
 					string dialog = conn.is_Connection() ? "Đăng nhập thành công" : "Đăng nhập thất bại";
 					if(dialog == "Đăng nhập thành công")
 					{
@@ -51,11 +48,6 @@ namespace APP.Views
 					{
 						MessageBox.Show(dialog);
 					}
-				} else
-				{
-					MessageBox.Show("Tài khoản đã: " + is_Active);
-
-				}
 			} catch(Exception ex)
 			{
 				MessageBox.Show(ex.Message);

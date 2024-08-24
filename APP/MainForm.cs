@@ -32,14 +32,14 @@ namespace APP
 		public void load()
 		{
 			UI ui = new UI();
-			Dashboard h = new Dashboard(UserName, PassWord);
+			HomePage h = new HomePage();
 			h.Dock = DockStyle.Fill;
 			h.TopLevel = false;
 			h.FormBorderStyle = FormBorderStyle.None;
 			pnl_Load_Main.Controls.Add(h);
 			h.Show();
 			tv_DanhMuc.Nodes.Clear();
-			foreach (DataRow item in conn.loadDB("SELECT * FROM PQMANHINH p, DANHSACHMANHINH ds WHERE p.ID = ds.ID AND p.MANV = 'NV001'").Rows)
+			foreach (DataRow item in conn.loadDB($"SELECT * FROM PQMANHINH p, DANHSACHMANHINH ds WHERE p.ID = ds.ID AND p.MANV = '{UserName}'").Rows)
 			{
 				 tv_DanhMuc.Nodes.Add(item["TENMH"].ToString());
 			}
