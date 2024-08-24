@@ -13,17 +13,17 @@ namespace APP.Views
 {
 	public partial class QuanLyHoaDon : Form
 	{
-		UI ui = new UI();
+		UI ui = new UI(new Label());
 		public QuanLyHoaDon()
 		{
 			InitializeComponent();
-			ui.load_HoaDon_ChuaXuat(flp_LoadHoaDon, "SELECT * FROM HOADON WHERE CAST(NGAYLAP AS DATE) = CAST(GETDATE() AS DATE)", new Label(), new Label(), new FlowLayoutPanel());
+			ui.load_HoaDon_ChuaXuat(flp_LoadHoaDon, "SELECT * FROM HOADON WHERE CAST(NGAYLAP AS DATE) = CAST(GETDATE() AS DATE)", new Label(), new Label(), new FlowLayoutPanel(), new TextBox());
 		}
 
 		private void rd_HomNay_CheckedChanged(object sender, EventArgs e)
 		{
 			dt_NgayChon.Enabled = false;
-			ui.load_HoaDon_ChuaXuat(flp_LoadHoaDon, "SELECT * FROM HOADON WHERE CAST(NGAYLAP AS DATE) = CAST(GETDATE() AS DATE)", new Label(), new Label(), new FlowLayoutPanel());
+			ui.load_HoaDon_ChuaXuat(flp_LoadHoaDon, "SELECT * FROM HOADON WHERE CAST(NGAYLAP AS DATE) = CAST(GETDATE() AS DATE)", new Label(), new Label(), new FlowLayoutPanel(), new TextBox());
 		}
 
 		private void rd_ChonNgay_CheckedChanged(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace APP.Views
 		{
 			ui.load_HoaDon_ChuaXuat(flp_LoadHoaDon,
 						$"SELECT * FROM HOADON WHERE FORMAT(NGAYLAP, 'dd/MM/yyyy') = CAST('{dt_NgayChon.Value.ToString("dd/MM/yyyy")}' AS DATE)",
-						new Label(), new Label(), new FlowLayoutPanel());
+						new Label(), new Label(), new FlowLayoutPanel(), new TextBox());
 
 		}
 	}

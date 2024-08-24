@@ -13,7 +13,7 @@ namespace APP.Views
 {
 	public partial class ChiTietHoaDon : Form
 	{
-		UI ui = new UI();
+		UI ui = new UI(new Label());
 		public ChiTietHoaDon(string MAHD)
 		{
 			InitializeComponent();

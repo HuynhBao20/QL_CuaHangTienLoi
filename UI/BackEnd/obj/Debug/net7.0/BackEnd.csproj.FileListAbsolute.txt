@@ -1,0 +1,14 @@
+C:\Users\HUYNH THE BAO\Desktop\Learn\src\UI\BackEnd\bin\Debug\net7.0\BackEnd.exe
+C:\Users\HUYNH THE BAO\Desktop\Learn\src\UI\BackEnd\bin\Debug\net7.0\BackEnd.deps.json
+C:\Users\HUYNH THE BAO\Desktop\Learn\src\UI\BackEnd\bin\Debug\net7.0\BackEnd.runtimeconfig.json
+C:\Users\HUYNH THE BAO\Desktop\Learn\src\UI\BackEnd\bin\Debug\net7.0\BackEnd.dll
+C:\Users\HUYNH THE BAO\Desktop\Learn\src\UI\BackEnd\bin\Debug\net7.0\BackEnd.pdb
+C:\Users\HUYNH THE BAO\Desktop\Learn\src\UI\BackEnd\obj\Debug\net7.0\BackEnd.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HUYNH THE BAO\Desktop\Learn\src\UI\BackEnd\obj\Debug\net7.0\BackEnd.AssemblyInfoInputs.cache
+C:\Users\HUYNH THE BAO\Desktop\Learn\src\UI\BackEnd\obj\Debug\net7.0\BackEnd.AssemblyInfo.cs
+C:\Users\HUYNH THE BAO\Desktop\Learn\src\UI\BackEnd\obj\Debug\net7.0\BackEnd.csproj.CoreCompileInputs.cache
+C:\Users\HUYNH THE BAO\Desktop\Learn\src\UI\BackEnd\obj\Debug\net7.0\BackEnd.dll
+C:\Users\HUYNH THE BAO\Desktop\Learn\src\UI\BackEnd\obj\Debug\net7.0\refint\BackEnd.dll
+C:\Users\HUYNH THE BAO\Desktop\Learn\src\UI\BackEnd\obj\Debug\net7.0\BackEnd.pdb
+C:\Users\HUYNH THE BAO\Desktop\Learn\src\UI\BackEnd\obj\Debug\net7.0\BackEnd.genruntimeconfig.cache
+C:\Users\HUYNH THE BAO\Desktop\Learn\src\UI\BackEnd\obj\Debug\net7.0\ref\BackEnd.dll

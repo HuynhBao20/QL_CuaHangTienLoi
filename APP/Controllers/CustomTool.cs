@@ -37,6 +37,7 @@ namespace APP.Controllers
 			btn.FlatAppearance.BorderSize = border;
 			return btn;
 		}
+		//LOAD SAN PHAM LEN FLP SAN PHAM
 		public void UI_Load(string ImagePathBg, string ImageFromFile, FlowLayoutPanel flp, string lable, int Width, EventHandler e)
 		{
 			Panel pnl = new Panel()
@@ -66,7 +67,8 @@ namespace APP.Controllers
 			pnl.Controls.Add(ProductName);
 			flp.Controls.Add(pnl);
 		}
-		public void UI_Load(FlowLayoutPanel flp, string MAHD, string Product_Name, string FilePath, string DonGia, string SL, string ThanhTien, int key, EventHandler e)
+		//LOAD SAN PHAM LEN FLP CHI TIET HOA DON
+		public void UI_Load(FlowLayoutPanel flp, string MAHD, string Product_Name, string FilePath, string DonGia, string SL, string ThanhTien, int key, TextBox tt, EventHandler e)
 		{
 			Control control;
 			Control control2;
@@ -199,13 +201,15 @@ namespace APP.Controllers
 			this.txt = txtSL;
 			this.dongia = DonGia;
 			string MASP = db.ExcuteReader($"SELECT MASP FROM SANPHAM WHERE TENSP = '{Product_Name}'", "MASP").ToString();
-			btnDesc.Click += (sender, ex) => Event_Product_Sort_Click(sender, ex, MAHD, MASP, "desc", txtSL, lb_ThanhTien, int.Parse(DonGia));
-			btnASC.Click += (sender, ex) => Event_Product_Sort_Click(sender, ex, MAHD, MASP, "asc", txtSL, lb_ThanhTien, int.Parse(DonGia));
+			btnDesc.Click += (sender, ex) => Event_Product_Sort_Click(sender, ex, MAHD, MASP, "desc", txtSL, lb_ThanhTien, int.Parse(DonGia), tt);
+			btnASC.Click += (sender, ex) => Event_Product_Sort_Click(sender, ex, MAHD, MASP, "asc", txtSL, lb_ThanhTien, int.Parse(DonGia), tt);
 			txtSL.TextChanged += (sender, ex) => Event_Input_ChangeText(sender, ex, MAHD, MASP, txtSL, int.Parse(DonGia), lb_ThanhTien);
 		}
-		public void Event_Product_Sort_Click(object sender, EventArgs e, string MAHD, string MASP, string sort, TextBox txt, Label thanhtien, int dongia)
+		public void Event_Product_Sort_Click(object sender, EventArgs e, string MAHD, string MASP, string sort, TextBox txt, Label thanhtien, int dongia, TextBox ThanhTien)
 		{
+			//Lấy số lượng từ đatabase
 			int SL = int.Parse(db.ExcuteReader($"SELECT SOLUONG FROM CT_HOADON WHERE MAHD = '{MAHD}' AND MASP = '{MASP}'", "SOLUONG"));
+
 			if(sort == "asc")
 			{
 				SL++;
@@ -219,15 +223,20 @@ namespace APP.Controllers
 				}
 			}
 			string Sql = $"UPDATE CT_HOADON SET SOLUONG = {SL} WHERE MAHD = '{MAHD}' AND MASP = '{MASP}'";
-			db.ExcuteQuery(Sql);
+			db.ExcuteQuery(Sql); //Thực thi SQL
+			//LUC TANG GIAM THI THANH TIEN TANG GIAM THEO
+			ThanhTien.Text = db.ExcuteReader($"EXEC Tong_ThanhTien {MAHD}", "Thành tiền");
+
 			txt.Text = SL.ToString();
 			thanhtien.Text = (int.Parse(txt.Text) * dongia).ToString();
+
 		}
 		public void Event_Input_ChangeText(object sender, EventArgs e, string MAHD, string MASP, TextBox txt, int DonGia, Label thanhtien)
 		{
-			string Sql = $"UPDATE CT_HOADON SET SOLUONG = {int.Parse(string.IsNullOrEmpty(txt.Text) ? "0" : txt.Text)} WHERE MAHD = '{MAHD}' AND MASP = '{MASP}'";
+			int SL = txt.Text == "" ? 1 : int.Parse(txt.Text);
+			string Sql = $"UPDATE CT_HOADON SET SOLUONG = {SL} WHERE MAHD = '{MAHD}' AND MASP = '{MASP}'";
 			db.ExcuteQuery(Sql);
-			thanhtien.Text = (int.Parse(txt.Text) * DonGia).ToString();
+			thanhtien.Text = (SL * DonGia).ToString();
 		}
 	}
 }

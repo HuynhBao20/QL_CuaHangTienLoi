@@ -10,24 +10,34 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ConnectionDB.Logic;
 using ConnectionDB;
+using APP.Views.manhinhphu;
 
 namespace APP.Views
 {
 	
 	public partial class QuanLySanPham : Form
 	{
-		UI ui = new UI();
-		Connection db = new Connection();
+		UI ui;
+		Connection db;
 		CustomTool cm = new CustomTool();
-		public QuanLySanPham()
+		public string UserName { get; set; }
+		public string PassWord { get; set; }
+
+
+		public QuanLySanPham(string User, string Pass)
 		{
 			InitializeComponent();
+			this.UserName = User;
+			this.PassWord = Pass;
+			ui = new UI(UserName, PassWord);
+			db = new Connection(UserName, PassWord);
 			load();
 		}
 		public void load()
 		{
 			ui.load_Product_Detail(tabControl1);
 			ui.loadCombobox(cboMaLoai, "SELECT * FROM LOAISP","TENLOAI", "TENLOAI");
+			ui.load_PhieuNhap(flpPhieuNhap);
 		}
 		private void btn_ImportExcel_Click(object sender, EventArgs e)
 		{
@@ -50,7 +60,6 @@ namespace APP.Views
 				MessageBox.Show("Thành công");
 			}
 		}
-
 		private void ptbProduct_Click(object sender, EventArgs e)
 		{
 			OpenFileDialog open = new OpenFileDialog();
@@ -62,6 +71,13 @@ namespace APP.Views
 				MessageBox.Show("Thành công");
 			}
 
+		}
+
+		private void btnNH_Click(object sender, EventArgs e)
+		{
+			frmNhapHang nh = new frmNhapHang(UserName, PassWord);
+			nh.StartPosition = FormStartPosition.CenterScreen;
+			nh.Show();
 		}
 	}
 }

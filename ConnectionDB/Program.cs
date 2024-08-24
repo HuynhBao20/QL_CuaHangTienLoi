@@ -10,11 +10,6 @@ namespace ConnectionDB
 	{
 		static void Main(string[] argv)
 		{
-			DBContext db = new DBContext();
-            foreach(var item in db.lstKhuyenMai())
-			{
-				Console.WriteLine(item.MASP);
-			}
             Console.ReadKey();
 		}
 	}

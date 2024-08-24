@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using APP.Views;
+using APP.Views.manhinhphu;
 using ConnectionDB;
 using ConnectionDB.Logic;
 
@@ -18,13 +19,29 @@ namespace APP.Controllers
 	// Class này dùng để thực hiện UI trên giao diện người dùng
 	public class UI
 	{
-		Connection db = new Connection();
+		Connection db { get; set; }
 		CustomTool custom = new CustomTool();
-		Process p = new Process();
 		public string MAHD;
 		public Label BILLID;
 		public Label NgayLap;
+		public string UserName { get; set; }
+		public string PassWord { get; set; }
+
 		public static string getBillID = "SELECT TOP 1 MAHD FROM HOADON ORDER BY MAHD DESC";
+		public UI() {
+			db = new Connection();
+		}
+		public UI(Label BILLID)
+		{
+			this.BILLID = BILLID;
+			db = new Connection();
+		}
+		public UI(string User, string Pass)
+		{
+			this.UserName = User;
+			this.PassWord = Pass;
+			db = new Connection(User, Pass);
+		}
 		//Hàm hay dùng
 		public string fullPath(string Fpath) => Path.GetFullPath(Fpath); //Hàm này lấy ra đường dẫn của file
 		public string fpathImage(string ImageName) => File.Exists(fullPath(@"../../Resources/" + ImageName.Trim() + ".jpg")) ? fullPath(@"../../Resources/" + ImageName.Trim() + ".jpg") : fullPath(@"../../Resources/Sp.jpg");
@@ -38,16 +55,19 @@ namespace APP.Controllers
 		}
 		public void loadTreeView(TreeView tv)
 		{
-			DataTable da = db.loadDB("SELECT TENLOAI FROM LOAISP");
+			tv.Nodes.Clear();
+			DataTable da = db.loadDB(Connection.Query_List_LoaiSP);
 			foreach (DataRow item in da.Rows)
 			{
 				tv.Nodes.Add(item["TENLOAI"].ToString());
 			}
 		}
 		//Load 
-		public void UI_LoadProduct(FlowLayoutPanel flp, FlowLayoutPanel billDetail, TextBox ThanhTien)
+		public void UI_LoadProduct(FlowLayoutPanel flp, FlowLayoutPanel billDetail, TextBox ThanhTien, string SDT)
 		{
 			DataTable da = db.loadDB("SELECT * FROM SANPHAM");
+			flp.Controls.Clear();
+			billDetail.Controls.Clear();
 			if (da.Rows.Count > 0)
 			{
 				foreach (DataRow item in da.Rows)
@@ -57,7 +77,7 @@ namespace APP.Controllers
 								   flp,
 								   item["TENSP"].ToString(),
 								   135,
-								   (sender, e) => Event_Product_Click(sender, e, item["MASP"].ToString(), billDetail, ThanhTien));
+								   (sender, e) => Event_Product_Click(sender, e, item["MASP"].ToString(), billDetail, ThanhTien, SDT));
 				}
 			} 
 			else
@@ -65,9 +85,11 @@ namespace APP.Controllers
 				MessageBox.Show("Không tìm thấy");
 			}
 		}
-		public void UI_BillDetail(FlowLayoutPanel flp, string MAHD)
+		public void UI_BillDetail(FlowLayoutPanel flp, string MAHD, TextBox ThanhTien)
 		{
+			flp.Controls.Clear();
 			Tilte(flp);
+			ThanhTien.Text = db.ExcuteReader($"EXEC Tong_ThanhTien {MAHD}", "Thành tiền");
 			DataTable da = db.loadDB($"exec Select_CTHoaDon '{MAHD}'");
 			foreach(DataRow item in da.Rows)
 			{
@@ -79,7 +101,8 @@ namespace APP.Controllers
 							   item["Số lượng"].ToString(),
 							   item["Thành Tiền"].ToString(),
 							   0,
-							   (sender, e) => Event_Del_Product_BillDetail(sender, e, item["Mã sản phẩm"].ToString(), flp, MAHD));
+							   ThanhTien,
+							   (sender, e) => Event_Del_Product_BillDetail(sender, e, item["Mã sản phẩm"].ToString(), flp, MAHD, ThanhTien));
 			}
 		}
 		public void Tilte(FlowLayoutPanel flp)
@@ -93,9 +116,10 @@ namespace APP.Controllers
 			   "Số lượng",
 			   "Thành Tiền",
 			   1,
+			   new TextBox(),
 			   (sender, e) => handler(sender, e));
 		}
-		public void Ui_Filter_Product(FlowLayoutPanel flp, string SQL, FlowLayoutPanel billDetail, TextBox ThanhTien)
+		public void Ui_Filter_Product(FlowLayoutPanel flp, string SQL, FlowLayoutPanel billDetail, TextBox ThanhTien, string SDT)
 		{
 			DataTable da = db.loadDB(SQL);
 			foreach (DataRow item in da.Rows)
@@ -105,7 +129,7 @@ namespace APP.Controllers
 							   flp,
 							   item["TENSP"].ToString(),
 							   135,
-							   (sender, e) => Event_Product_Click(sender, e, item["MASP"].ToString(), billDetail, ThanhTien));
+							   (sender, e) => Event_Product_Click(sender, e, item["MASP"].ToString(), billDetail, ThanhTien, SDT));
 
 			}
 		}
@@ -145,23 +169,24 @@ namespace APP.Controllers
 				flp.Controls.Add(pnl);
 			}
 		}
-		public void load_HoaDon_ChuaXuat(FlowLayoutPanel flp, string SQL, Label _MAHD, Label NgayLap, FlowLayoutPanel flowLayout)
-		{
-			flp.Controls.Clear();
-			DataTable da = db.loadDB(SQL);
-			foreach (DataRow item in da.Rows)
-			{
-				this.BILLID = _MAHD;
-				this.NgayLap = NgayLap;
-				custom.UI_Load("",
-							   fullPath(@"../../Resources/iconHoaDon.png"),
-							   flp, 
-							   $"MAHD: {item["MAHD"].ToString()} { Environment.NewLine + DateTime.Parse(item["NGAYLAP"].ToString()).ToString("dd/MM/yyyy HH:mm:ss")}", 
-							   140,
-							   (sender, e) => Event_Bill_Process_Click(sender, e, item["MAHD"].ToString(), item["NGAYLAP"].ToString(), flowLayout));
-			}
-		}
-		public void load_Product_Detail(TabControl tabControl1)
+        public void load_HoaDon_ChuaXuat(FlowLayoutPanel flp, string SQL, Label _MAHD, Label NgayLap, FlowLayoutPanel flowLayout, TextBox ThanhTien)
+        {
+            flp.Controls.Clear(); // Xóa các hóa đơn trước đó trong danh sách
+            DataTable da = db.loadDB(SQL);
+            foreach (DataRow item in da.Rows)
+            {
+                // Tạo một custom UI cho mỗi hóa đơn
+                // Khi click vào hóa đơn
+                custom.UI_Load("",
+                fullPath(@"../../Resources/iconHoaDon.png"),
+                flp,
+                $"MAHD: {item["MAHD"].ToString()} {Environment.NewLine + DateTime.Parse(item["NGAYLAP"].ToString()).ToString("dd/MM/yyyy HH:mm:ss")}",
+                140,
+                (sender, e) => Event_Bill_Process_Click(sender, e, item["MAHD"].ToString(), item["NGAYLAP"].ToString(), flowLayout, ThanhTien, NgayLap)); // Truyền lb_NgayLap từ lớp QuanLyHangHoa
+
+            }
+        }
+        public void load_Product_Detail(TabControl tabControl1)
 		{
 			tabControl1.Controls.Clear();
 			foreach (DataRow item in db.loadDB("SELECT * FROM LOAISP").Rows)
@@ -182,83 +207,208 @@ namespace APP.Controllers
 				tabPage.Controls.Add(flp);
 				tabControl1.Controls.Add(tabPage);
 			}
+		}
+		public void load_SanPham_PhieuNhap(FlowLayoutPanel flp, string MAPN)
+		{
+			DataTable da = db.loadDB("SELECT * FROM SANPHAM");
+			flp.Controls.Clear();
+			if (da.Rows.Count > 0)
+			{
+				foreach (DataRow item in da.Rows)
+				{
+					custom.UI_Load(fullPath(@"../../Resources/pngtree-purple-gradient-geometric-circle-background-image_50104.jpg"),
+								   fpathImage(item["MASP"].ToString()),
+								   flp,
+								   item["TENSP"].ToString(),
+								   135,
+								   (sender, e) => {
+									   frmNhapCTPhieu ct = new frmNhapCTPhieu(UserName, PassWord, item["MASP"].ToString(), MAPN);
+									   ct.Show();
+								   });
+				}
+			}
+			else
+			{
+				MessageBox.Show("Không tìm thấy");
+			}
+		}
+		public void load_PhieuNhap(FlowLayoutPanel flp)
+		{
+			flp.AutoScroll = true;
+			DataTable da = db.loadDB("SELECT DISTINCT MAPN, NGAYNHAP FROM PHIEUNHAP");
+			foreach(DataRow item in da.Rows)
+			{
+				Panel pnl = new Panel()
+				{
+					Width = 145,
+					Height = 190,
+					BackColor = Color.Transparent
+				};
+				Button btn = new Button()
+				{
+					Width = flp.Width - 10,
+					Height = 200,
+					BackColor = Color.Transparent,
+					Dock = DockStyle.Fill,
+					BackgroundImage = Image.FromFile(fullPath(@"../../Resources/IconKho.png")),
+					BackgroundImageLayout = ImageLayout.Stretch,
+					FlatStyle = FlatStyle.Flat
+				};
+				btn.FlatAppearance.BorderSize = 0;
+				Panel pn = new Panel()
+				{
+					Width = pnl.Width,
+					Height = 50,
+					Dock = DockStyle.Bottom,
+					BackColor = Color.White
+				};
+				Label ProductName = new Label()
+				{
+					Height = 50,
+					Text = item["MAPN"].ToString() + Environment.NewLine + item["NGAYNHAP"].ToString(),
+					Dock = DockStyle.Left,
+					BackColor = Color.Transparent,
+					TextAlign = ContentAlignment.MiddleCenter,
+				
+				};
+				Button btnXem = new Button()
+				{
+					Text = "Xem",
+					Width = 60,
+					Height = 50,
+					Dock = DockStyle.Right,
+					BackColor = Color.Green,
+					ForeColor = Color.White
+				};
+				//btn.Click += e;
+				pnl.Controls.Add(btn);
+				pn.Controls.Add(btnXem);
+				pn.Controls.Add(ProductName);
+				pnl.Controls.Add(pn);
+				flp.Controls.Add(pnl);
 
+			}
 		}
 		//Xử lý sự kiện
-		public void Event_Product_Click(object sender, EventArgs e, string MASP, FlowLayoutPanel flp, TextBox ThanhTien)
-		{
-			try
+			public void Event_Product_Click(object sender, EventArgs e, string MASP, FlowLayoutPanel flp, TextBox ThanhTien, string SDT)
 			{
-				Add_ProductToBill(MASP, ThanhTien);
-				flp.Controls.Clear();
-				UI_BillDetail(flp, this.BILLID.Text);
-				//ThanhTien.Text = db.ExcuteReader($"EXEC Tong_ThanhTien '{db.ExcuteReader(UI.getBillID, "MAHD")}'", "Thành tiền");
-				//ThanhTien.Text = string.IsNullOrEmpty(this.BILLID.Text) ? db.ExcuteReader($"EXEC Tong_ThanhTien '{db.ExcuteReader(UI.getBillID, "MAHD")}'", "Thành tiền") : 
-				//	db.ExcuteReader($"EXEC Tong_ThanhTien '{this.BILLID.Text}'", "Thành tiền");
-
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show(ex.Message);
-			}
-		}
-		public void Add_ProductToBill(string MASP, TextBox ThanhTien)
-		{
-			string MAHD = string.IsNullOrEmpty(this.BILLID.Text) ? p.getMAHD(db.ExcuteReader(UI.getBillID, "MAHD").Trim()) : this.BILLID.Text;
-			try
-			{
-				if(MAHD != this.BILLID.Text)
+				try
 				{
-					string themHD = $"INSERT INTO HOADON(MAHD, MAKH, MANV) VALUES ('{MAHD}', 'KH001', 'NV001')";
-					db.ExcuteQuery(themHD);
-					this.BILLID.Text = MAHD;
+					ThanhTien.Text = db.ExcuteReader($"EXEC Tong_ThanhTien {MAHD}", "Thành tiền");
+					Add_ProductToBill(MAHD, MASP,SDT ,ThanhTien);
+					flp.Controls.Clear();
+					UI_BillDetail(flp, this.BILLID.Text, ThanhTien);
 				}
-				string is_Bill_Active = db.ExcuteReader($"SELECT * FROM HOADON WHERE MAHD = '{MAHD}'", "TRANGTHAI");
-				if (is_Bill_Active == "Đã xuất hóa đơn" || is_Bill_Active == "Đã hủy")
+				catch (Exception ex)
 				{
-					MessageBox.Show("Không thể thêm sản phẩm khi đã xuất hóa đơn");
-				}else
-				{
-					string Sql = $"INSERT INTO CT_HOADON(MAHD, MASP, SOLUONG) VALUES ('{MAHD}', '{MASP}', 1)";
-					db.ExcuteQuery(Sql);					
-					ThanhTien.Text = db.ExcuteReader($"EXEC Tong_ThanhTien '{MAHD}'", "Thành tiền");
+					MessageBox.Show(ex.Message);
 				}
-
-			} catch
-			{
-				db.close();
-				int SL = int.Parse(db.ExcuteReader($"SELECT SOLUONG FROM CT_HOADON WHERE MAHD = '{MAHD}' AND MASP = '{MASP}'", "SOLUONG"));
-				SL++;
-				string Sql = $"UPDATE CT_HOADON SET SOLUONG = {SL} WHERE MAHD = '{MAHD}' AND MASP = '{MASP}'";
-				db.ExcuteQuery(Sql);
 			}
-		}
-		public void Event_Del_Product_BillDetail(object sender, EventArgs e, string MASP, FlowLayoutPanel flp, string MAHD)
+			public void Add_ProductToBill(string MAHD, string MASP, string SDT, TextBox ThanhTien)
+			{
+				try
+				{
+					// Xác định mã hóa đơn (MAHD)
+					MAHD = this.BILLID == null ? db.getMAHD(db.ExcuteReader(UI.getBillID, "MAHD").Trim(), "HD") : this.BILLID.Text;
+
+					// Nếu mã hóa đơn chưa tồn tại trong BILLID, thực hiện thêm mới
+					if (MAHD != this.BILLID.Text)
+					{
+						// Nếu số điện thoại (SDT) không được cung cấp, gán giá trị mặc định
+						SDT = SDT == "" ? "VL000" : db.ExcuteReader($"SELECT MAKH FROM KHACHHANG WHERE SDT = '{SDT}'", "SDT");
+
+						// Tạo câu lệnh SQL để thêm hóa đơn vào bảng HOADON
+						string themHD = $"INSERT INTO HOADON(MAHD, MAKH, MANV) VALUES ('{MAHD}', '{SDT}', '{UserName}')";
+						db.ExcuteQuery(themHD);
+
+						// Cập nhật mã hóa đơn vào control BILLID
+						this.BILLID.Text = MAHD;
+					}
+
+					// Kiểm tra trạng thái của hóa đơn
+					string is_Bill_Active = db.ExcuteReader($"SELECT * FROM HOADON WHERE MAHD = '{MAHD}'", "TRANGTHAI");
+					if (is_Bill_Active == "Đã xuất hóa đơn" || is_Bill_Active == "Đã hủy")
+					{
+						// Hiển thị thông báo nếu hóa đơn đã xuất hoặc đã bị hủy
+						MessageBox.Show("Không thể thêm sản phẩm khi đã xuất hóa đơn");
+					}
+					else
+					{
+						// Kiểm tra xem sản phẩm đã có trong hóa đơn chưa
+						string kt = $"SELECT COUNT(*) AS 'SL' FROM CT_HOADON WHERE MAHD = '{MAHD}' AND MASP = '{MASP}'";
+						int is_Exist = int.Parse(db.ExcuteReader(kt, "SL"));
+
+						// Xác định số lượng sản phẩm hiện có trong hóa đơn
+						int SL = is_Exist > 0 ?
+							int.Parse(db.ExcuteReader($"SELECT SOLUONG FROM CT_HOADON WHERE MAHD = '{MAHD}' AND MASP = '{MASP}'", "SOLUONG")) :
+							0;
+
+						// Tăng số lượng sản phẩm lên 1
+						SL++;
+
+						// Tạo câu lệnh SQL để thêm hoặc cập nhật sản phẩm trong hóa đơn
+						string Sql = is_Exist < 1 ?
+							$"INSERT INTO CT_HOADON(MAHD, MASP, SOLUONG) VALUES ('{MAHD}', '{MASP}', 1)" :
+							$"UPDATE CT_HOADON SET SOLUONG = {SL} WHERE MAHD = '{MAHD}' AND MASP = '{MASP}'";
+
+						// Thực thi câu lệnh SQL
+						db.ExcuteQuery(Sql);
+
+						// Cập nhật thành tiền vào control ThanhTien
+						ThanhTien.Text = db.ExcuteReader($"EXEC Tong_ThanhTien '{MAHD}'", "Thành tiền");
+					}
+				}
+				catch (Exception e)
+				{
+					// Hiển thị thông báo lỗi nếu có ngoại lệ xảy ra
+					MessageBox.Show(e.Message);
+				}
+			}
+
+        public void Event_Del_Product_BillDetail(object sender, EventArgs e, string MASP, FlowLayoutPanel flp, string MAHD, TextBox ThanhTien)
 		{
 			try
 			{
 				string Sql = $"DELETE FROM CT_HOADON WHERE MASP = '{MASP}' AND MAHD = '{MAHD}'";
 				db.ExcuteQuery(Sql);
 				flp.Controls.Clear();
-				UI_BillDetail(flp, MAHD);
-			}catch(SqlException ex)
+				UI_BillDetail(flp, MAHD, ThanhTien);
+			}
+			catch (SqlException ex)
 			{
 				MessageBox.Show(ex.Message);
 			}
-			
+
 		}
 		public void Event_Show_Bill(object sender, EventArgs e, string MAHD)
 		{
 			ChiTietHoaDon ct = new ChiTietHoaDon(MAHD);
 			ct.Show();
 		}
-		public void Event_Bill_Process_Click(object sender, EventArgs e, string MAHD, string NgayLap, FlowLayoutPanel flow)
-		{
-			flow.Controls.Clear();
-			this.BILLID.Text = MAHD;
-			this.NgayLap.Text = DateTime.Parse(NgayLap).ToString("dd/MM/yyyy HH:mm:ss");
-			UI_BillDetail(flow, MAHD);
-		}
-		
-	}
+        public void Event_Bill_Process_Click(object sender, EventArgs e, string MAHD, string NgayLap, FlowLayoutPanel flow, TextBox ThanhTien, Label lb_NgayLap)
+        {
+            try
+            {
+                flow.Controls.Clear(); // Xóa các thông tin chi tiết hóa đơn trước đó
+                this.BILLID.Text = MAHD; // Gán mã hóa đơn vào Label
+
+                // Gán giá trị cho lb_NgayLap
+                lb_NgayLap.Text = DateTime.Parse(NgayLap).ToString("dd/MM/yyyy HH:mm:ss");
+
+                // Gán giá trị cho this.MAHD để lưu mã hóa đơn
+                this.MAHD = MAHD; // Đây là bước quan trọng để lưu mã hóa đơn
+
+                // Hiển thị thông tin chi tiết của hóa đơn
+                UI_BillDetail(flow, MAHD, ThanhTien);
+
+                // Thêm kiểm tra mã hóa đơn (MAHD) sau khi được gán
+                MessageBox.Show($"Mã hóa đơn hiện tại: {this.MAHD}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Có lỗi xảy ra khi xử lý hóa đơn: {ex.Message}");
+            }
+        }
+
+    }
 }

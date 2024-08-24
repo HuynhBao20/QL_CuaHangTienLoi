@@ -64,6 +64,7 @@
     <Compile Include="Controllers\Analyst.cs" />
     <Compile Include="Controllers\CustomTool.cs" />
     <Compile Include="Controllers\Event.cs" />
+    <Compile Include="Controllers\Process.cs" />
     <Compile Include="Controllers\TotalMoMo.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -96,6 +97,12 @@
     <Compile Include="Views\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\frmQuanLyDoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmQuanLyDoanhThu.Designer.cs">
+      <DependentUpon>frmQuanLyDoanhThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\manhinhphu\frmKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +114,24 @@
     </Compile>
     <Compile Include="Views\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\manhinhphu\frmNhapCTPhieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\manhinhphu\frmNhapCTPhieu.Designer.cs">
+      <DependentUpon>frmNhapCTPhieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\manhinhphu\frmNhapHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\manhinhphu\frmNhapHang.Designer.cs">
+      <DependentUpon>frmNhapHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\manhinhphu\frmResetPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\manhinhphu\frmResetPass.Designer.cs">
+      <DependentUpon>frmResetPass.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\manhinhphu\QRThanhToanMoMo.cs">
       <SubType>Form</SubType>
@@ -150,11 +175,23 @@
     <EmbeddedResource Include="Views\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmQuanLyDoanhThu.resx">
+      <DependentUpon>frmQuanLyDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\manhinhphu\frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\manhinhphu\frmNhapCTPhieu.resx">
+      <DependentUpon>frmNhapCTPhieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\manhinhphu\frmNhapHang.resx">
+      <DependentUpon>frmNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\manhinhphu\frmResetPass.resx">
+      <DependentUpon>frmResetPass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\manhinhphu\QRThanhToanMoMo.resx">
       <DependentUpon>QRThanhToanMoMo.cs</DependentUpon>
@@ -203,7 +240,7 @@
     <None Include="Resources\4022801.png" />
     <None Include="Resources\9759376.png" />
     <Content Include="Resources\iconHoaDon.png" />
-    <Content Include="Resources\quan-ly-ton-kho-la-gi.png" />
+    <Content Include="Resources\IconKho.png" />
     <Content Include="Resources\Sp.jpg" />
     <None Include="Resources\pngtree-add-customers-icon-color-flat-png-image_4674922.png" />
     <Content Include="Resources\01030601.jpg" />
