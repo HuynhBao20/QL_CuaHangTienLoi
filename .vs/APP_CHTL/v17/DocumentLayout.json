@@ -1,0 +1,216 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{791DCD3E-3629-4952-A915-75CD1F31A35B}|APP\\APP.csproj|D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\app\\controllers\\ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{791DCD3E-3629-4952-A915-75CD1F31A35B}|APP\\APP.csproj|solutionrelative:app\\controllers\\ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{791DCD3E-3629-4952-A915-75CD1F31A35B}|APP\\APP.csproj|D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\app\\views\\quanlyhanghoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{791DCD3E-3629-4952-A915-75CD1F31A35B}|APP\\APP.csproj|solutionrelative:app\\views\\quanlyhanghoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{791DCD3E-3629-4952-A915-75CD1F31A35B}|APP\\APP.csproj|d:\\h\u1ECDc t\u1EADp\\app_chtl (1)\\app_chtl\\app\\controllers\\customtool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{791DCD3E-3629-4952-A915-75CD1F31A35B}|APP\\APP.csproj|solutionrelative:app\\controllers\\customtool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{791DCD3E-3629-4952-A915-75CD1F31A35B}|APP\\APP.csproj|D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\app\\controllers\\totalmomo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{791DCD3E-3629-4952-A915-75CD1F31A35B}|APP\\APP.csproj|solutionrelative:app\\controllers\\totalmomo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{791DCD3E-3629-4952-A915-75CD1F31A35B}|APP\\APP.csproj|D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\app\\views\\quanlyhanghoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{791DCD3E-3629-4952-A915-75CD1F31A35B}|APP\\APP.csproj|solutionrelative:app\\views\\quanlyhanghoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F557680-2F73-4686-ABF1-63BA915492C6}|ConnectionDB\\ConnectionDB.csproj|D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\connectiondb\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F557680-2F73-4686-ABF1-63BA915492C6}|ConnectionDB\\ConnectionDB.csproj|solutionrelative:connectiondb\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{791DCD3E-3629-4952-A915-75CD1F31A35B}|APP\\APP.csproj|D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\app\\controllers\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{791DCD3E-3629-4952-A915-75CD1F31A35B}|APP\\APP.csproj|solutionrelative:app\\controllers\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{791DCD3E-3629-4952-A915-75CD1F31A35B}|APP\\APP.csproj|D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\app\\views\\quanlyhoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{791DCD3E-3629-4952-A915-75CD1F31A35B}|APP\\APP.csproj|solutionrelative:app\\views\\quanlyhoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{791DCD3E-3629-4952-A915-75CD1F31A35B}|APP\\APP.csproj|D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\app\\views\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{791DCD3E-3629-4952-A915-75CD1F31A35B}|APP\\APP.csproj|solutionrelative:app\\views\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC2087D7-C0A5-493F-AAAF-F11C7CA76577}|Reporting\\Reporting.csproj|D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\reporting\\reporting\\hoadon.rpt||{C0EF7560-990E-4D61-B970-65A6096B6866}",
+      "RelativeMoniker": "D:0:0:{DC2087D7-C0A5-493F-AAAF-F11C7CA76577}|Reporting\\Reporting.csproj|solutionrelative:reporting\\reporting\\hoadon.rpt||{C0EF7560-990E-4D61-B970-65A6096B6866}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{791DCD3E-3629-4952-A915-75CD1F31A35B}|APP\\APP.csproj|D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\app\\views\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{791DCD3E-3629-4952-A915-75CD1F31A35B}|APP\\APP.csproj|solutionrelative:app\\views\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{791DCD3E-3629-4952-A915-75CD1F31A35B}|APP\\APP.csproj|D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\app\\controllers\\process.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{791DCD3E-3629-4952-A915-75CD1F31A35B}|APP\\APP.csproj|solutionrelative:app\\controllers\\process.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TotalMoMo.cs",
+              "DocumentMoniker": "D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\APP\\Controllers\\TotalMoMo.cs",
+              "RelativeDocumentMoniker": "APP\\Controllers\\TotalMoMo.cs",
+              "ToolTip": "D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\APP\\Controllers\\TotalMoMo.cs",
+              "RelativeToolTip": "APP\\Controllers\\TotalMoMo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-23T04:21:10.989Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "HoaDon.rpt",
+              "DocumentMoniker": "D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\Reporting\\Reporting\\HoaDon.rpt",
+              "RelativeDocumentMoniker": "Reporting\\Reporting\\HoaDon.rpt",
+              "ToolTip": "D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\Reporting\\Reporting\\HoaDon.rpt",
+              "RelativeToolTip": "Reporting\\Reporting\\HoaDon.rpt",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIdSURBVDhPpZJNaBNBFMf/M7ub2NhajSDiwS96CbY2BykojaD0oF5s0YPgQYReLHgpeNCLYv0AexNRb1VUAkJcPXgQEUG89BIaxI9gqzGxH6QmXTef3Wx2nJkmNev25g8ebx7z3n/ezBv8F4wx0lhK7j6fYo3lmowMhl35HoRA3XGk/YvYW\u002BsA2vCrUEIwu1hEJltwmeDc8V5Plx4BAaXEY4J7LxLSt4q4BBS6Eiq8oGm3nXHZ1VCkS9pgfxc62/0yT\u002BASaNRLIWE6ieHB3H1EZsMyVhUKTXU37Yo0RZFeVQiuL14D1tnooBtQcEwcSO9d7aoVdefw5yFC2GG\u002BDsa/OTj228LYwmXejYrkzxkUsqZMNG0TfZkexA99lHETUqlYJ0rV5YEPqfKOG7Glo3MGRSTkx2T4JNp2\u002BzGfmMf3JzNAHijHarJIfz\u002BN0wMh2QoduRrVL9x6NqrWzUt3hjfjYMiHV1NVWNHHCJAOoMof3OBOt10T8XD24kOiv0uynFFkp8ZTrPv8NNs3\u002BpXtifawUmWZWbU6q9l16Z\u002B\u002BTXrHOHHzDPP7ND6iNvSHAtjYrkLTNDzqfQleBIU/rDhdeI1Po4l7JpyqDSTSDoKdPmwLqqhaNdh2vbHrxXWhidcZ9mXBj3yJYr3Pwf7tBnL5HLZu2YRA4O/nERzp2yVrXQJiIhWrdsUwy92/lorZyURqLP4p/YZv/eBXLK9ktQL8AbhJ7xVosbKmAAAAAElFTkSuQmCC",
+              "WhenOpened": "2024-08-23T02:54:01.863Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FrmLogin.cs",
+              "DocumentMoniker": "D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\APP\\Views\\FrmLogin.cs",
+              "RelativeDocumentMoniker": "APP\\Views\\FrmLogin.cs",
+              "ToolTip": "D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\APP\\Views\\FrmLogin.cs",
+              "RelativeToolTip": "APP\\Views\\FrmLogin.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAowCQAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-23T02:34:54.96Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FrmLogin.cs [Design]",
+              "DocumentMoniker": "D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\APP\\Views\\FrmLogin.cs",
+              "RelativeDocumentMoniker": "APP\\Views\\FrmLogin.cs",
+              "ToolTip": "D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\APP\\Views\\FrmLogin.cs [Design]",
+              "RelativeToolTip": "APP\\Views\\FrmLogin.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-23T02:34:52.765Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "QuanLyHangHoa.cs",
+              "DocumentMoniker": "D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\APP\\Views\\QuanLyHangHoa.cs",
+              "RelativeDocumentMoniker": "APP\\Views\\QuanLyHangHoa.cs",
+              "ToolTip": "D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\APP\\Views\\QuanLyHangHoa.cs",
+              "RelativeToolTip": "APP\\Views\\QuanLyHangHoa.cs",
+              "ViewState": "AQIAAN4AAAAAAAAAAAAvwOoAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-23T02:32:42.449Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UI.cs",
+              "DocumentMoniker": "D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\APP\\Controllers\\UI.cs",
+              "RelativeDocumentMoniker": "APP\\Controllers\\UI.cs",
+              "ToolTip": "D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\APP\\Controllers\\UI.cs",
+              "RelativeToolTip": "APP\\Controllers\\UI.cs",
+              "ViewState": "AQIAAGcAAAAAAAAAAAAvwGgAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-23T02:23:49.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "QuanLyHangHoa.cs [Design]",
+              "DocumentMoniker": "D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\APP\\Views\\QuanLyHangHoa.cs",
+              "RelativeDocumentMoniker": "APP\\Views\\QuanLyHangHoa.cs",
+              "ToolTip": "D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\APP\\Views\\QuanLyHangHoa.cs [Design]",
+              "RelativeToolTip": "APP\\Views\\QuanLyHangHoa.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-23T02:59:29.592Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CustomTool.cs",
+              "DocumentMoniker": "D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\APP\\Controllers\\CustomTool.cs",
+              "RelativeDocumentMoniker": "APP\\Controllers\\CustomTool.cs",
+              "ToolTip": "D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\APP\\Controllers\\CustomTool.cs",
+              "RelativeToolTip": "APP\\Controllers\\CustomTool.cs",
+              "ViewState": "AQIAALYAAAAAAAAAAAAiwOQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-23T03:00:36.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Connection.cs",
+              "DocumentMoniker": "D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\ConnectionDB\\Connection.cs",
+              "RelativeDocumentMoniker": "ConnectionDB\\Connection.cs",
+              "ToolTip": "D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\ConnectionDB\\Connection.cs",
+              "RelativeToolTip": "ConnectionDB\\Connection.cs",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAmwCMAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-23T02:16:43.832Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Event.cs",
+              "DocumentMoniker": "D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\APP\\Controllers\\Event.cs",
+              "RelativeDocumentMoniker": "APP\\Controllers\\Event.cs",
+              "ToolTip": "D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\APP\\Controllers\\Event.cs",
+              "RelativeToolTip": "APP\\Controllers\\Event.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAqwC4AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-23T03:34:28.286Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "QuanLyHoaDon.cs [Design]",
+              "DocumentMoniker": "D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\APP\\Views\\QuanLyHoaDon.cs",
+              "RelativeDocumentMoniker": "APP\\Views\\QuanLyHoaDon.cs",
+              "ToolTip": "D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\APP\\Views\\QuanLyHoaDon.cs [Design]",
+              "RelativeToolTip": "APP\\Views\\QuanLyHoaDon.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-23T02:59:27.296Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Process.cs",
+              "DocumentMoniker": "D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\APP\\Controllers\\Process.cs",
+              "RelativeDocumentMoniker": "APP\\Controllers\\Process.cs",
+              "ToolTip": "D:\\H\u1ECCC T\u1EACP\\APP_CHTL (1)\\APP_CHTL\\APP\\Controllers\\Process.cs",
+              "RelativeToolTip": "APP\\Controllers\\Process.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAgwCwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-23T02:20:32.332Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
