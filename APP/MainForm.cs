@@ -26,7 +26,7 @@ namespace APP
 			this.UserName = User;
 			this.PassWord = Pass;
 			conn = new Connection(UserName, PassWord);
-			_UserName.Text = conn.ExcuteReader($"SELECT HOTEN FROM NHANVIEN WHERE MANV = '{this.UserName}'", "HOTEN");
+			_UserName.Text = conn.ExcuteReader($"SELECT HOTEN FROM NHANVIEN WHERE MANV = '{User}'", "HOTEN");
 			load();
 		}
 		public void load()
