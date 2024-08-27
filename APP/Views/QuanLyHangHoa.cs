@@ -20,7 +20,7 @@ namespace APP.Views
 	{
 		UI ui;
 		Connection db;
-		Process p = new Process();
+		process p = new process();
 		public static string getBillID = "SELECT TOP 1 MAHD FROM HOADON ORDER BY MAHD DESC";
 		public static string query_Bill = "SELECT COUNT(*) as 'SL' FROM HOADON WHERE TRANGTHAI = N'Chưa xuất' AND CAST(NGAYLAP AS DATE) = CAST(GETDATE() AS DATE)";
 		public string MAHD { get; set; }

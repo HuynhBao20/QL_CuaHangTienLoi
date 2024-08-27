@@ -1,6 +1,7 @@
 ﻿using ConnectionDB;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,5 +44,20 @@ namespace APP.Controllers
             // Cập nhật lại chi tiết hóa đơn
             ui.UI_BillDetail(flp_BillDetail, MAHD, txtTongTien);
         }
+        public string create_Pass(string MANV)
+		{
+            string birthDay = db.ExcuteReader($"SELECT NGAYSINH FROM NHANVIEN WHERE MANV = '{MANV}'", "NGAYSINH");
+            string[] sql = birthDay.Split('/');
+            string NewPass = "";
+            for(int i = 0; i < sql.Length; i++)
+			{
+                if(i < sql.Length - 1) NewPass += sql[i];
+                else
+				{
+                    NewPass += sql[i].Substring(2, 2);
+				}
+			}
+            return NewPass;
+		}
     }
 }

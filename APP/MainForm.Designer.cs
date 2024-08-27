@@ -186,7 +186,7 @@ namespace APP
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "MainForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "MainForm";
+			this.Text = "PHẦN MỀM QUẢN LÝ CỬA HÀNG TIỆN LỢI";
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.tableLayoutPanel1.PerformLayout();

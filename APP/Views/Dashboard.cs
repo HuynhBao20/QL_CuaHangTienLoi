@@ -25,7 +25,6 @@ namespace APP.Views
 			lb_MaNV.Text = db.ExcuteReader($"SELECT MANV FROM NHANVIEN WHERE MANV = '{UserName}'", "MANV");
 			lb_HoTen.Text = db.ExcuteReader($"SELECT HOTEN FROM NHANVIEN WHERE MANV = '{UserName}'", "HOTEN");
 			lb_NgaySinh.Text = DateTime.Parse(db.ExcuteReader($"SELECT NGAYSINH FROM NHANVIEN WHERE MANV = '{UserName}'", "NGAYSINH")).ToString("dd/MM/yyyy");
-
 		}
 	}
 }

@@ -15,11 +15,12 @@ namespace APP.Views
 {
 	public partial class FrmLogin : Form
 	{
+		Process p = new Process();
 		public FrmLogin()
 		{
 			InitializeComponent();
-			Connection conn = new Connection("NV001", "123");
-			
+			Connection conn = new Connection();
+			Debug.WriteLine(p.cre)
 		}
 
 		private void textBox1_TextChanged(object sender, EventArgs e)

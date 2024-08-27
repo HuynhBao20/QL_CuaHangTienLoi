@@ -47,7 +47,7 @@ namespace APP.Views
 				$"{txtNVL.Text}', '" +
 				$"{txtSDT.Text}', '" +
 				$"{txtCCCD.Text}', '" +
-				$"{txtDiaChi.Text}')";
+				$"{txtDiaChi.Text}') {Environment.NewLine} ALTER ROLE NHANVIEN ADD MEMBER {MANV}";
 			string SqlCreateAccount = $"CREATE LOGIN {MANV} WITH PASSWORD = '123' CREATE USER {MANV} FOR LOGIN {MANV}";
 			db.ExcuteQuery(SqlInsert);
 			db.ExcuteQuery(SqlCreateAccount);

@@ -15,7 +15,7 @@ namespace APP.Views.manhinhphu
 	public partial class frmNhapHang : Form
 	{
 		UI ui = new UI();
-		Process p = new Process();
+		process p = new process();
 		Connection db;
 		public static string getBillID = "SELECT TOP 1 MAPN FROM PHIEUNHAP ORDER BY MAPN DESC";
 		public string UserName { get; set; }
