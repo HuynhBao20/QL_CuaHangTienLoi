@@ -14,12 +14,12 @@ using System.Windows.Forms;
 
 namespace APP.Views.manhinhphu
 {
-	public partial class QRThanhToanMoMo : Form
+	public partial class frmQRThanhToanMoMo : Form
 	{
 		public readonly string MAHD;
 		public readonly int TienKD;
 		Connection db = new Connection();
-		public QRThanhToanMoMo(string MAHD, int TienKD)
+		public frmQRThanhToanMoMo(string MAHD, int TienKD)
 		{
 			InitializeComponent();
 			this.MAHD = MAHD;

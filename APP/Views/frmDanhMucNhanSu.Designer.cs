@@ -1,7 +1,7 @@
 ﻿
 namespace APP.Views
 {
-	partial class DanhMucNhanSu
+	partial class frmDanhMucNhanSu
 	{
 		/// <summary>
 		/// Required designer variable.

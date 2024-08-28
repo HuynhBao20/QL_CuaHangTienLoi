@@ -12,14 +12,14 @@ using System.Windows.Forms;
 
 namespace APP.Views
 {
-	public partial class DanhMucNhanSu : Form
+	public partial class frmDanhMucNhanSu : Form
 	{
 		Connection db = new Connection();
 		process p = new process();
 		public string UserName { get; set; }
 		public string PassWord { get; set; }
 		public static string getMaNV = "SELECT TOP 1 MANV FROM NHANVIEN ORDER BY MANV DESC";
-		public DanhMucNhanSu(string User, string Pass)
+		public frmDanhMucNhanSu(string User, string Pass)
 		{
 			InitializeComponent();
 			this.UserName = User;
@@ -42,7 +42,7 @@ namespace APP.Views
 
 		private void btnThem_Click(object sender, EventArgs e)
 		{
-			string MANV = db.getMAHD(db.ExcuteReader(DanhMucNhanSu.getMaNV, "MANV"), "NV");
+			string MANV = db.getMAHD(db.ExcuteReader(frmDanhMucNhanSu.getMaNV, "MANV"), "NV");
 			string SqlInsert = $"SET DATEFORMAT DMY INSERT INTO NHANVIEN VALUES ('{MANV}', N'" +
 				$"{txtHoTen.Text}', '" +
 				$"{txtNS.Text}', '" +

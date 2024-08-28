@@ -382,7 +382,7 @@ namespace APP.Controllers
 		}
 		public void Event_Show_Bill(object sender, EventArgs e, string MAHD)
 		{
-			ChiTietHoaDon ct = new ChiTietHoaDon(MAHD);
+			frmChiTietHoaDon ct = new frmChiTietHoaDon(MAHD);
 			ct.Show();
 		}
         public void Event_Bill_Process_Click(object sender, EventArgs e, string MAHD, string NgayLap, FlowLayoutPanel flow, TextBox ThanhTien, Label lb_NgayLap)

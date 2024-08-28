@@ -1,7 +1,7 @@
 ﻿
 namespace APP.Views.manhinhphu
 {
-	partial class HomePage
+	partial class frmHomePage
 	{
 		/// <summary>
 		/// Required designer variable.

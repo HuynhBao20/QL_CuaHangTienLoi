@@ -22,13 +22,13 @@ namespace APP.Views.manhinhphu
 		public frmNhapCTPhieu(string User, string Pass, string MASP, string MAPN)
 		{
 			InitializeComponent();
-			db = new Connection(UserName, PassWord);
+			db = new Connection("NV001", "123");
 			this.UserName = User;
 			this.PassWord = Pass;
 			this.MAPN = MAPN;
 			this.MASP = MASP;
 			lb_MAPN.Text = this.MAPN;
-			txtMAPN.Text = MASP;
+			txtMASP.Text = MASP;
 			
 		}
 

@@ -79,23 +79,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Views\ChiTietHoaDon.cs">
+    <Compile Include="Views\frmChiTietHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\ChiTietHoaDon.Designer.cs">
-      <DependentUpon>ChiTietHoaDon.cs</DependentUpon>
+    <Compile Include="Views\frmChiTietHoaDon.Designer.cs">
+      <DependentUpon>frmChiTietHoaDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\DanhMucNhanSu.cs">
+    <Compile Include="Views\frmDanhMucNhanSu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\DanhMucNhanSu.Designer.cs">
-      <DependentUpon>DanhMucNhanSu.cs</DependentUpon>
+    <Compile Include="Views\frmDanhMucNhanSu.Designer.cs">
+      <DependentUpon>frmDanhMucNhanSu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Dashboard.cs">
+    <Compile Include="Views\frmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Dashboard.Designer.cs">
-      <DependentUpon>Dashboard.cs</DependentUpon>
+    <Compile Include="Views\frmDashboard.Designer.cs">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\frmQuanLyDoanhThu.cs">
       <SubType>Form</SubType>
@@ -109,11 +109,11 @@
     <Compile Include="Views\manhinhphu\frmKhachHang.Designer.cs">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FrmLogin.cs">
+    <Compile Include="Views\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FrmLogin.Designer.cs">
-      <DependentUpon>FrmLogin.cs</DependentUpon>
+    <Compile Include="Views\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\manhinhphu\frmNhapCTPhieu.cs">
       <SubType>Form</SubType>
@@ -133,17 +133,17 @@
     <Compile Include="Views\manhinhphu\frmResetPass.Designer.cs">
       <DependentUpon>frmResetPass.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\manhinhphu\HomePage.cs">
+    <Compile Include="Views\manhinhphu\frmHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\manhinhphu\HomePage.Designer.cs">
-      <DependentUpon>HomePage.cs</DependentUpon>
+    <Compile Include="Views\manhinhphu\frmHomePage.Designer.cs">
+      <DependentUpon>frmHomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\manhinhphu\QRThanhToanMoMo.cs">
+    <Compile Include="Views\manhinhphu\frmQRThanhToanMoMo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\manhinhphu\QRThanhToanMoMo.Designer.cs">
-      <DependentUpon>QRThanhToanMoMo.cs</DependentUpon>
+    <Compile Include="Views\manhinhphu\frmQRThanhToanMoMo.Designer.cs">
+      <DependentUpon>frmQRThanhToanMoMo.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\QuanLyHoaDon.cs">
       <SubType>Form</SubType>
@@ -172,14 +172,14 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ChiTietHoaDon.resx">
-      <DependentUpon>ChiTietHoaDon.cs</DependentUpon>
+    <EmbeddedResource Include="Views\frmChiTietHoaDon.resx">
+      <DependentUpon>frmChiTietHoaDon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\DanhMucNhanSu.resx">
-      <DependentUpon>DanhMucNhanSu.cs</DependentUpon>
+    <EmbeddedResource Include="Views\frmDanhMucNhanSu.resx">
+      <DependentUpon>frmDanhMucNhanSu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Dashboard.resx">
-      <DependentUpon>Dashboard.cs</DependentUpon>
+    <EmbeddedResource Include="Views\frmDashboard.resx">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmQuanLyDoanhThu.resx">
       <DependentUpon>frmQuanLyDoanhThu.cs</DependentUpon>
@@ -187,8 +187,8 @@
     <EmbeddedResource Include="Views\manhinhphu\frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FrmLogin.resx">
-      <DependentUpon>FrmLogin.cs</DependentUpon>
+    <EmbeddedResource Include="Views\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\manhinhphu\frmNhapCTPhieu.resx">
       <DependentUpon>frmNhapCTPhieu.cs</DependentUpon>
@@ -199,11 +199,11 @@
     <EmbeddedResource Include="Views\manhinhphu\frmResetPass.resx">
       <DependentUpon>frmResetPass.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\manhinhphu\HomePage.resx">
-      <DependentUpon>HomePage.cs</DependentUpon>
+    <EmbeddedResource Include="Views\manhinhphu\frmHomePage.resx">
+      <DependentUpon>frmHomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\manhinhphu\QRThanhToanMoMo.resx">
-      <DependentUpon>QRThanhToanMoMo.cs</DependentUpon>
+    <EmbeddedResource Include="Views\manhinhphu\frmQRThanhToanMoMo.resx">
+      <DependentUpon>frmQRThanhToanMoMo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\QuanLyHangHoa.resx">
       <DependentUpon>QuanLyHangHoa.cs</DependentUpon>

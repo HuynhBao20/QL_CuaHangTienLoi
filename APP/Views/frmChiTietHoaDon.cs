@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace APP.Views
 {
-	public partial class ChiTietHoaDon : Form
+	public partial class frmChiTietHoaDon : Form
 	{
 		UI ui = new UI(new Label());
-		public ChiTietHoaDon(string MAHD)
+		public frmChiTietHoaDon(string MAHD)
 		{
 			InitializeComponent();
 			ui.loadCT_HoaDon(flowLayoutPanel1, MAHD);

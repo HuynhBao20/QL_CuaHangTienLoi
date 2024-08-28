@@ -37,7 +37,7 @@ namespace APP.Views.manhinhphu
 			this.label4 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
-			this.txtMAPN = new System.Windows.Forms.TextBox();
+			this.txtMASP = new System.Windows.Forms.TextBox();
 			this.txtSL = new System.Windows.Forms.TextBox();
 			this.txtGN = new System.Windows.Forms.TextBox();
 			this.txtDVT = new System.Windows.Forms.TextBox();
@@ -60,7 +60,7 @@ namespace APP.Views.manhinhphu
 			this.tableLayoutPanel1.Controls.Add(this.label4, 0, 4);
 			this.tableLayoutPanel1.Controls.Add(this.label5, 0, 5);
 			this.tableLayoutPanel1.Controls.Add(this.label6, 0, 6);
-			this.tableLayoutPanel1.Controls.Add(this.txtMAPN, 1, 1);
+			this.tableLayoutPanel1.Controls.Add(this.txtMASP, 1, 1);
 			this.tableLayoutPanel1.Controls.Add(this.txtSL, 1, 2);
 			this.tableLayoutPanel1.Controls.Add(this.txtGN, 1, 3);
 			this.tableLayoutPanel1.Controls.Add(this.txtDVT, 1, 6);
@@ -163,15 +163,15 @@ namespace APP.Views.manhinhphu
 			this.label6.Text = "ĐVT";
 			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// txtMAPN
+			// txtMASP
 			// 
-			this.txtMAPN.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.txtMAPN.Location = new System.Drawing.Point(164, 47);
-			this.txtMAPN.Multiline = true;
-			this.txtMAPN.Name = "txtMAPN";
-			this.txtMAPN.ReadOnly = true;
-			this.txtMAPN.Size = new System.Drawing.Size(333, 34);
-			this.txtMAPN.TabIndex = 6;
+			this.txtMASP.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.txtMASP.Location = new System.Drawing.Point(164, 47);
+			this.txtMASP.Multiline = true;
+			this.txtMASP.Name = "txtMASP";
+			this.txtMASP.ReadOnly = true;
+			this.txtMASP.Size = new System.Drawing.Size(333, 34);
+			this.txtMASP.TabIndex = 6;
 			// 
 			// txtSL
 			// 
@@ -258,7 +258,7 @@ namespace APP.Views.manhinhphu
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.TextBox txtMAPN;
+		private System.Windows.Forms.TextBox txtMASP;
 		private System.Windows.Forms.TextBox txtSL;
 		private System.Windows.Forms.TextBox txtGN;
 		private System.Windows.Forms.TextBox txtDVT;

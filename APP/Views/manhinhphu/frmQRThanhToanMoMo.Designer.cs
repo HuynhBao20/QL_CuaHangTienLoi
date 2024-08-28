@@ -1,7 +1,7 @@
 ﻿
 namespace APP.Views.manhinhphu
 {
-	partial class QRThanhToanMoMo
+	partial class frmQRThanhToanMoMo
 	{
 		/// <summary>
 		/// Required designer variable.

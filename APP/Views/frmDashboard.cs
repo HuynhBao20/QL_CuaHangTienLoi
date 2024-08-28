@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace APP.Views
 {
-	public partial class Dashboard : Form
+	public partial class frmDashboard : Form
 	{
 		Analyst a = new Analyst();
 		Connection db;
-		public Dashboard(string UserName, string Pass)
+		public frmDashboard(string UserName, string Pass)
 		{
 			InitializeComponent();
 			db = new Connection(UserName, Pass);

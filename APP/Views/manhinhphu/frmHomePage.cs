@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace APP.Views.manhinhphu
 {
-	public partial class HomePage : Form
+	public partial class frmHomePage : Form
 	{
-		public HomePage()
+		public frmHomePage()
 		{
 			InitializeComponent();
 		}

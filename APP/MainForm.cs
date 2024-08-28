@@ -32,7 +32,7 @@ namespace APP
 		public void load()
 		{
 			UI ui = new UI();
-			HomePage h = new HomePage();
+			frmHomePage h = new frmHomePage();
 			h.Dock = DockStyle.Fill;
 			h.TopLevel = false;
 			h.FormBorderStyle = FormBorderStyle.None;
@@ -51,7 +51,7 @@ namespace APP
 			switch (e.Node.Text)
 			{
 				case "Trang chủ":
-					Dashboard h = new Dashboard(UserName, PassWord);
+					frmDashboard h = new frmDashboard(UserName, PassWord);
 					h.Dock = DockStyle.Fill;
 					h.TopLevel = false;
 					h.FormBorderStyle = FormBorderStyle.None;
@@ -94,7 +94,7 @@ namespace APP
 					break;
 				case "Quản lý nhân sự":
 					pnl_Load_Main.Controls.Clear();
-					DanhMucNhanSu ns = new DanhMucNhanSu(UserName, PassWord);
+					frmDanhMucNhanSu ns = new frmDanhMucNhanSu(UserName, PassWord);
 					ns.FormBorderStyle = FormBorderStyle.None;
 					ns.Dock = DockStyle.Fill;
 					ns.TopLevel = false;
@@ -121,7 +121,7 @@ namespace APP
 
 		private void _Logout_Click(object sender, EventArgs e)
 		{
-			FrmLogin lg = new FrmLogin();
+			frmLogin lg = new frmLogin();
 			this.Hide();
 			lg.Show();
 		}

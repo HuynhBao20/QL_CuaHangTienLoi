@@ -1,7 +1,7 @@
 ﻿
 namespace APP.Views
 {
-	partial class Dashboard
+	partial class frmDashboard
 	{
 		/// <summary>
 		/// Required designer variable.

@@ -1,7 +1,7 @@
 ﻿
 namespace APP.Views
 {
-	partial class FrmLogin
+	partial class frmLogin
 	{
 		/// <summary>
 		/// Required designer variable.

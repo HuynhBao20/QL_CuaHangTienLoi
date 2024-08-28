@@ -14,10 +14,10 @@ using System.Windows.Forms;
 
 namespace APP.Views
 {
-	public partial class FrmLogin : Form
+	public partial class frmLogin : Form
 	{
 		process p = new process();
-		public FrmLogin()
+		public frmLogin()
 		{
 			InitializeComponent();
 			Connection conn = new Connection();
