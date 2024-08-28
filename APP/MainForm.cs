@@ -61,7 +61,7 @@ namespace APP
 					break;
 				case "Quản lý bán hàng":
 					pnl_Load_Main.Controls.Clear();
-					QuanLyHangHoa hh = new QuanLyHangHoa();
+					frmQuanLyHangHoa hh = new frmQuanLyHangHoa();
 					hh.Dock = DockStyle.Fill;
 					hh.TopLevel = false;
 					pnl_Load_Main.Controls.Add(hh);
@@ -69,7 +69,7 @@ namespace APP
 					break;
 				case "Quản lý nhập hàng":
 					pnl_Load_Main.Controls.Clear();
-					QuanLySanPham sp = new QuanLySanPham(UserName, PassWord);
+					frmQuanLySanPham sp = new frmQuanLySanPham(UserName, PassWord);
 					sp.Dock = DockStyle.Fill;
 					sp.TopLevel = false;
 					pnl_Load_Main.Controls.Add(sp);
@@ -77,7 +77,7 @@ namespace APP
 					break;
 				case "Quản lý hóa đơn":
 					pnl_Load_Main.Controls.Clear();
-					QuanLyHoaDon hd = new QuanLyHoaDon();
+					frmQuanLyHoaDon hd = new frmQuanLyHoaDon();
 					hd.Dock = DockStyle.Fill;
 					hd.TopLevel = false;
 					pnl_Load_Main.Controls.Add(hd);

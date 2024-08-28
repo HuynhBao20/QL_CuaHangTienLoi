@@ -34,14 +34,21 @@ namespace APP.Views.manhinhphu
 
 		private void btnNhapHang_Click(object sender, EventArgs e)
 		{
-			string Sql = $"SET DATEFORMAT DMY INSERT INTO CTPHIEUNHAP VALUES ('{MAPN}', '" +
-				$"{MASP}', '" +
-				$"{txtSL.Text}', '" +
-				$"{txtGN.Text}'," +
-				$"'{txtNgaySX.Text}', '" +
-				$"{txtNgayHH.Text}', N'" +
-				$"{txtDVT.Text}')";
-			db.ExcuteQuery(Sql);
+			try
+			{
+				string Sql = $"SET DATEFORMAT DMY INSERT INTO CTPHIEUNHAP VALUES ('{MAPN}', '" +
+					$"{MASP}', '" +
+					$"{txtSL.Text}', '" +
+					$"{txtGN.Text}'," +
+					$"'{txtNgaySX.Text}', '" +
+					$"{txtNgayHH.Text}', N'" +
+					$"{txtDVT.Text}')";
+				db.ExcuteQuery(Sql);
+				MessageBox.Show($"Thêm thành công Sản phẩm: {MASP} vào phiếu {MAPN}");
+			} catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
 		}
 	}
 }

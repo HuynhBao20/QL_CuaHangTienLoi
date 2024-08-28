@@ -77,9 +77,9 @@ namespace APP.Views.manhinhphu
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(592, 337);
 			this.tableLayoutPanel1.TabIndex = 0;
 			// 
@@ -147,7 +147,7 @@ namespace APP.Views.manhinhphu
 			this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.label5.Location = new System.Drawing.Point(3, 203);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(155, 42);
+			this.label5.Size = new System.Drawing.Size(155, 32);
 			this.label5.TabIndex = 4;
 			this.label5.Text = "Ngày HH";
 			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -156,9 +156,9 @@ namespace APP.Views.manhinhphu
 			// 
 			this.label6.AutoSize = true;
 			this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label6.Location = new System.Drawing.Point(3, 245);
+			this.label6.Location = new System.Drawing.Point(3, 235);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(155, 42);
+			this.label6.Size = new System.Drawing.Size(155, 37);
 			this.label6.TabIndex = 5;
 			this.label6.Text = "ĐVT";
 			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -194,10 +194,10 @@ namespace APP.Views.manhinhphu
 			// txtDVT
 			// 
 			this.txtDVT.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.txtDVT.Location = new System.Drawing.Point(164, 248);
+			this.txtDVT.Location = new System.Drawing.Point(164, 238);
 			this.txtDVT.Multiline = true;
 			this.txtDVT.Name = "txtDVT";
-			this.txtDVT.Size = new System.Drawing.Size(333, 36);
+			this.txtDVT.Size = new System.Drawing.Size(333, 31);
 			this.txtDVT.TabIndex = 6;
 			// 
 			// txtNgaySX
@@ -223,9 +223,9 @@ namespace APP.Views.manhinhphu
 			// btnNhapHang
 			// 
 			this.btnNhapHang.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.btnNhapHang.Location = new System.Drawing.Point(164, 290);
+			this.btnNhapHang.Location = new System.Drawing.Point(164, 275);
 			this.btnNhapHang.Name = "btnNhapHang";
-			this.btnNhapHang.Size = new System.Drawing.Size(333, 44);
+			this.btnNhapHang.Size = new System.Drawing.Size(333, 59);
 			this.btnNhapHang.TabIndex = 8;
 			this.btnNhapHang.Text = "Nhập hàng";
 			this.btnNhapHang.UseVisualStyleBackColor = true;

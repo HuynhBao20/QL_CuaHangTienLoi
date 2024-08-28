@@ -145,24 +145,24 @@
     <Compile Include="Views\manhinhphu\frmQRThanhToanMoMo.Designer.cs">
       <DependentUpon>frmQRThanhToanMoMo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\QuanLyHoaDon.cs">
+    <Compile Include="Views\frmQuanLyHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\QuanLyHoaDon.Designer.cs">
-      <DependentUpon>QuanLyHoaDon.cs</DependentUpon>
+    <Compile Include="Views\frmQuanLyHoaDon.Designer.cs">
+      <DependentUpon>frmQuanLyHoaDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\QuanLyHangHoa.cs">
+    <Compile Include="Views\frmQuanLyHangHoa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\QuanLyHangHoa.Designer.cs">
-      <DependentUpon>QuanLyHangHoa.cs</DependentUpon>
+    <Compile Include="Views\frmQuanLyHangHoa.Designer.cs">
+      <DependentUpon>frmQuanLyHangHoa.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\UI.cs" />
-    <Compile Include="Views\QuanLySanPham.cs">
+    <Compile Include="Views\frmQuanLySanPham.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\QuanLySanPham.Designer.cs">
-      <DependentUpon>QuanLySanPham.cs</DependentUpon>
+    <Compile Include="Views\frmQuanLySanPham.Designer.cs">
+      <DependentUpon>frmQuanLySanPham.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -205,14 +205,14 @@
     <EmbeddedResource Include="Views\manhinhphu\frmQRThanhToanMoMo.resx">
       <DependentUpon>frmQRThanhToanMoMo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\QuanLyHangHoa.resx">
-      <DependentUpon>QuanLyHangHoa.cs</DependentUpon>
+    <EmbeddedResource Include="Views\frmQuanLyHangHoa.resx">
+      <DependentUpon>frmQuanLyHangHoa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\QuanLyHoaDon.resx">
-      <DependentUpon>QuanLyHoaDon.cs</DependentUpon>
+    <EmbeddedResource Include="Views\frmQuanLyHoaDon.resx">
+      <DependentUpon>frmQuanLyHoaDon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\QuanLySanPham.resx">
-      <DependentUpon>QuanLySanPham.cs</DependentUpon>
+    <EmbeddedResource Include="Views\frmQuanLySanPham.resx">
+      <DependentUpon>frmQuanLySanPham.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

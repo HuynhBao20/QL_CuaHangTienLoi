@@ -15,10 +15,8 @@ C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\EntityFramework.Sq
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\EntityFramework.xml
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.MainForm.resources
-C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.QuanLyHangHoa.resources
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\ConnectionDB.exe.config
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.FrmLogin.resources
-C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.QuanLySanPham.resources
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\Reporting.exe
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\CrystalDecisions.Windows.Forms.dll
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
@@ -40,7 +38,6 @@ C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\stdole.dll
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\Reporting.pdb
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\Reporting.exe.config
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\ExcelDataReader.dll
-C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.QuanLyHoaDon.resources
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\zxing.dll
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\bin\Debug\zxing.xml
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.frmKhachHang.resources
@@ -165,3 +162,6 @@ C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.frmDanhM
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.frmDashboard.resources
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.manhinhphu.frmHomePage.resources
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.manhinhphu.frmQRThanhToanMoMo.resources
+C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.frmQuanLyHangHoa.resources
+C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.frmQuanLyHoaDon.resources
+C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.frmQuanLySanPham.resources

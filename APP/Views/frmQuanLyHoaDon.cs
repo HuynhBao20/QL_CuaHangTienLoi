@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace APP.Views
 {
-	public partial class QuanLyHoaDon : Form
+	public partial class frmQuanLyHoaDon : Form
 	{
 		UI ui = new UI(new Label());
-		public QuanLyHoaDon()
+		public frmQuanLyHoaDon()
 		{
 			InitializeComponent();
 			ui.load_HoaDon_ChuaXuat(flp_LoadHoaDon, "SELECT * FROM HOADON WHERE CAST(NGAYLAP AS DATE) = CAST(GETDATE() AS DATE)", new Label(), new Label(), new FlowLayoutPanel(), new TextBox());

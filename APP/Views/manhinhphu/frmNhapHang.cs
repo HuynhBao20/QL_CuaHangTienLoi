@@ -16,6 +16,8 @@ namespace APP.Views.manhinhphu
 	{
 		UI ui = new UI();
 		process p = new process();
+		DataTable da = new DataTable();
+		DataTable sl = new DataTable();
 		Connection db;
 		public static string getBillID = "SELECT TOP 1 MAPN FROM PHIEUNHAP ORDER BY MAPN DESC";
 		public string UserName { get; set; }
@@ -28,17 +30,11 @@ namespace APP.Views.manhinhphu
 			this.UserName = User;
 			this.PassWord = Pass;
 			db = new Connection(UserName, PassWord);
-			Load();
 		}
 		public frmNhapHang()
 		{
 			InitializeComponent();
 			db = new Connection();
-			Load();
-		}
-		private void Load()
-		{
-			ui.load_SanPham_PhieuNhap(flp, this.MAPN);
 		}
 
 		private void btnTaoPhieu_Click(object sender, EventArgs e)
@@ -49,12 +45,18 @@ namespace APP.Views.manhinhphu
 			db.ExcuteQuery(InsertSql);
 			lb_MAPN.Text = PhieuNhapNew;
 			ui.load_SanPham_PhieuNhap(flp, PhieuNhapNew);
-			dataGridView1.DataSource = db.loadDB($"SELECT * FROM CTPHIEUNHAP WHERE MAPN = '{PhieuNhapNew}'");
+			da = db.loadDB($"SELECT * FROM CTPHIEUNHAP WHERE MAPN = '{PhieuNhapNew}'");
+			dgvLoad.DataSource = da;
 		}
 
 		private void dataGridView1_ParentChanged(object sender, EventArgs e)
 		{
 			
+		}
+
+		private void btnAddSP_Click(object sender, EventArgs e)
+		{
+			groupBox3.Enabled = true;
 		}
 	}
 }

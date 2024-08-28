@@ -52,9 +52,9 @@ namespace APP.Views.manhinhphu
 			this.btnTaoPhieu = new System.Windows.Forms.Button();
 			this.lb_MAPN = new System.Windows.Forms.Label();
 			this.button2 = new System.Windows.Forms.Button();
-			this.button3 = new System.Windows.Forms.Button();
+			this.btnAddSP = new System.Windows.Forms.Button();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.dgvLoad = new System.Windows.Forms.DataGridView();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
@@ -64,7 +64,7 @@ namespace APP.Views.manhinhphu
 			this.groupBox3.SuspendLayout();
 			this.tableLayoutPanel5.SuspendLayout();
 			this.groupBox4.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgvLoad)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -72,16 +72,16 @@ namespace APP.Views.manhinhphu
 			this.tableLayoutPanel1.ColumnCount = 2;
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.13864F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.86136F));
-			this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 1);
 			this.tableLayoutPanel1.Controls.Add(this.groupBox2, 1, 1);
 			this.tableLayoutPanel1.Controls.Add(this.groupBox3, 0, 0);
+			this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 1);
 			this.tableLayoutPanel1.Controls.Add(this.groupBox4, 1, 0);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.RowCount = 2;
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.32043F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 59.67957F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.07457F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.92543F));
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(1356, 751);
 			this.tableLayoutPanel1.TabIndex = 0;
 			// 
@@ -89,9 +89,9 @@ namespace APP.Views.manhinhphu
 			// 
 			this.groupBox1.Controls.Add(this.flp);
 			this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.groupBox1.Location = new System.Drawing.Point(3, 305);
+			this.groupBox1.Location = new System.Drawing.Point(3, 334);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(700, 443);
+			this.groupBox1.Size = new System.Drawing.Size(700, 414);
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Danh sách sản phẩm";
@@ -102,17 +102,16 @@ namespace APP.Views.manhinhphu
 			this.flp.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.flp.Location = new System.Drawing.Point(3, 23);
 			this.flp.Name = "flp";
-			this.flp.Size = new System.Drawing.Size(694, 417);
+			this.flp.Size = new System.Drawing.Size(694, 388);
 			this.flp.TabIndex = 0;
 			// 
 			// groupBox2
 			// 
 			this.groupBox2.Controls.Add(this.tableLayoutPanel3);
-			this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.groupBox2.Enabled = false;
-			this.groupBox2.Location = new System.Drawing.Point(709, 305);
+			this.groupBox2.Location = new System.Drawing.Point(709, 334);
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(644, 443);
+			this.groupBox2.Size = new System.Drawing.Size(581, 225);
 			this.groupBox2.TabIndex = 2;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Quản lý sản phẩm";
@@ -145,7 +144,7 @@ namespace APP.Views.manhinhphu
 			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 107F));
 			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15F));
 			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-			this.tableLayoutPanel3.Size = new System.Drawing.Size(638, 417);
+			this.tableLayoutPanel3.Size = new System.Drawing.Size(575, 199);
 			this.tableLayoutPanel3.TabIndex = 0;
 			// 
 			// label1
@@ -288,7 +287,7 @@ namespace APP.Views.manhinhphu
 			this.ptbProduct.Location = new System.Drawing.Point(478, 3);
 			this.ptbProduct.Name = "ptbProduct";
 			this.tableLayoutPanel3.SetRowSpan(this.ptbProduct, 4);
-			this.ptbProduct.Size = new System.Drawing.Size(113, 130);
+			this.ptbProduct.Size = new System.Drawing.Size(67, 130);
 			this.ptbProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.ptbProduct.TabIndex = 5;
 			this.ptbProduct.TabStop = false;
@@ -296,10 +295,9 @@ namespace APP.Views.manhinhphu
 			// groupBox3
 			// 
 			this.groupBox3.Controls.Add(this.tableLayoutPanel5);
-			this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.groupBox3.Location = new System.Drawing.Point(3, 3);
 			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Size = new System.Drawing.Size(700, 296);
+			this.groupBox3.Size = new System.Drawing.Size(535, 283);
 			this.groupBox3.TabIndex = 4;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Nhập hàng";
@@ -313,16 +311,18 @@ namespace APP.Views.manhinhphu
 			this.tableLayoutPanel5.Controls.Add(this.btnTaoPhieu, 0, 0);
 			this.tableLayoutPanel5.Controls.Add(this.lb_MAPN, 1, 0);
 			this.tableLayoutPanel5.Controls.Add(this.button2, 0, 1);
-			this.tableLayoutPanel5.Controls.Add(this.button3, 0, 2);
+			this.tableLayoutPanel5.Controls.Add(this.btnAddSP, 0, 2);
 			this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 23);
 			this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-			this.tableLayoutPanel5.RowCount = 4;
-			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
-			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
-			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-			this.tableLayoutPanel5.Size = new System.Drawing.Size(694, 270);
+			this.tableLayoutPanel5.RowCount = 6;
+			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+			this.tableLayoutPanel5.Size = new System.Drawing.Size(529, 257);
 			this.tableLayoutPanel5.TabIndex = 0;
 			// 
 			// btnTaoPhieu
@@ -330,7 +330,7 @@ namespace APP.Views.manhinhphu
 			this.btnTaoPhieu.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.btnTaoPhieu.Location = new System.Drawing.Point(3, 3);
 			this.btnTaoPhieu.Name = "btnTaoPhieu";
-			this.btnTaoPhieu.Size = new System.Drawing.Size(198, 49);
+			this.btnTaoPhieu.Size = new System.Drawing.Size(198, 39);
 			this.btnTaoPhieu.TabIndex = 0;
 			this.btnTaoPhieu.Text = "Tạo phiếu nhập";
 			this.btnTaoPhieu.UseVisualStyleBackColor = true;
@@ -342,52 +342,54 @@ namespace APP.Views.manhinhphu
 			this.lb_MAPN.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.lb_MAPN.Location = new System.Drawing.Point(207, 0);
 			this.lb_MAPN.Name = "lb_MAPN";
-			this.lb_MAPN.Size = new System.Drawing.Size(171, 55);
+			this.lb_MAPN.Size = new System.Drawing.Size(171, 45);
 			this.lb_MAPN.TabIndex = 1;
 			this.lb_MAPN.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// button2
 			// 
 			this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.button2.Location = new System.Drawing.Point(3, 58);
+			this.button2.Location = new System.Drawing.Point(3, 48);
 			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(198, 42);
+			this.button2.Size = new System.Drawing.Size(198, 39);
 			this.button2.TabIndex = 2;
 			this.button2.Text = "Hủy phiếu";
 			this.button2.UseVisualStyleBackColor = true;
 			// 
-			// button3
+			// btnAddSP
 			// 
-			this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.button3.Location = new System.Drawing.Point(3, 106);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(198, 41);
-			this.button3.TabIndex = 3;
-			this.button3.Text = "Thêm sản phẩm mới";
-			this.button3.UseVisualStyleBackColor = true;
+			this.btnAddSP.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.btnAddSP.Location = new System.Drawing.Point(3, 93);
+			this.btnAddSP.Name = "btnAddSP";
+			this.btnAddSP.Size = new System.Drawing.Size(198, 39);
+			this.btnAddSP.TabIndex = 3;
+			this.btnAddSP.Text = "Thêm sản phẩm mới";
+			this.btnAddSP.UseVisualStyleBackColor = true;
+			this.btnAddSP.Click += new System.EventHandler(this.btnAddSP_Click);
 			// 
 			// groupBox4
 			// 
-			this.groupBox4.Controls.Add(this.dataGridView1);
+			this.groupBox4.Controls.Add(this.dgvLoad);
 			this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.groupBox4.Location = new System.Drawing.Point(709, 3);
 			this.groupBox4.Name = "groupBox4";
-			this.groupBox4.Size = new System.Drawing.Size(644, 296);
+			this.groupBox4.Size = new System.Drawing.Size(644, 325);
 			this.groupBox4.TabIndex = 5;
 			this.groupBox4.TabStop = false;
 			this.groupBox4.Text = "Danh sách sản phẩm nhập";
 			// 
-			// dataGridView1
+			// dgvLoad
 			// 
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dataGridView1.Location = new System.Drawing.Point(3, 23);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.RowHeadersWidth = 51;
-			this.dataGridView1.RowTemplate.Height = 24;
-			this.dataGridView1.Size = new System.Drawing.Size(638, 270);
-			this.dataGridView1.TabIndex = 0;
-			this.dataGridView1.ParentChanged += new System.EventHandler(this.dataGridView1_ParentChanged);
+			this.dgvLoad.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.dgvLoad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvLoad.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dgvLoad.Location = new System.Drawing.Point(3, 23);
+			this.dgvLoad.Name = "dgvLoad";
+			this.dgvLoad.RowHeadersWidth = 51;
+			this.dgvLoad.RowTemplate.Height = 24;
+			this.dgvLoad.Size = new System.Drawing.Size(638, 299);
+			this.dgvLoad.TabIndex = 0;
+			this.dgvLoad.ParentChanged += new System.EventHandler(this.dataGridView1_ParentChanged);
 			// 
 			// frmNhapHang
 			// 
@@ -411,7 +413,7 @@ namespace APP.Views.manhinhphu
 			this.tableLayoutPanel5.ResumeLayout(false);
 			this.tableLayoutPanel5.PerformLayout();
 			this.groupBox4.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgvLoad)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -441,8 +443,8 @@ namespace APP.Views.manhinhphu
 		private System.Windows.Forms.Button btnTaoPhieu;
 		private System.Windows.Forms.Label lb_MAPN;
 		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.Button btnAddSP;
 		private System.Windows.Forms.GroupBox groupBox4;
-		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.DataGridView dgvLoad;
 	}
 }

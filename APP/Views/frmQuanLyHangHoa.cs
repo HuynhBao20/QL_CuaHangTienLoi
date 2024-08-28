@@ -16,7 +16,7 @@ using APP.Views.manhinhphu;
 
 namespace APP.Views
 {
-	public partial class QuanLyHangHoa : Form
+	public partial class frmQuanLyHangHoa : Form
 	{
 		UI ui;
 		Connection db;
@@ -28,14 +28,14 @@ namespace APP.Views
 		public string UserName { get; set; }
 		public string PassWord { get; set; }
 
-		public QuanLyHangHoa()
+		public frmQuanLyHangHoa()
 		{
 			InitializeComponent();
 			db = new Connection();
 			ui = new UI(lb_MaHD);
 			UI_Design();
 		}
-		public QuanLyHangHoa(string UserName, string PassWord)
+		public frmQuanLyHangHoa(string UserName, string PassWord)
 		{
 			this.UserName = UserName;
 			this.PassWord = PassWord;
@@ -54,7 +54,7 @@ namespace APP.Views
 			ui.loadTreeView(tv_LoaiSP);
 			btnTotalMoMo.Enabled = false;
 			ui.load_HoaDon_ChuaXuat(flp_HDChuaXuat, "EXEC sp_HD_ChuaXuat", lb_MaHD, lb_NgayLap, flp_BillDetail, txtTongTien);
-			int SOHD = int.Parse(db.ExcuteReader(QuanLyHangHoa.query_Bill, "SL"));
+			int SOHD = int.Parse(db.ExcuteReader(frmQuanLyHangHoa.query_Bill, "SL"));
 			gp_HoaDonChuaXuat.Text = $"Số hóa đơn chưa xuất: {SOHD}";
 			lb_DT.Text = db.ExcuteReader(Connection.Query_DoanhThu, "Tổng giá trị hóa đơn") == "" ? "0" : db.ExcuteReader(Connection.Query_DoanhThu, "Tổng giá trị hóa đơn");
 		}
@@ -62,14 +62,14 @@ namespace APP.Views
 		{
 			try
 			{
-				string getMAHD = db.ExcuteReader(QuanLyHangHoa.getBillID, "MAHD").Trim();
+				string getMAHD = db.ExcuteReader(frmQuanLyHangHoa.getBillID, "MAHD").Trim();
 				string MAHD = db.getMAHD(getMAHD, "HD");
 				this.MAHD = MAHD;
 				string Sql = $"INSERT INTO HOADON(MAHD, MAKH, MANV) VALUES ('{MAHD}', 'KH001', 'NV001')";
 				db.ExcuteQuery(Sql);
 				lb_MaHD.Text = MAHD;
 				lb_NgayLap.Text = DateTime.Now.ToString("dd/MM/yyyy");
-				int HDDT = int.Parse(db.ExcuteReader(QuanLyHangHoa.query_Bill, "SL"));
+				int HDDT = int.Parse(db.ExcuteReader(frmQuanLyHangHoa.query_Bill, "SL"));
 				if (HDDT != this.SOHD)
 				{
 					gp_HoaDonChuaXuat.Text = $"Số hóa đơn chưa xuất: {HDDT}";

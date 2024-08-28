@@ -15,7 +15,7 @@ using APP.Views.manhinhphu;
 namespace APP.Views
 {
 	
-	public partial class QuanLySanPham : Form
+	public partial class frmQuanLySanPham : Form
 	{
 		UI ui;
 		Connection db;
@@ -24,7 +24,7 @@ namespace APP.Views
 		public string PassWord { get; set; }
 
 
-		public QuanLySanPham(string User, string Pass)
+		public frmQuanLySanPham(string User, string Pass)
 		{
 			InitializeComponent();
 			this.UserName = User;
