@@ -18,6 +18,7 @@ namespace APP
 	public partial class MainForm : Form
 	{
 		public Connection conn;
+		Connection db = new Connection();
 		public string UserName { get; set; }
 		public string PassWord { get; set; }
 		public MainForm(string User, string Pass)
@@ -26,7 +27,7 @@ namespace APP
 			this.UserName = User;
 			this.PassWord = Pass;
 			conn = new Connection(UserName, PassWord);
-			_UserName.Text = conn.ExcuteReader($"SELECT HOTEN FROM NHANVIEN WHERE MANV = '{User}'", "HOTEN");
+			_UserName.Text = db.ExcuteReader($"SELECT HOTEN FROM NHANVIEN WHERE MANV = '{User}'", "HOTEN");
 			load();
 		}
 		public void load()
@@ -38,11 +39,6 @@ namespace APP
 			h.FormBorderStyle = FormBorderStyle.None;
 			pnl_Load_Main.Controls.Add(h);
 			h.Show();
-			tv_DanhMuc.Nodes.Clear();
-			foreach (DataRow item in conn.loadDB($"SELECT * FROM PQMANHINH p, DANHSACHMANHINH ds WHERE p.ID = ds.ID AND p.MANV = '{UserName}'").Rows)
-			{
-				 tv_DanhMuc.Nodes.Add(item["TENMH"].ToString());
-			}
 
 		}
 		private void tv_DanhMuc_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)

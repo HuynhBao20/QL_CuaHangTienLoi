@@ -290,7 +290,7 @@ namespace APP.Controllers
 			}
 		}
 		//Xử lý sự kiện
-			public void Event_Product_Click(object sender, EventArgs e, string MASP, FlowLayoutPanel flp, TextBox ThanhTien, string SDT)
+		public void Event_Product_Click(object sender, EventArgs e, string MASP, FlowLayoutPanel flp, TextBox ThanhTien, string SDT)
 			{
 				try
 				{
@@ -304,7 +304,7 @@ namespace APP.Controllers
 					MessageBox.Show(ex.Message);
 				}
 			}
-			public void Add_ProductToBill(string MAHD, string MASP, string SDT, TextBox ThanhTien)
+		public void Add_ProductToBill(string MAHD, string MASP, string SDT, TextBox ThanhTien)
 			{
 				try
 				{
@@ -364,7 +364,6 @@ namespace APP.Controllers
 					MessageBox.Show(e.Message);
 				}
 			}
-
         public void Event_Del_Product_BillDetail(object sender, EventArgs e, string MASP, FlowLayoutPanel flp, string MAHD, TextBox ThanhTien)
 		{
 			try

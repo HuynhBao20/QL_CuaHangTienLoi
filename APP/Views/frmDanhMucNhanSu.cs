@@ -30,14 +30,16 @@ namespace APP.Views
 
 		private void dgv_ListEmployee_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
-			txtMaNV.Text = dgv_ListEmployee.Rows[e.RowIndex].Cells[0].Value.ToString();
-			txtHoTen.Text = dgv_ListEmployee.Rows[e.RowIndex].Cells[1].Value.ToString();
-			txtNS.Text = DateTime.Parse(dgv_ListEmployee.Rows[e.RowIndex].Cells[2].Value.ToString()).ToString("dd/MM/yyyy");
-			txtNVL.Text = DateTime.Parse(dgv_ListEmployee.Rows[e.RowIndex].Cells[3].Value.ToString()).ToString("dd/MM/yyyy");
-			txtSDT.Text = dgv_ListEmployee.Rows[e.RowIndex].Cells[4].Value.ToString();
-			txtCCCD.Text = dgv_ListEmployee.Rows[e.RowIndex].Cells[5].Value.ToString();
-			txtDiaChi.Text = dgv_ListEmployee.Rows[e.RowIndex].Cells[6].Value.ToString();
-			
+			if(dgv_ListEmployee.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+			{
+				txtMaNV.Text = dgv_ListEmployee.Rows[e.RowIndex].Cells[0].Value.ToString();
+				txtHoTen.Text = dgv_ListEmployee.Rows[e.RowIndex].Cells[1].Value.ToString();
+				txtNS.Text = DateTime.Parse(dgv_ListEmployee.Rows[e.RowIndex].Cells[2].Value.ToString()).ToString("dd/MM/yyyy") ?? DateTime.Now.Date.ToString("dd/MM/yyyy");
+				txtNVL.Text = DateTime.Parse(dgv_ListEmployee.Rows[e.RowIndex].Cells[3].Value.ToString()).ToString("dd/MM/yyyy") ?? DateTime.Now.Date.ToString("dd/MM/yyyy");
+				txtSDT.Text = dgv_ListEmployee.Rows[e.RowIndex].Cells[4].Value.ToString();
+				txtCCCD.Text = dgv_ListEmployee.Rows[e.RowIndex].Cells[5].Value.ToString();
+				txtDiaChi.Text = dgv_ListEmployee.Rows[e.RowIndex].Cells[6].Value.ToString();
+			}
 		}
 
 		private void btnThem_Click(object sender, EventArgs e)
@@ -48,19 +50,19 @@ namespace APP.Views
 				$"{txtNS.Text}', '" +
 				$"{txtNVL.Text}', '" +
 				$"{txtSDT.Text}', '" +
-				$"{txtCCCD.Text}', '" +
-				$"{txtDiaChi.Text}') {Environment.NewLine} ALTER ROLE NHANVIEN ADD MEMBER {MANV}";
-			string SqlCreateAccount = $"CREATE LOGIN {MANV} WITH PASSWORD = '{p.create_Pass(MANV)}' CREATE USER {MANV} FOR LOGIN {MANV}";
+				$"{txtCCCD.Text}', N'" +
+				$"{txtDiaChi.Text}')";
 			db.ExcuteQuery(SqlInsert);
+			string SqlCreateAccount = $"CREATE LOGIN {MANV} WITH PASSWORD = '{p.create_Pass(MANV)}' CREATE USER {MANV} FOR LOGIN {MANV} ALTER ROLE NHANVIEN ADD MEMBER {MANV}";
+			
 			db.ExcuteQuery(SqlCreateAccount);
 			dgv_ListEmployee.DataSource = db.loadDB("SELECT * FROM NHANVIEN");
 		}
-
 		private void btnXoa_Click(object sender, EventArgs e)
 		{
 			if(!string.IsNullOrEmpty(txtMaNV.Text))
 			{
-				string SqlDel = $"DELETE FROM NHANVIEN WHERE MANV = '{txtMaNV.Text}'";
+				string SqlDel = $"DELETE FROM NHANVIEN WHERE MANV = '{txtMaNV.Text.Trim()}' {Environment.NewLine} EXEC drop_User '{txtMaNV.Text.Trim()}'";
 				db.ExcuteQuery(SqlDel);
 				MessageBox.Show("Xóa thành công");
 				dgv_ListEmployee.DataSource = db.loadDB("SELECT * FROM NHANVIEN");

@@ -451,7 +451,7 @@ namespace APP.Views
 			this.flpPhieuNhap.Size = new System.Drawing.Size(713, 400);
 			this.flpPhieuNhap.TabIndex = 1;
 			// 
-			// QuanLySanPham
+			// frmQuanLySanPham
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -460,7 +460,7 @@ namespace APP.Views
 			this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Margin = new System.Windows.Forms.Padding(4);
-			this.Name = "QuanLySanPham";
+			this.Name = "frmQuanLySanPham";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "QuanLySanPham";
 			this.tableLayoutPanel1.ResumeLayout(false);
