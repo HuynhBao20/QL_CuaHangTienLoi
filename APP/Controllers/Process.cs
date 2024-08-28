@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace APP.Controllers
 {
-	public class Process
+	public class process
 	{
         Connection db = new Connection();
         UI ui = new UI();
@@ -46,7 +46,7 @@ namespace APP.Controllers
         }
         public string create_Pass(string MANV)
 		{
-            string birthDay = db.ExcuteReader($"SELECT NGAYSINH FROM NHANVIEN WHERE MANV = '{MANV}'", "NGAYSINH");
+            string birthDay = DateTime.Parse(db.ExcuteReader($"SELECT NGAYSINH FROM NHANVIEN WHERE MANV = '{MANV}'", "NGAYSINH")).ToString("dd/MM/yyyy");
             string[] sql = birthDay.Split('/');
             string NewPass = "";
             for(int i = 0; i < sql.Length; i++)

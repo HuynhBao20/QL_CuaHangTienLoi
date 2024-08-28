@@ -1,4 +1,5 @@
-﻿using APP.Views.manhinhphu;
+﻿using APP.Controllers;
+using APP.Views.manhinhphu;
 using ConnectionDB;
 using System;
 using System.Collections.Generic;
@@ -15,12 +16,12 @@ namespace APP.Views
 {
 	public partial class FrmLogin : Form
 	{
-		Process p = new Process();
+		process p = new process();
 		public FrmLogin()
 		{
 			InitializeComponent();
 			Connection conn = new Connection();
-			Debug.WriteLine(p.cre)
+			Debug.WriteLine(p.create_Pass("NV002"));
 		}
 
 		private void textBox1_TextChanged(object sender, EventArgs e)

@@ -30,19 +30,26 @@ namespace APP.Views.manhinhphu
 			db = new Connection(UserName, PassWord);
 			Load();
 		}
+		public frmNhapHang()
+		{
+			InitializeComponent();
+			db = new Connection();
+			Load();
+		}
 		private void Load()
 		{
-			ui.load_SanPham_PhieuNhap(flp, lb_MAPN.Text);
+			ui.load_SanPham_PhieuNhap(flp, this.MAPN);
 		}
 
 		private void btnTaoPhieu_Click(object sender, EventArgs e)
 		{
 			string getMAPN = db.ExcuteReader(frmNhapHang.getBillID, "MAPN");
 			string PhieuNhapNew = db.getMAHD(getMAPN, "N0");
+			
+			string InsertSql = $"INSERT INTO PHIEUNHAP(MAPN, MANV) VALUES ('{PhieuNhapNew}', 'NV001')";
 			lb_MAPN.Text = PhieuNhapNew;
-			this.MAPN = MAPN;
-			string InsertSql = $"INSERT INTO PHIEUNHAP(MAPN, MANV) VALUES ('{PhieuNhapNew}', '{UserName}')";
 			db.ExcuteQuery(InsertSql);
+			this.MAPN = PhieuNhapNew;
 			dataGridView1.DataSource = db.loadDB($"SELECT * FROM CTPHIEUNHAP WHERE MAPN = '{PhieuNhapNew}'");
 		}
 	}

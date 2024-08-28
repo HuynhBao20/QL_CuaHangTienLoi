@@ -64,7 +64,7 @@
     <Compile Include="Controllers\Analyst.cs" />
     <Compile Include="Controllers\CustomTool.cs" />
     <Compile Include="Controllers\Event.cs" />
-    <Compile Include="Controllers\Process.cs" />
+    <Compile Include="Controllers\process.cs" />
     <Compile Include="Controllers\TotalMoMo.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>

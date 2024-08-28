@@ -22,13 +22,14 @@ namespace APP.Views.manhinhphu
 		public frmNhapCTPhieu(string User, string Pass, string MASP, string MAPN)
 		{
 			InitializeComponent();
+			db = new Connection(UserName, PassWord);
 			this.UserName = User;
 			this.PassWord = Pass;
 			this.MAPN = MAPN;
 			this.MASP = MASP;
-			lb_MAPN.Text = MAPN;
+			lb_MAPN.Text = this.MAPN;
 			txtMAPN.Text = MASP;
-			db = new Connection(UserName, PassWord);
+			
 		}
 
 		private void btnNhapHang_Click(object sender, EventArgs e)
@@ -38,7 +39,7 @@ namespace APP.Views.manhinhphu
 				$"{txtSL.Text}', '" +
 				$"{txtGN.Text}'," +
 				$"'{txtNgaySX.Text}', '" +
-				$"{txtNgayHH.Text}', '" +
+				$"{txtNgayHH.Text}', N'" +
 				$"{txtDVT.Text}')";
 			db.ExcuteQuery(Sql);
 		}

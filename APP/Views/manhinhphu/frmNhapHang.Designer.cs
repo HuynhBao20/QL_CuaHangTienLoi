@@ -344,7 +344,6 @@ namespace APP.Views.manhinhphu
 			this.lb_MAPN.Name = "lb_MAPN";
 			this.lb_MAPN.Size = new System.Drawing.Size(171, 55);
 			this.lb_MAPN.TabIndex = 1;
-			this.lb_MAPN.Text = "dđ";
 			this.lb_MAPN.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// button2

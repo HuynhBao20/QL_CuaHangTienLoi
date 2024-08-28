@@ -216,7 +216,7 @@ namespace APP.Controllers
 			{
 				foreach (DataRow item in da.Rows)
 				{
-					custom.UI_Load(fullPath(@"../../Resources/pngtree-purple-gradient-geometric-circle-background-image_50104.jpg"),
+					custom.UI_Load("",
 								   fpathImage(item["MASP"].ToString()),
 								   flp,
 								   item["TENSP"].ToString(),

@@ -52,7 +52,7 @@ namespace APP.Views.manhinhphu
 			this.tableLayoutPanel1.ColumnCount = 3;
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 161F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 339F));
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 92F));
 			this.tableLayoutPanel1.Controls.Add(this.lb_MAPN, 0, 0);
 			this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
 			this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
@@ -69,7 +69,7 @@ namespace APP.Views.manhinhphu
 			this.tableLayoutPanel1.Controls.Add(this.btnNhapHang, 1, 7);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-			this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.RowCount = 8;
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
@@ -238,7 +238,7 @@ namespace APP.Views.manhinhphu
 			this.ClientSize = new System.Drawing.Size(592, 337);
 			this.Controls.Add(this.tableLayoutPanel1);
 			this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "frmNhapCTPhieu";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "NHẬP CHI TIẾT PHIẾU";

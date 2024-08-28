@@ -1,4 +1,5 @@
-﻿using ConnectionDB;
+﻿using APP.Controllers;
+using ConnectionDB;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace APP.Views
 	public partial class DanhMucNhanSu : Form
 	{
 		Connection db = new Connection();
+		process p = new process();
 		public string UserName { get; set; }
 		public string PassWord { get; set; }
 		public static string getMaNV = "SELECT TOP 1 MANV FROM NHANVIEN ORDER BY MANV DESC";
@@ -48,7 +50,7 @@ namespace APP.Views
 				$"{txtSDT.Text}', '" +
 				$"{txtCCCD.Text}', '" +
 				$"{txtDiaChi.Text}') {Environment.NewLine} ALTER ROLE NHANVIEN ADD MEMBER {MANV}";
-			string SqlCreateAccount = $"CREATE LOGIN {MANV} WITH PASSWORD = '123' CREATE USER {MANV} FOR LOGIN {MANV}";
+			string SqlCreateAccount = $"CREATE LOGIN {MANV} WITH PASSWORD = '{p.create_Pass(MANV)}' CREATE USER {MANV} FOR LOGIN {MANV}";
 			db.ExcuteQuery(SqlInsert);
 			db.ExcuteQuery(SqlCreateAccount);
 			dgv_ListEmployee.DataSource = db.loadDB("SELECT * FROM NHANVIEN");
