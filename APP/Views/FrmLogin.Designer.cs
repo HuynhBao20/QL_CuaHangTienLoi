@@ -141,8 +141,9 @@ namespace APP.Views
 			this.txtPass.Name = "txtPass";
 			this.txtPass.PasswordChar = '•';
 			this.txtPass.Size = new System.Drawing.Size(270, 22);
-			this.txtPass.TabIndex = 0;
+			this.txtPass.TabIndex = 1;
 			this.txtPass.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+			this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
 			// 
 			// pictureBox4
 			// 
@@ -182,7 +183,7 @@ namespace APP.Views
 			this.btnLogin.Location = new System.Drawing.Point(199, 393);
 			this.btnLogin.Name = "btnLogin";
 			this.btnLogin.Size = new System.Drawing.Size(235, 41);
-			this.btnLogin.TabIndex = 4;
+			this.btnLogin.TabIndex = 3;
 			this.btnLogin.Text = "Đăng nhập";
 			this.btnLogin.UseVisualStyleBackColor = false;
 			this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -197,7 +198,7 @@ namespace APP.Views
 			this.pictureBox5.TabIndex = 5;
 			this.pictureBox5.TabStop = false;
 			// 
-			// FrmLogin
+			// frmLogin
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -215,7 +216,7 @@ namespace APP.Views
 			this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Margin = new System.Windows.Forms.Padding(4);
-			this.Name = "FrmLogin";
+			this.Name = "frmLogin";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "FrmLogin";
 			this.panel1.ResumeLayout(false);

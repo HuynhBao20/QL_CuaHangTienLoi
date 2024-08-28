@@ -45,12 +45,16 @@ namespace APP.Views.manhinhphu
 		{
 			string getMAPN = db.ExcuteReader(frmNhapHang.getBillID, "MAPN");
 			string PhieuNhapNew = db.getMAHD(getMAPN, "N0");
-			
-			string InsertSql = $"INSERT INTO PHIEUNHAP(MAPN, MANV) VALUES ('{PhieuNhapNew}', 'NV001')";
-			lb_MAPN.Text = PhieuNhapNew;
+			string InsertSql = $"INSERT INTO PHIEUNHAP(MAPN, MANV) VALUES ('{PhieuNhapNew}', '{UserName}')";
 			db.ExcuteQuery(InsertSql);
-			this.MAPN = PhieuNhapNew;
+			lb_MAPN.Text = PhieuNhapNew;
+			ui.load_SanPham_PhieuNhap(flp, PhieuNhapNew);
 			dataGridView1.DataSource = db.loadDB($"SELECT * FROM CTPHIEUNHAP WHERE MAPN = '{PhieuNhapNew}'");
+		}
+
+		private void dataGridView1_ParentChanged(object sender, EventArgs e)
+		{
+			
 		}
 	}
 }

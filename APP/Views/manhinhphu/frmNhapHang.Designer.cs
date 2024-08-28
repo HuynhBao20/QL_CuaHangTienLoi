@@ -387,6 +387,7 @@ namespace APP.Views.manhinhphu
 			this.dataGridView1.RowTemplate.Height = 24;
 			this.dataGridView1.Size = new System.Drawing.Size(638, 270);
 			this.dataGridView1.TabIndex = 0;
+			this.dataGridView1.ParentChanged += new System.EventHandler(this.dataGridView1_ParentChanged);
 			// 
 			// frmNhapHang
 			// 

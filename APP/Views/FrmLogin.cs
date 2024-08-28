@@ -55,5 +55,15 @@ namespace APP.Views
 				MessageBox.Show(ex.Message);
 			}
 		}
+
+		private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (e.KeyChar == (char)Keys.Enter)
+			{
+				btnLogin_Click(sender, e);			
+				txtPass.Clear();
+
+			}
+		}
 	}
 }
