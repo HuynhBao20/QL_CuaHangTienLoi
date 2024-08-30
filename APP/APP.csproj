@@ -248,8 +248,14 @@
     <None Include="Resources\5087579.png" />
     <None Include="Resources\4022801.png" />
     <None Include="Resources\9759376.png" />
+    <None Include="Resources\icon-10.png" />
+    <None Include="Resources\iconBill.png" />
+    <None Include="Resources\30.1.2021-06.png" />
+    <None Include="Resources\iconDoanhThu.png" />
+    <None Include="Resources\Asset-3-1.png" />
     <Content Include="Resources\iconHoaDon.png" />
     <Content Include="Resources\IconKho.png" />
+    <None Include="Resources\quan-ly-ton-kho-la-gi.png" />
     <Content Include="Resources\Sp.jpg" />
     <None Include="Resources\pngtree-add-customers-icon-color-flat-png-image_4674922.png" />
     <Content Include="Resources\01030601.jpg" />

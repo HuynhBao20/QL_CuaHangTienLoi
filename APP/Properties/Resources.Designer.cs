@@ -63,6 +63,16 @@ namespace APP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _30_1_2021_06 {
+            get {
+                object obj = ResourceManager.GetObject("30.1.2021-06", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _4022801 {
             get {
                 object obj = ResourceManager.GetObject("4022801", resourceCulture);
@@ -103,6 +113,16 @@ namespace APP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Asset_3_1 {
+            get {
+                object obj = ResourceManager.GetObject("Asset-3-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap avatar {
             get {
                 object obj = ResourceManager.GetObject("avatar", resourceCulture);
@@ -123,9 +143,39 @@ namespace APP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_10 {
+            get {
+                object obj = ResourceManager.GetObject("icon-10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icona {
             get {
                 object obj = ResourceManager.GetObject("icona", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconBill {
+            get {
+                object obj = ResourceManager.GetObject("iconBill", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconDoanhThu {
+            get {
+                object obj = ResourceManager.GetObject("iconDoanhThu", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +196,16 @@ namespace APP.Properties {
         internal static System.Drawing.Bitmap pngtree_add_customers_icon_color_flat_png_image_4674922 {
             get {
                 object obj = ResourceManager.GetObject("pngtree-add-customers-icon-color-flat-png-image_4674922", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap quan_ly_ton_kho_la_gi {
+            get {
+                object obj = ResourceManager.GetObject("quan-ly-ton-kho-la-gi", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

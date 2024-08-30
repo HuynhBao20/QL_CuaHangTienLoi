@@ -41,75 +41,6 @@ namespace APP
 			h.Show();
 
 		}
-		private void tv_DanhMuc_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
-		{
-			
-			switch (e.Node.Text)
-			{
-				case "Trang chủ":
-					frmDashboard h = new frmDashboard(UserName, PassWord);
-					h.Dock = DockStyle.Fill;
-					h.TopLevel = false;
-					h.FormBorderStyle = FormBorderStyle.None;
-					pnl_Load_Main.Controls.Add(h);
-					h.Show();
-
-					break;
-				case "Quản lý bán hàng":
-					pnl_Load_Main.Controls.Clear();
-					frmQuanLyHangHoa hh = new frmQuanLyHangHoa();
-					hh.Dock = DockStyle.Fill;
-					hh.TopLevel = false;
-					pnl_Load_Main.Controls.Add(hh);
-					hh.Show();
-					break;
-				case "Quản lý nhập hàng":
-					pnl_Load_Main.Controls.Clear();
-					frmNhapHang sp = new frmNhapHang(UserName, PassWord);
-					sp.Dock = DockStyle.Fill;
-					sp.TopLevel = false;
-					sp.FormBorderStyle = FormBorderStyle.None;
-					pnl_Load_Main.Controls.Add(sp);
-					sp.Show();
-					break;
-				case "Quản lý hóa đơn":
-					pnl_Load_Main.Controls.Clear();
-					frmQuanLyHoaDon hd = new frmQuanLyHoaDon();
-					hd.Dock = DockStyle.Fill;
-					hd.TopLevel = false;
-					pnl_Load_Main.Controls.Add(hd);
-					hd.Show();
-					break;
-				case "Quản lý khách hàng":
-					pnl_Load_Main.Controls.Clear();
-					frmKhachHang kh = new frmKhachHang();
-					kh.FormBorderStyle = FormBorderStyle.None;
-					kh.Dock = DockStyle.Fill;
-					kh.TopLevel = false;
-					pnl_Load_Main.Controls.Add(kh);
-					kh.Show();
-					break;
-				case "Quản lý nhân sự":
-					pnl_Load_Main.Controls.Clear();
-					frmDanhMucNhanSu ns = new frmDanhMucNhanSu(UserName, PassWord);
-					ns.FormBorderStyle = FormBorderStyle.None;
-					ns.Dock = DockStyle.Fill;
-					ns.TopLevel = false;
-					pnl_Load_Main.Controls.Add(ns);
-					ns.Show();
-					break;
-				case "Quản lý doanh thu":
-					pnl_Load_Main.Controls.Clear();
-					frmQuanLyDoanhThu dt = new frmQuanLyDoanhThu();
-					dt.FormBorderStyle = FormBorderStyle.None;
-					dt.Dock = DockStyle.Fill;
-					dt.TopLevel = false;
-					pnl_Load_Main.Controls.Add(dt);
-					dt.Show();
-					break;
-			}
-		}
-
 		private void resetPass_Click(object sender, EventArgs e)
 		{
 			frmResetPass reset = new frmResetPass(UserName);
@@ -121,6 +52,88 @@ namespace APP
 			frmLogin lg = new frmLogin();
 			this.Hide();
 			lg.Show();
+		}
+
+		private void btnHome_Click(object sender, EventArgs e)
+		{
+			frmDashboard h = new frmDashboard(UserName, PassWord);
+			h.Dock = DockStyle.Fill;
+			h.TopLevel = false;
+			h.FormBorderStyle = FormBorderStyle.None;
+			pnl_Load_Main.Controls.Add(h);
+			h.Show();
+		}
+
+		private void btnBanHang_Click(object sender, EventArgs e)
+		{
+			pnl_Load_Main.Controls.Clear();
+			frmQuanLyHangHoa hh = new frmQuanLyHangHoa();
+			hh.Dock = DockStyle.Fill;
+			hh.TopLevel = false;
+			pnl_Load_Main.Controls.Add(hh);
+			hh.Show();
+		}
+
+		private void btnKhachHang_Click(object sender, EventArgs e)
+		{
+			pnl_Load_Main.Controls.Clear();
+			frmKhachHang kh = new frmKhachHang();
+			kh.FormBorderStyle = FormBorderStyle.None;
+			kh.Dock = DockStyle.Fill;
+			kh.TopLevel = false;
+			pnl_Load_Main.Controls.Add(kh);
+			kh.Show();
+		}
+
+		private void btnNhanSu_Click(object sender, EventArgs e)
+		{
+			pnl_Load_Main.Controls.Clear();
+			frmDanhMucNhanSu ns = new frmDanhMucNhanSu(UserName, PassWord);
+			ns.FormBorderStyle = FormBorderStyle.None;
+			ns.Dock = DockStyle.Fill;
+			ns.TopLevel = false;
+			pnl_Load_Main.Controls.Add(ns);
+			ns.Show();
+
+		}
+
+		private void button6_Click(object sender, EventArgs e)
+		{
+			pnl_Load_Main.Controls.Clear();
+			frmQuanLyHoaDon hd = new frmQuanLyHoaDon();
+			hd.Dock = DockStyle.Fill;
+			hd.TopLevel = false;
+			pnl_Load_Main.Controls.Add(hd);
+			hd.Show();
+
+		}
+
+		private void btnDoanhThu_Click(object sender, EventArgs e)
+		{
+			pnl_Load_Main.Controls.Clear();
+			frmQuanLyDoanhThu dt = new frmQuanLyDoanhThu();
+			dt.FormBorderStyle = FormBorderStyle.None;
+			dt.Dock = DockStyle.Fill;
+			dt.TopLevel = false;
+			pnl_Load_Main.Controls.Add(dt);
+			dt.Show();
+
+		}
+
+		private void btnHangHoa_Click(object sender, EventArgs e)
+		{
+			pnl_Load_Main.Controls.Clear();
+			frmNhapHang sp = new frmNhapHang(UserName, PassWord);
+			sp.Dock = DockStyle.Fill;
+			sp.TopLevel = false;
+			sp.FormBorderStyle = FormBorderStyle.None;
+			pnl_Load_Main.Controls.Add(sp);
+			sp.Show();
+		}
+
+		private void MainForm_Load(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

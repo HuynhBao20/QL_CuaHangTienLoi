@@ -30,41 +30,43 @@ namespace APP
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Trang chủ");
-			System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Quản lý bán hàng");
-			System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Quản lý nhập hàng");
-			System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Quản lý kho");
-			System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Danh mục hàng hóa", new System.Windows.Forms.TreeNode[] {
-            treeNode12,
-            treeNode13,
-            treeNode14});
-			System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Hóa đơn trong ngày");
-			System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Quản lý hóa đơn", new System.Windows.Forms.TreeNode[] {
-            treeNode16});
-			System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Quản lý khách hàng");
-			System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Quản lý nhân sự");
-			System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Quản lý doanh thu");
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.pnl_Load_Main = new System.Windows.Forms.Panel();
-			this.tv_DanhMuc = new System.Windows.Forms.TreeView();
 			this.imageList1 = new System.Windows.Forms.ImageList(this.components);
 			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.btnHome = new System.Windows.Forms.Button();
+			this.btnKhachHang = new System.Windows.Forms.Button();
 			this._UserName = new System.Windows.Forms.ToolStripDropDownButton();
 			this.resetPass = new System.Windows.Forms.ToolStripMenuItem();
 			this._Logout = new System.Windows.Forms.ToolStripMenuItem();
-			this.panel1 = new System.Windows.Forms.Panel();
+			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+			this.toolStripButton2 = new System.Windows.Forms.ToolStripDropDownButton();
+			this.btnHangHoa = new System.Windows.Forms.ToolStripMenuItem();
+			this.quảnLýNhậpHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+			this.btnBill = new System.Windows.Forms.Button();
+			this.btnDoanhThu = new System.Windows.Forms.Button();
+			this.btnNhanSu = new System.Windows.Forms.Button();
+			this.btnBanHang = new System.Windows.Forms.Button();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.button1 = new System.Windows.Forms.Button();
+			this.button2 = new System.Windows.Forms.Button();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.toolStrip1.SuspendLayout();
 			this.panel1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel1
 			// 
 			this.tableLayoutPanel1.BackColor = System.Drawing.Color.White;
 			this.tableLayoutPanel1.ColumnCount = 2;
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.76684F));
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.23316F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.2487F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.7513F));
 			this.tableLayoutPanel1.Controls.Add(this.pnl_Load_Main, 1, 1);
 			this.tableLayoutPanel1.Controls.Add(this.toolStrip1, 1, 0);
 			this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
@@ -82,72 +84,81 @@ namespace APP
 			// pnl_Load_Main
 			// 
 			this.pnl_Load_Main.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pnl_Load_Main.Location = new System.Drawing.Point(232, 47);
+			this.pnl_Load_Main.Location = new System.Drawing.Point(224, 47);
 			this.pnl_Load_Main.Margin = new System.Windows.Forms.Padding(4);
 			this.pnl_Load_Main.Name = "pnl_Load_Main";
-			this.pnl_Load_Main.Size = new System.Drawing.Size(1308, 727);
+			this.pnl_Load_Main.Size = new System.Drawing.Size(1316, 727);
 			this.pnl_Load_Main.TabIndex = 0;
-			// 
-			// tv_DanhMuc
-			// 
-			this.tv_DanhMuc.BackColor = System.Drawing.Color.White;
-			this.tv_DanhMuc.ImageIndex = 0;
-			this.tv_DanhMuc.ImageList = this.imageList1;
-			this.tv_DanhMuc.Location = new System.Drawing.Point(10, 10);
-			this.tv_DanhMuc.Margin = new System.Windows.Forms.Padding(4);
-			this.tv_DanhMuc.Name = "tv_DanhMuc";
-			treeNode11.Name = "Node5";
-			treeNode11.Text = "Trang chủ";
-			treeNode12.BackColor = System.Drawing.Color.Transparent;
-			treeNode12.Name = "Node1";
-			treeNode12.Text = "Quản lý bán hàng";
-			treeNode13.Name = "Node4";
-			treeNode13.Text = "Quản lý nhập hàng";
-			treeNode14.Name = "Node0";
-			treeNode14.Text = "Quản lý kho";
-			treeNode15.ImageIndex = -2;
-			treeNode15.Name = "Node0";
-			treeNode15.Text = "Danh mục hàng hóa";
-			treeNode16.Name = "Node1";
-			treeNode16.Text = "Hóa đơn trong ngày";
-			treeNode17.Name = "Node0";
-			treeNode17.Text = "Quản lý hóa đơn";
-			treeNode18.Name = "Node0";
-			treeNode18.Text = "Quản lý khách hàng";
-			treeNode19.Name = "Node1";
-			treeNode19.Text = "Quản lý nhân sự";
-			treeNode20.Name = "Node2";
-			treeNode20.Text = "Quản lý doanh thu";
-			this.tv_DanhMuc.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode11,
-            treeNode15,
-            treeNode17,
-            treeNode18,
-            treeNode19,
-            treeNode20});
-			this.tv_DanhMuc.SelectedImageIndex = 0;
-			this.tv_DanhMuc.Size = new System.Drawing.Size(202, 381);
-			this.tv_DanhMuc.TabIndex = 1;
-			this.tv_DanhMuc.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tv_DanhMuc_NodeMouseClick);
 			// 
 			// imageList1
 			// 
 			this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
 			this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
 			this.imageList1.Images.SetKeyName(0, "icon-thiet-ke-linh-vuc-logo-hang-tieu-dung-baa-brand-1.png");
+			this.imageList1.Images.SetKeyName(1, "icon-10.png");
+			this.imageList1.Images.SetKeyName(2, "iconBill.png");
+			this.imageList1.Images.SetKeyName(3, "30.1.2021-06.png");
+			this.imageList1.Images.SetKeyName(4, "iconDoanhThu.png");
+			this.imageList1.Images.SetKeyName(5, "quan-ly-ton-kho-la-gi.png");
+			this.imageList1.Images.SetKeyName(6, "Asset-3-1.png");
 			// 
 			// toolStrip1
 			// 
-			this.toolStrip1.BackColor = System.Drawing.Color.PaleTurquoise;
+			this.toolStrip1.BackColor = System.Drawing.SystemColors.Control;
 			this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this._UserName});
-			this.toolStrip1.Location = new System.Drawing.Point(228, 0);
+            this._UserName,
+            this.toolStripButton1,
+            this.toolStripButton2,
+            this.toolStripButton3});
+			this.toolStrip1.Location = new System.Drawing.Point(220, 0);
 			this.toolStrip1.Name = "toolStrip1";
-			this.toolStrip1.Size = new System.Drawing.Size(1316, 43);
+			this.toolStrip1.Size = new System.Drawing.Size(1324, 43);
 			this.toolStrip1.TabIndex = 2;
 			this.toolStrip1.Text = "toolStrip1";
+			// 
+			// panel1
+			// 
+			this.panel1.BackColor = System.Drawing.SystemColors.Control;
+			this.panel1.Controls.Add(this.groupBox1);
+			this.panel1.Controls.Add(this.btnBill);
+			this.panel1.Controls.Add(this.btnDoanhThu);
+			this.panel1.Controls.Add(this.btnNhanSu);
+			this.panel1.Controls.Add(this.btnKhachHang);
+			this.panel1.Controls.Add(this.btnBanHang);
+			this.panel1.Controls.Add(this.btnHome);
+			this.panel1.Controls.Add(this.pictureBox1);
+			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel1.Location = new System.Drawing.Point(3, 3);
+			this.panel1.Name = "panel1";
+			this.tableLayoutPanel1.SetRowSpan(this.panel1, 2);
+			this.panel1.Size = new System.Drawing.Size(214, 772);
+			this.panel1.TabIndex = 3;
+			// 
+			// btnHome
+			// 
+			this.btnHome.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnHome.Location = new System.Drawing.Point(0, 40);
+			this.btnHome.Name = "btnHome";
+			this.btnHome.Size = new System.Drawing.Size(214, 53);
+			this.btnHome.TabIndex = 1;
+			this.btnHome.Text = "Trang chủ";
+			this.btnHome.UseVisualStyleBackColor = true;
+			this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+			// 
+			// btnKhachHang
+			// 
+			this.btnKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnKhachHang.ImageList = this.imageList1;
+			this.btnKhachHang.Location = new System.Drawing.Point(0, 153);
+			this.btnKhachHang.Name = "btnKhachHang";
+			this.btnKhachHang.Size = new System.Drawing.Size(214, 60);
+			this.btnKhachHang.TabIndex = 3;
+			this.btnKhachHang.Text = "Quản lý khách hàng";
+			this.btnKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnKhachHang.UseVisualStyleBackColor = true;
+			this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
 			// 
 			// _UserName
 			// 
@@ -165,27 +176,157 @@ namespace APP
 			// resetPass
 			// 
 			this.resetPass.Name = "resetPass";
-			this.resetPass.Size = new System.Drawing.Size(224, 26);
+			this.resetPass.Size = new System.Drawing.Size(181, 26);
 			this.resetPass.Text = "Đổi mật khẩu";
 			this.resetPass.Click += new System.EventHandler(this.resetPass_Click);
 			// 
 			// _Logout
 			// 
 			this._Logout.Name = "_Logout";
-			this._Logout.Size = new System.Drawing.Size(224, 26);
+			this._Logout.Size = new System.Drawing.Size(181, 26);
 			this._Logout.Text = "Đăng xuất";
 			this._Logout.Click += new System.EventHandler(this._Logout_Click);
 			// 
-			// panel1
+			// toolStripButton1
 			// 
-			this.panel1.BackColor = System.Drawing.Color.PaleTurquoise;
-			this.panel1.Controls.Add(this.tv_DanhMuc);
-			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel1.Location = new System.Drawing.Point(3, 3);
-			this.panel1.Name = "panel1";
-			this.tableLayoutPanel1.SetRowSpan(this.panel1, 2);
-			this.panel1.Size = new System.Drawing.Size(222, 772);
-			this.panel1.TabIndex = 3;
+			this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+			this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripButton1.Name = "toolStripButton1";
+			this.toolStripButton1.Size = new System.Drawing.Size(56, 40);
+			this.toolStripButton1.Text = "File";
+			// 
+			// toolStripButton2
+			// 
+			this.toolStripButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnHangHoa,
+            this.quảnLýNhậpHàngToolStripMenuItem});
+			this.toolStripButton2.Image = global::APP.Properties.Resources.Asset_3_1;
+			this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripButton2.Name = "toolStripButton2";
+			this.toolStripButton2.Size = new System.Drawing.Size(116, 40);
+			this.toolStripButton2.Text = "Nhập hàng";
+			// 
+			// btnHangHoa
+			// 
+			this.btnHangHoa.Name = "btnHangHoa";
+			this.btnHangHoa.Size = new System.Drawing.Size(224, 26);
+			this.btnHangHoa.Text = "Quản lý hàng hóa";
+			this.btnHangHoa.Click += new System.EventHandler(this.btnHangHoa_Click);
+			// 
+			// quảnLýNhậpHàngToolStripMenuItem
+			// 
+			this.quảnLýNhậpHàngToolStripMenuItem.Name = "quảnLýNhậpHàngToolStripMenuItem";
+			this.quảnLýNhậpHàngToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.quảnLýNhậpHàngToolStripMenuItem.Text = "Quản lý nhập hàng";
+			// 
+			// toolStripButton3
+			// 
+			this.toolStripButton3.Image = global::APP.Properties.Resources.quan_ly_ton_kho_la_gi;
+			this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripButton3.Name = "toolStripButton3";
+			this.toolStripButton3.Size = new System.Drawing.Size(111, 40);
+			this.toolStripButton3.Text = "Quản lý kho";
+			// 
+			// btnBill
+			// 
+			this.btnBill.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnBill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnBill.ImageKey = "iconBill.png";
+			this.btnBill.ImageList = this.imageList1;
+			this.btnBill.Location = new System.Drawing.Point(0, 333);
+			this.btnBill.Name = "btnBill";
+			this.btnBill.Size = new System.Drawing.Size(214, 60);
+			this.btnBill.TabIndex = 6;
+			this.btnBill.Text = "Quản lý hóa đơn";
+			this.btnBill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnBill.UseVisualStyleBackColor = true;
+			this.btnBill.Click += new System.EventHandler(this.button6_Click);
+			// 
+			// btnDoanhThu
+			// 
+			this.btnDoanhThu.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnDoanhThu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnDoanhThu.ImageKey = "iconDoanhThu.png";
+			this.btnDoanhThu.ImageList = this.imageList1;
+			this.btnDoanhThu.Location = new System.Drawing.Point(0, 273);
+			this.btnDoanhThu.Name = "btnDoanhThu";
+			this.btnDoanhThu.Size = new System.Drawing.Size(214, 60);
+			this.btnDoanhThu.TabIndex = 5;
+			this.btnDoanhThu.Text = "Quản lý doanh thu";
+			this.btnDoanhThu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnDoanhThu.UseVisualStyleBackColor = true;
+			this.btnDoanhThu.Click += new System.EventHandler(this.btnDoanhThu_Click);
+			// 
+			// btnNhanSu
+			// 
+			this.btnNhanSu.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnNhanSu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnNhanSu.ImageKey = "icon-10.png";
+			this.btnNhanSu.ImageList = this.imageList1;
+			this.btnNhanSu.Location = new System.Drawing.Point(0, 213);
+			this.btnNhanSu.Name = "btnNhanSu";
+			this.btnNhanSu.Size = new System.Drawing.Size(214, 60);
+			this.btnNhanSu.TabIndex = 4;
+			this.btnNhanSu.Text = "Quản lý nhân sự";
+			this.btnNhanSu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnNhanSu.UseVisualStyleBackColor = true;
+			this.btnNhanSu.Click += new System.EventHandler(this.btnNhanSu_Click);
+			// 
+			// btnBanHang
+			// 
+			this.btnBanHang.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnBanHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnBanHang.ImageKey = "30.1.2021-06.png";
+			this.btnBanHang.ImageList = this.imageList1;
+			this.btnBanHang.Location = new System.Drawing.Point(0, 93);
+			this.btnBanHang.Name = "btnBanHang";
+			this.btnBanHang.Size = new System.Drawing.Size(214, 60);
+			this.btnBanHang.TabIndex = 2;
+			this.btnBanHang.Text = "Quản lý bán hàng";
+			this.btnBanHang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnBanHang.UseVisualStyleBackColor = true;
+			this.btnBanHang.Click += new System.EventHandler(this.btnBanHang_Click);
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+			this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(214, 40);
+			this.pictureBox1.TabIndex = 0;
+			this.pictureBox1.TabStop = false;
+			// 
+			// groupBox1
+			// 
+			this.groupBox1.Controls.Add(this.button2);
+			this.groupBox1.Controls.Add(this.button1);
+			this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.groupBox1.Location = new System.Drawing.Point(0, 590);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(214, 182);
+			this.groupBox1.TabIndex = 7;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "Cài đặt";
+			// 
+			// button1
+			// 
+			this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.button1.Location = new System.Drawing.Point(3, 140);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(208, 39);
+			this.button1.TabIndex = 0;
+			this.button1.Text = "Thông tin cá nhân";
+			this.button1.UseVisualStyleBackColor = true;
+			// 
+			// button2
+			// 
+			this.button2.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.button2.Location = new System.Drawing.Point(3, 101);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(208, 39);
+			this.button2.TabIndex = 1;
+			this.button2.Text = "Cài đặt";
+			this.button2.UseVisualStyleBackColor = true;
 			// 
 			// MainForm
 			// 
@@ -201,11 +342,14 @@ namespace APP
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "PHẦN MỀM QUẢN LÝ CỬA HÀNG TIỆN LỢI";
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+			this.Load += new System.EventHandler(this.MainForm_Load);
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.tableLayoutPanel1.PerformLayout();
 			this.toolStrip1.ResumeLayout(false);
 			this.toolStrip1.PerformLayout();
 			this.panel1.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			this.groupBox1.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -214,12 +358,26 @@ namespace APP
 
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 		private System.Windows.Forms.Panel pnl_Load_Main;
-		private System.Windows.Forms.TreeView tv_DanhMuc;
 		private System.Windows.Forms.ToolStrip toolStrip1;
 		private System.Windows.Forms.ToolStripDropDownButton _UserName;
 		private System.Windows.Forms.ToolStripMenuItem resetPass;
 		private System.Windows.Forms.ToolStripMenuItem _Logout;
 		private System.Windows.Forms.ImageList imageList1;
 		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.ToolStripButton toolStripButton1;
+		private System.Windows.Forms.ToolStripButton toolStripButton3;
+		private System.Windows.Forms.Button btnBill;
+		private System.Windows.Forms.Button btnDoanhThu;
+		private System.Windows.Forms.Button btnNhanSu;
+		private System.Windows.Forms.Button btnKhachHang;
+		private System.Windows.Forms.Button btnBanHang;
+		private System.Windows.Forms.Button btnHome;
+		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.ToolStripDropDownButton toolStripButton2;
+		private System.Windows.Forms.ToolStripMenuItem btnHangHoa;
+		private System.Windows.Forms.ToolStripMenuItem quảnLýNhậpHàngToolStripMenuItem;
+		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Button button1;
 	}
 }
