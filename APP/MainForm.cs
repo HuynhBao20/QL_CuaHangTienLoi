@@ -65,9 +65,10 @@ namespace APP
 					break;
 				case "Quản lý nhập hàng":
 					pnl_Load_Main.Controls.Clear();
-					frmQuanLySanPham sp = new frmQuanLySanPham(UserName, PassWord);
+					frmNhapHang sp = new frmNhapHang(UserName, PassWord);
 					sp.Dock = DockStyle.Fill;
 					sp.TopLevel = false;
+					sp.FormBorderStyle = FormBorderStyle.None;
 					pnl_Load_Main.Controls.Add(sp);
 					sp.Show();
 					break;

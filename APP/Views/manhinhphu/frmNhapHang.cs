@@ -46,7 +46,7 @@ namespace APP.Views.manhinhphu
 			lb_MAPN.Text = PhieuNhapNew;
 			ui.load_SanPham_PhieuNhap(flp, PhieuNhapNew);
 			da = db.loadDB($"SELECT * FROM CTPHIEUNHAP WHERE MAPN = '{PhieuNhapNew}'");
-			dgvLoad.DataSource = da;
+			//dgvLoad.DataSource = da;
 		}
 
 		private void dataGridView1_ParentChanged(object sender, EventArgs e)
