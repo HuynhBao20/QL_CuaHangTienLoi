@@ -39,16 +39,19 @@ namespace APP.Views.manhinhphu
 		}
 		public void load()
 		{
-			ui.load_SanPham_PhieuNhap(flp);
-			n.load_ChiTiet(flp_SP);
+			n.load_SanPham_PhieuNhap(flp, txtMaSP);
+			n.load_PhieuNhap(flp_SP, flp_CTPN);
 		}
 		private void btnTaoPhieu_Click(object sender, EventArgs e)
 		{
+			flpDs.Controls.Clear();
 			string getMAPN = db.ExcuteReader(frmNhapHang.getBillID, "MAPN");
 			string PhieuNhapNew = db.getMAHD(getMAPN, "N0");
 			string InsertSql = $"INSERT INTO PHIEUNHAP(MAPN, MANV) VALUES ('{PhieuNhapNew}', '{UserName}')";
 			db.ExcuteQuery(InsertSql);
 			lb_MAPN.Text = PhieuNhapNew;
+			this.MAPN = PhieuNhapNew;
+			n.load_PhieuNhapCT(flpDs, PhieuNhapNew);
 			//da = db.loadDB($"SELECT * FROM CTPHIEUNHAP WHERE MAPN = '{PhieuNhapNew}'");
 			//dgvLoad.DataSource = da;
 		}
@@ -61,6 +64,29 @@ namespace APP.Views.manhinhphu
 		private void btnAddSP_Click(object sender, EventArgs e)
 		{
 			groupBox3.Enabled = true;
+		}
+
+		private void btnNhapHang_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				string Sql = $"SET DATEFORMAT DMY INSERT INTO CTPHIEUNHAP VALUES ('{MAPN}', '" +
+					$"{txtMaSP.Text}', '" +
+					$"{txtSL.Text}', '" +
+					$"{txtGN.Text}'," +
+					$"'{txtNgaySX.Text}', '" +
+					$"{txtNgayHH.Text}', N'" +
+					$"{txtDVT.Text}')";
+				db.ExcuteQuery(Sql);
+				MessageBox.Show($"Thêm thành công Sản phẩm: {txtMaSP.Text.Trim()} vào phiếu {MAPN}");
+				n.load_PhieuNhapCT(flpDs, this.MAPN);
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+
 		}
 	}
 }

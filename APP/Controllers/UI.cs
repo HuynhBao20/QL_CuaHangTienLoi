@@ -208,27 +208,6 @@ namespace APP.Controllers
 				tabControl1.Controls.Add(tabPage);
 			}
 		}
-		public void load_SanPham_PhieuNhap(FlowLayoutPanel flp)
-		{
-			DataTable da = db.loadDB("SELECT * FROM SANPHAM");
-			flp.Controls.Clear();
-			if (da.Rows.Count > 0)
-			{
-				foreach (DataRow item in da.Rows)
-				{
-					custom.UI_Load("",
-								   fpathImage(item["MASP"].ToString()),
-								   flp,
-								   item["TENSP"].ToString(),
-								   145,
-								   (sender, e) => {});
-				}
-			}
-			else
-			{
-				MessageBox.Show("Không có sản phẩm");
-			}
-		}
 		public void load_PhieuNhap(FlowLayoutPanel flp)
 		{
 			flp.AutoScroll = true;

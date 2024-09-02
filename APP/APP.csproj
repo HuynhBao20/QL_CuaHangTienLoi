@@ -116,12 +116,6 @@
     <Compile Include="Views\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\manhinhphu\frmNhapCTPhieu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\manhinhphu\frmNhapCTPhieu.Designer.cs">
-      <DependentUpon>frmNhapCTPhieu.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\manhinhphu\frmNhapHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,9 +184,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\manhinhphu\frmNhapCTPhieu.resx">
-      <DependentUpon>frmNhapCTPhieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\manhinhphu\frmNhapHang.resx">
       <DependentUpon>frmNhapHang.cs</DependentUpon>

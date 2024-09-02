@@ -154,7 +154,6 @@ D:\HỌC TẬP\APP_CHTL (1)\APP_CHTL\APP\obj\Debug\APP.csproj.Up2Date
 D:\HỌC TẬP\APP_CHTL (1)\APP_CHTL\APP\obj\Debug\APP.exe
 D:\HỌC TẬP\APP_CHTL (1)\APP_CHTL\APP\obj\Debug\APP.pdb
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.frmQuanLyDoanhThu.resources
-C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.manhinhphu.frmNhapCTPhieu.resources
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.manhinhphu.frmNhapHang.resources
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.manhinhphu.frmResetPass.resources
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.frmChiTietHoaDon.resources

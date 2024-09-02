@@ -24,5 +24,7 @@ namespace ConnectionDB.Models
 		public DataTable da_HoaDon() => db.loadDB("SELECT * FROM HOADON");
 		public DataTable da_SanPham() => db.loadDB("SELECT * FROM SANPHAM");
 		public DataTable da_PhieuNhap() => db.loadDB("SELECT * FROM PHIEUNHAP");
+		public DataTable da_CTPhieuNhap(string MAPN) => db.loadDB($"EXEC sp_Join_CTPN '{MAPN}'");
+		public DataTable da_CTPhieuNhap_MAPN(string MAPN) => db.loadDB($"SELECT * FROM CTPHIEUNHAP WHERE MAPN = '{MAPN}'");
 	}
 }
