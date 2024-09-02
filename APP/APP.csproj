@@ -64,6 +64,7 @@
     <Compile Include="Controllers\Analyst.cs" />
     <Compile Include="Controllers\CustomTool.cs" />
     <Compile Include="Controllers\Event.cs" />
+    <Compile Include="Controllers\NhapHang.cs" />
     <Compile Include="Controllers\process.cs" />
     <Compile Include="Controllers\TotalMoMo.cs" />
     <Compile Include="MainForm.cs">
@@ -246,7 +247,6 @@
     <None Include="Resources\avatar.jpg" />
     <None Include="Resources\8160405.png" />
     <None Include="Resources\5087579.png" />
-    <None Include="Resources\4022801.png" />
     <None Include="Resources\9759376.png" />
     <None Include="Resources\icon-10.png" />
     <None Include="Resources\iconBill.png" />

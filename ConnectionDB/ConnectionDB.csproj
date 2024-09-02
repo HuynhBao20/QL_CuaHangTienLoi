@@ -90,6 +90,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Data.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Datatable.cs" />
     <Compile Include="Models\HOADON.cs">
       <DependentUpon>Data.tt</DependentUpon>
     </Compile>

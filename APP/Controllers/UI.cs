@@ -169,7 +169,7 @@ namespace APP.Controllers
 				flp.Controls.Add(pnl);
 			}
 		}
-        public void load_HoaDon_ChuaXuat(FlowLayoutPanel flp, string SQL, Label _MAHD, Label NgayLap, FlowLayoutPanel flowLayout, TextBox ThanhTien)
+        public void load_HoaDon_ChuaXuat(FlowLayoutPanel flp, string SQL, Label NgayLap, FlowLayoutPanel flowLayout, TextBox ThanhTien)
         {
             flp.Controls.Clear(); // Xóa các hóa đơn trước đó trong danh sách
             DataTable da = db.loadDB(SQL);
@@ -208,7 +208,7 @@ namespace APP.Controllers
 				tabControl1.Controls.Add(tabPage);
 			}
 		}
-		public void load_SanPham_PhieuNhap(FlowLayoutPanel flp, string MAPN)
+		public void load_SanPham_PhieuNhap(FlowLayoutPanel flp)
 		{
 			DataTable da = db.loadDB("SELECT * FROM SANPHAM");
 			flp.Controls.Clear();
@@ -220,16 +220,13 @@ namespace APP.Controllers
 								   fpathImage(item["MASP"].ToString()),
 								   flp,
 								   item["TENSP"].ToString(),
-								   135,
-								   (sender, e) => {
-									   frmNhapCTPhieu ct = new frmNhapCTPhieu(UserName, PassWord, item["MASP"].ToString(), MAPN);
-									   ct.Show();
-								   });
+								   145,
+								   (sender, e) => {});
 				}
 			}
 			else
 			{
-				MessageBox.Show("Không tìm thấy");
+				MessageBox.Show("Không có sản phẩm");
 			}
 		}
 		public void load_PhieuNhap(FlowLayoutPanel flp)
@@ -288,6 +285,16 @@ namespace APP.Controllers
 				flp.Controls.Add(pnl);
 
 			}
+		}
+		public void load_Interface(Form a, Panel flp)
+		{
+			flp.Controls.Clear();
+			a.FormBorderStyle = FormBorderStyle.None;
+			a.Dock = DockStyle.Fill;
+			a.TopLevel = false;
+			flp.Controls.Add(a);
+			a.Show();
+
 		}
 		//Xử lý sự kiện
 		public void Event_Product_Click(object sender, EventArgs e, string MASP, FlowLayoutPanel flp, TextBox ThanhTien, string SDT)

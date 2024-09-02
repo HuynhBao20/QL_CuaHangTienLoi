@@ -141,7 +141,7 @@ namespace APP.Views
 			this.txtPass.Name = "txtPass";
 			this.txtPass.PasswordChar = '•';
 			this.txtPass.Size = new System.Drawing.Size(270, 22);
-			this.txtPass.TabIndex = 1;
+			this.txtPass.TabIndex = 2;
 			this.txtPass.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
 			this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
 			// 

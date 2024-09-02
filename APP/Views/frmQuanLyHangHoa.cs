@@ -53,7 +53,7 @@ namespace APP.Views
 			tv_LoaiSP.Controls.Clear();
 			ui.loadTreeView(tv_LoaiSP);
 			btnTotalMoMo.Enabled = false;
-			ui.load_HoaDon_ChuaXuat(flp_HDChuaXuat, "EXEC sp_HD_ChuaXuat", lb_MaHD, lb_NgayLap, flp_BillDetail, txtTongTien);
+			ui.load_HoaDon_ChuaXuat(flp_HDChuaXuat, "EXEC sp_HD_ChuaXuat", lb_NgayLap, flp_BillDetail, txtTongTien);
 			int SOHD = int.Parse(db.ExcuteReader(frmQuanLyHangHoa.query_Bill, "SL"));
 			gp_HoaDonChuaXuat.Text = $"Số hóa đơn chưa xuất: {SOHD}";
 			lb_DT.Text = db.ExcuteReader(Connection.Query_DoanhThu, "Tổng giá trị hóa đơn") == "" ? "0" : db.ExcuteReader(Connection.Query_DoanhThu, "Tổng giá trị hóa đơn");
@@ -73,7 +73,7 @@ namespace APP.Views
 				if (HDDT != this.SOHD)
 				{
 					gp_HoaDonChuaXuat.Text = $"Số hóa đơn chưa xuất: {HDDT}";
-					ui.load_HoaDon_ChuaXuat(flp_HDChuaXuat, "EXEC sp_HD_ChuaXuat", lb_MaHD, lb_NgayLap, flp_BillDetail, txtTongTien);
+					ui.load_HoaDon_ChuaXuat(flp_HDChuaXuat, "EXEC sp_HD_ChuaXuat", lb_NgayLap, flp_BillDetail, txtTongTien);
 				}
 				txtThanhTien.Text = db.ExcuteReader($"EXEC Tong_ThanhTien '{MAHD}'", "Thành tiền");
 			} catch (Exception ex)
@@ -122,7 +122,7 @@ namespace APP.Views
                 }
 
                 // Làm mới giao diện
-                ui.load_HoaDon_ChuaXuat(flp_HDChuaXuat, "EXEC sp_HD_ChuaXuat", lb_MaHD, lb_NgayLap, flp_BillDetail, txtTongTien);
+                ui.load_HoaDon_ChuaXuat(flp_HDChuaXuat, "EXEC sp_HD_ChuaXuat", lb_NgayLap, flp_BillDetail, txtTongTien);
             }
             catch (Exception ex)
             {

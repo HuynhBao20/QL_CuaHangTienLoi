@@ -16,8 +16,7 @@ namespace APP.Views.manhinhphu
 	{
 		UI ui = new UI();
 		process p = new process();
-		DataTable da = new DataTable();
-		DataTable sl = new DataTable();
+		NhapHang n;
 		Connection db;
 		public static string getBillID = "SELECT TOP 1 MAPN FROM PHIEUNHAP ORDER BY MAPN DESC";
 		public string UserName { get; set; }
@@ -30,13 +29,19 @@ namespace APP.Views.manhinhphu
 			this.UserName = User;
 			this.PassWord = Pass;
 			db = new Connection(UserName, PassWord);
+			n = new NhapHang(UserName, PassWord);
+			load();
 		}
 		public frmNhapHang()
 		{
 			InitializeComponent();
 			db = new Connection();
 		}
-
+		public void load()
+		{
+			ui.load_SanPham_PhieuNhap(flp);
+			n.load_ChiTiet(flp_SP);
+		}
 		private void btnTaoPhieu_Click(object sender, EventArgs e)
 		{
 			string getMAPN = db.ExcuteReader(frmNhapHang.getBillID, "MAPN");
@@ -44,8 +49,7 @@ namespace APP.Views.manhinhphu
 			string InsertSql = $"INSERT INTO PHIEUNHAP(MAPN, MANV) VALUES ('{PhieuNhapNew}', '{UserName}')";
 			db.ExcuteQuery(InsertSql);
 			lb_MAPN.Text = PhieuNhapNew;
-			ui.load_SanPham_PhieuNhap(flp, PhieuNhapNew);
-			da = db.loadDB($"SELECT * FROM CTPHIEUNHAP WHERE MAPN = '{PhieuNhapNew}'");
+			//da = db.loadDB($"SELECT * FROM CTPHIEUNHAP WHERE MAPN = '{PhieuNhapNew}'");
 			//dgvLoad.DataSource = da;
 		}
 
