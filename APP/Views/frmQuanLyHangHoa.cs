@@ -27,7 +27,6 @@ namespace APP.Views
 		public int SOHD { get; set; }
 		public string UserName { get; set; }
 		public string PassWord { get; set; }
-
 		public frmQuanLyHangHoa()
 		{
 			InitializeComponent();
@@ -101,7 +100,6 @@ namespace APP.Views
                 // Kiểm tra trạng thái đã được cập nhật chưa
                 string checkStatusSql = $"SELECT TRANGTHAI FROM HOADON WHERE MAHD = '{this.MAHD}'";
                 string currentStatus = db.ExcuteReader(checkStatusSql, "TRANGTHAI");
-
                 if (currentStatus == "Đã hủy")
                 {
                     MessageBox.Show($"Hóa đơn {this.MAHD} đã được hủy thành công!");
@@ -147,6 +145,13 @@ namespace APP.Views
 				this.MAHD = lb_MaHD.Text;
 				string KD = txtKD.Text == "" ? db.ExcuteReader($"EXEC Tong_ThanhTien '{lb_MaHD.Text}'", "Thành tiền") : txtKD.Text;
 				string insertTienKD = $"UPDATE HOADON SET TIENKD = {KD}, TRANGTHAI = N'Đã xuất hóa đơn' WHERE MAHD = '{this.MAHD}'";
+				string is_Bill = db.ExcuteReader($"SELECT TRANGTHAI FROM HOADON WHERE MAHD = '{this.MAHD}'", "TRANGTHAI");
+				if(is_Bill == "Đã xuất hóa đơn")
+				{
+					MessageBox.Show("Hóa đơn đã được xuất không thay đổi được");
+					return;
+				}
+
 				db.ExcuteQuery(insertTienKD);
 				MessageBox.Show("Xác nhận thành công");
 				btnTotalMoMo.Enabled = true;
@@ -228,7 +233,6 @@ namespace APP.Views
 				e.Handled = true;
 			}
 		}
-
         private void flp_BillDetail_Paint(object sender, PaintEventArgs e)
         {
 

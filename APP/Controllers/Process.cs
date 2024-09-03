@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace APP.Controllers
 	{
         Connection db = new Connection();
         UI ui = new UI();
+        public static string get_NewBillID = "SELECT TOP 1 TRANGTHAI FROM HOADON ORDER BY MAHD desc";
         public void ThemHoaDon(FlowLayoutPanel flp_BillDetail, string MAHD, TextBox txtMaSP, TextBox txtTongTien)
         {
             // Kiểm tra xem có bao nhiêu sản phẩm trong hóa đơn hiện tại
@@ -59,5 +61,9 @@ namespace APP.Controllers
 			}
             return NewPass;
 		}
+        public string fullPath(string Fpath) => Path.GetFullPath(Fpath); //Hàm này lấy ra đường dẫn của file
+        public string fpathImage(string ImageName) => File.Exists(fullPath(@"../../Resources/" + ImageName.Trim() + ".jpg")) ? fullPath(@"../../Resources/" + ImageName.Trim() + ".jpg") : fullPath(@"../../Resources/Sp.jpg");
+        public string getHoaDon() => db.ExcuteReader(process.get_NewBillID, "TRANGTHAI") == "Chưa xuất" ? db.ExcuteReader(UI.getBillID, "MAHD") : "";
+
     }
 }

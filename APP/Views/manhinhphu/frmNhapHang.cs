@@ -52,20 +52,11 @@ namespace APP.Views.manhinhphu
 			lb_MAPN.Text = PhieuNhapNew;
 			this.MAPN = PhieuNhapNew;
 			n.load_PhieuNhapCT(flpDs, PhieuNhapNew);
-			//da = db.loadDB($"SELECT * FROM CTPHIEUNHAP WHERE MAPN = '{PhieuNhapNew}'");
-			//dgvLoad.DataSource = da;
 		}
-
-		private void dataGridView1_ParentChanged(object sender, EventArgs e)
-		{
-			
-		}
-
 		private void btnAddSP_Click(object sender, EventArgs e)
 		{
-			groupBox3.Enabled = true;
-		}
 
+		}
 		private void btnNhapHang_Click(object sender, EventArgs e)
 		{
 			try
@@ -80,7 +71,6 @@ namespace APP.Views.manhinhphu
 				db.ExcuteQuery(Sql);
 				MessageBox.Show($"Thêm thành công Sản phẩm: {txtMaSP.Text.Trim()} vào phiếu {MAPN}");
 				n.load_PhieuNhapCT(flpDs, this.MAPN);
-
 			}
 			catch (Exception ex)
 			{
