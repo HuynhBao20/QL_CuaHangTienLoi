@@ -40,8 +40,6 @@ namespace APP
 			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
 			this.toolStripButton2 = new System.Windows.Forms.ToolStripDropDownButton();
 			this.btnHangHoa = new System.Windows.Forms.ToolStripMenuItem();
-			this.quảnLýNhậpHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.button2 = new System.Windows.Forms.Button();
@@ -54,6 +52,7 @@ namespace APP
 			this.btnBanHang = new System.Windows.Forms.Button();
 			this.btnHome = new System.Windows.Forms.Button();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.tt_Kho = new System.Windows.Forms.ToolStripMenuItem();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.toolStrip1.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -98,8 +97,7 @@ namespace APP
 			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._UserName,
             this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3});
+            this.toolStripButton2});
 			this.toolStrip1.Location = new System.Drawing.Point(219, 0);
 			this.toolStrip1.Name = "toolStrip1";
 			this.toolStrip1.Size = new System.Drawing.Size(1325, 43);
@@ -122,14 +120,14 @@ namespace APP
 			// resetPass
 			// 
 			this.resetPass.Name = "resetPass";
-			this.resetPass.Size = new System.Drawing.Size(181, 26);
+			this.resetPass.Size = new System.Drawing.Size(224, 26);
 			this.resetPass.Text = "Đổi mật khẩu";
 			this.resetPass.Click += new System.EventHandler(this.resetPass_Click);
 			// 
 			// _Logout
 			// 
 			this._Logout.Name = "_Logout";
-			this._Logout.Size = new System.Drawing.Size(181, 26);
+			this._Logout.Size = new System.Drawing.Size(224, 26);
 			this._Logout.Text = "Đăng xuất";
 			this._Logout.Click += new System.EventHandler(this._Logout_Click);
 			// 
@@ -145,33 +143,20 @@ namespace APP
 			// 
 			this.toolStripButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnHangHoa,
-            this.quảnLýNhậpHàngToolStripMenuItem});
+            this.tt_Kho});
 			this.toolStripButton2.Image = global::APP.Properties.Resources.Asset_3_1;
 			this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolStripButton2.Name = "toolStripButton2";
 			this.toolStripButton2.Size = new System.Drawing.Size(116, 40);
 			this.toolStripButton2.Text = "Nhập hàng";
+			this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
 			// 
 			// btnHangHoa
 			// 
 			this.btnHangHoa.Name = "btnHangHoa";
-			this.btnHangHoa.Size = new System.Drawing.Size(216, 26);
-			this.btnHangHoa.Text = "Quản lý hàng hóa";
+			this.btnHangHoa.Size = new System.Drawing.Size(224, 26);
+			this.btnHangHoa.Text = "Quản lý nhập hàng";
 			this.btnHangHoa.Click += new System.EventHandler(this.btnHangHoa_Click);
-			// 
-			// quảnLýNhậpHàngToolStripMenuItem
-			// 
-			this.quảnLýNhậpHàngToolStripMenuItem.Name = "quảnLýNhậpHàngToolStripMenuItem";
-			this.quảnLýNhậpHàngToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-			this.quảnLýNhậpHàngToolStripMenuItem.Text = "Quản lý nhập hàng";
-			// 
-			// toolStripButton3
-			// 
-			this.toolStripButton3.Image = global::APP.Properties.Resources.quan_ly_ton_kho_la_gi;
-			this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolStripButton3.Name = "toolStripButton3";
-			this.toolStripButton3.Size = new System.Drawing.Size(111, 40);
-			this.toolStripButton3.Text = "Quản lý kho";
 			// 
 			// panel1
 			// 
@@ -346,6 +331,13 @@ namespace APP
 			this.pictureBox1.TabIndex = 0;
 			this.pictureBox1.TabStop = false;
 			// 
+			// tt_Kho
+			// 
+			this.tt_Kho.Name = "tt_Kho";
+			this.tt_Kho.Size = new System.Drawing.Size(224, 26);
+			this.tt_Kho.Text = "Quản lý kho";
+			this.tt_Kho.Click += new System.EventHandler(this.tt_Kho_Click);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -383,7 +375,6 @@ namespace APP
 		private System.Windows.Forms.ImageList imageList1;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.ToolStripButton toolStripButton1;
-		private System.Windows.Forms.ToolStripButton toolStripButton3;
 		private System.Windows.Forms.Button btnBill;
 		private System.Windows.Forms.Button btnDoanhThu;
 		private System.Windows.Forms.Button btnNhanSu;
@@ -393,9 +384,9 @@ namespace APP
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.ToolStripDropDownButton toolStripButton2;
 		private System.Windows.Forms.ToolStripMenuItem btnHangHoa;
-		private System.Windows.Forms.ToolStripMenuItem quảnLýNhậpHàngToolStripMenuItem;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.ToolStripMenuItem tt_Kho;
 	}
 }

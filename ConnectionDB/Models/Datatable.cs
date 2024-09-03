@@ -18,13 +18,16 @@ namespace ConnectionDB.Models
 			this.Pass = Pass;
 			db = new Connection(User, Pass);
 		}
-
 		public DataTable da_NhanVien() => db.loadDB("SELECT * FROM NHANVIEN");
 		public DataTable da_KhachHang() => db.loadDB("SELECT * FROM KHACHHANG");
 		public DataTable da_HoaDon() => db.loadDB("SELECT * FROM HOADON");
 		public DataTable da_SanPham() => db.loadDB("SELECT * FROM SANPHAM");
 		public DataTable da_PhieuNhap() => db.loadDB("SELECT * FROM PHIEUNHAP");
+		public DataTable da_MaLoai() => db.loadDB("SELECT * FROM LOAISP");
+		public DataTable da_MaLoai(string TenSP) => db.loadDB($"SELECT * FROM LOAISP WHERE TENSP = N'{TenSP}'");
+		public DataTable da_PhieuNhap(string Active) => db.loadDB($"SELECT * FROM PHIEUNHAP WHERE TRANGTHAI = N'{Active}'");
 		public DataTable da_CTPhieuNhap(string MAPN) => db.loadDB($"EXEC sp_Join_CTPN '{MAPN}'");
 		public DataTable da_CTPhieuNhap_MAPN(string MAPN) => db.loadDB($"SELECT * FROM CTPHIEUNHAP WHERE MAPN = '{MAPN}'");
+		
 	}
 }

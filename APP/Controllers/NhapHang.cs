@@ -26,15 +26,14 @@ namespace APP.Controllers
 		}		
 		public string fullPath(string Fpath) => Path.GetFullPath(Fpath); //Hàm này lấy ra đường dẫn của file
 		public string fpathImage(string ImageName) => File.Exists(fullPath(@"../../Resources/" + ImageName.Trim() + ".jpg")) ? fullPath(@"../../Resources/" + ImageName.Trim() + ".jpg") : fullPath(@"../../Resources/Sp.jpg");
-		public void load_PhieuNhap(FlowLayoutPanel flp, FlowLayoutPanel flp_Ct)
+		public void load_PhieuNhap(FlowLayoutPanel flp, FlowLayoutPanel flp_Ct, string Active)
 		{
 			flp.Controls.Clear();
 			flp.AutoScroll = true;
-			foreach(DataRow item in dt.da_PhieuNhap().Rows)
+			foreach(DataRow item in dt.da_PhieuNhap(Active).Rows)
 			{
 				string ID = item["MAPN"].ToString();				
 				Color is_PN = db.ExcuteReader($"SELECT TRANGTHAI FROM PHIEUNHAP WHERE MAPN = '{ID}'", "TRANGTHAI") == "Chưa duyệt" ? Color.Red : Color.Green;
-
 				TableLayoutPanel tbl = new TableLayoutPanel()
 				{
 					Dock = DockStyle.Fill,
@@ -93,7 +92,21 @@ namespace APP.Controllers
 				pnl.Controls.Add(tbl);
 				flp.Controls.Add(pnl);
 				btn.Click += (sender, e) => Event_Show_PhieuNhap(sender, e, flp_Ct, ID);
-				btn_Duyet.Click += (sender, e) => Event_UpdateActive_Click(sender, e, flp, flp_Ct, ID);
+				btn_Duyet.Click += (sender, e) => {
+						int is_Quanlity = string.IsNullOrEmpty(db.ExcuteReader($"SELECT MAPN, COUNT(*) AS 'SL' FROM CTPHIEUNHAP WHERE MAPN = '{MAPN}' GROUP BY MAPN", "SL")) ? 0 :
+						int.Parse(db.ExcuteReader($"SELECT MAPN, COUNT(*) AS 'SL' FROM CTPHIEUNHAP WHERE MAPN = '{MAPN}' GROUP BY MAPN", "SL"));
+						if (is_Quanlity < 1)
+						{
+							MessageBox.Show("Phiếu nhập rỗng");
+						}
+						else
+						{
+							string Sql = $"UPDATE PHIEUNHAP SET TRANGTHAI = N'Đã duyệt' WHERE MAPN = '{MAPN}'";
+							db.ExcuteQuery(Sql);
+							MessageBox.Show("Duyệt thành công");
+							load_PhieuNhap(flp, flp_Ct, Active);
+						}
+				};
 			}
 		}
 		public void load_CTPhieuNhap(FlowLayoutPanel flp, string MAPN)
@@ -143,7 +156,7 @@ namespace APP.Controllers
 
 			}
 		}
-		public void load_SanPham_PhieuNhap(FlowLayoutPanel flp, TextBox MASP)
+		public void load_SanPham_PhieuNhap(FlowLayoutPanel flp, TextBox MASP, TextBox TENSP, TextBox _MASP, TextBox DonGia, ComboBox box)
 		{
 			DataTable da = dt.da_SanPham();
 			flp.Controls.Clear();
@@ -193,6 +206,13 @@ namespace APP.Controllers
 					tbl.RowStyles.Add(new ColumnStyle(SizeType.Absolute, 50F));
 					pnl.Controls.Add(tbl);
 					flp.Controls.Add(pnl);
+					picture.Click += (sender, e) =>
+					{
+						_MASP.Text = item["MASP"].ToString();
+						TENSP.Text = item["TENSP"].ToString();
+						DonGia.Text = item["DONGIA"].ToString();
+						box.Text = db.ExcuteReader($"SELECT * FROM LOAISP WHERE MALOAI = '{item["MALOAI"].ToString()}'", "TENLOAI");
+					};
 					btn.Click += (sender, e) => {
 						MASP.Text = item["MASP"].ToString();
 					};
@@ -278,22 +298,6 @@ namespace APP.Controllers
 		{
 			flp.Controls.Clear();
 			load_CTPhieuNhap(flp, MAPN);
-		}
-		private void Event_UpdateActive_Click(object sender, EventArgs e, FlowLayoutPanel flp, FlowLayoutPanel flp_Ct, string MAPN)
-		{
-			int is_Quanlity = string.IsNullOrEmpty(db.ExcuteReader($"SELECT MAPN, COUNT(*) AS 'SL' FROM CTPHIEUNHAP WHERE MAPN = '{MAPN}' GROUP BY MAPN", "SL"))? 0 :
-							  int.Parse(db.ExcuteReader($"SELECT MAPN, COUNT(*) AS 'SL' FROM CTPHIEUNHAP WHERE MAPN = '{MAPN}' GROUP BY MAPN", "SL"));
-			if(is_Quanlity < 1)
-			{
-				MessageBox.Show("Phiếu nhập rỗng");
-			}
-			else
-			{
-				string Sql = $"UPDATE PHIEUNHAP SET TRANGTHAI = N'Đã duyệt' WHERE MAPN = '{MAPN}'";
-				db.ExcuteQuery(Sql);
-				MessageBox.Show("Duyệt thành công");
-				load_PhieuNhap(flp, flp_Ct);
-			}
 		}
 		
 	}

@@ -96,5 +96,17 @@ namespace APP
 		{
 
 		}
+
+		private void toolStripButton2_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void tt_Kho_Click(object sender, EventArgs e)
+		{
+			frmQuanLyKho kho = new frmQuanLyKho();
+			ui.load_Interface(kho, pnl_Load_Main);
+
+		}
 	}
 }

@@ -273,7 +273,6 @@ namespace APP.Controllers
 			a.TopLevel = false;
 			flp.Controls.Add(a);
 			a.Show();
-
 		}
 		//Xử lý sự kiện
 		public void Event_Product_Click(object sender, EventArgs e, string MASP, FlowLayoutPanel flp, TextBox ThanhTien, string SDT)

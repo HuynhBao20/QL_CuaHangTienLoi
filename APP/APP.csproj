@@ -161,12 +161,6 @@
       <DependentUpon>frmQuanLyHangHoa.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\UI.cs" />
-    <Compile Include="Views\frmQuanLySanPham.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\frmQuanLySanPham.Designer.cs">
-      <DependentUpon>frmQuanLySanPham.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,9 +207,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmQuanLyHoaDon.resx">
       <DependentUpon>frmQuanLyHoaDon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmQuanLySanPham.resx">
-      <DependentUpon>frmQuanLySanPham.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

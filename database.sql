@@ -349,9 +349,11 @@ CREATE TABLE KHO
 	MASP	NCHAR(10),
 	NGAYSX DATE,
 	SLTON	INT,
+	NGAYHH DATE,
 	PRIMARY KEY (MASP, NGAYSX),
 	FOREIGN KEY (MASP) REFERENCES SANPHAM(MASP),
 )
+
 CREATE PROC sp_Join_CTPN @MAPN char(10)
 AS
 BEGIN
@@ -361,16 +363,47 @@ END
 EXEC sp_Join_CTPN 'N0022'
 GO
 
-CREATE TRIGGER tg_Update_Kho
+ALTER TRIGGER tg_Update_Kho
 ON PHIEUNHAP
 AFTER UPDATE
 AS
 BEGIN
     SET NOCOUNT ON;
-    INSERT INTO KHO (MASP, NGAYSX, SLTON)
-    SELECT sp.MASP, ct.NGAYSX, ct.SLNHAP
-    FROM inserted i, CTPHIEUNHAP ct, SANPHAM sp
-    WHERE i.MAPN = ct.MAPN AND sp.MASP = ct.MASP AND i.TRANGTHAI = N'Đã duyệt';
+	DECLARE @MASP NCHAR(10), @NGAYSX DATE, @NGAYHH DATE, @SLNHAP INT;
+
+    DECLARE cur CURSOR FOR 
+    SELECT ct.MASP, ct.NGAYSX, ct.NGAYHH, ct.SLNHAP
+    FROM inserted i
+    INNER JOIN CTPHIEUNHAP ct ON i.MAPN = ct.MAPN
+    WHERE i.TRANGTHAI = N'Đã duyệt';
+
+    OPEN cur;
+    FETCH NEXT FROM cur INTO @MASP, @NGAYSX, @NGAYHH, @SLNHAP;
+
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        -- Kiểm tra nếu sản phẩm đã tồn tại trong kho
+        IF EXISTS (SELECT 1 FROM KHO WHERE MASP = @MASP AND NGAYSX = @NGAYSX AND NGAYHH = @NGAYHH)
+        BEGIN
+            -- Cập nhật SLTON nếu sản phẩm đã tồn tại
+            UPDATE KHO 
+            SET SLTON = SLTON + @SLNHAP
+            WHERE MASP = @MASP AND NGAYSX = @NGAYSX AND NGAYHH = @NGAYHH;
+        END
+        ELSE
+        BEGIN
+            -- Chèn sản phẩm mới vào kho nếu chưa tồn tại
+            INSERT INTO KHO (MASP, NGAYSX, NGAYHH, SLTON)
+            VALUES (@MASP, @NGAYSX, @NGAYHH, @SLNHAP);
+        END;
+
+        FETCH NEXT FROM cur INTO @MASP, @NGAYSX, @NGAYHH, @SLNHAP;
+    END;
+
+    CLOSE cur;
+    DEALLOCATE cur;
+
+    PRINT N'Nhập kho thành công';
 END;
 GO
 
@@ -385,3 +418,4 @@ BEGIN
     WHERE k.MASP = i.MASP AND  hd.TRANGTHAI = N'Đã xuất hóa đơn';
 END
 
+UPDATE PHIEUNHAP SET TRANGTHAI = N'Chưa duyệt'
