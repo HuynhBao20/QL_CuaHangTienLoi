@@ -64,6 +64,8 @@
     <Compile Include="Controllers\Analyst.cs" />
     <Compile Include="Controllers\CustomTool.cs" />
     <Compile Include="Controllers\Event.cs" />
+    <Compile Include="Controllers\HoaDon.cs" />
+    <Compile Include="Controllers\Kho.cs" />
     <Compile Include="Controllers\NhapHang.cs" />
     <Compile Include="Controllers\process.cs" />
     <Compile Include="Controllers\TotalMoMo.cs" />
@@ -103,6 +105,12 @@
     </Compile>
     <Compile Include="Views\frmQuanLyDoanhThu.Designer.cs">
       <DependentUpon>frmQuanLyDoanhThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmQuanLyKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmQuanLyKho.Designer.cs">
+      <DependentUpon>frmQuanLyKho.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\manhinhphu\frmKhachHang.cs">
       <SubType>Form</SubType>
@@ -178,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmQuanLyDoanhThu.resx">
       <DependentUpon>frmQuanLyDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmQuanLyKho.resx">
+      <DependentUpon>frmQuanLyKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\manhinhphu\frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
