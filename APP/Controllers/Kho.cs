@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace APP.Controllers
 {
-	class Kho
+	public class Kho
 	{
+
 	}
 }

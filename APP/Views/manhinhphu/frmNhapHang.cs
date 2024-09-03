@@ -1,5 +1,6 @@
 ﻿using APP.Controllers;
 using ConnectionDB;
+using ConnectionDB.Logic;
 using ConnectionDB.Models;
 using System;
 using System.Collections.Generic;
@@ -88,7 +89,7 @@ namespace APP.Views.manhinhphu
 
 		private void ptbProduct_Click(object sender, EventArgs e)
 		{
-			MessageBox.Show("Hello");
+			
 		}
 
 		private void btnThem_Click(object sender, EventArgs e)
@@ -145,7 +146,35 @@ namespace APP.Views.manhinhphu
 
 		private void button2_Click(object sender, EventArgs e)
 		{
+			OpenFileDialog open = new OpenFileDialog();
+			open.Filter = "Excel Files|*.xls;*.xlsx";
+			if (open.ShowDialog() == DialogResult.OK)
+			{
+				string excelFilePath = open.FileName; // Đường dẫn tệp Excel đã chọn
+				ImportExcel import = new ImportExcel();
+				foreach (DataRow item in import.load(excelFilePath).Rows)
+				{
+					string Sql = $"INSERT INTO SANPHAM VALUES (" +
+						$"{item["MASP"].ToString()}, N'" +
+						$"{item["TENSP"].ToString()}'," +
+						$"{int.Parse(item["MALOAI"].ToString())}," +
+						$"{int.Parse(item["DONGIA"].ToString())})";
+					db.ExcuteQuery(Sql);
+				}
+				MessageBox.Show("Thành công");
+			}
 
+		}
+
+		private void btnTim_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void btnKho_Click(object sender, EventArgs e)
+		{
+			frmQuanLyKho k = new frmQuanLyKho(UserName, PassWord);
+			k.Show();
 		}
 	}
 }

@@ -85,27 +85,21 @@ namespace APP
 			frmQuanLyDoanhThu dt = new frmQuanLyDoanhThu();
 			ui.load_Interface(dt, pnl_Load_Main);
 		}
-
-		private void btnHangHoa_Click(object sender, EventArgs e)
-		{
-			frmNhapHang sp = new frmNhapHang(UserName, PassWord);
-			ui.load_Interface(sp, pnl_Load_Main);
-		}
-
 		private void MainForm_Load(object sender, EventArgs e)
 		{
 
 		}
-
-		private void toolStripButton2_Click(object sender, EventArgs e)
+		private void tt_Kho_Click(object sender, EventArgs e)
 		{
+			frmQuanLyKho kho = new frmQuanLyKho(UserName, PassWord);
+			ui.load_Interface(kho, pnl_Load_Main);
 
 		}
 
-		private void tt_Kho_Click(object sender, EventArgs e)
+		private void btnNhap_Click(object sender, EventArgs e)
 		{
-			frmQuanLyKho kho = new frmQuanLyKho();
-			ui.load_Interface(kho, pnl_Load_Main);
+			frmNhapHang sp = new frmNhapHang(UserName, PassWord);
+			ui.load_Interface(sp, pnl_Load_Main);
 
 		}
 	}

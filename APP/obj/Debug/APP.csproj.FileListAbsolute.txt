@@ -164,3 +164,4 @@ C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.manhinhp
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.frmQuanLyHangHoa.resources
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.frmQuanLyHoaDon.resources
 C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.frmQuanLyKho.resources
+C:\Users\HUYNH THE BAO\Desktop\QL_CHTL\APP_CHTL\APP\obj\Debug\APP.Views.manhinhphu.frmXemSP.resources

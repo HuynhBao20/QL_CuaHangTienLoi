@@ -316,6 +316,7 @@ namespace APP.Controllers
 					{
 						// Hiển thị thông báo nếu hóa đơn đã xuất hoặc đã bị hủy
 						MessageBox.Show("Không thể thêm sản phẩm khi đã xuất hóa đơn");
+						return;
 					}
 					else
 					{

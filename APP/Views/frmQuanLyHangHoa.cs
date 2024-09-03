@@ -141,11 +141,13 @@ namespace APP.Views
 		{
 			try
 			{
-
 				this.MAHD = lb_MaHD.Text;
+				string getMAKH = string.IsNullOrEmpty(db.ExcuteReader($"SELECT MAKH FROM KHACHHANG WHERE SDT = '{txtSDT.Text}'", "MAKH")) ? "VL000" : db.ExcuteReader($"SELECT MAKH FROM KHACHHANG WHERE SDT = '{txtSDT.Text}'", "MAKH");
+				string MAKH = txtSDT.Text == "" ? "VL000" : getMAKH;
 				string KD = txtKD.Text == "" ? db.ExcuteReader($"EXEC Tong_ThanhTien '{lb_MaHD.Text}'", "Thành tiền") : txtKD.Text;
-				string insertTienKD = $"UPDATE HOADON SET TIENKD = {KD}, TRANGTHAI = N'Đã xuất hóa đơn' WHERE MAHD = '{this.MAHD}'";
+				string insertTienKD = $"UPDATE HOADON SET TIENKD = {KD}, MAKH = '{MAKH}', TRANGTHAI = N'Đã xuất hóa đơn' WHERE MAHD = '{this.MAHD}'";
 				string is_Bill = db.ExcuteReader($"SELECT TRANGTHAI FROM HOADON WHERE MAHD = '{this.MAHD}'", "TRANGTHAI");
+
 				if(is_Bill == "Đã xuất hóa đơn")
 				{
 					MessageBox.Show("Hóa đơn đã được xuất không thay đổi được");
@@ -237,5 +239,20 @@ namespace APP.Views
         {
 
         }
-    }
+
+		private void btnXemSanPham_Click(object sender, EventArgs e)
+		{
+			string Sql = $"SELECT COUNT(*) AS 'SL' FROM SANPHAM WHERE MASP = '{txtMaSP.Text}'";
+			int sl = int.Parse(db.ExcuteReader(Sql, "SL"));
+			if(sl > 0)
+			{
+				frmXemSP x = new frmXemSP(txtMaSP.Text);
+				x.Text = "Thông tin sản phẩm: " + txtMaSP.Text;
+				x.Show();
+			} else
+			{
+				MessageBox.Show("Không có sản phẩm");
+			}
+		}
+	}
 }

@@ -34,25 +34,22 @@ namespace APP
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.pnl_Load_Main = new System.Windows.Forms.Panel();
 			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-			this._UserName = new System.Windows.Forms.ToolStripDropDownButton();
-			this.resetPass = new System.Windows.Forms.ToolStripMenuItem();
-			this._Logout = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-			this.toolStripButton2 = new System.Windows.Forms.ToolStripDropDownButton();
-			this.btnHangHoa = new System.Windows.Forms.ToolStripMenuItem();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.button2 = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
-			this.btnBill = new System.Windows.Forms.Button();
 			this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+			this.btnKhachHang = new System.Windows.Forms.Button();
+			this.btnHome = new System.Windows.Forms.Button();
+			this._UserName = new System.Windows.Forms.ToolStripDropDownButton();
+			this.resetPass = new System.Windows.Forms.ToolStripMenuItem();
+			this._Logout = new System.Windows.Forms.ToolStripMenuItem();
+			this.btnNhap = new System.Windows.Forms.Button();
+			this.btnBill = new System.Windows.Forms.Button();
 			this.btnDoanhThu = new System.Windows.Forms.Button();
 			this.btnNhanSu = new System.Windows.Forms.Button();
-			this.btnKhachHang = new System.Windows.Forms.Button();
 			this.btnBanHang = new System.Windows.Forms.Button();
-			this.btnHome = new System.Windows.Forms.Button();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.tt_Kho = new System.Windows.Forms.ToolStripMenuItem();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.toolStrip1.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -74,7 +71,7 @@ namespace APP
 			this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.RowCount = 2;
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(1544, 778);
@@ -83,10 +80,10 @@ namespace APP
 			// pnl_Load_Main
 			// 
 			this.pnl_Load_Main.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pnl_Load_Main.Location = new System.Drawing.Point(223, 47);
+			this.pnl_Load_Main.Location = new System.Drawing.Point(223, 36);
 			this.pnl_Load_Main.Margin = new System.Windows.Forms.Padding(4);
 			this.pnl_Load_Main.Name = "pnl_Load_Main";
-			this.pnl_Load_Main.Size = new System.Drawing.Size(1317, 727);
+			this.pnl_Load_Main.Size = new System.Drawing.Size(1317, 738);
 			this.pnl_Load_Main.TabIndex = 0;
 			// 
 			// toolStrip1
@@ -95,72 +92,17 @@ namespace APP
 			this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this._UserName,
-            this.toolStripButton1,
-            this.toolStripButton2});
+            this._UserName});
 			this.toolStrip1.Location = new System.Drawing.Point(219, 0);
 			this.toolStrip1.Name = "toolStrip1";
-			this.toolStrip1.Size = new System.Drawing.Size(1325, 43);
+			this.toolStrip1.Size = new System.Drawing.Size(1325, 32);
 			this.toolStrip1.TabIndex = 2;
 			this.toolStrip1.Text = "toolStrip1";
-			// 
-			// _UserName
-			// 
-			this._UserName.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-			this._UserName.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.resetPass,
-            this._Logout});
-			this._UserName.Image = global::APP.Properties.Resources.images;
-			this._UserName.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this._UserName.Margin = new System.Windows.Forms.Padding(0, 1, 20, 2);
-			this._UserName.Name = "_UserName";
-			this._UserName.Size = new System.Drawing.Size(141, 40);
-			this._UserName.Text = "Tên đăng nhập";
-			// 
-			// resetPass
-			// 
-			this.resetPass.Name = "resetPass";
-			this.resetPass.Size = new System.Drawing.Size(224, 26);
-			this.resetPass.Text = "Đổi mật khẩu";
-			this.resetPass.Click += new System.EventHandler(this.resetPass_Click);
-			// 
-			// _Logout
-			// 
-			this._Logout.Name = "_Logout";
-			this._Logout.Size = new System.Drawing.Size(224, 26);
-			this._Logout.Text = "Đăng xuất";
-			this._Logout.Click += new System.EventHandler(this._Logout_Click);
-			// 
-			// toolStripButton1
-			// 
-			this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-			this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolStripButton1.Name = "toolStripButton1";
-			this.toolStripButton1.Size = new System.Drawing.Size(56, 40);
-			this.toolStripButton1.Text = "File";
-			// 
-			// toolStripButton2
-			// 
-			this.toolStripButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnHangHoa,
-            this.tt_Kho});
-			this.toolStripButton2.Image = global::APP.Properties.Resources.Asset_3_1;
-			this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolStripButton2.Name = "toolStripButton2";
-			this.toolStripButton2.Size = new System.Drawing.Size(116, 40);
-			this.toolStripButton2.Text = "Nhập hàng";
-			this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
-			// 
-			// btnHangHoa
-			// 
-			this.btnHangHoa.Name = "btnHangHoa";
-			this.btnHangHoa.Size = new System.Drawing.Size(224, 26);
-			this.btnHangHoa.Text = "Quản lý nhập hàng";
-			this.btnHangHoa.Click += new System.EventHandler(this.btnHangHoa_Click);
 			// 
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.SystemColors.Control;
+			this.panel1.Controls.Add(this.btnNhap);
 			this.panel1.Controls.Add(this.groupBox1);
 			this.panel1.Controls.Add(this.btnBill);
 			this.panel1.Controls.Add(this.btnDoanhThu);
@@ -208,24 +150,6 @@ namespace APP
 			this.button1.Text = "Thông tin cá nhân";
 			this.button1.UseVisualStyleBackColor = true;
 			// 
-			// btnBill
-			// 
-			this.btnBill.Dock = System.Windows.Forms.DockStyle.Top;
-			this.btnBill.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.btnBill.FlatAppearance.BorderSize = 0;
-			this.btnBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnBill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnBill.ImageKey = "iconBill.png";
-			this.btnBill.ImageList = this.imageList1;
-			this.btnBill.Location = new System.Drawing.Point(0, 333);
-			this.btnBill.Name = "btnBill";
-			this.btnBill.Size = new System.Drawing.Size(213, 60);
-			this.btnBill.TabIndex = 6;
-			this.btnBill.Text = "Quản lý hóa đơn";
-			this.btnBill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnBill.UseVisualStyleBackColor = true;
-			this.btnBill.Click += new System.EventHandler(this.button6_Click);
-			// 
 			// imageList1
 			// 
 			this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
@@ -238,6 +162,99 @@ namespace APP
 			this.imageList1.Images.SetKeyName(5, "quan-ly-ton-kho-la-gi.png");
 			this.imageList1.Images.SetKeyName(6, "Asset-3-1.png");
 			// 
+			// btnKhachHang
+			// 
+			this.btnKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnKhachHang.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.btnKhachHang.FlatAppearance.BorderSize = 0;
+			this.btnKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnKhachHang.ImageList = this.imageList1;
+			this.btnKhachHang.Location = new System.Drawing.Point(0, 142);
+			this.btnKhachHang.Name = "btnKhachHang";
+			this.btnKhachHang.Size = new System.Drawing.Size(213, 60);
+			this.btnKhachHang.TabIndex = 3;
+			this.btnKhachHang.Text = "Quản lý khách hàng";
+			this.btnKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnKhachHang.UseVisualStyleBackColor = true;
+			this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
+			// 
+			// btnHome
+			// 
+			this.btnHome.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.btnHome.FlatAppearance.BorderSize = 0;
+			this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnHome.Location = new System.Drawing.Point(0, 29);
+			this.btnHome.Name = "btnHome";
+			this.btnHome.Size = new System.Drawing.Size(213, 53);
+			this.btnHome.TabIndex = 1;
+			this.btnHome.Text = "Trang chủ";
+			this.btnHome.UseVisualStyleBackColor = true;
+			this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+			// 
+			// _UserName
+			// 
+			this._UserName.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+			this._UserName.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.resetPass,
+            this._Logout});
+			this._UserName.Image = global::APP.Properties.Resources.images;
+			this._UserName.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this._UserName.Margin = new System.Windows.Forms.Padding(0, 1, 20, 2);
+			this._UserName.Name = "_UserName";
+			this._UserName.Size = new System.Drawing.Size(141, 40);
+			this._UserName.Text = "Tên đăng nhập";
+			// 
+			// resetPass
+			// 
+			this.resetPass.Name = "resetPass";
+			this.resetPass.Size = new System.Drawing.Size(224, 26);
+			this.resetPass.Text = "Đổi mật khẩu";
+			this.resetPass.Click += new System.EventHandler(this.resetPass_Click);
+			// 
+			// _Logout
+			// 
+			this._Logout.Name = "_Logout";
+			this._Logout.Size = new System.Drawing.Size(224, 26);
+			this._Logout.Text = "Đăng xuất";
+			this._Logout.Click += new System.EventHandler(this._Logout_Click);
+			// 
+			// btnNhap
+			// 
+			this.btnNhap.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnNhap.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.btnNhap.FlatAppearance.BorderSize = 0;
+			this.btnNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnNhap.ImageKey = "iconBill.png";
+			this.btnNhap.ImageList = this.imageList1;
+			this.btnNhap.Location = new System.Drawing.Point(0, 382);
+			this.btnNhap.Name = "btnNhap";
+			this.btnNhap.Size = new System.Drawing.Size(213, 60);
+			this.btnNhap.TabIndex = 8;
+			this.btnNhap.Text = "Quản lý nhập hàng";
+			this.btnNhap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnNhap.UseVisualStyleBackColor = true;
+			this.btnNhap.Click += new System.EventHandler(this.btnNhap_Click);
+			// 
+			// btnBill
+			// 
+			this.btnBill.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnBill.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.btnBill.FlatAppearance.BorderSize = 0;
+			this.btnBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnBill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnBill.ImageKey = "iconBill.png";
+			this.btnBill.ImageList = this.imageList1;
+			this.btnBill.Location = new System.Drawing.Point(0, 322);
+			this.btnBill.Name = "btnBill";
+			this.btnBill.Size = new System.Drawing.Size(213, 60);
+			this.btnBill.TabIndex = 6;
+			this.btnBill.Text = "Quản lý hóa đơn";
+			this.btnBill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnBill.UseVisualStyleBackColor = true;
+			this.btnBill.Click += new System.EventHandler(this.button6_Click);
+			// 
 			// btnDoanhThu
 			// 
 			this.btnDoanhThu.Dock = System.Windows.Forms.DockStyle.Top;
@@ -247,7 +264,7 @@ namespace APP
 			this.btnDoanhThu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnDoanhThu.ImageKey = "iconDoanhThu.png";
 			this.btnDoanhThu.ImageList = this.imageList1;
-			this.btnDoanhThu.Location = new System.Drawing.Point(0, 273);
+			this.btnDoanhThu.Location = new System.Drawing.Point(0, 262);
 			this.btnDoanhThu.Name = "btnDoanhThu";
 			this.btnDoanhThu.Size = new System.Drawing.Size(213, 60);
 			this.btnDoanhThu.TabIndex = 5;
@@ -265,7 +282,7 @@ namespace APP
 			this.btnNhanSu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnNhanSu.ImageKey = "icon-10.png";
 			this.btnNhanSu.ImageList = this.imageList1;
-			this.btnNhanSu.Location = new System.Drawing.Point(0, 213);
+			this.btnNhanSu.Location = new System.Drawing.Point(0, 202);
 			this.btnNhanSu.Name = "btnNhanSu";
 			this.btnNhanSu.Size = new System.Drawing.Size(213, 60);
 			this.btnNhanSu.TabIndex = 4;
@@ -273,22 +290,6 @@ namespace APP
 			this.btnNhanSu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnNhanSu.UseVisualStyleBackColor = true;
 			this.btnNhanSu.Click += new System.EventHandler(this.btnNhanSu_Click);
-			// 
-			// btnKhachHang
-			// 
-			this.btnKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
-			this.btnKhachHang.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.btnKhachHang.FlatAppearance.BorderSize = 0;
-			this.btnKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnKhachHang.ImageList = this.imageList1;
-			this.btnKhachHang.Location = new System.Drawing.Point(0, 153);
-			this.btnKhachHang.Name = "btnKhachHang";
-			this.btnKhachHang.Size = new System.Drawing.Size(213, 60);
-			this.btnKhachHang.TabIndex = 3;
-			this.btnKhachHang.Text = "Quản lý khách hàng";
-			this.btnKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnKhachHang.UseVisualStyleBackColor = true;
-			this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
 			// 
 			// btnBanHang
 			// 
@@ -299,7 +300,7 @@ namespace APP
 			this.btnBanHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.btnBanHang.ImageKey = "30.1.2021-06.png";
 			this.btnBanHang.ImageList = this.imageList1;
-			this.btnBanHang.Location = new System.Drawing.Point(0, 93);
+			this.btnBanHang.Location = new System.Drawing.Point(0, 82);
 			this.btnBanHang.Name = "btnBanHang";
 			this.btnBanHang.Size = new System.Drawing.Size(213, 60);
 			this.btnBanHang.TabIndex = 2;
@@ -308,35 +309,14 @@ namespace APP
 			this.btnBanHang.UseVisualStyleBackColor = true;
 			this.btnBanHang.Click += new System.EventHandler(this.btnBanHang_Click);
 			// 
-			// btnHome
-			// 
-			this.btnHome.Dock = System.Windows.Forms.DockStyle.Top;
-			this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.btnHome.FlatAppearance.BorderSize = 0;
-			this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnHome.Location = new System.Drawing.Point(0, 40);
-			this.btnHome.Name = "btnHome";
-			this.btnHome.Size = new System.Drawing.Size(213, 53);
-			this.btnHome.TabIndex = 1;
-			this.btnHome.Text = "Trang chủ";
-			this.btnHome.UseVisualStyleBackColor = true;
-			this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-			// 
 			// pictureBox1
 			// 
 			this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.pictureBox1.Location = new System.Drawing.Point(0, 0);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(213, 40);
+			this.pictureBox1.Size = new System.Drawing.Size(213, 29);
 			this.pictureBox1.TabIndex = 0;
 			this.pictureBox1.TabStop = false;
-			// 
-			// tt_Kho
-			// 
-			this.tt_Kho.Name = "tt_Kho";
-			this.tt_Kho.Size = new System.Drawing.Size(224, 26);
-			this.tt_Kho.Text = "Quản lý kho";
-			this.tt_Kho.Click += new System.EventHandler(this.tt_Kho_Click);
 			// 
 			// MainForm
 			// 
@@ -374,7 +354,6 @@ namespace APP
 		private System.Windows.Forms.ToolStripMenuItem _Logout;
 		private System.Windows.Forms.ImageList imageList1;
 		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.ToolStripButton toolStripButton1;
 		private System.Windows.Forms.Button btnBill;
 		private System.Windows.Forms.Button btnDoanhThu;
 		private System.Windows.Forms.Button btnNhanSu;
@@ -382,11 +361,9 @@ namespace APP
 		private System.Windows.Forms.Button btnBanHang;
 		private System.Windows.Forms.Button btnHome;
 		private System.Windows.Forms.PictureBox pictureBox1;
-		private System.Windows.Forms.ToolStripDropDownButton toolStripButton2;
-		private System.Windows.Forms.ToolStripMenuItem btnHangHoa;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.ToolStripMenuItem tt_Kho;
+		private System.Windows.Forms.Button btnNhap;
 	}
 }
