@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,7 @@ namespace APP.Views.manhinhphu
 		public string UserName { get; set; }
 		public string PassWord { get; set; }
 		public string MAPN { get; set; }
+		public string Active { get; set; }
 
 		public frmNhapHang(string User, string Pass)
 		{
@@ -44,8 +46,15 @@ namespace APP.Views.manhinhphu
 		public void load()
 		{
 			n.load_SanPham_PhieuNhap(flp, txtMaSP, txtTenSP, txMasp, txtDonGia, cbo_MaLoai);
-			n.load_PhieuNhap(flp_SP, flp_CTPN, "Chưa duyệt");
+			n.load_PhieuNhap(flp_SP, flp_CTPN, "Chưa duyệt", DateTime.Now.Date.ToString("yyyy-MM-dd"), "AND");
 			ui.loadCombobox(cbo_MaLoai, "SELECT * FROM LOAISP", "TENLOAI", "TENLOAI");
+			string[] cboText = { "6 tháng", "1 năm", "2 năm", "Vô hạn" };
+			foreach(var item in cboText)
+			{
+				cbo.Items.Add(item);
+			}
+			this.Active = "Chưa duyệt";
+			dtime.Value.ToString("dd/MM/yyyy");
 		}
 		private void btnTaoPhieu_Click(object sender, EventArgs e)
 		{
@@ -71,6 +80,8 @@ namespace APP.Views.manhinhphu
 					$"{txtDVT.Text}')";
 				db.ExcuteQuery(Sql);
 				MessageBox.Show($"Thêm thành công Sản phẩm: {txtMaSP.Text.Trim()} vào phiếu {MAPN}");
+				n.load_PhieuNhap(flp_SP, flp_CTPN, "Chưa duyệt", DateTime.Now.Date.ToString("yyyy-MM-dd"), "AND");
+				n.load_CTPhieuNhap(flpDs, MAPN);
 			}
 			catch (Exception ex)
 			{
@@ -80,18 +91,19 @@ namespace APP.Views.manhinhphu
 		}
 		private void rdb_Ch_CheckedChanged(object sender, EventArgs e)
 		{
-			n.load_PhieuNhap(flp_SP, flp_CTPN, "Chưa duyệt");
+			n.load_PhieuNhap(flp_SP, flp_CTPN, "Chưa duyệt", DateTime.Now.Date.ToString("yyyy-MM-dd"), "AND");
+			Active = "Chưa duyệt";
 		}
 		private void rdb_D_CheckedChanged(object sender, EventArgs e)
 		{
-			n.load_PhieuNhap(flp_SP, flp_CTPN, "Đã duyệt");
-		}
+			n.load_PhieuNhap(flp_SP, flp_CTPN, "Đã duyệt", DateTime.Now.Date.ToString("yyyy-MM-dd"), "AND");
+			Active = "Đã duyệt";
 
+		}
 		private void ptbProduct_Click(object sender, EventArgs e)
 		{
 			
 		}
-
 		private void btnThem_Click(object sender, EventArgs e)
 		{
 			try
@@ -111,7 +123,6 @@ namespace APP.Views.manhinhphu
 
 			}
 		}
-
 		private void btnSua_Click(object sender, EventArgs e)
 		{
 			try
@@ -127,7 +138,6 @@ namespace APP.Views.manhinhphu
 				MessageBox.Show(ex.Message);
 			}
 		}
-
 		private void btnXoa_Click(object sender, EventArgs e)
 		{
 			try
@@ -143,7 +153,6 @@ namespace APP.Views.manhinhphu
 			}
 
 		}
-
 		private void button2_Click(object sender, EventArgs e)
 		{
 			OpenFileDialog open = new OpenFileDialog();
@@ -165,16 +174,29 @@ namespace APP.Views.manhinhphu
 			}
 
 		}
-
 		private void btnTim_Click(object sender, EventArgs e)
 		{
 
 		}
-
 		private void btnKho_Click(object sender, EventArgs e)
 		{
 			frmQuanLyKho k = new frmQuanLyKho(UserName, PassWord);
 			k.Show();
+		}
+		private void btnLamSach_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				db.ExcuteQuery("EXEC sp_LamSachPhieu");
+				MessageBox.Show("Làm sạch thành công");
+			}catch(SqlException se)
+			{
+				MessageBox.Show(se.Message);
+			}
+		}
+		private void dtime_ValueChanged(object sender, EventArgs e)
+		{
+			n.load_PhieuNhap(flp_SP, flp_CTPN, Active, DateTime.Parse(dtime.Text).ToString("yyyy-MM-dd"), "AND");
 		}
 	}
 }

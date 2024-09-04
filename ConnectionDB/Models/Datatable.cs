@@ -26,9 +26,10 @@ namespace ConnectionDB.Models
 		public DataTable da_Kho() => db.loadDB("SELECT MASP, SUM(SLTON) FROM KHO GROUP BY MASP");
 		public DataTable da_MaLoai() => db.loadDB("SELECT * FROM LOAISP");
 		public DataTable da_MaLoai(string TenSP) => db.loadDB($"SELECT * FROM LOAISP WHERE TENSP = N'{TenSP}'");
-		public DataTable da_PhieuNhap(string Active) => db.loadDB($"SELECT * FROM PHIEUNHAP WHERE TRANGTHAI = N'{Active}'");
+		public DataTable da_PhieuNhap(string Active, string Date, string condition) => db.loadDB($"SELECT * FROM PHIEUNHAP WHERE TRANGTHAI = N'{Active}' {condition} CAST(NGAYNHAP AS DATE) = '{Date}'");
 		public DataTable da_CTPhieuNhap(string MAPN) => db.loadDB($"EXEC sp_Join_CTPN '{MAPN}'");
 		public DataTable da_CTPhieuNhap_MAPN(string MAPN) => db.loadDB($"SELECT * FROM CTPHIEUNHAP WHERE MAPN = '{MAPN}'");
+		public void Del_CTPhieu(string MASP, string MAPN) => db.ExcuteQuery($"DELETE FROM CTPHIEUNHAP WHERE MASP = '{MASP}' AND MAPN = '{MAPN}'");
 		
 	}
 }

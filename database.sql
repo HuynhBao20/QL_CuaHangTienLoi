@@ -353,40 +353,51 @@ CREATE TABLE KHO
 	PRIMARY KEY (MASP, NGAYSX),
 	FOREIGN KEY (MASP) REFERENCES SANPHAM(MASP),
 )
-
-CREATE PROC sp_Join_CTPN @MAPN char(10)
+go
+ALTER PROC sp_Join_CTPN @MAPN char(10)
 AS
 BEGIN
 	SELECT * FROM CTPHIEUNHAP ct, PHIEUNHAP p, SANPHAM sp
 	WHERE ct.MAPN = p.MAPN AND ct.MASP = sp.MASP AND ct.MAPN = @MAPN
 END
-EXEC sp_Join_CTPN 'N0022'
 GO
+CREATE TRIGGER tg_Update_SL
+ON CT_HOADON
+AFTER UPDATE
+AS
+BEGIN
+	UPDATE KHO
+    SET SLTON = k.SLTON - i.SOLUONG
+    FROM KHO k, inserted i, HOADON hd
+    WHERE k.MASP = i.MASP AND  hd.TRANGTHAI = N'Đã xuất hóa đơn';
+END
+go
+--====================================Mới====================================
 
+
+GO
 ALTER TRIGGER tg_Update_Kho
 ON PHIEUNHAP
 AFTER UPDATE
 AS
 BEGIN
-    SET NOCOUNT ON;
 	DECLARE @MASP NCHAR(10), @NGAYSX DATE, @NGAYHH DATE, @SLNHAP INT;
-
     DECLARE cur CURSOR FOR 
     SELECT ct.MASP, ct.NGAYSX, ct.NGAYHH, ct.SLNHAP
-    FROM inserted i
-    INNER JOIN CTPHIEUNHAP ct ON i.MAPN = ct.MAPN
-    WHERE i.TRANGTHAI = N'Đã duyệt';
+    FROM inserted i, CTPHIEUNHAP ct
+    WHERE i.TRANGTHAI = N'Đã duyệt' AND i.MAPN = ct.MAPN;
 
     OPEN cur;
     FETCH NEXT FROM cur INTO @MASP, @NGAYSX, @NGAYHH, @SLNHAP;
 
     WHILE @@FETCH_STATUS = 0
     BEGIN
+		SET NOCOUNT ON
         -- Kiểm tra nếu sản phẩm đã tồn tại trong kho
-        IF EXISTS (SELECT 1 FROM KHO WHERE MASP = @MASP AND NGAYSX = @NGAYSX AND NGAYHH = @NGAYHH)
+        IF EXISTS (SELECT 1 FROM KHO WHERE MASP = @MASP AND NGAYSX = @NGAYSX)
         BEGIN
             -- Cập nhật SLTON nếu sản phẩm đã tồn tại
-            UPDATE KHO 
+            UPDATE KHO
             SET SLTON = SLTON + @SLNHAP
             WHERE MASP = @MASP AND NGAYSX = @NGAYSX AND NGAYHH = @NGAYHH;
         END
@@ -407,14 +418,36 @@ BEGIN
 END;
 GO
 
-CREATE TRIGGER tg_Update_SL
-ON CT_HOADON
-AFTER UPDATE
+ALTER PROC sp_LamSachPhieu
 AS
 BEGIN
-	UPDATE KHO
-    SET SLTON = k.SLTON - i.SOLUONG
-    FROM KHO k, inserted i, HOADON hd
-    WHERE k.MASP = i.MASP AND  hd.TRANGTHAI = N'Đã xuất hóa đơn';
+	DECLARE @MAPN NCHAR(10);
+	DECLARE @COUNT INT;
+	SET @COUNT = (SELECT COUNT(*) FROM PHIEUNHAP pn
+									WHERE NOT EXISTS (
+									SELECT 1
+									FROM CTPHIEUNHAP ctpn
+									WHERE pn.MAPN = ctpn.MAPN));
+
+	DECLARE cur CURSOR FOR 
+	SELECT MAPN
+	FROM PHIEUNHAP pn
+	WHERE NOT EXISTS (
+		SELECT 1
+		FROM CTPHIEUNHAP ctpn
+		WHERE pn.MAPN = ctpn.MAPN
+	)
+	open cur 
+	FETCH NEXT FROM cur INTO @MAPN
+	WHILE @@FETCH_STATUS = 0
+    BEGIN
+		DELETE FROM PHIEUNHAP WHERE MAPN = @MAPN;
+		FETCH NEXT FROM cur INTO @MAPN;
+	END;
+	CLOSE cur;
+    DEALLOCATE cur;
+    PRINT N'Lọc thành công: ' + cast(@COUNT AS NVARCHAR);
 END
 
+EXEC sp_LamSachPhieu
+EXEC sp_Join_CTPN 'N0041'

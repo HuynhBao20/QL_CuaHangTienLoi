@@ -3,6 +3,7 @@ using ConnectionDB.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -26,11 +27,44 @@ namespace APP.Controllers
 		}		
 		public string fullPath(string Fpath) => Path.GetFullPath(Fpath); //Hàm này lấy ra đường dẫn của file
 		public string fpathImage(string ImageName) => File.Exists(fullPath(@"../../Resources/" + ImageName.Trim() + ".jpg")) ? fullPath(@"../../Resources/" + ImageName.Trim() + ".jpg") : fullPath(@"../../Resources/Sp.jpg");
-		public void load_PhieuNhap(FlowLayoutPanel flp, FlowLayoutPanel flp_Ct, string Active)
+		public void tilte(FlowLayoutPanel flp)
+		{
+			TableLayoutPanel tbl = new TableLayoutPanel()
+			{
+				Dock = DockStyle.Fill,
+				ColumnCount = 5,
+				RowCount = 1,
+			};
+			Panel pnl = new Panel()
+			{
+				Width = flp.Width - 40,
+				Height = 60,
+				BackColor = Color.Chocolate,
+				ForeColor = Color.White
+			};
+			string[] list = { "Mã phiếu nhập", "Ngày lập", "Trạng thái", "Xem", "Duyệt" };
+			int i = 0;
+			foreach(var item in list)
+			{
+				Label TrangThai = new Label()
+				{
+					Dock = DockStyle.Fill,
+					Text = item,
+					TextAlign = ContentAlignment.MiddleCenter
+				};
+				tbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
+				tbl.Controls.Add(TrangThai, i, 0);
+				i++;
+			}
+			pnl.Controls.Add(tbl);
+			flp.Controls.Add(pnl);
+		}
+		public void load_PhieuNhap(FlowLayoutPanel flp, FlowLayoutPanel flp_Ct, string Active, string Date, string condition)
 		{
 			flp.Controls.Clear();
+			tilte(flp);
 			flp.AutoScroll = true;
-			foreach(DataRow item in dt.da_PhieuNhap(Active).Rows)
+			foreach(DataRow item in dt.da_PhieuNhap(Active, Date, condition).Rows)
 			{
 				string ID = item["MAPN"].ToString();				
 				Color is_PN = db.ExcuteReader($"SELECT TRANGTHAI FROM PHIEUNHAP WHERE MAPN = '{ID}'", "TRANGTHAI") == "Chưa duyệt" ? Color.Red : Color.Green;
@@ -79,11 +113,11 @@ namespace APP.Controllers
 					BackColor = Color.Gray,
 					ForeColor = Color.White
 				};
-				tbl.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
-				tbl.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 150F));
-				tbl.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 150F));
-				tbl.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 130F));
-				tbl.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
+				tbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
+				tbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
+				tbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
+				tbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
+				tbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
 				tbl.Controls.Add(MAPN, 0, 0);
 				tbl.Controls.Add(lb, 1, 0);
 				tbl.Controls.Add(TrangThai, 2, 0);
@@ -93,19 +127,26 @@ namespace APP.Controllers
 				flp.Controls.Add(pnl);
 				btn.Click += (sender, e) => Event_Show_PhieuNhap(sender, e, flp_Ct, ID);
 				btn_Duyet.Click += (sender, e) => {
-						int is_Quanlity = string.IsNullOrEmpty(db.ExcuteReader($"SELECT MAPN, COUNT(*) AS 'SL' FROM CTPHIEUNHAP WHERE MAPN = '{MAPN}' GROUP BY MAPN", "SL")) ? 0 :
-						int.Parse(db.ExcuteReader($"SELECT MAPN, COUNT(*) AS 'SL' FROM CTPHIEUNHAP WHERE MAPN = '{MAPN}' GROUP BY MAPN", "SL"));
+					try
+					{
+						int is_Quanlity = string.IsNullOrEmpty(db.ExcuteReader($"SELECT MAPN, COUNT(*) AS 'SL' FROM CTPHIEUNHAP WHERE MAPN = '{ID}' GROUP BY MAPN", "SL")) ? 0 :
+						int.Parse(db.ExcuteReader($"SELECT MAPN, COUNT(*) AS 'SL' FROM CTPHIEUNHAP WHERE MAPN = '{ID}' GROUP BY MAPN", "SL"));
 						if (is_Quanlity < 1)
 						{
 							MessageBox.Show("Phiếu nhập rỗng");
 						}
 						else
 						{
-							string Sql = $"UPDATE PHIEUNHAP SET TRANGTHAI = N'Đã duyệt' WHERE MAPN = '{MAPN}'";
+							string Sql = $"UPDATE PHIEUNHAP SET TRANGTHAI = N'Đã duyệt' WHERE MAPN = '{ID}'";
 							db.ExcuteQuery(Sql);
 							MessageBox.Show("Duyệt thành công");
-							load_PhieuNhap(flp, flp_Ct, Active);
+							load_PhieuNhap(flp, flp_Ct, Active, Date, condition);
 						}
+					}
+					catch (SqlException se)
+					{
+						MessageBox.Show(se.Message);
+					}
 				};
 			}
 		}
@@ -114,6 +155,12 @@ namespace APP.Controllers
 			flp.AutoScroll = true;
 			foreach (DataRow item in dt.da_CTPhieuNhap(MAPN).Rows)
 			{
+				Panel pnl = new Panel()
+				{
+					Width = flp.Width - 40,
+					Height = 80,
+					BackColor = Color.White
+				};
 				TableLayoutPanel tbl = new TableLayoutPanel()
 				{
 					Dock = DockStyle.Fill,
@@ -137,22 +184,36 @@ namespace APP.Controllers
 					Dock = DockStyle.Fill,
 					Text = item["TENSP"].ToString(),
 					TextAlign = ContentAlignment.MiddleCenter
-				};
-				Panel pnl = new Panel()
+				};				
+				Button btn = new Button()
 				{
-					Width = flp.Width - 30,
-					Height = 80,
-					BackColor = Color.White
+					Dock = DockStyle.Fill,
+					Text = "Xóa",
+					BackColor = Color.Red,
+					ForeColor = Color.White
 				};
 				tbl.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
-				tbl.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 250F));
-				tbl.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 250F));
-				tbl.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 12));
+				tbl.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 180F));
+				tbl.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 180F));
+				tbl.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
 				tbl.Controls.Add(lb, 2, 0);
+				tbl.Controls.Add(btn, 3, 0);
 				tbl.Controls.Add(lb_ProductName, 1, 0);
 				tbl.Controls.Add(box, 0, 0);
 				pnl.Controls.Add(tbl);
 				flp.Controls.Add(pnl);
+				btn.Click += (sender, e) =>
+				{
+					try
+					{
+						string MASP = item["MASP"].ToString();
+						dt.Del_CTPhieu(MASP, MAPN);
+						load_CTPhieuNhap(flp, MAPN);
+					}catch(Exception ex)
+					{
+						MessageBox.Show(ex.Message);
+					}
+				};
 
 			}
 		}
@@ -299,6 +360,5 @@ namespace APP.Controllers
 			flp.Controls.Clear();
 			load_CTPhieuNhap(flp, MAPN);
 		}
-		
 	}
 }
