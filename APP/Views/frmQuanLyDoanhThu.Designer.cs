@@ -29,12 +29,12 @@ namespace APP.Views
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-			System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-			System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-			System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-			System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+			System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+			System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+			System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+			System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
 			this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -51,6 +51,7 @@ namespace APP.Views
 			this.txtMaKH = new System.Windows.Forms.TextBox();
 			this.btnMaKH = new System.Windows.Forms.Button();
 			this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.groupBox4.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -71,6 +72,7 @@ namespace APP.Views
 			this.tableLayoutPanel1.Controls.Add(this.groupBox4, 1, 1);
 			this.tableLayoutPanel1.Controls.Add(this.groupBox3, 0, 1);
 			this.tableLayoutPanel1.Controls.Add(this.groupBox2, 0, 0);
+			this.tableLayoutPanel1.Controls.Add(this.groupBox1, 2, 1);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
 			this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
@@ -90,22 +92,22 @@ namespace APP.Views
 			this.groupBox4.Size = new System.Drawing.Size(437, 326);
 			this.groupBox4.TabIndex = 6;
 			this.groupBox4.TabStop = false;
-			this.groupBox4.Text = "Doanh thu hóa đơn theo ngày";
+			this.groupBox4.Text = "Doanh thu theo tháng";
 			// 
 			// chart1
 			// 
-			chartArea2.Name = "ChartArea1";
-			this.chart1.ChartAreas.Add(chartArea2);
+			chartArea5.Name = "ChartArea1";
+			this.chart1.ChartAreas.Add(chartArea5);
 			this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-			legend2.Name = "Legend1";
-			this.chart1.Legends.Add(legend2);
+			legend5.Name = "Legend1";
+			this.chart1.Legends.Add(legend5);
 			this.chart1.Location = new System.Drawing.Point(3, 23);
 			this.chart1.Name = "chart1";
-			series2.ChartArea = "ChartArea1";
-			series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-			series2.Legend = "Legend1";
-			series2.Name = "Series1";
-			this.chart1.Series.Add(series2);
+			series5.ChartArea = "ChartArea1";
+			series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+			series5.Legend = "Legend1";
+			series5.Name = "Series1";
+			this.chart1.Series.Add(series5);
 			this.chart1.Size = new System.Drawing.Size(427, 300);
 			this.chart1.TabIndex = 1;
 			this.chart1.Text = "Doanh thu theo ngày";
@@ -266,20 +268,30 @@ namespace APP.Views
 			// 
 			// chart2
 			// 
-			chartArea1.Name = "ChartArea1";
-			this.chart2.ChartAreas.Add(chartArea1);
+			chartArea6.Name = "ChartArea1";
+			this.chart2.ChartAreas.Add(chartArea6);
 			this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
-			legend1.Name = "Legend1";
-			this.chart2.Legends.Add(legend1);
+			legend6.Name = "Legend1";
+			this.chart2.Legends.Add(legend6);
 			this.chart2.Location = new System.Drawing.Point(3, 23);
 			this.chart2.Name = "chart2";
-			series1.ChartArea = "ChartArea1";
-			series1.Legend = "Legend1";
-			series1.Name = "Series1";
-			this.chart2.Series.Add(series1);
+			series6.ChartArea = "ChartArea1";
+			series6.Legend = "Legend1";
+			series6.Name = "Series1";
+			this.chart2.Series.Add(series6);
 			this.chart2.Size = new System.Drawing.Size(431, 300);
 			this.chart2.TabIndex = 0;
 			this.chart2.Text = "chart2";
+			// 
+			// groupBox1
+			// 
+			this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.groupBox1.Location = new System.Drawing.Point(885, 421);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(399, 326);
+			this.groupBox1.TabIndex = 7;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "Chức năng";
 			// 
 			// frmQuanLyDoanhThu
 			// 
@@ -324,5 +336,6 @@ namespace APP.Views
 		private System.Windows.Forms.TextBox txtMaKH;
 		private System.Windows.Forms.Button btnMaKH;
 		private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+		private System.Windows.Forms.GroupBox groupBox1;
 	}
 }

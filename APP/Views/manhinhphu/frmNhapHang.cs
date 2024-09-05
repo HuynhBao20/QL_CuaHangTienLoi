@@ -48,11 +48,6 @@ namespace APP.Views.manhinhphu
 			n.load_SanPham_PhieuNhap(flp, txtMaSP, txtTenSP, txMasp, txtDonGia, cbo_MaLoai);
 			n.load_PhieuNhap(flp_SP, flp_CTPN, "Chưa duyệt", DateTime.Now.Date.ToString("yyyy-MM-dd"), "AND");
 			ui.loadCombobox(cbo_MaLoai, "SELECT * FROM LOAISP", "TENLOAI", "TENLOAI");
-			string[] cboText = { "6 tháng", "1 năm", "2 năm", "Vô hạn" };
-			foreach(var item in cboText)
-			{
-				cbo.Items.Add(item);
-			}
 			this.Active = "Chưa duyệt";
 			dtime.Value.ToString("dd/MM/yyyy");
 		}
@@ -196,7 +191,7 @@ namespace APP.Views.manhinhphu
 		}
 		private void dtime_ValueChanged(object sender, EventArgs e)
 		{
-			n.load_PhieuNhap(flp_SP, flp_CTPN, Active, DateTime.Parse(dtime.Text).ToString("yyyy-MM-dd"), "AND");
+			n.load_PhieuNhap(flp_SP, flp_CTPN, Active, dtime.Value.ToString("yyyy-MM-dd"), "AND");
 		}
 	}
 }
