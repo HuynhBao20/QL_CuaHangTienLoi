@@ -149,9 +149,11 @@ namespace APP.Controllers
 					}
 				};
 			}
+
 		}
 		public void load_CTPhieuNhap(FlowLayoutPanel flp, string MAPN)
 		{
+			flp.Controls.Clear();
 			flp.AutoScroll = true;
 			foreach (DataRow item in dt.da_CTPhieuNhap(MAPN).Rows)
 			{

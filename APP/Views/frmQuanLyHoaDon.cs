@@ -1,4 +1,5 @@
 ﻿using APP.Controllers;
+using ConnectionDB;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +14,13 @@ namespace APP.Views
 {
 	public partial class frmQuanLyHoaDon : Form
 	{
-		UI ui = new UI(new Label());
-		public frmQuanLyHoaDon()
+		UI ui;
+		Connection db;
+		public frmQuanLyHoaDon(string User, string Pass)
 		{
 			InitializeComponent();
+			db = new Connection(User, Pass);
+			ui = new UI(User, Pass);
 			ui.load_HoaDon_ChuaXuat(flp_LoadHoaDon, "SELECT * FROM HOADON WHERE CAST(NGAYLAP AS DATE) = CAST(GETDATE() AS DATE)", new Label(), new FlowLayoutPanel(), new TextBox());
 		}
 
@@ -34,9 +38,20 @@ namespace APP.Views
 		private void dt_NgayChon_ValueChanged(object sender, EventArgs e)
 		{
 			ui.load_HoaDon_ChuaXuat(flp_LoadHoaDon,
-						$"SELECT * FROM HOADON WHERE FORMAT(NGAYLAP, 'dd/MM/yyyy') = CAST('{dt_NgayChon.Value.ToString("dd/MM/yyyy")}' AS DATE)",
+						$"SELECT * FROM HOADON WHERE FORMAT(NGAYLAP, 'dd/MM/yyyy') = '{dt_NgayChon.Value.ToString("dd/MM/yyyy")}'",
 						new Label(), new FlowLayoutPanel(), new TextBox());
+		}
 
+		private void button1_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				db.ExcuteQuery("EXEC sp_LocHD");
+				MessageBox.Show("Lọc thành công");
+			}catch(Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
 		}
 	}
 }

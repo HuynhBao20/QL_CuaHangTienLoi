@@ -66,7 +66,7 @@ namespace APP
 
 		private void btnKhachHang_Click(object sender, EventArgs e)
 		{
-			frmKhachHang kh = new frmKhachHang();
+			frmKhachHang kh = new frmKhachHang(UserName, PassWord);
 			ui.load_Interface(kh, pnl_Load_Main);
 		}
 
@@ -77,7 +77,7 @@ namespace APP
 		}
 		private void button6_Click(object sender, EventArgs e)
 		{
-			frmQuanLyHoaDon hd = new frmQuanLyHoaDon();
+			frmQuanLyHoaDon hd = new frmQuanLyHoaDon(UserName, PassWord);
 			ui.load_Interface(hd, pnl_Load_Main);
 		}
 		private void btnDoanhThu_Click(object sender, EventArgs e)

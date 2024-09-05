@@ -206,7 +206,7 @@ namespace APP.Views
 		}
 		private void btnThemKhach_Click(object sender, EventArgs e)
 		{
-			frmKhachHang kh = new frmKhachHang();
+			frmKhachHang kh = new frmKhachHang(UserName, PassWord);
 			kh.Show();
 		}
 		private void btnTotalMoMo_Click(object sender, EventArgs e)

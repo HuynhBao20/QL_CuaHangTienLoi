@@ -279,15 +279,15 @@ END
 EXEC sp_ThongKe 
 GO
 --Thống kê hóa đơn theo tháng
-CREATE PROC sp_ThongKeTheoThang @NGAYLAP int
+Alter PROC sp_ThongKeTheoThang
 AS
 BEGIN
-	SELECT MONTH(NGAYLAP), SUM(sp.DONGIA * ct.SOLUONG) as N'Tổng giá trị hóa đơn'
+	SELECT MONTH(NGAYLAP) AS 'Thang', YEAR(NGAYLAP) AS 'Nam', SUM(sp.DONGIA * ct.SOLUONG) as N'Tổng giá trị hóa đơn'
 	FROM CT_HOADON ct, HOADON hd, SANPHAM sp
-	WHERE ct.MAHD = hd.MAHD AND ct.MASP = sp.MASP AND TRANGTHAI = N'Đã xuất hóa đơn' AND MONTH(NGAYLAP) = @NGAYLAP
-	GROUP BY MONTH(NGAYLAP)
+	WHERE ct.MAHD = hd.MAHD AND ct.MASP = sp.MASP AND TRANGTHAI = N'Đã xuất hóa đơn'
+	GROUP BY MONTH(NGAYLAP), YEAR(NGAYLAP)
 END
-EXEC sp_ThongKeTheoThang 8
+EXEC sp_ThongKeTheoThang
 GO
 --Theo ngày
 CREATE PROC sp_ThongKeTheoNgay
@@ -371,10 +371,6 @@ BEGIN
     FROM KHO k, inserted i, HOADON hd
     WHERE k.MASP = i.MASP AND  hd.TRANGTHAI = N'Đã xuất hóa đơn';
 END
-go
---====================================Mới====================================
-
-
 GO
 ALTER TRIGGER tg_Update_Kho
 ON PHIEUNHAP
@@ -386,7 +382,6 @@ BEGIN
     SELECT ct.MASP, ct.NGAYSX, ct.NGAYHH, ct.SLNHAP
     FROM inserted i, CTPHIEUNHAP ct
     WHERE i.TRANGTHAI = N'Đã duyệt' AND i.MAPN = ct.MAPN;
-
     OPEN cur;
     FETCH NEXT FROM cur INTO @MASP, @NGAYSX, @NGAYHH, @SLNHAP;
 
@@ -417,7 +412,6 @@ BEGIN
     PRINT N'Nhập kho thành công';
 END;
 GO
-
 ALTER PROC sp_LamSachPhieu
 AS
 BEGIN
@@ -447,7 +441,123 @@ BEGIN
 	CLOSE cur;
     DEALLOCATE cur;
     PRINT N'Lọc thành công: ' + cast(@COUNT AS NVARCHAR);
-END
+END;
+GO
+--====================================Mới====================================
+ALTER TRIGGER tg_GopCTPN
+ON CTPHIEUNHAP
+AFTER INSERT, UPDATE
+AS
+BEGIN
+	DECLARE @MAPN NCHAR(10), 
+			@MASP NCHAR(10), 
+			@SL INT, 
+			@GIANHAP INT, 
+			@NGAYSX DATE,
+			@NGAYHH DATE,
+			@DVT NVARCHAR(20);
+	DECLARE cur CURSOR FOR 
+	SELECT MAPN, MASP, SLNHAP, GIANHAP,NGAYSX, NGAYHH, DVT FROM inserted
+	OPEN cur;
+	FETCH NEXT FROM cur INTO @MAPN, @MASP, @SL, @GIANHAP, @NGAYSX, @NGAYHH, @DVT
+	WHILE @@FETCH_STATUS = 0
+	BEGIN
+		IF EXISTS(SELECT 1
+				  FROM CTPHIEUNHAP
+				  WHERE MAPN = @MAPN AND MASP = @MASP)
+			BEGIN
+				UPDATE CTPHIEUNHAP 
+				SET SLNHAP = SLNHAP + @SL
+				WHERE MAPN = @MAPN AND MASP = @MASP;
+				PRINT N'Cập nhật thành công';
+			END;
+			ELSE
+				BEGIN
+					INSERT INTO CTPHIEUNHAP(MAPN, MASP, SLNHAP, GIANHAP,NGAYSX, NGAYHH, DVT) 
+					VALUES (@MAPN, @MASP, @SL, @GIANHAP, @NGAYSX, @NGAYHH, @DVT)
+				END
+			FETCH NEXT FROM cur INTO @MAPN, @MASP, @SL, @GIANHAP, @NGAYSX, @NGAYHH, @DVT;
+	END
+	CLOSE cur;
+    DEALLOCATE cur;
+END;
 
-EXEC sp_LamSachPhieu
-EXEC sp_Join_CTPN 'N0041'
+GO
+CREATE PROC sp_GomKho
+AS
+BEGIN
+	DECLARE @MASP NCHAR(10);
+	DECLARE cur CURSOR FOR
+	SELECT MASP FROM KHO
+	OPEN cur;
+	FETCH NEXT FROM cur INTO @MASP
+	WHILE @@FETCH_STATUS = 0
+	BEGIN
+		
+		FETCH NEXT FROM cur INTO @MASP;
+	END;
+	CLOSE cur;
+    DEALLOCATE cur;
+
+END;
+GO
+CREATE PROC sp_HoaDon_DoanhThu @NGAYLAP DATE
+AS
+BEGIN
+	SELECT hd.MAHD AS N'Mã hóa đơn', NGAYLAP as N'Ngày lập', MAKH AS N'Mã khách hàng', COUNT(sp.MASP) AS N'Số sản phẩm', SUM(SOLUONG * DONGIA) AS N'Thành tiền' 
+	FROM HOADON hd, CT_HOADON ct, SANPHAM sp
+	WHERE hd.MAHD = ct.MAHD 
+	AND ct.MASP = sp.MASP 
+	AND TRANGTHAI = N'Đã xuất hóa đơn'
+	AND CAST(NGAYLAP AS DATE) = @NGAYLAP
+	GROUP BY hd.MAHD, NGAYLAP, MAKH
+END
+go
+CREATE PROC sp_DoanhThu
+AS
+BEGIN
+	SELECT hd.MAHD AS N'Mã hóa đơn', NGAYLAP as N'Ngày lập', MAKH AS N'Mã khách hàng', COUNT(sp.MASP) AS N'Số sản phẩm', SUM(SOLUONG * DONGIA) AS N'Thành tiền' 
+	FROM HOADON hd, CT_HOADON ct, SANPHAM sp
+	WHERE hd.MAHD = ct.MAHD 
+	AND ct.MASP = sp.MASP 
+	AND TRANGTHAI = N'Đã xuất hóa đơn'
+	GROUP BY hd.MAHD, NGAYLAP, MAKH
+END
+go
+CREATE VIEW Tong_DoanhThu
+as
+	SELECT hd.MAHD AS N'Mã hóa đơn', NGAYLAP as N'Ngày lập', MAKH AS N'Mã khách hàng', COUNT(sp.MASP) AS N'Số sản phẩm', SUM(SOLUONG * DONGIA) AS N'Thành tiền' 
+	FROM HOADON hd, CT_HOADON ct, SANPHAM sp
+	WHERE hd.MAHD = ct.MAHD 
+	AND ct.MASP = sp.MASP 
+	AND TRANGTHAI = N'Đã xuất hóa đơn'
+	GROUP BY hd.MAHD, NGAYLAP, MAKH
+GO
+CREATE PROC sp_ThanhTienTheoNgay @NL DATE
+AS
+BEGIN
+	SELECT CAST([Ngày lập] AS DATE) as N'NGAY', SUM([Thành tiền]) AS 'TT' 
+	FROM Tong_DoanhThu 
+	WHERE CAST([Ngày lập] AS DATE) = @NL 
+	GROUP BY CAST([Ngày lập] AS DATE)
+END
+GO
+CREATE PROC sp_LocHD
+AS
+BEGIN
+	DECLARE @MAHD NCHAR(10);
+	DECLARE cs CURSOR FOR
+	SELECT MAHD FROM HOADON h
+	WHERE NOT EXISTS (SELECT 1 FROM CT_HOADON ct WHERE ct.MAHD = h.MAHD)
+	OPEN cs;
+	FETCH NEXT FROM cs INTO @MAHD
+	WHILE @@FETCH_STATUS = 0
+	BEGIN
+		DELETE FROM HOADON WHERE MAHD = @MAHD
+		Print 'Đã xóa hóa đơn: ' + @MAHD
+		FETCH NEXT FROM cs INTO @MAHD
+	END
+	CLOSE cs;
+    DEALLOCATE cs;
+END
+GO

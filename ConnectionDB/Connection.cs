@@ -37,10 +37,16 @@ namespace ConnectionDB
 		}
 		public DataTable loadDB(string Sql)
 		{
-			DataTable da = new DataTable();
-			SqlDataAdapter sda = new SqlDataAdapter(Sql, _cnn);
-			sda.Fill(da);
-			return da;
+			try
+			{
+				DataTable da = new DataTable();
+				SqlDataAdapter sda = new SqlDataAdapter(Sql, _cnn);
+				sda.Fill(da);
+				return da;
+			}catch(Exception e)
+			{
+				throw new Exception(e.Message);
+			}
 		}
 		
 		public void ExcuteQuery(string Sql)

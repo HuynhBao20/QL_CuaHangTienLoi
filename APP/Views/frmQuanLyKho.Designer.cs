@@ -31,14 +31,15 @@ namespace APP.Views
 		{
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.radioButton1 = new System.Windows.Forms.RadioButton();
+			this.txtMaSP = new System.Windows.Forms.TextBox();
+			this.btnSearch = new System.Windows.Forms.Button();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.dgv = new System.Windows.Forms.DataGridView();
-			this.btnSearch = new System.Windows.Forms.Button();
-			this.txtMaSP = new System.Windows.Forms.TextBox();
-			this.radioButton1 = new System.Windows.Forms.RadioButton();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.lb_TongSL = new System.Windows.Forms.Label();
 			this.lb_TongTien = new System.Windows.Forms.Label();
+			this.lb_TongSL = new System.Windows.Forms.Label();
+			this.button1 = new System.Windows.Forms.Button();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox3.SuspendLayout();
@@ -69,55 +70,16 @@ namespace APP.Views
 			this.tableLayoutPanel1.SetColumnSpan(this.groupBox2, 2);
 			this.groupBox2.Controls.Add(this.radioButton1);
 			this.groupBox2.Controls.Add(this.txtMaSP);
+			this.groupBox2.Controls.Add(this.button1);
 			this.groupBox2.Controls.Add(this.btnSearch);
 			this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.groupBox2.Location = new System.Drawing.Point(3, 3);
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(1005, 63);
+			this.groupBox2.Size = new System.Drawing.Size(1005, 62);
 			this.groupBox2.TabIndex = 1;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Bộ lọc";
-			// 
-			// groupBox3
-			// 
-			this.groupBox3.Controls.Add(this.dgv);
-			this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.groupBox3.Location = new System.Drawing.Point(3, 72);
-			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Size = new System.Drawing.Size(775, 481);
-			this.groupBox3.TabIndex = 1;
-			this.groupBox3.TabStop = false;
-			this.groupBox3.Text = "Danh sách tồn kho";
-			// 
-			// dgv
-			// 
-			this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dgv.Location = new System.Drawing.Point(3, 23);
-			this.dgv.Name = "dgv";
-			this.dgv.RowHeadersWidth = 51;
-			this.dgv.RowTemplate.Height = 24;
-			this.dgv.Size = new System.Drawing.Size(769, 455);
-			this.dgv.TabIndex = 0;
-			// 
-			// btnSearch
-			// 
-			this.btnSearch.Location = new System.Drawing.Point(299, 22);
-			this.btnSearch.Name = "btnSearch";
-			this.btnSearch.Size = new System.Drawing.Size(109, 30);
-			this.btnSearch.TabIndex = 0;
-			this.btnSearch.Text = "Tìm";
-			this.btnSearch.UseVisualStyleBackColor = true;
-			this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-			// 
-			// txtMaSP
-			// 
-			this.txtMaSP.Location = new System.Drawing.Point(79, 22);
-			this.txtMaSP.Multiline = true;
-			this.txtMaSP.Name = "txtMaSP";
-			this.txtMaSP.Size = new System.Drawing.Size(214, 30);
-			this.txtMaSP.TabIndex = 1;
 			// 
 			// radioButton1
 			// 
@@ -131,17 +93,66 @@ namespace APP.Views
 			this.radioButton1.UseVisualStyleBackColor = true;
 			this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
 			// 
+			// txtMaSP
+			// 
+			this.txtMaSP.Location = new System.Drawing.Point(79, 22);
+			this.txtMaSP.Multiline = true;
+			this.txtMaSP.Name = "txtMaSP";
+			this.txtMaSP.Size = new System.Drawing.Size(214, 30);
+			this.txtMaSP.TabIndex = 1;
+			// 
+			// btnSearch
+			// 
+			this.btnSearch.Location = new System.Drawing.Point(299, 22);
+			this.btnSearch.Name = "btnSearch";
+			this.btnSearch.Size = new System.Drawing.Size(109, 30);
+			this.btnSearch.TabIndex = 0;
+			this.btnSearch.Text = "Tìm";
+			this.btnSearch.UseVisualStyleBackColor = true;
+			this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+			// 
+			// groupBox3
+			// 
+			this.groupBox3.Controls.Add(this.dgv);
+			this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.groupBox3.Location = new System.Drawing.Point(3, 71);
+			this.groupBox3.Name = "groupBox3";
+			this.groupBox3.Size = new System.Drawing.Size(775, 482);
+			this.groupBox3.TabIndex = 1;
+			this.groupBox3.TabStop = false;
+			this.groupBox3.Text = "Danh sách tồn kho";
+			// 
+			// dgv
+			// 
+			this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dgv.Location = new System.Drawing.Point(3, 23);
+			this.dgv.Name = "dgv";
+			this.dgv.RowHeadersWidth = 51;
+			this.dgv.RowTemplate.Height = 24;
+			this.dgv.Size = new System.Drawing.Size(769, 456);
+			this.dgv.TabIndex = 0;
+			// 
 			// groupBox1
 			// 
 			this.groupBox1.Controls.Add(this.lb_TongTien);
 			this.groupBox1.Controls.Add(this.lb_TongSL);
 			this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.groupBox1.Location = new System.Drawing.Point(784, 72);
+			this.groupBox1.Location = new System.Drawing.Point(784, 71);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(224, 481);
+			this.groupBox1.Size = new System.Drawing.Size(224, 482);
 			this.groupBox1.TabIndex = 2;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Thống kê";
+			// 
+			// lb_TongTien
+			// 
+			this.lb_TongTien.AutoSize = true;
+			this.lb_TongTien.Location = new System.Drawing.Point(7, 77);
+			this.lb_TongTien.Name = "lb_TongTien";
+			this.lb_TongTien.Size = new System.Drawing.Size(53, 20);
+			this.lb_TongTien.TabIndex = 0;
+			this.lb_TongTien.Text = "label1";
 			// 
 			// lb_TongSL
 			// 
@@ -152,14 +163,15 @@ namespace APP.Views
 			this.lb_TongSL.TabIndex = 0;
 			this.lb_TongSL.Text = "Tổng số lượng:";
 			// 
-			// lb_TongTien
+			// button1
 			// 
-			this.lb_TongTien.AutoSize = true;
-			this.lb_TongTien.Location = new System.Drawing.Point(7, 77);
-			this.lb_TongTien.Name = "lb_TongTien";
-			this.lb_TongTien.Size = new System.Drawing.Size(53, 20);
-			this.lb_TongTien.TabIndex = 0;
-			this.lb_TongTien.Text = "label1";
+			this.button1.Location = new System.Drawing.Point(628, 22);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(109, 30);
+			this.button1.TabIndex = 0;
+			this.button1.Text = "Lọc kho";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// frmQuanLyKho
 			// 
@@ -196,5 +208,6 @@ namespace APP.Views
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Label lb_TongTien;
 		private System.Windows.Forms.Label lb_TongSL;
+		private System.Windows.Forms.Button button1;
 	}
 }

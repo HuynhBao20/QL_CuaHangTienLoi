@@ -29,39 +29,33 @@ namespace APP.Views
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-			System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-			System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-			System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-			System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-			System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+			System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+			System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+			System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+			System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+			System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
 			this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.lb_MaNV = new System.Windows.Forms.Label();
 			this.lb_HoTen = new System.Windows.Forms.Label();
 			this.lb_NgaySinh = new System.Windows.Forms.Label();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.groupBox3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-			this.groupBox2.SuspendLayout();
-			this.tableLayoutPanel2.SuspendLayout();
 			this.tableLayoutPanel3.SuspendLayout();
 			this.tableLayoutPanel4.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -99,23 +93,23 @@ namespace APP.Views
 			// 
 			// chart2
 			// 
-			chartArea3.Name = "ChartArea1";
-			this.chart2.ChartAreas.Add(chartArea3);
+			chartArea1.Name = "ChartArea1";
+			this.chart2.ChartAreas.Add(chartArea1);
 			this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
-			legend3.Name = "Legend1";
-			this.chart2.Legends.Add(legend3);
+			legend1.Name = "Legend1";
+			this.chart2.Legends.Add(legend1);
 			this.chart2.Location = new System.Drawing.Point(3, 23);
 			this.chart2.Name = "chart2";
-			series3.ChartArea = "ChartArea1";
-			series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
-			series3.Legend = "Legend1";
-			series3.Name = "Series1";
-			this.chart2.Series.Add(series3);
+			series1.ChartArea = "ChartArea1";
+			series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
+			series1.Legend = "Legend1";
+			series1.Name = "Series1";
+			this.chart2.Series.Add(series1);
 			this.chart2.Size = new System.Drawing.Size(641, 267);
 			this.chart2.TabIndex = 0;
 			this.chart2.Text = "chart2";
-			title2.Name = "Title1";
-			this.chart2.Titles.Add(title2);
+			title1.Name = "Title1";
+			this.chart2.Titles.Add(title1);
 			// 
 			// groupBox1
 			// 
@@ -130,25 +124,24 @@ namespace APP.Views
 			// 
 			// chart1
 			// 
-			chartArea4.Name = "ChartArea1";
-			this.chart1.ChartAreas.Add(chartArea4);
+			chartArea2.Name = "ChartArea1";
+			this.chart1.ChartAreas.Add(chartArea2);
 			this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-			legend4.Name = "Legend1";
-			this.chart1.Legends.Add(legend4);
+			legend2.Name = "Legend1";
+			this.chart1.Legends.Add(legend2);
 			this.chart1.Location = new System.Drawing.Point(3, 23);
 			this.chart1.Name = "chart1";
-			series4.ChartArea = "ChartArea1";
-			series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-			series4.Legend = "Legend1";
-			series4.Name = "Series1";
-			this.chart1.Series.Add(series4);
+			series2.ChartArea = "ChartArea1";
+			series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+			series2.Legend = "Legend1";
+			series2.Name = "Series1";
+			this.chart1.Series.Add(series2);
 			this.chart1.Size = new System.Drawing.Size(587, 424);
 			this.chart1.TabIndex = 1;
 			this.chart1.Text = "Doanh thu theo ngày";
 			// 
 			// groupBox2
 			// 
-			this.groupBox2.Controls.Add(this.tableLayoutPanel2);
 			this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.groupBox2.Location = new System.Drawing.Point(602, 302);
 			this.groupBox2.Name = "groupBox2";
@@ -156,60 +149,6 @@ namespace APP.Views
 			this.groupBox2.TabIndex = 3;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Thống kê doanh thu";
-			// 
-			// tableLayoutPanel2
-			// 
-			this.tableLayoutPanel2.ColumnCount = 4;
-			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 147F));
-			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 171F));
-			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 146F));
-			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 177F));
-			this.tableLayoutPanel2.Controls.Add(this.label1, 0, 1);
-			this.tableLayoutPanel2.Controls.Add(this.label2, 0, 2);
-			this.tableLayoutPanel2.Controls.Add(this.label3, 1, 1);
-			this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 23);
-			this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-			this.tableLayoutPanel2.RowCount = 4;
-			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
-			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-			this.tableLayoutPanel2.Size = new System.Drawing.Size(641, 424);
-			this.tableLayoutPanel2.TabIndex = 0;
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label1.Location = new System.Drawing.Point(3, 34);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(141, 38);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "Doanh thu ngày:";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label2.Location = new System.Drawing.Point(3, 72);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(141, 43);
-			this.label2.TabIndex = 0;
-			this.label2.Text = "Tổng thu nhập";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label3.Location = new System.Drawing.Point(150, 34);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(165, 38);
-			this.label3.TabIndex = 1;
-			this.label3.Text = "label3";
-			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// tableLayoutPanel3
 			// 
@@ -284,18 +223,6 @@ namespace APP.Views
 			this.label6.Text = "Ngày sinh";
 			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox1.Image = global::APP.Properties.Resources.avatar;
-			this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-			this.pictureBox1.Name = "pictureBox1";
-			this.tableLayoutPanel3.SetRowSpan(this.pictureBox1, 2);
-			this.pictureBox1.Size = new System.Drawing.Size(210, 287);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox1.TabIndex = 1;
-			this.pictureBox1.TabStop = false;
-			// 
 			// lb_MaNV
 			// 
 			this.lb_MaNV.AutoSize = true;
@@ -326,7 +253,19 @@ namespace APP.Views
 			this.lb_NgaySinh.TabIndex = 1;
 			this.lb_NgaySinh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// Dashboard
+			// pictureBox1
+			// 
+			this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.pictureBox1.Image = global::APP.Properties.Resources.avatar;
+			this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+			this.pictureBox1.Name = "pictureBox1";
+			this.tableLayoutPanel3.SetRowSpan(this.pictureBox1, 2);
+			this.pictureBox1.Size = new System.Drawing.Size(210, 287);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.TabIndex = 1;
+			this.pictureBox1.TabStop = false;
+			// 
+			// frmDashboard
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -334,7 +273,7 @@ namespace APP.Views
 			this.Controls.Add(this.tableLayoutPanel1);
 			this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Margin = new System.Windows.Forms.Padding(4);
-			this.Name = "Dashboard";
+			this.Name = "frmDashboard";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
 			this.Text = "TRANG CHỦ";
 			this.tableLayoutPanel1.ResumeLayout(false);
@@ -342,9 +281,6 @@ namespace APP.Views
 			((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
 			this.groupBox1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-			this.groupBox2.ResumeLayout(false);
-			this.tableLayoutPanel2.ResumeLayout(false);
-			this.tableLayoutPanel2.PerformLayout();
 			this.tableLayoutPanel3.ResumeLayout(false);
 			this.tableLayoutPanel4.ResumeLayout(false);
 			this.tableLayoutPanel4.PerformLayout();
@@ -359,12 +295,8 @@ namespace APP.Views
 		private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.GroupBox groupBox2;
-		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
 		private System.Windows.Forms.GroupBox groupBox3;
 		private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
 		private System.Windows.Forms.PictureBox pictureBox1;

@@ -12,13 +12,10 @@ namespace APP.Controllers
 	public class Analyst
 	{
 		Connection db = new Connection();
-		public void Analyst_Month(Chart chart)
+		public void Analyst_Month(Chart chart, string Sql, string TableName)
 		{
             ChartArea chartArea = new ChartArea("");
-            DataTable da = db.loadDB("EXEC sp_ThongKeTheoNgay");
-            //chart.ChartAreas.Add(chartArea);
-
-            // Create a new series
+            DataTable da = db.loadDB(Sql);
             Series series = new Series("Doanh thu theo ngày")
             {
                 ChartType = SeriesChartType.Line,
@@ -27,10 +24,8 @@ namespace APP.Controllers
             };
             foreach(DataRow item in da.Rows)
 			{
-                series.Points.AddXY(item["Ngày lập"].ToString(), int.Parse(item["Tổng giá trị hóa đơn"].ToString()));
+                series.Points.AddXY(item[TableName].ToString(), int.Parse(item["Tổng giá trị hóa đơn"].ToString()));
 			}
-
-            // Add series to the chart
             chart.Series.Add(series);
         }
         public void Analyst_Product_Buy(Chart chart)
@@ -47,7 +42,6 @@ namespace APP.Controllers
             {
                 series.Points.AddXY(item["TENSP"].ToString(), int.Parse(item["SOLUONG"].ToString()));
             }
-
             // Add series to the chart
             chart.Series.Add(series);
         }

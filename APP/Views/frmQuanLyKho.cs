@@ -40,10 +40,13 @@ namespace APP.Views
 		{
 			dgv.DataSource = db.loadDB("SELECT KHO.MASP, TENSP, SUM(SLTON) FROM KHO, SANPHAM where KHO.MASP = SANPHAM.MASP GROUP BY KHO.MASP, TENSP");
 		}
-
 		private void btnSearch_Click(object sender, EventArgs e)
 		{
 			dgv.DataSource = db.loadDB($"SELECT KHO.MASP, TENSP, NGAYSX, NGAYHH, SLTON FROM KHO, SANPHAM where KHO.MASP = SANPHAM.MASP and KHO.MASP = '{txtMaSP.Text}'");
+		}
+		private void button1_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

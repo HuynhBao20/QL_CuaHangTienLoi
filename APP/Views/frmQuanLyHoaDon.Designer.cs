@@ -38,6 +38,7 @@ namespace APP.Views
 			this.rd_HomNay = new System.Windows.Forms.RadioButton();
 			this.rd_ChonNgay = new System.Windows.Forms.RadioButton();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.button1 = new System.Windows.Forms.Button();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.tableLayoutPanel2.SuspendLayout();
@@ -77,11 +78,13 @@ namespace APP.Views
 			// 
 			// tableLayoutPanel2
 			// 
-			this.tableLayoutPanel2.ColumnCount = 2;
-			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.06197F));
-			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.93803F));
+			this.tableLayoutPanel2.ColumnCount = 3;
+			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.28835F));
+			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.71166F));
+			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170F));
 			this.tableLayoutPanel2.Controls.Add(this.flp_LoadHoaDon, 0, 1);
 			this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
+			this.tableLayoutPanel2.Controls.Add(this.button1, 2, 0);
 			this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 24);
 			this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -94,7 +97,7 @@ namespace APP.Views
 			// flp_LoadHoaDon
 			// 
 			this.flp_LoadHoaDon.AutoScroll = true;
-			this.tableLayoutPanel2.SetColumnSpan(this.flp_LoadHoaDon, 2);
+			this.tableLayoutPanel2.SetColumnSpan(this.flp_LoadHoaDon, 3);
 			this.flp_LoadHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.flp_LoadHoaDon.Location = new System.Drawing.Point(3, 43);
 			this.flp_LoadHoaDon.Name = "flp_LoadHoaDon";
@@ -106,7 +109,7 @@ namespace APP.Views
 			this.tableLayoutPanel3.ColumnCount = 3;
 			this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 165F));
+			this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 172F));
 			this.tableLayoutPanel3.Controls.Add(this.dt_NgayChon, 2, 0);
 			this.tableLayoutPanel3.Controls.Add(this.rd_HomNay, 0, 0);
 			this.tableLayoutPanel3.Controls.Add(this.rd_ChonNgay, 1, 0);
@@ -115,7 +118,7 @@ namespace APP.Views
 			this.tableLayoutPanel3.Name = "tableLayoutPanel3";
 			this.tableLayoutPanel3.RowCount = 1;
 			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel3.Size = new System.Drawing.Size(513, 34);
+			this.tableLayoutPanel3.Size = new System.Drawing.Size(524, 34);
 			this.tableLayoutPanel3.TabIndex = 1;
 			// 
 			// dt_NgayChon
@@ -125,9 +128,9 @@ namespace APP.Views
 			this.dt_NgayChon.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
 			this.dt_NgayChon.Enabled = false;
 			this.dt_NgayChon.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-			this.dt_NgayChon.Location = new System.Drawing.Point(351, 3);
+			this.dt_NgayChon.Location = new System.Drawing.Point(355, 3);
 			this.dt_NgayChon.Name = "dt_NgayChon";
-			this.dt_NgayChon.Size = new System.Drawing.Size(159, 27);
+			this.dt_NgayChon.Size = new System.Drawing.Size(166, 27);
 			this.dt_NgayChon.TabIndex = 1;
 			this.dt_NgayChon.ValueChanged += new System.EventHandler(this.dt_NgayChon_ValueChanged);
 			// 
@@ -138,7 +141,7 @@ namespace APP.Views
 			this.rd_HomNay.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.rd_HomNay.Location = new System.Drawing.Point(3, 3);
 			this.rd_HomNay.Name = "rd_HomNay";
-			this.rd_HomNay.Size = new System.Drawing.Size(168, 28);
+			this.rd_HomNay.Size = new System.Drawing.Size(170, 28);
 			this.rd_HomNay.TabIndex = 0;
 			this.rd_HomNay.TabStop = true;
 			this.rd_HomNay.Text = "Hôm nay";
@@ -150,9 +153,9 @@ namespace APP.Views
 			// 
 			this.rd_ChonNgay.AutoSize = true;
 			this.rd_ChonNgay.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.rd_ChonNgay.Location = new System.Drawing.Point(177, 3);
+			this.rd_ChonNgay.Location = new System.Drawing.Point(179, 3);
 			this.rd_ChonNgay.Name = "rd_ChonNgay";
-			this.rd_ChonNgay.Size = new System.Drawing.Size(168, 28);
+			this.rd_ChonNgay.Size = new System.Drawing.Size(170, 28);
 			this.rd_ChonNgay.TabIndex = 0;
 			this.rd_ChonNgay.Text = "Chọn ngày";
 			this.rd_ChonNgay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -168,6 +171,17 @@ namespace APP.Views
 			this.groupBox2.TabIndex = 1;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Doanh thu";
+			// 
+			// button1
+			// 
+			this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.button1.Location = new System.Drawing.Point(655, 3);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(165, 34);
+			this.button1.TabIndex = 2;
+			this.button1.Text = "Lọc hóa đơn";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// frmQuanLyHoaDon
 			// 
@@ -201,5 +215,6 @@ namespace APP.Views
 		private System.Windows.Forms.RadioButton rd_HomNay;
 		private System.Windows.Forms.RadioButton rd_ChonNgay;
 		private System.Windows.Forms.DateTimePicker dt_NgayChon;
+		private System.Windows.Forms.Button button1;
 	}
 }

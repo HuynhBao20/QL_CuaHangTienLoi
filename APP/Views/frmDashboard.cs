@@ -20,7 +20,7 @@ namespace APP.Views
 		{
 			InitializeComponent();
 			db = new Connection(UserName, Pass);
-			a.Analyst_Month(chart1);
+			a.Analyst_Month(chart1, "EXEC sp_ThongKeTheoNgay", "Ngày lập");
 			a.Analyst_Product_Buy(chart2);
 			lb_MaNV.Text = db.ExcuteReader($"SELECT MANV FROM NHANVIEN WHERE MANV = '{UserName}'", "MANV");
 			lb_HoTen.Text = db.ExcuteReader($"SELECT HOTEN FROM NHANVIEN WHERE MANV = '{UserName}'", "HOTEN");
