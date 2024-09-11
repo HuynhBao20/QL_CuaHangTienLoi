@@ -874,7 +874,7 @@ namespace APP.Views.manhinhphu
 			this.tableLayoutPanel7.ColumnCount = 3;
 			this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.21576F));
 			this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.78424F));
-			this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 135F));
+			this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 141F));
 			this.tableLayoutPanel7.Controls.Add(this.flp, 0, 1);
 			this.tableLayoutPanel7.Controls.Add(this.btnTim, 2, 0);
 			this.tableLayoutPanel7.Controls.Add(this.textBox1, 1, 0);
@@ -900,9 +900,9 @@ namespace APP.Views.manhinhphu
 			// btnTim
 			// 
 			this.btnTim.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.btnTim.Location = new System.Drawing.Point(558, 3);
+			this.btnTim.Location = new System.Drawing.Point(552, 3);
 			this.btnTim.Name = "btnTim";
-			this.btnTim.Size = new System.Drawing.Size(130, 32);
+			this.btnTim.Size = new System.Drawing.Size(136, 32);
 			this.btnTim.TabIndex = 12;
 			this.btnTim.Text = "Tìm\r\n";
 			this.btnTim.UseVisualStyleBackColor = true;
@@ -911,10 +911,10 @@ namespace APP.Views.manhinhphu
 			// textBox1
 			// 
 			this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.textBox1.Location = new System.Drawing.Point(254, 3);
+			this.textBox1.Location = new System.Drawing.Point(251, 3);
 			this.textBox1.Multiline = true;
 			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(298, 32);
+			this.textBox1.Size = new System.Drawing.Size(295, 32);
 			this.textBox1.TabIndex = 13;
 			// 
 			// frmNhapHang

@@ -16,13 +16,11 @@ namespace APP.Views
 	public partial class frmKhachHang : Form
 	{
 		Connection db = new Connection();
-		UI ui = new UI();
 		public string active { get; set; }
 		public frmKhachHang(string UserName, string PassWord)
 		{
 			InitializeComponent();
 			db = new Connection(UserName, PassWord);
-			ui = new UI(UserName, PassWord);
 			dgvKhachHang.DataSource = db.loadDB("SELECT * FROM KHACHHANG");
 		}
 		private void btnThem_Click(object sender, EventArgs e)

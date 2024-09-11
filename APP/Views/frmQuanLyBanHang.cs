@@ -1,5 +1,4 @@
-﻿using APP.Controllers;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,13 +10,16 @@ using System.Windows.Forms;
 
 namespace APP.Views
 {
-	public partial class frmChiTietHoaDon : Form
+	public partial class frmQuanLyBanHang : Form
 	{
-		UI ui = new UI(new Label());
-		public frmChiTietHoaDon(string MAHD)
+		public frmQuanLyBanHang()
 		{
 			InitializeComponent();
-			ui.loadCT_HoaDon(flowLayoutPanel1, MAHD);
+		}
+
+		private void frmQuanLyBanHang_Load(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

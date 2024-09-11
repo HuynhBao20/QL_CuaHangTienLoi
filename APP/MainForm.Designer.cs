@@ -34,21 +34,20 @@ namespace APP
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.pnl_Load_Main = new System.Windows.Forms.Panel();
 			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-			this.panel1 = new System.Windows.Forms.Panel();
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.button2 = new System.Windows.Forms.Button();
-			this.button1 = new System.Windows.Forms.Button();
-			this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-			this.btnKhachHang = new System.Windows.Forms.Button();
-			this.btnHome = new System.Windows.Forms.Button();
 			this._UserName = new System.Windows.Forms.ToolStripDropDownButton();
 			this.resetPass = new System.Windows.Forms.ToolStripMenuItem();
 			this._Logout = new System.Windows.Forms.ToolStripMenuItem();
+			this.panel1 = new System.Windows.Forms.Panel();
 			this.btnNhap = new System.Windows.Forms.Button();
-			this.btnBill = new System.Windows.Forms.Button();
+			this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.button2 = new System.Windows.Forms.Button();
+			this.button1 = new System.Windows.Forms.Button();
 			this.btnDoanhThu = new System.Windows.Forms.Button();
 			this.btnNhanSu = new System.Windows.Forms.Button();
+			this.btnKhachHang = new System.Windows.Forms.Button();
 			this.btnBanHang = new System.Windows.Forms.Button();
+			this.btnHome = new System.Windows.Forms.Button();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.toolStrip1.SuspendLayout();
@@ -99,12 +98,38 @@ namespace APP
 			this.toolStrip1.TabIndex = 2;
 			this.toolStrip1.Text = "toolStrip1";
 			// 
+			// _UserName
+			// 
+			this._UserName.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+			this._UserName.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.resetPass,
+            this._Logout});
+			this._UserName.Image = global::APP.Properties.Resources.images;
+			this._UserName.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this._UserName.Margin = new System.Windows.Forms.Padding(0, 1, 20, 2);
+			this._UserName.Name = "_UserName";
+			this._UserName.Size = new System.Drawing.Size(141, 29);
+			this._UserName.Text = "Tên đăng nhập";
+			// 
+			// resetPass
+			// 
+			this.resetPass.Name = "resetPass";
+			this.resetPass.Size = new System.Drawing.Size(181, 26);
+			this.resetPass.Text = "Đổi mật khẩu";
+			this.resetPass.Click += new System.EventHandler(this.resetPass_Click);
+			// 
+			// _Logout
+			// 
+			this._Logout.Name = "_Logout";
+			this._Logout.Size = new System.Drawing.Size(181, 26);
+			this._Logout.Text = "Đăng xuất";
+			this._Logout.Click += new System.EventHandler(this._Logout_Click);
+			// 
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.SystemColors.Control;
 			this.panel1.Controls.Add(this.btnNhap);
 			this.panel1.Controls.Add(this.groupBox1);
-			this.panel1.Controls.Add(this.btnBill);
 			this.panel1.Controls.Add(this.btnDoanhThu);
 			this.panel1.Controls.Add(this.btnNhanSu);
 			this.panel1.Controls.Add(this.btnKhachHang);
@@ -117,6 +142,36 @@ namespace APP
 			this.tableLayoutPanel1.SetRowSpan(this.panel1, 2);
 			this.panel1.Size = new System.Drawing.Size(213, 772);
 			this.panel1.TabIndex = 3;
+			// 
+			// btnNhap
+			// 
+			this.btnNhap.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnNhap.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.btnNhap.FlatAppearance.BorderSize = 0;
+			this.btnNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnNhap.ImageKey = "iconBill.png";
+			this.btnNhap.ImageList = this.imageList1;
+			this.btnNhap.Location = new System.Drawing.Point(0, 322);
+			this.btnNhap.Name = "btnNhap";
+			this.btnNhap.Size = new System.Drawing.Size(213, 60);
+			this.btnNhap.TabIndex = 8;
+			this.btnNhap.Text = "Quản lý nhập hàng";
+			this.btnNhap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnNhap.UseVisualStyleBackColor = true;
+			this.btnNhap.Click += new System.EventHandler(this.btnNhap_Click);
+			// 
+			// imageList1
+			// 
+			this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+			this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+			this.imageList1.Images.SetKeyName(0, "icon-thiet-ke-linh-vuc-logo-hang-tieu-dung-baa-brand-1.png");
+			this.imageList1.Images.SetKeyName(1, "icon-10.png");
+			this.imageList1.Images.SetKeyName(2, "iconBill.png");
+			this.imageList1.Images.SetKeyName(3, "30.1.2021-06.png");
+			this.imageList1.Images.SetKeyName(4, "iconDoanhThu.png");
+			this.imageList1.Images.SetKeyName(5, "quan-ly-ton-kho-la-gi.png");
+			this.imageList1.Images.SetKeyName(6, "Asset-3-1.png");
 			// 
 			// groupBox1
 			// 
@@ -149,111 +204,6 @@ namespace APP
 			this.button1.TabIndex = 0;
 			this.button1.Text = "Thông tin cá nhân";
 			this.button1.UseVisualStyleBackColor = true;
-			// 
-			// imageList1
-			// 
-			this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-			this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-			this.imageList1.Images.SetKeyName(0, "icon-thiet-ke-linh-vuc-logo-hang-tieu-dung-baa-brand-1.png");
-			this.imageList1.Images.SetKeyName(1, "icon-10.png");
-			this.imageList1.Images.SetKeyName(2, "iconBill.png");
-			this.imageList1.Images.SetKeyName(3, "30.1.2021-06.png");
-			this.imageList1.Images.SetKeyName(4, "iconDoanhThu.png");
-			this.imageList1.Images.SetKeyName(5, "quan-ly-ton-kho-la-gi.png");
-			this.imageList1.Images.SetKeyName(6, "Asset-3-1.png");
-			// 
-			// btnKhachHang
-			// 
-			this.btnKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
-			this.btnKhachHang.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.btnKhachHang.FlatAppearance.BorderSize = 0;
-			this.btnKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnKhachHang.ImageList = this.imageList1;
-			this.btnKhachHang.Location = new System.Drawing.Point(0, 142);
-			this.btnKhachHang.Name = "btnKhachHang";
-			this.btnKhachHang.Size = new System.Drawing.Size(213, 60);
-			this.btnKhachHang.TabIndex = 3;
-			this.btnKhachHang.Text = "Quản lý khách hàng";
-			this.btnKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnKhachHang.UseVisualStyleBackColor = true;
-			this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
-			// 
-			// btnHome
-			// 
-			this.btnHome.Dock = System.Windows.Forms.DockStyle.Top;
-			this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.btnHome.FlatAppearance.BorderSize = 0;
-			this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnHome.Location = new System.Drawing.Point(0, 29);
-			this.btnHome.Name = "btnHome";
-			this.btnHome.Size = new System.Drawing.Size(213, 53);
-			this.btnHome.TabIndex = 1;
-			this.btnHome.Text = "Trang chủ";
-			this.btnHome.UseVisualStyleBackColor = true;
-			this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-			// 
-			// _UserName
-			// 
-			this._UserName.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-			this._UserName.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.resetPass,
-            this._Logout});
-			this._UserName.Image = global::APP.Properties.Resources.images;
-			this._UserName.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this._UserName.Margin = new System.Windows.Forms.Padding(0, 1, 20, 2);
-			this._UserName.Name = "_UserName";
-			this._UserName.Size = new System.Drawing.Size(141, 40);
-			this._UserName.Text = "Tên đăng nhập";
-			// 
-			// resetPass
-			// 
-			this.resetPass.Name = "resetPass";
-			this.resetPass.Size = new System.Drawing.Size(224, 26);
-			this.resetPass.Text = "Đổi mật khẩu";
-			this.resetPass.Click += new System.EventHandler(this.resetPass_Click);
-			// 
-			// _Logout
-			// 
-			this._Logout.Name = "_Logout";
-			this._Logout.Size = new System.Drawing.Size(224, 26);
-			this._Logout.Text = "Đăng xuất";
-			this._Logout.Click += new System.EventHandler(this._Logout_Click);
-			// 
-			// btnNhap
-			// 
-			this.btnNhap.Dock = System.Windows.Forms.DockStyle.Top;
-			this.btnNhap.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.btnNhap.FlatAppearance.BorderSize = 0;
-			this.btnNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnNhap.ImageKey = "iconBill.png";
-			this.btnNhap.ImageList = this.imageList1;
-			this.btnNhap.Location = new System.Drawing.Point(0, 382);
-			this.btnNhap.Name = "btnNhap";
-			this.btnNhap.Size = new System.Drawing.Size(213, 60);
-			this.btnNhap.TabIndex = 8;
-			this.btnNhap.Text = "Quản lý nhập hàng";
-			this.btnNhap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnNhap.UseVisualStyleBackColor = true;
-			this.btnNhap.Click += new System.EventHandler(this.btnNhap_Click);
-			// 
-			// btnBill
-			// 
-			this.btnBill.Dock = System.Windows.Forms.DockStyle.Top;
-			this.btnBill.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.btnBill.FlatAppearance.BorderSize = 0;
-			this.btnBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnBill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnBill.ImageKey = "iconBill.png";
-			this.btnBill.ImageList = this.imageList1;
-			this.btnBill.Location = new System.Drawing.Point(0, 322);
-			this.btnBill.Name = "btnBill";
-			this.btnBill.Size = new System.Drawing.Size(213, 60);
-			this.btnBill.TabIndex = 6;
-			this.btnBill.Text = "Quản lý hóa đơn";
-			this.btnBill.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnBill.UseVisualStyleBackColor = true;
-			this.btnBill.Click += new System.EventHandler(this.button6_Click);
 			// 
 			// btnDoanhThu
 			// 
@@ -291,6 +241,22 @@ namespace APP
 			this.btnNhanSu.UseVisualStyleBackColor = true;
 			this.btnNhanSu.Click += new System.EventHandler(this.btnNhanSu_Click);
 			// 
+			// btnKhachHang
+			// 
+			this.btnKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnKhachHang.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.btnKhachHang.FlatAppearance.BorderSize = 0;
+			this.btnKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnKhachHang.ImageList = this.imageList1;
+			this.btnKhachHang.Location = new System.Drawing.Point(0, 142);
+			this.btnKhachHang.Name = "btnKhachHang";
+			this.btnKhachHang.Size = new System.Drawing.Size(213, 60);
+			this.btnKhachHang.TabIndex = 3;
+			this.btnKhachHang.Text = "Quản lý khách hàng";
+			this.btnKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnKhachHang.UseVisualStyleBackColor = true;
+			this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
+			// 
 			// btnBanHang
 			// 
 			this.btnBanHang.Dock = System.Windows.Forms.DockStyle.Top;
@@ -308,6 +274,20 @@ namespace APP
 			this.btnBanHang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnBanHang.UseVisualStyleBackColor = true;
 			this.btnBanHang.Click += new System.EventHandler(this.btnBanHang_Click);
+			// 
+			// btnHome
+			// 
+			this.btnHome.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.btnHome.FlatAppearance.BorderSize = 0;
+			this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnHome.Location = new System.Drawing.Point(0, 29);
+			this.btnHome.Name = "btnHome";
+			this.btnHome.Size = new System.Drawing.Size(213, 53);
+			this.btnHome.TabIndex = 1;
+			this.btnHome.Text = "Trang chủ";
+			this.btnHome.UseVisualStyleBackColor = true;
+			this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
 			// 
 			// pictureBox1
 			// 
@@ -354,7 +334,6 @@ namespace APP
 		private System.Windows.Forms.ToolStripMenuItem _Logout;
 		private System.Windows.Forms.ImageList imageList1;
 		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.Button btnBill;
 		private System.Windows.Forms.Button btnDoanhThu;
 		private System.Windows.Forms.Button btnNhanSu;
 		private System.Windows.Forms.Button btnKhachHang;

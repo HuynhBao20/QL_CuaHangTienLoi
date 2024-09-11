@@ -17,7 +17,6 @@ namespace APP.Views.manhinhphu
 {
 	public partial class frmNhapHang : Form
 	{
-		UI ui = new UI();
 		process p = new process();
 		NhapHang n;
 		Connection db;
@@ -47,7 +46,7 @@ namespace APP.Views.manhinhphu
 		{
 			n.load_SanPham_PhieuNhap(flp, txtMaSP, txtTenSP, txMasp, txtDonGia, cbo_MaLoai);
 			n.load_PhieuNhap(flp_SP, flp_CTPN, "Chưa duyệt", DateTime.Now.Date.ToString("yyyy-MM-dd"), "AND");
-			ui.loadCombobox(cbo_MaLoai, "SELECT * FROM LOAISP", "TENLOAI", "TENLOAI");
+			p.loadCombobox(cbo_MaLoai, "SELECT * FROM LOAISP", "TENLOAI", "TENLOAI");
 			this.Active = "Chưa duyệt";
 			dtime.Value.ToString("dd/MM/yyyy");
 		}

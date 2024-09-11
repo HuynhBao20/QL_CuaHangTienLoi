@@ -62,8 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\Analyst.cs" />
-    <Compile Include="Controllers\CustomTool.cs" />
-    <Compile Include="Controllers\Event.cs" />
     <Compile Include="Controllers\HoaDon.cs" />
     <Compile Include="Controllers\Kho.cs" />
     <Compile Include="Controllers\NhapHang.cs" />
@@ -82,12 +80,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Views\frmChiTietHoaDon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\frmChiTietHoaDon.Designer.cs">
-      <DependentUpon>frmChiTietHoaDon.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\frmDanhMucNhanSu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +91,12 @@
     </Compile>
     <Compile Include="Views\frmDashboard.Designer.cs">
       <DependentUpon>frmDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmQuanLyBanHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmQuanLyBanHang.Designer.cs">
+      <DependentUpon>frmQuanLyBanHang.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\frmQuanLyDoanhThu.cs">
       <SubType>Form</SubType>
@@ -148,19 +146,6 @@
     <Compile Include="Views\manhinhphu\frmQRThanhToanMoMo.Designer.cs">
       <DependentUpon>frmQRThanhToanMoMo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\frmQuanLyHoaDon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\frmQuanLyHoaDon.Designer.cs">
-      <DependentUpon>frmQuanLyHoaDon.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\frmQuanLyHangHoa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\frmQuanLyHangHoa.Designer.cs">
-      <DependentUpon>frmQuanLyHangHoa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\UI.cs" />
     <Compile Include="Views\manhinhphu\frmXemSP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,14 +160,14 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmChiTietHoaDon.resx">
-      <DependentUpon>frmChiTietHoaDon.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\frmDanhMucNhanSu.resx">
       <DependentUpon>frmDanhMucNhanSu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmQuanLyBanHang.resx">
+      <DependentUpon>frmQuanLyBanHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmQuanLyDoanhThu.resx">
       <DependentUpon>frmQuanLyDoanhThu.cs</DependentUpon>
@@ -207,12 +192,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\manhinhphu\frmQRThanhToanMoMo.resx">
       <DependentUpon>frmQRThanhToanMoMo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmQuanLyHangHoa.resx">
-      <DependentUpon>frmQuanLyHangHoa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmQuanLyHoaDon.resx">
-      <DependentUpon>frmQuanLyHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\manhinhphu\frmXemSP.resx">
       <DependentUpon>frmXemSP.cs</DependentUpon>

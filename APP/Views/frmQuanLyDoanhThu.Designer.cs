@@ -29,37 +29,37 @@ namespace APP.Views
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-			System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-			System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-			System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-			System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+			System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+			System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+			System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+			System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
-			this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+			this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.dgv = new System.Windows.Forms.DataGridView();
 			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-			this.lb_TongTien = new System.Windows.Forms.Label();
+			this.dgv = new System.Windows.Forms.DataGridView();
+			this.label2 = new System.Windows.Forms.Label();
+			this.label5 = new System.Windows.Forms.Label();
+			this.dtp_toDate = new System.Windows.Forms.DateTimePicker();
 			this.dtp = new System.Windows.Forms.DateTimePicker();
 			this.label1 = new System.Windows.Forms.Label();
-			this.dtp_toDate = new System.Windows.Forms.DateTimePicker();
-			this.label5 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
+			this.lb_TongTien = new System.Windows.Forms.Label();
 			this.txtMaKH = new System.Windows.Forms.TextBox();
 			this.btnMaKH = new System.Windows.Forms.Button();
-			this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.groupBox4.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-			this.groupBox3.SuspendLayout();
-			this.groupBox2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
-			this.tableLayoutPanel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+			this.groupBox3.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+			this.groupBox2.SuspendLayout();
+			this.tableLayoutPanel2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tableLayoutPanel1
@@ -87,41 +87,58 @@ namespace APP.Views
 			// 
 			this.groupBox4.Controls.Add(this.chart2);
 			this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.groupBox4.Location = new System.Drawing.Point(442, 421);
+			this.groupBox4.Location = new System.Drawing.Point(442, 420);
 			this.groupBox4.Name = "groupBox4";
-			this.groupBox4.Size = new System.Drawing.Size(437, 326);
+			this.groupBox4.Size = new System.Drawing.Size(437, 327);
 			this.groupBox4.TabIndex = 6;
 			this.groupBox4.TabStop = false;
 			this.groupBox4.Text = "Doanh thu theo tháng";
 			// 
-			// chart1
+			// chart2
 			// 
-			chartArea5.Name = "ChartArea1";
-			this.chart1.ChartAreas.Add(chartArea5);
-			this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-			legend5.Name = "Legend1";
-			this.chart1.Legends.Add(legend5);
-			this.chart1.Location = new System.Drawing.Point(3, 23);
-			this.chart1.Name = "chart1";
-			series5.ChartArea = "ChartArea1";
-			series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-			series5.Legend = "Legend1";
-			series5.Name = "Series1";
-			this.chart1.Series.Add(series5);
-			this.chart1.Size = new System.Drawing.Size(427, 300);
-			this.chart1.TabIndex = 1;
-			this.chart1.Text = "Doanh thu theo ngày";
+			chartArea1.Name = "ChartArea1";
+			this.chart2.ChartAreas.Add(chartArea1);
+			this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
+			legend1.Name = "Legend1";
+			this.chart2.Legends.Add(legend1);
+			this.chart2.Location = new System.Drawing.Point(3, 23);
+			this.chart2.Name = "chart2";
+			series1.ChartArea = "ChartArea1";
+			series1.Legend = "Legend1";
+			series1.Name = "Series1";
+			this.chart2.Series.Add(series1);
+			this.chart2.Size = new System.Drawing.Size(431, 301);
+			this.chart2.TabIndex = 0;
+			this.chart2.Text = "chart2";
 			// 
 			// groupBox3
 			// 
 			this.groupBox3.Controls.Add(this.chart1);
 			this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.groupBox3.Location = new System.Drawing.Point(3, 421);
+			this.groupBox3.Location = new System.Drawing.Point(3, 420);
 			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Size = new System.Drawing.Size(433, 326);
+			this.groupBox3.Size = new System.Drawing.Size(433, 327);
 			this.groupBox3.TabIndex = 5;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Doanh thu theo ngày";
+			// 
+			// chart1
+			// 
+			chartArea2.Name = "ChartArea1";
+			this.chart1.ChartAreas.Add(chartArea2);
+			this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+			legend2.Name = "Legend1";
+			this.chart1.Legends.Add(legend2);
+			this.chart1.Location = new System.Drawing.Point(3, 23);
+			this.chart1.Name = "chart1";
+			series2.ChartArea = "ChartArea1";
+			series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+			series2.Legend = "Legend1";
+			series2.Name = "Series1";
+			this.chart1.Series.Add(series2);
+			this.chart1.Size = new System.Drawing.Size(427, 301);
+			this.chart1.TabIndex = 1;
+			this.chart1.Text = "Doanh thu theo ngày";
 			// 
 			// groupBox2
 			// 
@@ -130,23 +147,10 @@ namespace APP.Views
 			this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.groupBox2.Location = new System.Drawing.Point(3, 3);
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(1281, 412);
+			this.groupBox2.Size = new System.Drawing.Size(1281, 411);
 			this.groupBox2.TabIndex = 1;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Phân tích hóa đơn";
-			// 
-			// dgv
-			// 
-			this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.tableLayoutPanel2.SetColumnSpan(this.dgv, 8);
-			this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dgv.Location = new System.Drawing.Point(3, 37);
-			this.dgv.Name = "dgv";
-			this.dgv.RowHeadersWidth = 51;
-			this.dgv.RowTemplate.Height = 24;
-			this.dgv.Size = new System.Drawing.Size(1269, 315);
-			this.dgv.TabIndex = 0;
 			// 
 			// tableLayoutPanel2
 			// 
@@ -159,7 +163,7 @@ namespace APP.Views
 			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 141F));
 			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 214F));
 			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
-			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 126F));
+			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 246F));
 			this.tableLayoutPanel2.Controls.Add(this.label2, 4, 0);
 			this.tableLayoutPanel2.Controls.Add(this.label5, 2, 0);
 			this.tableLayoutPanel2.Controls.Add(this.dtp_toDate, 3, 0);
@@ -177,19 +181,54 @@ namespace APP.Views
 			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.42254F));
 			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
 			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-			this.tableLayoutPanel2.Size = new System.Drawing.Size(1275, 386);
+			this.tableLayoutPanel2.Size = new System.Drawing.Size(1275, 385);
 			this.tableLayoutPanel2.TabIndex = 0;
 			// 
-			// lb_TongTien
+			// dgv
 			// 
-			this.tableLayoutPanel2.SetColumnSpan(this.lb_TongTien, 2);
-			this.lb_TongTien.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.lb_TongTien.Location = new System.Drawing.Point(929, 355);
-			this.lb_TongTien.Name = "lb_TongTien";
-			this.lb_TongTien.Size = new System.Drawing.Size(343, 31);
-			this.lb_TongTien.TabIndex = 0;
-			this.lb_TongTien.Text = "label1";
-			this.lb_TongTien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.tableLayoutPanel2.SetColumnSpan(this.dgv, 8);
+			this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dgv.Location = new System.Drawing.Point(3, 37);
+			this.dgv.Name = "dgv";
+			this.dgv.RowHeadersWidth = 51;
+			this.dgv.RowTemplate.Height = 24;
+			this.dgv.Size = new System.Drawing.Size(1269, 315);
+			this.dgv.TabIndex = 0;
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.label2.Location = new System.Drawing.Point(574, 0);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(135, 34);
+			this.label2.TabIndex = 6;
+			this.label2.Text = "Mã khách hàng";
+			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.label5.Location = new System.Drawing.Point(272, 0);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(104, 34);
+			this.label5.TabIndex = 5;
+			this.label5.Text = "Đến ngày";
+			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// dtp_toDate
+			// 
+			this.dtp_toDate.CustomFormat = "dd-MM-yyyy";
+			this.dtp_toDate.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dtp_toDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.dtp_toDate.Location = new System.Drawing.Point(382, 3);
+			this.dtp_toDate.Name = "dtp_toDate";
+			this.dtp_toDate.Size = new System.Drawing.Size(186, 27);
+			this.dtp_toDate.TabIndex = 4;
+			this.dtp_toDate.ValueChanged += new System.EventHandler(this.dtp_toDate_ValueChanged);
 			// 
 			// dtp
 			// 
@@ -213,38 +252,16 @@ namespace APP.Views
 			this.label1.Text = "Từ ngày";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// dtp_toDate
+			// lb_TongTien
 			// 
-			this.dtp_toDate.CustomFormat = "dd-MM-yyyy";
-			this.dtp_toDate.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dtp_toDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-			this.dtp_toDate.Location = new System.Drawing.Point(382, 3);
-			this.dtp_toDate.Name = "dtp_toDate";
-			this.dtp_toDate.Size = new System.Drawing.Size(186, 27);
-			this.dtp_toDate.TabIndex = 4;
-			this.dtp_toDate.ValueChanged += new System.EventHandler(this.dtp_toDate_ValueChanged);
-			// 
-			// label5
-			// 
-			this.label5.AutoSize = true;
-			this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label5.Location = new System.Drawing.Point(272, 0);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(104, 34);
-			this.label5.TabIndex = 5;
-			this.label5.Text = "Đến ngày";
-			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label2.Location = new System.Drawing.Point(574, 0);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(135, 34);
-			this.label2.TabIndex = 6;
-			this.label2.Text = "Mã khách hàng";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.tableLayoutPanel2.SetColumnSpan(this.lb_TongTien, 2);
+			this.lb_TongTien.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.lb_TongTien.Location = new System.Drawing.Point(929, 355);
+			this.lb_TongTien.Name = "lb_TongTien";
+			this.lb_TongTien.Size = new System.Drawing.Size(343, 30);
+			this.lb_TongTien.TabIndex = 0;
+			this.lb_TongTien.Text = "label1";
+			this.lb_TongTien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// txtMaKH
 			// 
@@ -266,29 +283,12 @@ namespace APP.Views
 			this.btnMaKH.UseVisualStyleBackColor = true;
 			this.btnMaKH.Click += new System.EventHandler(this.btnMaKH_Click);
 			// 
-			// chart2
-			// 
-			chartArea6.Name = "ChartArea1";
-			this.chart2.ChartAreas.Add(chartArea6);
-			this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
-			legend6.Name = "Legend1";
-			this.chart2.Legends.Add(legend6);
-			this.chart2.Location = new System.Drawing.Point(3, 23);
-			this.chart2.Name = "chart2";
-			series6.ChartArea = "ChartArea1";
-			series6.Legend = "Legend1";
-			series6.Name = "Series1";
-			this.chart2.Series.Add(series6);
-			this.chart2.Size = new System.Drawing.Size(431, 300);
-			this.chart2.TabIndex = 0;
-			this.chart2.Text = "chart2";
-			// 
 			// groupBox1
 			// 
 			this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.groupBox1.Location = new System.Drawing.Point(885, 421);
+			this.groupBox1.Location = new System.Drawing.Point(885, 420);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(399, 326);
+			this.groupBox1.Size = new System.Drawing.Size(399, 327);
 			this.groupBox1.TabIndex = 7;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Chức năng";
@@ -307,13 +307,13 @@ namespace APP.Views
 			this.Text = "QUẢN LÝ DOANH THU";
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.groupBox4.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
 			this.groupBox3.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
 			this.groupBox2.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
 			this.tableLayoutPanel2.ResumeLayout(false);
 			this.tableLayoutPanel2.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
 			this.ResumeLayout(false);
 
 		}
