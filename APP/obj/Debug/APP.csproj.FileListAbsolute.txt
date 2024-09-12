@@ -220,3 +220,5 @@ D:\Source\Phần mềm quản lý\APP_CHTL\APP\obj\Debug\APP.csproj.CopyComplete
 D:\Source\Phần mềm quản lý\APP_CHTL\APP\obj\Debug\APP.exe
 D:\Source\Phần mềm quản lý\APP_CHTL\APP\obj\Debug\APP.pdb
 D:\Source\Phần mềm quản lý\APP_CHTL\APP\obj\Debug\APP.Views.frmQuanLyBanHang.resources
+D:\Source\Phần mềm quản lý\APP_CHTL\APP\obj\Debug\APP.Views.LoadControl.Product.resources
+D:\Source\Phần mềm quản lý\APP_CHTL\APP\obj\Debug\APP.Views.LoadControl.load_Infor_Product.resources

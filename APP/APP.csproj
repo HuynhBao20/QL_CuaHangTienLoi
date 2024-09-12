@@ -66,6 +66,7 @@
     <Compile Include="Controllers\Kho.cs" />
     <Compile Include="Controllers\NhapHang.cs" />
     <Compile Include="Controllers\process.cs" />
+    <Compile Include="Controllers\SanPham.cs" />
     <Compile Include="Controllers\TotalMoMo.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -109,6 +110,18 @@
     </Compile>
     <Compile Include="Views\frmQuanLyKho.Designer.cs">
       <DependentUpon>frmQuanLyKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoadControl\load_Infor_Product.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\LoadControl\load_Infor_Product.Designer.cs">
+      <DependentUpon>load_Infor_Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoadControl\Product.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\LoadControl\Product.Designer.cs">
+      <DependentUpon>Product.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\manhinhphu\frmKhachHang.cs">
       <SubType>Form</SubType>
@@ -174,6 +187,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmQuanLyKho.resx">
       <DependentUpon>frmQuanLyKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LoadControl\load_Infor_Product.resx">
+      <DependentUpon>load_Infor_Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LoadControl\Product.resx">
+      <DependentUpon>Product.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\manhinhphu\frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
