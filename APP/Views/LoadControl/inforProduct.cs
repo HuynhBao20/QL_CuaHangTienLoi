@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace APP.Views.LoadControl
 {
-	public partial class load_Infor_Product : UserControl
+	public partial class inforProduct : UserControl
 	{
-		public load_Infor_Product(string MASP)
+		public inforProduct(string MASP)
 		{
 			InitializeComponent();
 			label4.Text = MASP;
 		}
-		public load_Infor_Product()
+		public inforProduct()
 		{
 			InitializeComponent();
 		}

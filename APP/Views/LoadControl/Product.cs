@@ -1,4 +1,5 @@
 ﻿using APP.Controllers;
+using ConnectionDB;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace APP.Views.LoadControl
 	{
 		process p = new process();
 		Panel Panel = new Panel();
+		Connection db = new Connection();
 		public string MASP { get; set; }
 		public Product(string imgPath, string Name, string Price, string MASP, Panel pnl)
 		{
@@ -26,14 +28,9 @@ namespace APP.Views.LoadControl
 			label2.Text = int.Parse(Price).ToString("0,00đ");
 			this.MASP = MASP;
 		}
-
 		private void btn_Click(object sender, EventArgs e)
 		{
-
-			load_Infor_Product l = new load_Infor_Product(MASP);
-			l.Dock = DockStyle.Fill;
-			//Panel.Controls.Add(l);
-			l.Show();
+			
 		}
 	}
 }

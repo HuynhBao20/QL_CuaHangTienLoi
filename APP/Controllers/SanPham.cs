@@ -25,13 +25,17 @@ namespace APP.Controllers
 		{
 			db = new Connection();
 		}
-		public void load_Product(FlowLayoutPanel flow, Panel pnl)
+		public async void load_Product(FlowLayoutPanel flow, Panel pnl)
 		{
 			flow.Controls.Clear();
 			pnl.Controls.Clear();
-			foreach(DataRow item in dt.da_SanPham().Rows)
+			foreach(DataRow item in dt.da_SanPham().AsEnumerable().Skip(10).CopyToDataTable().Rows)
 			{
-				Product product = new Product(p.fpathImage(item["MASP"].ToString()), item["TENSP"].ToString(), item["DONGIA"].ToString(), item["MASP"].ToString(), pnl);
+				Product product = new Product(p.fpathImage(item["MASP"].ToString()), 
+															item["TENSP"].ToString(), 
+															item["DONGIA"].ToString(), 
+															item["MASP"].ToString(), 
+															pnl);
 				flow.Controls.Add(product);
 				product.Show();
 			}

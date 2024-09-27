@@ -21,11 +21,16 @@ namespace APP.Views
 
 		private void frmQuanLyBanHang_Load(object sender, EventArgs e)
 		{
-			sp.load_Product(flp_SanPham, pnl);
-			load_Infor_Product l = new load_Infor_Product();
+			sp.load_Product(flp_SanPham, pnlCTSP);
+			inforProduct l = new inforProduct();
 			l.Dock = DockStyle.Fill;
 			pnl.Controls.Add(l);
 			l.Show();
+		}
+
+		private void groupBox3_Enter(object sender, EventArgs e)
+		{
+			
 		}
 	}
 }

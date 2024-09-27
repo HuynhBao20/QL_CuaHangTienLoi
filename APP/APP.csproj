@@ -111,11 +111,17 @@
     <Compile Include="Views\frmQuanLyKho.Designer.cs">
       <DependentUpon>frmQuanLyKho.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\LoadControl\load_Infor_Product.cs">
+    <Compile Include="Views\LoadControl\ChiTietSP.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\LoadControl\load_Infor_Product.Designer.cs">
-      <DependentUpon>load_Infor_Product.cs</DependentUpon>
+    <Compile Include="Views\LoadControl\ChiTietSP.Designer.cs">
+      <DependentUpon>ChiTietSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoadControl\inforProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\LoadControl\inforProduct.Designer.cs">
+      <DependentUpon>inforProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\LoadControl\Product.cs">
       <SubType>UserControl</SubType>
@@ -188,8 +194,11 @@
     <EmbeddedResource Include="Views\frmQuanLyKho.resx">
       <DependentUpon>frmQuanLyKho.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\LoadControl\load_Infor_Product.resx">
-      <DependentUpon>load_Infor_Product.cs</DependentUpon>
+    <EmbeddedResource Include="Views\LoadControl\ChiTietSP.resx">
+      <DependentUpon>ChiTietSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LoadControl\inforProduct.resx">
+      <DependentUpon>inforProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\LoadControl\Product.resx">
       <DependentUpon>Product.cs</DependentUpon>

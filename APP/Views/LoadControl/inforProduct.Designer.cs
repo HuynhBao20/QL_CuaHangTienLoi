@@ -1,7 +1,7 @@
 ﻿
 namespace APP.Views.LoadControl
 {
-	partial class load_Infor_Product
+	partial class inforProduct
 	{
 		/// <summary> 
 		/// Required designer variable.

@@ -30,5 +30,9 @@ namespace APP.Controllers
 			this.MAHD = db.ExcuteReader(process.get_NewBillID, "MAHD");
 		}
 		//public void load()
+		public void loadInvoid()
+		{
+			
+		}
 	}
 }
